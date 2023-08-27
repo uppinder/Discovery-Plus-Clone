@@ -28,6 +28,7 @@ body {
   background-color: #000;
   top: 47px;
   width: 250px;
+  max-height: 400px;
   z-index: 15;
   padding: 16px;
 }
@@ -41,10 +42,12 @@ body {
   width: 200px;
 }
 
-.dropdown-container:hover .dropdown-content {
-  display: block;
-}
+@media screen and (min-width: 48em) {
+  .dropdown-container:hover .dropdown-content {
+    display: block;
+  }
 
-.dropdown-container:hover .dropdown-empty-space {
-  display: block;
+  .dropdown-container:hover .dropdown-empty-space {
+    display: block;
+  }
 }

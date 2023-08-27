@@ -1,13 +1,13 @@
-import { VStack, Center, Box } from '@chakra-ui/react';
+import { Center, Flex } from '@chakra-ui/react';
 import React from 'react';
 
 function Home() {
   return (
-    <VStack minWidth="100vw">
-      <Center height="200px" width="100%" backgroundColor="green.400">
+    <Flex minWidth="100vw">
+      <Center height="300px" width="100%" backgroundColor="#121317">
         Carousel
       </Center>
-    </VStack>
+    </Flex>
   );
 }
 

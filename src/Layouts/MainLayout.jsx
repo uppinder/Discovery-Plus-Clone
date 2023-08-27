@@ -6,7 +6,7 @@ import { Grid } from '@chakra-ui/react';
 
 function MainLayout() {
   return (
-    <Grid minH="100vh" gridTemplateRows="1fr 10%" paddingTop="70px">
+    <Grid minH="100vh" gridTemplateRows="1fr 10%" paddingTop={'70px'}>
       <Navbar />
       <Outlet />
       <Footer />
