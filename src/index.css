@@ -27,7 +27,6 @@ body {
   position: absolute;
   background-color: #000;
   top: 47px;
-  width: 250px;
   max-height: 400px;
   z-index: 15;
   padding: 16px;
@@ -50,4 +49,46 @@ body {
   .dropdown-container:hover .dropdown-empty-space {
     display: block;
   }
+}
+
+.swiper-home-carousel {
+  height: 550px;
+  width: 100%;
+  background-color: #121317;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+  padding-top: 10px;
+}
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  border: 1px solid white;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white;
+  height: 10px;
+  width: 10px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+  --swiper-navigation-size: 24px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  --swiper-navigation-size: 32px;
 }

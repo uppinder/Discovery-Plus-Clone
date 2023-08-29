@@ -66,7 +66,10 @@ function Navbar() {
             />
           </Flex>
           <Box className="dropdown-empty-space"></Box>
-          <Box className="dropdown-content" width={{ md: '350px' }}>
+          <Box
+            className="dropdown-content"
+            width={{ sm: '350px', xl: '250px' }}
+          >
             <Flex
               flexDirection="column"
               gap="10px"
@@ -100,7 +103,11 @@ function Navbar() {
                 </Center>
               </Flex>
               <Flex gap="20px" fontWeight="500">
-                <Flex flexDirection="column" gap="8px">
+                <Flex
+                  flexDirection="column"
+                  gap="8px"
+                  display={{ base: 'none', sm: 'flex', xl: 'none' }}
+                >
                   <Link
                     display="flex"
                     alignItems="center"
