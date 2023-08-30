@@ -258,8 +258,3 @@ function MainCarousel() {
 }
 
 export default MainCarousel;
-
-// 1. Image pe click - done
-// 2. premium icon overlay positioning - done
-// 3. Responsive - done
-// 4. Bottom navigation bar for mobile screens - with Home, Explore, etc.

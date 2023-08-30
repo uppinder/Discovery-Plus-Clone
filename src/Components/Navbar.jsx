@@ -31,6 +31,7 @@ import {
 } from '@phosphor-icons/react';
 import discoveryHeaderLogo from '../Assets/Images/discovery_header_logo.png';
 import kidsLogo from '../Assets/Images/kids_icon.svg';
+import kidsLogoBottomNavbar from '../Assets/Images/kids_logo_bottom_navbar.svg';
 import avatarLogo from '../Assets/Images/avatar_icon.svg';
 import crownLogo from '../Assets/Images/crown_logo.svg';
 
@@ -53,6 +54,74 @@ function Navbar() {
       position="fixed"
       zIndex="10"
     >
+      <Flex
+        display={{ base: 'flex', sm: 'none' }}
+        position="fixed"
+        width="100%"
+        height="50px"
+        backgroundColor="#121317"
+        left="0"
+        bottom="0"
+        justifyContent="space-around"
+      >
+        <Link
+          display="flex"
+          flexDir="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <House size="24px" color="white" weight="fill" />
+          <Text fontSize="14px" lineHeight="1">
+            Home
+          </Text>
+        </Link>
+        <Link
+          display="flex"
+          flexDir="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <SquaresFour size="24px" color="#838991" />
+          <Text fontSize="14px" lineHeight="1" color="#838991">
+            Explore
+          </Text>
+        </Link>
+        <Link
+          display="flex"
+          flexDir="column"
+          justifyContent="center"
+          alignItems="center"
+          marginTop="-20px"
+          gap="2px"
+        >
+          <Image src={kidsLogoBottomNavbar} width="42px" height="42px" />
+          <Text fontSize="14px" lineHeight="1" color="#838991">
+            Kids
+          </Text>
+        </Link>
+        <Link
+          display="flex"
+          flexDir="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Lightning size="24px" color="#838991" />
+          <Text fontSize="14px" lineHeight="1" color="#838991">
+            Shorts
+          </Text>
+        </Link>
+        <Link
+          display="flex"
+          flexDir="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <CrownSimple size="24px" color="#838991" />
+          <Text fontSize="14px" lineHeight="1" color="#838991">
+            Premium
+          </Text>
+        </Link>
+      </Flex>
       <HStack spacing={['10px', '20px']}>
         <Box className="dropdown-container">
           <Flex className="hoverable-button" onClick={onOpen}>
@@ -99,6 +168,7 @@ function Navbar() {
                   All Access
                 </Center>
               </Flex>
+
               <Flex gap="20px" fontWeight="500">
                 <Flex
                   flexDirection="column"
