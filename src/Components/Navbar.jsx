@@ -1,12 +1,9 @@
 import React from 'react';
 import {
-  Avatar,
   Box,
   Center,
   Drawer,
-  DrawerBody,
   DrawerContent,
-  DrawerHeader,
   Flex,
   HStack,
   IconButton,
