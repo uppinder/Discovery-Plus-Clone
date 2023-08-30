@@ -392,7 +392,9 @@ function Navbar() {
           </Drawer>
         )}
 
-        <Image src={discoveryHeaderLogo} maxWidth={['100px', '170px']} />
+        <Link>
+          <Image src={discoveryHeaderLogo} maxWidth={['100px', '170px']} />
+        </Link>
 
         {/* For mobile screen */}
         <Flex

@@ -26,16 +26,6 @@ function MainCarousel() {
 
   const carouselData = [
     {
-      showTitle: 'Caribbean Life',
-      showDesc: `Families leave behind the mainland for dream homes in the caribbean.`,
-      showTags: ["Editor's Pick", 'Must Watch'],
-      showImage: require(`../Assets/Images/carousel_image_test.jpeg`),
-      showImageMobile: require(`../Assets/Images/carousel_image_test_mobile.jpeg`),
-      showIsPremium: true,
-      showHasNewEpisodes: true,
-      showWatch: true,
-    },
-    {
       showTitle: 'Pawn Stars',
       showDesc: `Pawn Stars follows three generations of the Harrison family`,
       showTags: ['All Time Fav', 'Stream Now'],
@@ -44,6 +34,16 @@ function MainCarousel() {
       showIsPremium: true,
       showHasNewEpisodes: false,
       showWatch: false,
+    },
+    {
+      showTitle: 'Caribbean Life',
+      showDesc: `Families leave behind the mainland for dream homes in the caribbean.`,
+      showTags: ["Editor's Pick", 'Must Watch'],
+      showImage: require(`../Assets/Images/carousel_image_test.jpeg`),
+      showImageMobile: require(`../Assets/Images/carousel_image_test_mobile.jpeg`),
+      showIsPremium: true,
+      showHasNewEpisodes: true,
+      showWatch: true,
     },
   ];
 
@@ -65,8 +65,8 @@ function MainCarousel() {
       modules={[Autoplay, Pagination, Navigation]}
       className="swiper-home-carousel"
     >
-      {carouselData.map(showData => (
-        <LinkBox>
+      {carouselData.map((showData, idx) => (
+        <LinkBox key={idx}>
           <SwiperSlide>
             <Flex
               display={{ base: 'none', md: 'flex' }}
@@ -92,8 +92,9 @@ function MainCarousel() {
                 {showData.showDesc}
               </Text>
               <Flex gap="8px">
-                {showData.showTags.map(showTag => (
+                {showData.showTags.map((showTag, idx) => (
                   <Box
+                    key={idx}
                     backgroundColor="rgb(40, 46, 61)"
                     width="fit-content"
                     color="#9ba1a9"
@@ -129,7 +130,12 @@ function MainCarousel() {
                 </Text>
               </Flex>
             </Flex>
-            <LinkOverlay as={RouterLink} to="404" height="100%">
+            <LinkOverlay
+              as={RouterLink}
+              to="404"
+              height="100%"
+              paddingRight="5%"
+            >
               {isMobile ? (
                 <Flex width="100%" height="100%" position="relative">
                   <Image
@@ -154,8 +160,9 @@ function MainCarousel() {
                     gap="7px"
                   >
                     <Flex gap="8px">
-                      {showData.showTags.map(showTag => (
+                      {showData.showTags.map((showTag, idx) => (
                         <Box
+                          key={idx}
                           backgroundColor="rgb(40, 46, 61)"
                           width="fit-content"
                           color="#9ba1a9"
@@ -200,13 +207,7 @@ function MainCarousel() {
                   </Flex>
                 </Flex>
               ) : (
-                <Flex
-                  width="100%"
-                  height="100%"
-                  flex="65%"
-                  paddingRight="5%"
-                  position="relative"
-                >
+                <Flex width="100%" height="100%" flex="65%" position="relative">
                   <Flex
                     width="100%"
                     height="100%"
