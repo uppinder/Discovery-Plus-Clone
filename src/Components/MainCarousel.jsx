@@ -134,7 +134,7 @@ function MainCarousel() {
               as={RouterLink}
               to="404"
               height="100%"
-              paddingRight="5%"
+              paddingRight={isMobile ? '0' : '5%'}
             >
               {isMobile ? (
                 <Flex width="100%" height="100%" position="relative">

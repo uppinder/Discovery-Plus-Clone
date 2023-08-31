@@ -7,6 +7,7 @@ import {
   Link,
   Stack,
   Text,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
 import googleStoreImage from '../Assets/Images/google_play_download.png';
@@ -18,6 +19,8 @@ import discoveryIcon from '../Assets/Images/discovery_small_icon.svg';
 import React from 'react';
 
 function Footer() {
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+
   const footerBottomStyle = { textDecoration: 'none', color: 'white' };
 
   return (
@@ -26,6 +29,7 @@ function Footer() {
       height="fit-content"
       gridTemplateRows={['1fr 1fr', '1fr 100px']}
       padding="2vh 1.5vw"
+      paddingBottom={isMobile ? '80px' : '0'}
       color="#838991"
       gap="25px"
     >

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 
-import showThumbnail from '../Assets/Images/shows_test_1.jpeg';
+import showThumbnailVertical from '../Assets/Images/shows_vertical_test_1.jpeg';
 
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
-function HomeShowItem() {
+function HomeShowItemVertical() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const [isHovered, setIsHovered] = useState(false);
@@ -18,28 +18,13 @@ function HomeShowItem() {
 
   return (
     <Box onMouseEnter={handleHover} onMouseLeave={handleHover}>
-      <Image src={showThumbnail} borderRadius={isMobile ? '1px' : '4px'} />
+      <Image
+        src={showThumbnailVertical}
+        borderRadius={isMobile ? '1px' : '4px'}
+      />
 
       {/* Premium Icon Overlay*/}
       <Image src={premiumIcon} position="absolute" top="1.5%" left="1%" />
-
-      {/* New Episodes Overlay */}
-      <Flex
-        display={isHovered ? 'none' : 'flex'}
-        position="absolute"
-        height={isMobile ? '18px' : '24px'}
-        justifyContent="center"
-        alignItems="center"
-        backgroundColor="#2175d9"
-        borderRadius="3px"
-        padding={isMobile ? '0px 6px' : '2px 12px'}
-        bottom="14%"
-        left={isMobile ? '20%' : '25%'}
-      >
-        <Text fontSize={isMobile ? '12px' : '16px'} fontWeight="500">
-          New Episodes
-        </Text>
-      </Flex>
 
       {/* Play Button Overlay*/}
       <Flex
@@ -79,19 +64,24 @@ function HomeShowItem() {
           lineHeight="1.2"
           position="relative"
         >
-          <Text fontSize="16px" fontWeight="600">
-            Little Singham
+          <Text
+            fontSize="16px"
+            fontWeight="600"
+            overflow="hidden"
+            textOverflow="ellipsis"
+            maxH="2.4em" // 1.2em * 2 lines
+          >
+            Raja Rasoi Aur Anya Kahaaniyan
           </Text>
           <Flex alignItems="center">
             <Text
               color="#838991"
               fontSize="16px"
-              textOverflow="ellipsis"
-              whiteSpace="nowrap"
               overflow="hidden"
+              textOverflow="ellipsis"
+              maxH="2.4em" // 1.2em * 2 lines
             >
-              A nine-year-old boy battles evil villains that are out to create
-              chaos.
+              Explore the history and flavors of regional Indian cuisine.
             </Text>
           </Flex>
           <HomeShowItemHoverableIcon />
@@ -101,4 +91,4 @@ function HomeShowItem() {
   );
 }
 
-export default HomeShowItem;
+export default HomeShowItemVertical;
