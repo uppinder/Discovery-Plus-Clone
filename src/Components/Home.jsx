@@ -157,4 +157,6 @@ function Home() {
 
 export default Home;
 
-// - On mobile screens, all shows should appear in the grid and they should be scrollable.
+// 1. Genre list below main carousel.
+// 2. Refactor HomeListItem and HomeListItemVertical
+// 3. Sync with Siddharth

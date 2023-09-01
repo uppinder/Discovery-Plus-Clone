@@ -33,7 +33,7 @@ function HomeShowItem() {
         backgroundColor="#2175d9"
         borderRadius="3px"
         padding={isMobile ? '0px 6px' : '2px 12px'}
-        bottom="14%"
+        bottom={isMobile ? '14%' : '5%'}
         left={isMobile ? '20%' : '25%'}
       >
         <Text fontSize={isMobile ? '12px' : '16px'} fontWeight="500">
