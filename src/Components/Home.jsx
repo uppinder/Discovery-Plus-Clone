@@ -1,16 +1,19 @@
 import { Flex, Grid, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
-import MainCarousel from './MainCarousel';
+import ShowCarousel from './ShowCarousel';
 
 import HomeShowItem from './HomeShowItem';
 import HomeShowItemVertical from './HomeShowItemVertical';
+import GenreCarousel from './GenreCarousel';
 
 function Home() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   return (
     <Flex minWidth="100vw" flexDirection="column">
-      <MainCarousel />
+      <ShowCarousel />
+
+      <GenreCarousel />
 
       {/* Shows you love */}
       <Flex
@@ -157,6 +160,6 @@ function Home() {
 
 export default Home;
 
-// 1. Genre list below main carousel.
+// 1. Genre list below main carousel. - done
 // 2. Refactor HomeListItem and HomeListItemVertical
 // 3. Sync with Siddharth

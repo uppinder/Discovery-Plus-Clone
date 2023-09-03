@@ -21,7 +21,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 
-function MainCarousel() {
+function ShowCarousel() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const carouselData = [
@@ -52,7 +52,7 @@ function MainCarousel() {
       spaceBetween={30}
       centeredSlides={true}
       //   autoplay={{
-      //     delay: 3000,
+      //     delay: 2500,
       //     disableOnInteraction: false,
       //   }}
       pagination={{
@@ -130,12 +130,7 @@ function MainCarousel() {
                 </Text>
               </Flex>
             </Flex>
-            <LinkOverlay
-              as={RouterLink}
-              to="404"
-              height="100%"
-              paddingRight={isMobile ? '0' : '5%'}
-            >
+            <LinkOverlay as={RouterLink} to="404" height="100%">
               {isMobile ? (
                 <Flex width="100%" height="100%" position="relative">
                   <Image
@@ -207,7 +202,7 @@ function MainCarousel() {
                   </Flex>
                 </Flex>
               ) : (
-                <Flex width="100%" height="100%" flex="65%" position="relative">
+                <Flex width="95%" height="98%" flex="65%" position="relative">
                   <Flex
                     width="100%"
                     height="100%"
@@ -240,7 +235,7 @@ function MainCarousel() {
                       borderRadius="3px"
                       padding="2px 12px"
                       position="absolute"
-                      bottom="4%"
+                      bottom="3%"
                       left="40%"
                     >
                       <Text fontSize="18px" fontWeight="500">
@@ -258,4 +253,4 @@ function MainCarousel() {
   );
 }
 
-export default MainCarousel;
+export default ShowCarousel;

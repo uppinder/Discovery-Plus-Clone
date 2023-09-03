@@ -61,11 +61,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2%;
+  gap: 1%;
   padding-top: 10px;
 }
 
 @media screen and (max-width: 30em) {
+  .swiper-home-carousel {
+    margin-bottom: 45px;
+  }
+
   .swiper-slide {
     padding-top: 0;
     gap: 0;
@@ -88,6 +92,7 @@ body {
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
   border: 1px solid white;
+  opacity: 0.8;
 }
 
 .swiper-pagination-bullet-active {
@@ -128,4 +133,24 @@ body {
   .swiper-button-next {
     display: none;
   }
+}
+
+.swiper-genre-carousel {
+  width: 100vw;
+  height: 180px;
+  padding: 20px 0px;
+  background-color: #121317;
+}
+
+.swiper-genre-slide {
+  padding-top: 0px;
+  position: relative;
+}
+
+.swiper-genre-carousel .swiper-wrapper {
+  margin-left: 50px;
+}
+
+.swiper-genre-slide-wrapper:hover .swiper-genre-text {
+  bottom: 25%;
 }
