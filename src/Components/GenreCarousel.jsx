@@ -33,7 +33,7 @@ function GenreCarousel() {
           {Array(8)
             .fill(null)
             .map((_, index) => (
-              <Link position="relative" minWidth="80px">
+              <Link key={index} position="relative" minWidth="80px">
                 <Flex
                   height="100%"
                   flexDirection="column"

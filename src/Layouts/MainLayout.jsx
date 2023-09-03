@@ -2,15 +2,15 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-import { Grid } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
 function MainLayout() {
   return (
-    <Grid minH="100vh" gridTemplateRows="1fr auto 10%" paddingTop={'70px'}>
+    <Flex minH="100vh" flexDirection="column" paddingTop={'70px'}>
       <Navbar />
       <Outlet />
       <Footer />
-    </Grid>
+    </Flex>
   );
 }
 

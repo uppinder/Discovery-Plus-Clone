@@ -1,4 +1,6 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+
 import {
   Box,
   Center,
@@ -29,9 +31,11 @@ import {
   Television,
   Ticket,
 } from '@phosphor-icons/react';
+
 import discoveryHeaderLogo from '../Assets/Images/discovery_header_logo.png';
 import kidsLogo from '../Assets/Images/kids_icon.svg';
 import kidsLogoBottomNavbar from '../Assets/Images/kids_logo_bottom_navbar.svg';
+import kidsLogoBottomNavbarActive from '../Assets/Images/kids_logo_bottom_navbar_active.svg';
 import avatarLogo from '../Assets/Images/avatar_icon.svg';
 import crownLogo from '../Assets/Images/crown_logo.svg';
 
@@ -41,6 +45,17 @@ function Navbar() {
   // Drawer
   const isMobile = useBreakpointValue({ base: true, sm: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Active Links
+  const location = useLocation();
+
+  const isActiveLink = navName => {
+    if (navName === 'home') {
+      return location.pathname === '/' || location.pathname === '/home';
+    }
+
+    return location.pathname === `/${navName}`;
+  };
 
   return (
     <Flex
@@ -70,8 +85,16 @@ function Navbar() {
           justifyContent="center"
           alignItems="center"
         >
-          <House size="24px" color="white" weight="fill" />
-          <Text fontSize="14px" lineHeight="1">
+          <House
+            size="24px"
+            color={isActiveLink('home') ? 'white' : '#838991'}
+            weight="fill"
+          />
+          <Text
+            fontSize="14px"
+            lineHeight="1"
+            color={isActiveLink('home') ? 'white' : '#838991'}
+          >
             Home
           </Text>
         </Link>
@@ -81,8 +104,15 @@ function Navbar() {
           justifyContent="center"
           alignItems="center"
         >
-          <SquaresFour size="24px" color="#838991" />
-          <Text fontSize="14px" lineHeight="1" color="#838991">
+          <SquaresFour
+            size="24px"
+            color={isActiveLink('explore') ? 'white' : '#838991'}
+          />
+          <Text
+            fontSize="14px"
+            lineHeight="1"
+            color={isActiveLink('explore') ? 'white' : '#838991'}
+          >
             Explore
           </Text>
         </Link>
@@ -94,8 +124,20 @@ function Navbar() {
           marginTop="-20px"
           gap="2px"
         >
-          <Image src={kidsLogoBottomNavbar} width="42px" height="42px" />
-          <Text fontSize="14px" lineHeight="1" color="#838991">
+          <Image
+            src={
+              isActiveLink('kids')
+                ? kidsLogoBottomNavbar
+                : kidsLogoBottomNavbarActive
+            }
+            width="42px"
+            height="42px"
+          />
+          <Text
+            fontSize="14px"
+            lineHeight="1"
+            color={isActiveLink('kids') ? 'white' : '#838991'}
+          >
             Kids
           </Text>
         </Link>
@@ -105,8 +147,15 @@ function Navbar() {
           justifyContent="center"
           alignItems="center"
         >
-          <Lightning size="24px" color="#838991" />
-          <Text fontSize="14px" lineHeight="1" color="#838991">
+          <Lightning
+            size="24px"
+            color={isActiveLink('shorts') ? 'white' : '#838991'}
+          />
+          <Text
+            fontSize="14px"
+            lineHeight="1"
+            color={isActiveLink('shorts') ? 'white' : '#838991'}
+          >
             Shorts
           </Text>
         </Link>
@@ -116,8 +165,15 @@ function Navbar() {
           justifyContent="center"
           alignItems="center"
         >
-          <CrownSimple size="24px" color="#838991" />
-          <Text fontSize="14px" lineHeight="1" color="#838991">
+          <CrownSimple
+            size="24px"
+            color={isActiveLink('go-premium-web') ? 'white' : '#838991'}
+          />
+          <Text
+            fontSize="14px"
+            lineHeight="1"
+            color={isActiveLink('go-premium-web') ? 'white' : '#838991'}
+          >
             Premium
           </Text>
         </Link>
@@ -418,12 +474,54 @@ function Navbar() {
           color="#838991"
           display={{ base: 'none', xl: 'flex' }}
         >
-          <Link _hover={headerLinkStyle}>Home</Link>
-          <Link _hover={headerLinkStyle}>Explore</Link>
-          <Link _hover={headerLinkStyle}>Kids</Link>
-          <Link _hover={headerLinkStyle}>Shorts</Link>
-          <Link _hover={headerLinkStyle}>Mindblown</Link>
-          <Link _hover={headerLinkStyle}>Premium</Link>
+          <Link
+            _hover={headerLinkStyle}
+            style={{
+              color: isActiveLink('home') ? 'white' : null,
+            }}
+          >
+            Home
+          </Link>
+          <Link
+            _hover={headerLinkStyle}
+            style={{
+              color: isActiveLink('explore') ? 'white' : null,
+            }}
+          >
+            Explore
+          </Link>
+          <Link
+            _hover={headerLinkStyle}
+            style={{
+              color: isActiveLink('kids') ? 'white' : null,
+            }}
+          >
+            Kids
+          </Link>
+          <Link
+            _hover={headerLinkStyle}
+            style={{
+              color: isActiveLink('shorts') ? 'white' : null,
+            }}
+          >
+            Shorts
+          </Link>
+          <Link
+            _hover={headerLinkStyle}
+            style={{
+              color: isActiveLink('mindblown') ? 'white' : null,
+            }}
+          >
+            Mindblown
+          </Link>
+          <Link
+            _hover={headerLinkStyle}
+            style={{
+              color: isActiveLink('go-premium-web') ? 'white' : null,
+            }}
+          >
+            Premium
+          </Link>
         </HStack>
       </HStack>
 

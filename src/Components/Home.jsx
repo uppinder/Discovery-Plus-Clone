@@ -1,5 +1,6 @@
+import React, { useEffect } from 'react';
+
 import { Flex, Grid, Link, Text, useBreakpointValue } from '@chakra-ui/react';
-import React from 'react';
 import ShowCarousel from './ShowCarousel';
 
 import HomeShowItem from './HomeShowItem';
@@ -61,7 +62,12 @@ function Home() {
             {Array(8)
               .fill(null)
               .map((_, index) => (
-                <Link position="relative" minWidth="160px" height="100px">
+                <Link
+                  key={index}
+                  position="relative"
+                  minWidth="160px"
+                  height="100px"
+                >
                   <HomeShowItem />
                 </Link>
               ))}
@@ -77,7 +83,7 @@ function Home() {
             {Array(4)
               .fill(null)
               .map((_, index) => (
-                <Link position="relative">
+                <Link key={index} position="relative">
                   <HomeShowItem />
                 </Link>
               ))}
@@ -131,7 +137,12 @@ function Home() {
             {Array(8)
               .fill(null)
               .map((_, index) => (
-                <Link position="relative" minWidth="105px" height="140px">
+                <Link
+                  key={index}
+                  position="relative"
+                  minWidth="105px"
+                  height="140px"
+                >
                   <HomeShowItemVertical />
                 </Link>
               ))}
@@ -147,7 +158,7 @@ function Home() {
             {Array(6)
               .fill(null)
               .map((_, index) => (
-                <Link position="relative">
+                <Link key={index} position="relative">
                   <HomeShowItemVertical />
                 </Link>
               ))}
@@ -160,6 +171,5 @@ function Home() {
 
 export default Home;
 
-// 1. Genre list below main carousel. - done
-// 2. Refactor HomeListItem and HomeListItemVertical
-// 3. Sync with Siddharth
+// 1. Home Active link implement
+// 2. go-premium-web
