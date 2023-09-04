@@ -25,6 +25,7 @@ function Footer() {
 
   return (
     <Grid
+      justifySelf="flex-end"
       className="footer"
       height="fit-content"
       gridTemplateRows={['1fr 1fr', '1fr 100px']}

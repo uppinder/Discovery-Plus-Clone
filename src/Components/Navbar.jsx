@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 
 import {
   Box,
@@ -61,7 +61,7 @@ function Navbar() {
     <Flex
       className="navbar"
       height={['50px', '70px']}
-      width="100%"
+      width="100vw"
       justifyContent="space-between"
       alignItems="center"
       px="20px"
@@ -72,7 +72,7 @@ function Navbar() {
       <Flex
         display={{ base: 'flex', sm: 'none' }}
         position="fixed"
-        width="100%"
+        width="100vw"
         height="50px"
         backgroundColor="#121317"
         left="0"
@@ -80,6 +80,8 @@ function Navbar() {
         justifyContent="space-around"
       >
         <Link
+          to="/home"
+          as={ReactRouterLink}
           display="flex"
           flexDir="column"
           justifyContent="center"
@@ -160,6 +162,8 @@ function Navbar() {
           </Text>
         </Link>
         <Link
+          to="/go-premium-web"
+          as={ReactRouterLink}
           display="flex"
           flexDir="column"
           justifyContent="center"
@@ -232,6 +236,8 @@ function Navbar() {
                   display={{ base: 'none', sm: 'flex', xl: 'none' }}
                 >
                   <Link
+                    to="/home"
+                    as={ReactRouterLink}
                     display="flex"
                     alignItems="center"
                     gap="12px"
@@ -277,6 +283,8 @@ function Navbar() {
                     Mindblown
                   </Link>
                   <Link
+                    to="/go-premium-web"
+                    as={ReactRouterLink}
                     display="flex"
                     alignItems="center"
                     gap="12px"
@@ -345,7 +353,10 @@ function Navbar() {
             >
               <Image src={avatarLogo} />
               <Text fontWeight="600">Guest User</Text>
-              <Flex
+              <Link
+                as={ReactRouterLink}
+                to="/go-premium-web"
+                display="flex"
                 backgroundImage="linear-gradient(45deg, #2175d9 37%, #2789ff 77%)"
                 borderRadius="8px"
                 fontSize="14px"
@@ -361,7 +372,7 @@ function Navbar() {
               >
                 <Image src={crownLogo} width="18px" height="18px" />
                 <Text>Go Premium</Text>
-              </Flex>
+              </Link>
               <Link
                 marginLeft="25px"
                 alignSelf="flex-start"
@@ -448,25 +459,30 @@ function Navbar() {
           </Drawer>
         )}
 
-        <Link>
+        <Link as={ReactRouterLink} to="/">
           <Image src={discoveryHeaderLogo} maxWidth={['100px', '170px']} />
         </Link>
 
         {/* For mobile screen */}
-        <Flex
-          display={['flex', 'none']}
-          backgroundImage="linear-gradient(45deg, #2175d9 37%, #2789ff 77%)"
-          borderRadius="3px"
-          fontSize="12px"
-          fontWeight="600"
-          justifyContent="center"
-          alignItems="center"
-          whiteSpace="nowrap"
-          cursor="pointer"
-          padding="3px 8px"
-        >
-          Buy Plan
-        </Flex>
+        {isActiveLink('go-premium-web') ? null : (
+          <Link
+            as={ReactRouterLink}
+            to="/go-premium-web"
+            display={['flex', 'none']}
+            backgroundImage="linear-gradient(45deg, #2175d9 37%, #2789ff 77%)"
+            borderRadius="3px"
+            fontSize="12px"
+            fontWeight="600"
+            justifyContent="center"
+            alignItems="center"
+            whiteSpace="nowrap"
+            cursor="pointer"
+            padding="3px 8px"
+            _hover={{ textDecoration: 'none' }}
+          >
+            Buy Plan
+          </Link>
+        )}
 
         <HStack
           spacing="20px"
@@ -475,6 +491,8 @@ function Navbar() {
           display={{ base: 'none', xl: 'flex' }}
         >
           <Link
+            to="/home"
+            as={ReactRouterLink}
             _hover={headerLinkStyle}
             style={{
               color: isActiveLink('home') ? 'white' : null,
@@ -515,6 +533,8 @@ function Navbar() {
             Mindblown
           </Link>
           <Link
+            to="/go-premium-web"
+            as={ReactRouterLink}
             _hover={headerLinkStyle}
             style={{
               color: isActiveLink('go-premium-web') ? 'white' : null,
@@ -561,25 +581,27 @@ function Navbar() {
         >
           Sign In
         </Flex>
-        <Flex
-          backgroundImage="linear-gradient(45deg, #2175d9 37%, #2789ff 77%)"
-          borderRadius="3px"
-          fontSize="16px"
-          fontWeight="600"
-          justifyContent="center"
-          alignItems="center"
-          whiteSpace="nowrap"
-          cursor="pointer"
-          padding="4px 10px"
-        >
-          Buy Plan
-        </Flex>
+        {isActiveLink('go-premium-web') ? null : (
+          <Link
+            as={ReactRouterLink}
+            to="/go-premium-web"
+            backgroundImage="linear-gradient(45deg, #2175d9 37%, #2789ff 77%)"
+            borderRadius="3px"
+            fontSize="16px"
+            fontWeight="600"
+            justifyContent="center"
+            alignItems="center"
+            whiteSpace="nowrap"
+            cursor="pointer"
+            padding="4px 10px"
+            _hover={{ textDecoration: 'none' }}
+          >
+            Buy Plan
+          </Link>
+        )}
       </HStack>
     </Flex>
   );
 }
 
 export default Navbar;
-
-// TODO
-// 1. Implement active link styling based on current path

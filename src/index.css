@@ -154,3 +154,20 @@ body {
 .swiper-genre-slide-wrapper:hover .swiper-genre-text {
   bottom: 25%;
 }
+
+.premium-offer-table {
+  border-collapse: collapse;
+}
+
+.premium-offer-table th,
+td {
+  border-bottom: 1px dashed rgb(40, 45, 51) !important;
+}
+
+.premium-offer-table tr:last-child > td {
+  border-bottom: none !important;
+}
+
+.premium-offer-table th > p {
+  text-transform: none;
+}

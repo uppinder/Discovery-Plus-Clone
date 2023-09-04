@@ -6,7 +6,13 @@ import { Flex } from '@chakra-ui/react';
 
 function MainLayout() {
   return (
-    <Flex minH="100vh" flexDirection="column" paddingTop={'70px'}>
+    <Flex
+      minH="100vh"
+      flexDirection="column"
+      justifyContent="space-between"
+      paddingTop="70px"
+      gap="50px"
+    >
       <Navbar />
       <Outlet />
       <Footer />

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Flex, Grid, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 import ShowCarousel from './ShowCarousel';
@@ -13,7 +13,6 @@ function Home() {
   return (
     <Flex minWidth="100vw" flexDirection="column">
       <ShowCarousel />
-
       <GenreCarousel />
 
       {/* Shows you love */}
@@ -91,7 +90,7 @@ function Home() {
         )}
       </Flex>
 
-      {/* Shows you love */}
+      {/* Must Watch EPIC Shows */}
       <Flex
         width="100%"
         flexDirection="column"
