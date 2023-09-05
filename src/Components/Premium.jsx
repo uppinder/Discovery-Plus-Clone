@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Box,
   Center,
-  Divider,
   Flex,
   Image,
   Table,
@@ -11,7 +10,6 @@ import {
   Td,
   Text,
   Th,
-  Thead,
   Tr,
   useBreakpointValue,
 } from '@chakra-ui/react';
@@ -41,7 +39,68 @@ import { Autoplay, Pagination } from 'swiper/modules';
 
 import premiumImageSomething from '../Assets/Images/premium-image-one.jpeg';
 import premiumCrown from '../Assets/Images/premium-crown.svg';
-import { Check, X } from '@phosphor-icons/react';
+import { Check, Star, X } from '@phosphor-icons/react';
+
+import premiumQuotesLeft from '../Assets/Images/premium-testimonials-quotes-left.svg';
+import premiumQuotesRight from '../Assets/Images/premium-testimonials-quotes-right.svg';
+import Slider from 'react-slick';
+
+const Testimonial = ({ content, name, numOfStars }) => {
+  return (
+    <Flex
+      flex="1"
+      height="100%"
+      flexDirection="column"
+      justifyContent="space-between"
+      border="2px dashed rgb(56, 62, 71)"
+      borderRadius="9px"
+    >
+      <Flex justifyContent="flex-start" paddingLeft="2%" paddingTop="1%">
+        <Image src={premiumQuotesLeft} height="28px" width="23px" />
+      </Flex>
+      <Text
+        color="rgb(191, 197, 205)"
+        textAlign="center"
+        fontSize="1.3em"
+        fontWeight="500"
+        fontStyle="italic"
+        lineHeight="1.51"
+        margin="0 42px 42px"
+        css={{
+          WebkitLineClamp: 5, // Limit to 3 lines
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          display: '-webkit-box',
+          maxHeight: '10em', // Adjust this to control the number of lines
+        }}
+      >
+        {content}
+      </Text>
+      <Flex justifyContent="center" alignItems="center" gap="10px">
+        <Text color="rgb(155, 161, 169)" fontSize="18px">
+          {name}
+        </Text>
+        <Flex gap="1px">
+          {Array(numOfStars)
+            .fill(null)
+            .map((_, index) => (
+              <Star size={16} color="rgb(255, 164, 36)" weight="fill" />
+            ))}
+          {Array(5 - numOfStars)
+            .fill(null)
+            .map((_, index) => (
+              <Star size={16} color="rgb(108, 114, 122)" weight="fill" />
+            ))}
+        </Flex>
+      </Flex>
+
+      <Flex justifyContent="flex-end" paddingBottom="1%" paddingRight="2%">
+        <Image src={premiumQuotesRight} height="28px" width="23px" />
+      </Flex>
+    </Flex>
+  );
+};
 
 function Premium() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -623,6 +682,191 @@ function Premium() {
           </Table>
         </TableContainer>
       </Flex>
+
+      {!isMobile && (
+        <Flex
+          width="100%"
+          justifyContent="center"
+          alignItems="center"
+          gap="3%"
+          marginTop="50px"
+          paddingY="24px"
+          backgroundColor="rgb(26, 28, 33)"
+        >
+          <Flex
+            backgroundColor="white"
+            borderRadius="3.2px"
+            flexDirection="column"
+            justifyContent="space-around"
+            alignItems="center"
+            padding="16px"
+            width="20%"
+            height="240px"
+            gap="12px"
+          >
+            <Text
+              color="black"
+              fontSize="26px"
+              lineHeight="1.13"
+              fontWeight="bold"
+            >
+              ₹ 199/month
+            </Text>
+            <Text
+              color="rgb(84, 90, 98)"
+              textAlign="center"
+              fontSize="22px"
+              fontWeight="500"
+              lineHeight="1.3"
+              height="114px"
+            >
+              Unlimited access to the greatest real-life entertainment plus
+              exclusives and originals
+            </Text>
+            <Flex
+              width="80%"
+              height="40px"
+              justifyContent="center"
+              alignItems="center"
+              fontSize="16px"
+              lineHeight="23px"
+              fontWeight="700"
+              background="linear-gradient( to top, #2175d9, #2789ff )"
+              borderRadius="4px"
+              cursor="pointer"
+            >
+              Subscribe Now
+            </Flex>
+          </Flex>
+
+          <Flex
+            backgroundColor="white"
+            borderRadius="3.2px"
+            flexDirection="column"
+            justifyContent="space-around"
+            alignItems="center"
+            padding="16px"
+            width="20%"
+            height="240px"
+            gap="12px"
+          >
+            <Text
+              color="black"
+              fontSize="26px"
+              lineHeight="1.13"
+              fontWeight="bold"
+            >
+              ₹ 399/month
+            </Text>
+            <Text
+              color="rgb(84, 90, 98)"
+              textAlign="center"
+              fontSize="22px"
+              fontWeight="500"
+              lineHeight="1.3"
+              height="114px"
+            >
+              Unlimited access to all that the monthly plan has to offer with{' '}
+              <Text as="b">₹1000 in savings</Text>
+            </Text>
+            <Flex
+              width="80%"
+              height="40px"
+              justifyContent="center"
+              alignItems="center"
+              fontSize="16px"
+              lineHeight="23px"
+              fontWeight="700"
+              background="linear-gradient( to top, #2175d9, #2789ff )"
+              borderRadius="4px"
+              cursor="pointer"
+            >
+              Subscribe Now
+            </Flex>
+          </Flex>
+        </Flex>
+      )}
+
+      <Flex
+        marginTop="64px"
+        paddingX="8%"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        background="radial-gradient(32% 75% at center top, rgb(56, 62, 71), rgb(26, 28, 33))"
+      >
+        <Text
+          color="white"
+          fontSize="32px"
+          paddingY="35px"
+          lineHeight="1.37"
+          fontWeight="700"
+        >
+          User Testimonials
+        </Text>
+
+        {isMobile ? (
+          //   <Slider
+          //     settings={{
+          //       dots: true,
+          //       infinite: true,
+          //       slidesToShow: 1,
+          //       slidesToScroll: 1,
+          //     }}
+          //   >
+          //     <Box>
+          //       <Testimonial
+          //         content={'Very reasonable subscription rate and great content.'}
+          //         name={'Swara'}
+          //         numOfStars={5}
+          //       />
+          //     </Box>
+          //     <Box>
+          //       <Testimonial
+          //         content={`I don't usually rate an app, but this one deserve 5stars. The variety of shows they have is absolutely amazing, no regrets.`}
+          //         name={'Vaishakh Singh'}
+          //         numOfStars={5}
+          //       />
+          //     </Box>
+          //     <Box>
+          //       <Testimonial
+          //         content={
+          //           'Looking at the content offered, I immediately subscribed to the annual plan and am loving each and every content! I’m hooked on to the app!'
+          //         }
+          //         name={'Rohit Iyer'}
+          //         numOfStars={4}
+          //       />
+          //     </Box>
+          //   </Slider>
+          <></>
+        ) : (
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            gap="1%"
+            height="340px"
+            width="90%"
+          >
+            <Testimonial
+              content={'Very reasonable subscription rate and great content.'}
+              name={'Swara'}
+              numOfStars={5}
+            />
+            <Testimonial
+              content={`I don't usually rate an app, but this one deserve 5stars. The variety of shows they have is absolutely amazing, no regrets.`}
+              name={'Vaishakh Singh'}
+              numOfStars={5}
+            />
+            <Testimonial
+              content={
+                'Looking at the content offered, I immediately subscribed to the annual plan and am loving each and every content! I’m hooked on to the app!'
+              }
+              name={'Rohit Iyer'}
+              numOfStars={4}
+            />
+          </Flex>
+        )}
+      </Flex>
     </Flex>
   );
 }
@@ -630,7 +874,7 @@ function Premium() {
 export default Premium;
 
 // In mobile screen:
-// 1. move discovery+ crown logo to navbar along with back button
+// 1. move discovery+ crown logo to navbar along with back button - done
 // 2. on scroll below the monthly annual section, add the monthly annual to fixed footer
 // 3. Premium show carousel
 // 4. Replicate the video player on premium page

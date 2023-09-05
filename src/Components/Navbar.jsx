@@ -1,5 +1,9 @@
-import React, { useEffect } from 'react';
-import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
+import React from 'react';
+import {
+  Link as ReactRouterLink,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 
 import {
   Box,
@@ -20,6 +24,7 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, SearchIcon } from '@chakra-ui/icons';
 import {
+  ArrowLeft,
   BookmarkSimple,
   CrownSimple,
   Heart,
@@ -39,14 +44,7 @@ import kidsLogoBottomNavbarActive from '../Assets/Images/kids_logo_bottom_navbar
 import avatarLogo from '../Assets/Images/avatar_icon.svg';
 import crownLogo from '../Assets/Images/crown_logo.svg';
 
-function Navbar() {
-  const headerLinkStyle = { textDecoration: 'none', color: 'white' };
-
-  // Drawer
-  const isMobile = useBreakpointValue({ base: true, sm: false });
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  // Active Links
+const FixedBottomNavbar = () => {
   const location = useLocation();
 
   const isActiveLink = navName => {
@@ -56,6 +54,166 @@ function Navbar() {
 
     return location.pathname === `/${navName}`;
   };
+
+  return (
+    <Flex
+      display={{ base: 'flex', sm: 'none' }}
+      position="fixed"
+      width="100vw"
+      height="50px"
+      backgroundColor="#121317"
+      left="0"
+      bottom="0"
+      justifyContent="space-around"
+    >
+      <Link
+        to="/home"
+        as={ReactRouterLink}
+        display="flex"
+        flexDir="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <House
+          size="24px"
+          color={isActiveLink('home') ? 'white' : '#838991'}
+          weight="fill"
+        />
+        <Text
+          fontSize="14px"
+          lineHeight="1"
+          color={isActiveLink('home') ? 'white' : '#838991'}
+        >
+          Home
+        </Text>
+      </Link>
+      <Link
+        display="flex"
+        flexDir="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <SquaresFour
+          size="24px"
+          color={isActiveLink('explore') ? 'white' : '#838991'}
+        />
+        <Text
+          fontSize="14px"
+          lineHeight="1"
+          color={isActiveLink('explore') ? 'white' : '#838991'}
+        >
+          Explore
+        </Text>
+      </Link>
+      <Link
+        display="flex"
+        flexDir="column"
+        justifyContent="center"
+        alignItems="center"
+        marginTop="-20px"
+        gap="2px"
+      >
+        <Image
+          src={
+            isActiveLink('kids')
+              ? kidsLogoBottomNavbar
+              : kidsLogoBottomNavbarActive
+          }
+          width="42px"
+          height="42px"
+        />
+        <Text
+          fontSize="14px"
+          lineHeight="1"
+          color={isActiveLink('kids') ? 'white' : '#838991'}
+        >
+          Kids
+        </Text>
+      </Link>
+      <Link
+        display="flex"
+        flexDir="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Lightning
+          size="24px"
+          color={isActiveLink('shorts') ? 'white' : '#838991'}
+        />
+        <Text
+          fontSize="14px"
+          lineHeight="1"
+          color={isActiveLink('shorts') ? 'white' : '#838991'}
+        >
+          Shorts
+        </Text>
+      </Link>
+      <Link
+        to="/go-premium-web"
+        as={ReactRouterLink}
+        display="flex"
+        flexDir="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <CrownSimple
+          size="24px"
+          color={isActiveLink('go-premium-web') ? 'white' : '#838991'}
+        />
+        <Text
+          fontSize="14px"
+          lineHeight="1"
+          color={isActiveLink('go-premium-web') ? 'white' : '#838991'}
+        >
+          Premium
+        </Text>
+      </Link>
+    </Flex>
+  );
+};
+
+function Navbar() {
+  const headerLinkStyle = { textDecoration: 'none', color: 'white' };
+
+  // Drawer
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Active Links
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isActiveLink = navName => {
+    if (navName === 'home') {
+      return location.pathname === '/' || location.pathname === '/home';
+    }
+
+    return location.pathname === `/${navName}`;
+  };
+
+  if (isMobile && location.pathname === '/go-premium-web') {
+    return (
+      <Flex
+        className="navbar"
+        height="50px"
+        width="100vw"
+        paddingX="3%"
+        alignItems="center"
+        top="0"
+        position="fixed"
+        zIndex="10"
+      >
+        <Link onClick={() => navigate(-1)}>
+          <ArrowLeft size={25} />
+        </Link>
+        <Flex flex="1" justifyContent="center" paddingRight="5%">
+          <Image src={discoveryHeaderLogo} width="100px" justifySelf="center" />
+        </Flex>
+
+        <FixedBottomNavbar />
+      </Flex>
+    );
+  }
 
   return (
     <Flex
@@ -69,119 +227,9 @@ function Navbar() {
       position="fixed"
       zIndex="10"
     >
-      <Flex
-        display={{ base: 'flex', sm: 'none' }}
-        position="fixed"
-        width="100vw"
-        height="50px"
-        backgroundColor="#121317"
-        left="0"
-        bottom="0"
-        justifyContent="space-around"
-      >
-        <Link
-          to="/home"
-          as={ReactRouterLink}
-          display="flex"
-          flexDir="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <House
-            size="24px"
-            color={isActiveLink('home') ? 'white' : '#838991'}
-            weight="fill"
-          />
-          <Text
-            fontSize="14px"
-            lineHeight="1"
-            color={isActiveLink('home') ? 'white' : '#838991'}
-          >
-            Home
-          </Text>
-        </Link>
-        <Link
-          display="flex"
-          flexDir="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <SquaresFour
-            size="24px"
-            color={isActiveLink('explore') ? 'white' : '#838991'}
-          />
-          <Text
-            fontSize="14px"
-            lineHeight="1"
-            color={isActiveLink('explore') ? 'white' : '#838991'}
-          >
-            Explore
-          </Text>
-        </Link>
-        <Link
-          display="flex"
-          flexDir="column"
-          justifyContent="center"
-          alignItems="center"
-          marginTop="-20px"
-          gap="2px"
-        >
-          <Image
-            src={
-              isActiveLink('kids')
-                ? kidsLogoBottomNavbar
-                : kidsLogoBottomNavbarActive
-            }
-            width="42px"
-            height="42px"
-          />
-          <Text
-            fontSize="14px"
-            lineHeight="1"
-            color={isActiveLink('kids') ? 'white' : '#838991'}
-          >
-            Kids
-          </Text>
-        </Link>
-        <Link
-          display="flex"
-          flexDir="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Lightning
-            size="24px"
-            color={isActiveLink('shorts') ? 'white' : '#838991'}
-          />
-          <Text
-            fontSize="14px"
-            lineHeight="1"
-            color={isActiveLink('shorts') ? 'white' : '#838991'}
-          >
-            Shorts
-          </Text>
-        </Link>
-        <Link
-          to="/go-premium-web"
-          as={ReactRouterLink}
-          display="flex"
-          flexDir="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <CrownSimple
-            size="24px"
-            color={isActiveLink('go-premium-web') ? 'white' : '#838991'}
-          />
-          <Text
-            fontSize="14px"
-            lineHeight="1"
-            color={isActiveLink('go-premium-web') ? 'white' : '#838991'}
-          >
-            Premium
-          </Text>
-        </Link>
-      </Flex>
+      {/* Fixed bottom navbar  */}
+      <FixedBottomNavbar />
+
       <HStack spacing={['10px', '20px']}>
         <Box className="dropdown-container">
           <Flex className="hoverable-button" onClick={onOpen}>
