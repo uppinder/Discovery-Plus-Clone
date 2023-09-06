@@ -35,17 +35,23 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+import premiumCarouselImage1 from '../Assets/Images/premium_show_carousel_image_1.jpeg';
+import premiumCarouselImage2 from '../Assets/Images/premium_show_carousel_image_2.jpeg';
+import premiumCarouselImage3 from '../Assets/Images/premium_show_carousel_image_3.jpeg';
+import premiumCarouselImage4 from '../Assets/Images/premium_show_carousel_image_4.jpeg';
 
 import premiumImageSomething from '../Assets/Images/premium-image-one.jpeg';
 import premiumCrown from '../Assets/Images/premium-crown.svg';
-import { Check, Star, X } from '@phosphor-icons/react';
+import { Check, PaintBrush, Star, X } from '@phosphor-icons/react';
 
 import premiumQuotesLeft from '../Assets/Images/premium-testimonials-quotes-left.svg';
 import premiumQuotesRight from '../Assets/Images/premium-testimonials-quotes-right.svg';
-import Slider from 'react-slick';
 
 const Testimonial = ({ content, name, numOfStars }) => {
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+
   return (
     <Flex
       flex="1"
@@ -67,12 +73,12 @@ const Testimonial = ({ content, name, numOfStars }) => {
         lineHeight="1.51"
         margin="0 42px 42px"
         css={{
-          WebkitLineClamp: 5, // Limit to 3 lines
+          WebkitLineClamp: isMobile ? 3 : 5, // Limit to 3 lines
           WebkitBoxOrient: 'vertical',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
           display: '-webkit-box',
-          maxHeight: '10em', // Adjust this to control the number of lines
+          maxHeight: `${isMobile ? '5em' : '10em'}`, // Adjust this to control the number of lines
         }}
       >
         {content}
@@ -97,6 +103,59 @@ const Testimonial = ({ content, name, numOfStars }) => {
 
       <Flex justifyContent="flex-end" paddingBottom="1%" paddingRight="2%">
         <Image src={premiumQuotesRight} height="28px" width="23px" />
+      </Flex>
+    </Flex>
+  );
+};
+
+const PremiumShowCarouselSlide = ({ slideImage, title, desc }) => {
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+
+  return (
+    <Flex
+      minHeight="100%"
+      flexDirection={isMobile ? 'column' : 'row'}
+      justifyContent="center"
+      alignItems="center"
+      gap="10px"
+      paddingX="20px"
+    >
+      <Flex
+        order={isMobile ? null : '1'}
+        width="100%"
+        height="100%"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Image
+          width={isMobile ? '100%' : '60%'}
+          height="100%"
+          objectFit="cover"
+          borderRadius="6px"
+          src={slideImage}
+        />
+      </Flex>
+      <Flex
+        width={isMobile ? '100%' : '30%'}
+        paddingLeft="10px"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Text
+          fontSize={isMobile ? '18px' : '32px'}
+          color="white"
+          fontWeight="600"
+        >
+          {title}
+        </Text>
+        <Text
+          fontSize={isMobile ? '14px' : '16px'}
+          color="rgb(214, 220, 228)"
+          textAlign="center"
+        >
+          {desc}
+        </Text>
       </Flex>
     </Flex>
   );
@@ -152,6 +211,7 @@ function Premium() {
           justifyContent="center"
           alignItems="center"
           gap="30px"
+          marginTop={isMobile ? '-60px' : '0px'}
         >
           {!isMobile && <Image src={discoveryIcon} />}
 
@@ -265,7 +325,7 @@ function Premium() {
         justifyContent="center"
         alignItems="center"
         flexWrap="wrap"
-        marginY={isMobile ? '16px' : '58px'}
+        marginY={isMobile ? '0px' : '58px'}
         paddingX={isMobile ? '5%' : '0'}
         gap="5px"
       >
@@ -344,8 +404,9 @@ function Premium() {
       </Flex>
 
       <Flex
-        height="400px"
+        height={isMobile ? '330px' : '500px'}
         width="100vw"
+        marginY="45px"
         justifyContent="center"
         alignItems="center"
         flexDirection="column"
@@ -358,20 +419,46 @@ function Premium() {
           Thousands of Premium Shows
         </Text>
         <Swiper
-          pagination={true}
-          modules={[Pagination]}
-          className="premium-show-carousel"
-          width="200px"
-          height="200px"
+          loop={true}
+          autoplay={{ delay: 1000 }}
+          pagination={{ enabled: isMobile }}
+          navigation={{ enabled: !isMobile }}
+          modules={[Navigation, Pagination, Autoplay]}
+          className="swiper-premium-show-carousel"
         >
-          <SwiperSlide width="500px" height="300px">
-            <Center>Slide 1</Center>
+          <SwiperSlide>
+            <PremiumShowCarouselSlide
+              slideImage={premiumCarouselImage1}
+              title={'American Chopper'}
+              desc={`The Teutuls are back and Sr. and Jr. forge ahead with their own
+            shops.`}
+            />
           </SwiperSlide>
-          <SwiperSlide width="500px" height="300px">
-            <Center>Slide 1</Center>
+          <SwiperSlide>
+            <PremiumShowCarouselSlide
+              slideImage={premiumCarouselImage2}
+              title={'Battle Ops'}
+              desc={`India's iconic military operations are deciphered and
+            depicted.`}
+            />
           </SwiperSlide>
-          <SwiperSlide width="500px" height="300px">
-            <Center>Slide 1</Center>
+
+          <SwiperSlide>
+            <PremiumShowCarouselSlide
+              slideImage={premiumCarouselImage3}
+              title={'A Haunting'}
+              desc={`Eyewitnesses share their terrifying true tales of the
+            paranormal.`}
+            />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <PremiumShowCarouselSlide
+              slideImage={premiumCarouselImage4}
+              title={'Say Yes To The Dress India'}
+              desc={`16 Indian brides-to-be hunt for their perfect dress with
+            family & top talent.`}
+            />
           </SwiperSlide>
         </Swiper>
       </Flex>
@@ -806,39 +893,45 @@ function Premium() {
         </Text>
 
         {isMobile ? (
-          //   <Slider
-          //     settings={{
-          //       dots: true,
-          //       infinite: true,
-          //       slidesToShow: 1,
-          //       slidesToScroll: 1,
-          //     }}
-          //   >
-          //     <Box>
-          //       <Testimonial
-          //         content={'Very reasonable subscription rate and great content.'}
-          //         name={'Swara'}
-          //         numOfStars={5}
-          //       />
-          //     </Box>
-          //     <Box>
-          //       <Testimonial
-          //         content={`I don't usually rate an app, but this one deserve 5stars. The variety of shows they have is absolutely amazing, no regrets.`}
-          //         name={'Vaishakh Singh'}
-          //         numOfStars={5}
-          //       />
-          //     </Box>
-          //     <Box>
-          //       <Testimonial
-          //         content={
-          //           'Looking at the content offered, I immediately subscribed to the annual plan and am loving each and every content! I’m hooked on to the app!'
-          //         }
-          //         name={'Rohit Iyer'}
-          //         numOfStars={4}
-          //       />
-          //     </Box>
-          //   </Slider>
-          <></>
+          <Flex height="260px" width="100%" position="relative">
+            <Swiper
+              loop={true}
+              slidesPerView={1}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={true}
+              modules={[Autoplay, Pagination]}
+              className="swiper-premium-testimonial-carousel"
+            >
+              <SwiperSlide>
+                <Testimonial
+                  content={
+                    'Very reasonable subscription rate and great content.'
+                  }
+                  name={'Swara'}
+                  numOfStars={5}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Testimonial
+                  content={`I don't usually rate an app, but this one deserve 5stars. The variety of shows they have is absolutely amazing, no regrets.`}
+                  name={'Vaishakh Singh'}
+                  numOfStars={5}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Testimonial
+                  content={
+                    'Looking at the content offered, I immediately subscribed to the annual plan and am loving each and every content! I’m hooked on to the app!'
+                  }
+                  name={'Rohit Iyer'}
+                  numOfStars={4}
+                />
+              </SwiperSlide>
+            </Swiper>
+          </Flex>
         ) : (
           <Flex
             justifyContent="center"
@@ -873,8 +966,11 @@ function Premium() {
 
 export default Premium;
 
+// TODO
+// Finish premium show carousel - 90% done
+// - figure out how to move pagination below swiper container
+// - styling in desktop screen (might need siddharth's help)
+
 // In mobile screen:
-// 1. move discovery+ crown logo to navbar along with back button - done
-// 2. on scroll below the monthly annual section, add the monthly annual to fixed footer
-// 3. Premium show carousel
-// 4. Replicate the video player on premium page
+// 1. on scroll below the monthly annual section, add the monthly annual to fixed footer
+// 2. Replicate the video player on premium page

@@ -171,3 +171,30 @@ td {
 .premium-offer-table th > p {
   text-transform: none;
 }
+
+.swiper-premium-show-carousel {
+  width: 90%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.swiper-premium-show-carousel .swiper-slide {
+  height: 100%;
+  background-color: rgb(38, 41, 49);
+  border-radius: 6px;
+  gap: 0;
+  padding-top: 0;
+}
+
+.swiper-premium-testimonial-carousel {
+  height: 240px;
+  width: 100%;
+  position: relative;
+}
+
+.swiper-premium-testimonial-carousel .swiper-pagination-bullets {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

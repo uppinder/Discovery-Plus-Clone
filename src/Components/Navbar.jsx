@@ -206,9 +206,16 @@ function Navbar() {
         <Link onClick={() => navigate(-1)}>
           <ArrowLeft size={25} />
         </Link>
-        <Flex flex="1" justifyContent="center" paddingRight="5%">
+        <Link
+          as={ReactRouterLink}
+          to="/home"
+          flex="1"
+          display="flex"
+          justifyContent="center"
+          paddingRight="5%"
+        >
           <Image src={discoveryHeaderLogo} width="100px" justifySelf="center" />
-        </Flex>
+        </Link>
 
         <FixedBottomNavbar />
       </Flex>
