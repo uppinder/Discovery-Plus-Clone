@@ -10,6 +10,7 @@ import {
   TabPanels,
   Tabs,
   Text,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
@@ -17,7 +18,7 @@ import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import showImage from '../Assets/Images/show_image.jpeg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import { DotOutline, Heart, Play, ShareNetwork } from '@phosphor-icons/react';
-import HomeShowItem from './HomeShowItem';
+import ShowItem from './ShowItem';
 
 const HoverableButton = ({ iconType, text }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -52,6 +53,7 @@ const HoverableButton = ({ iconType, text }) => {
 };
 
 function Show() {
+  const isMobile = useBreakpointValue({ base: true, sm: false });
   const location = useLocation();
 
   const handleTabsChange = index => {
@@ -70,7 +72,7 @@ function Show() {
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        width="75%"
+        width={isMobile ? '100%' : '80%'}
       >
         {/* Thumbnail */}
         <Image src={showImage} borderRadius="10px" />
@@ -242,15 +244,25 @@ function Show() {
                       <Grid
                         width="100%"
                         height="100%"
-                        gridTemplateColumns="repeat(5, minmax(0, 100%))"
-                        gridTemplateRows=""
-                        gap="10px"
+                        gridTemplateColumns={{
+                          base: 'repeat(1, minmax(0, 100%))',
+                          md: 'repeat(3, minmax(0, 100%))',
+                          lg: 'repeat(4, minmax(0, 100%))',
+                          xl: 'repeat(5, minmax(0, 100%))',
+                        }}
+                        gridColumnGap="10px"
+                        gridRowGap="16px"
                       >
                         {Array(14)
                           .fill(null)
                           .map((_, index) => (
-                            <Link key={index} position="relative">
-                              <HomeShowItem />
+                            <Link
+                              key={index}
+                              position="relative"
+                              height="190px"
+                              _hover={{ textDecoration: 'none' }}
+                            >
+                              <ShowItem />
                             </Link>
                           ))}
                       </Grid>
@@ -271,6 +283,7 @@ function Show() {
 
 export default Show;
 
-// 1. HomeShowItem ki jagah create custom for this page
-// 2. Responsive grid
+// 1. HomeShowItem ki jagah create custom for this page - done
+// 2. Responsive grid - done
+// 3. Show page responsive for mobile
 // 3. Video page
