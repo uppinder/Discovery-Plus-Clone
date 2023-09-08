@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Link as ReactRouterLink,
   useLocation,
@@ -190,6 +190,27 @@ function Navbar() {
 
     return location.pathname === `/${navName}`;
   };
+
+  const showIdPattern = new RegExp('^/show/[A-Za-z0-9-_]+$');
+
+  if (isMobile && showIdPattern.test(location.pathname)) {
+    return (
+      <Flex
+        height="44px"
+        width="100vw"
+        paddingX="3%"
+        background="linear-gradient(180deg,#262931,rgba(26, 28, 33, 0))"
+        alignItems="center"
+        top="0"
+        position="absolute"
+        zIndex="10"
+      >
+        <Link onClick={() => navigate(-1)}>
+          <ArrowLeft size={30} />
+        </Link>
+      </Flex>
+    );
+  }
 
   if (isMobile && location.pathname === '/go-premium-web') {
     return (
