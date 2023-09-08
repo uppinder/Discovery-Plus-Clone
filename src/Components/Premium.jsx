@@ -972,5 +972,4 @@ export default Premium;
 // - styling in desktop screen (might need siddharth's help)
 
 // In mobile screen:
-// 1. on scroll below the monthly annual section, add the monthly annual to fixed footer
-// 2. Replicate the video player on premium page
+// 1. Replicate the video player on premium page

@@ -116,8 +116,8 @@ const FixedBottomNavbar = () => {
         <Image
           src={
             isActiveLink('kids')
-              ? kidsLogoBottomNavbar
-              : kidsLogoBottomNavbarActive
+              ? kidsLogoBottomNavbarActive
+              : kidsLogoBottomNavbar
           }
           width="42px"
           height="42px"

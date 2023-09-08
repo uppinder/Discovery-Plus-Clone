@@ -4,6 +4,7 @@ import AuthMainLayout from '../Layouts/AuthMainLayout';
 import MainLayout from '../Layouts/MainLayout';
 
 import Home from '../Components/Home';
+import Show from '../Components/Show';
 import Premium from '../Components/Premium';
 
 import Login from '../Pages/AuthPages/Login';
@@ -27,6 +28,10 @@ export default function Router() {
         {
           path: 'go-premium-web',
           element: <Premium />,
+        },
+        {
+          path: 'show/:showId',
+          element: <Show />,
         },
       ],
     },
