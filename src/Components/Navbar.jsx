@@ -188,11 +188,24 @@ function Navbar() {
       return location.pathname === '/' || location.pathname === '/home';
     }
 
+    if (navName === 'show') {
+      const showIdPattern = new RegExp('^/show/[A-Za-z0-9-_]+$');
+      return showIdPattern.test(location.pathname);
+    }
+
+    if (navName === 'video') {
+      const videoIdPattern = new RegExp(
+        '^/video/[A-Za-z0-9-_]+/[A-Za-z0-9-_]+$'
+      );
+      return videoIdPattern.test(location.pathname);
+    }
+
     return location.pathname === `/${navName}`;
   };
 
-  const showIdPattern = new RegExp('^/show/[A-Za-z0-9-_]+$');
-
+  const showIdPattern = new RegExp(
+    '^/show/[A-Za-z0-9-_]+$' + '|' + '^/video/[A-Za-z0-9-_]+/[A-Za-z0-9-_]+$'
+  );
   if (isMobile && showIdPattern.test(location.pathname)) {
     return (
       <Flex
@@ -657,7 +670,9 @@ function Navbar() {
         >
           Sign In
         </Flex>
-        {isActiveLink('go-premium-web') ? null : (
+        {isActiveLink('go-premium-web') ||
+        isActiveLink('show') ||
+        isActiveLink('video') ? null : (
           <Link
             as={ReactRouterLink}
             to="/go-premium-web"

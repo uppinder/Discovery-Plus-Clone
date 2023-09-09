@@ -6,7 +6,9 @@ import { Flex, useBreakpointValue } from '@chakra-ui/react';
 
 function MainLayout() {
   const location = useLocation();
-  const showIdPattern = new RegExp('^/show/[A-Za-z0-9-_]+$');
+  const showIdPattern = new RegExp(
+    '^/show/[A-Za-z0-9-_]+$' + '|' + '^/video/[A-Za-z0-9-_]+/[A-Za-z0-9-_]+$'
+  );
   const isMobile = useBreakpointValue({ base: true, sm: false });
   const isShowPage = showIdPattern.test(location.pathname);
   const isShowPageMobileView = isShowPage && isMobile;
