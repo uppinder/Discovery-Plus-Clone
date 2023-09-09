@@ -110,6 +110,7 @@ function ShowItem({ isShowPageMobileView = false }) {
         </Flex>
         <Menu>
           <MenuButton
+            size={20}
             as={IconButton}
             icon={
               <DotsThreeOutlineVertical
@@ -120,12 +121,21 @@ function ShowItem({ isShowPageMobileView = false }) {
             }
             variant="unstyled"
             position="absolute"
-            top="0"
+            top="6px"
             right="0"
           />
-          <MenuList>
-            <MenuItem>Favourite</MenuItem>
-            <MenuItem>Share</MenuItem>
+          <MenuList
+            backgroundColor="#121317"
+            minWidth="120px"
+            borderRadius="0px"
+            paddingY="4px"
+          >
+            <MenuItem backgroundColor="#121317" fontSize="14px">
+              Add to Favourite
+            </MenuItem>
+            <MenuItem backgroundColor="#121317" fontSize="14px">
+              Share
+            </MenuItem>
           </MenuList>
         </Menu>
       </Flex>

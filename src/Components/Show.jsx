@@ -230,7 +230,7 @@ function Show() {
         {/* Episodes */}
 
         <Flex width="100%">
-          <Tabs align="start">
+          <Tabs align="start" isFitted={isShowPageMobileView}>
             <TabList color="#9ba1a9" border="transparent" gap="24px">
               <Tab
                 paddingX="0"
@@ -343,6 +343,6 @@ export default Show;
 // 1. HomeShowItem ki jagah create custom for this page - done
 // 2. Responsive grid - done
 // 3. Show page responsive for mobile
-//    - Episodes/shorts tabs
-//    - Three dots menu
+//    - Episodes/shorts tabs - done
+//    - Three dots menu - done
 // 4. Video page
