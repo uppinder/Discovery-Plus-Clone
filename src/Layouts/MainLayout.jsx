@@ -11,7 +11,9 @@ function MainLayout() {
       '|' +
       '^/video/[A-Za-z0-9-_]+/[A-Za-z0-9-_]+$' +
       '|' +
-      '^/channel/[A-Za-z0-9-_]+$'
+      '^/channel/[A-Za-z0-9-_]+$' +
+      '|' +
+      '^/genre/[A-Za-z0-9-_]+$'
   );
   const isMobile = useBreakpointValue({ base: true, sm: false });
   const isShowPage = showIdPattern.test(location.pathname);

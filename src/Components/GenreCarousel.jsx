@@ -1,5 +1,7 @@
-import { Flex, Image, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
+import { Link as ReactRouterLink } from 'react-router-dom';
+
+import { Flex, Image, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import genreThumbnail from '../Assets/Images/genre_image.png';
 import genreThumbnailOverlay from '../Assets/Images/genre_image_2.png';
@@ -33,7 +35,13 @@ function GenreCarousel() {
           {Array(8)
             .fill(null)
             .map((_, index) => (
-              <Link key={index} position="relative" minWidth="80px">
+              <Link
+                to="/genre/test"
+                as={ReactRouterLink}
+                key={index}
+                position="relative"
+                minWidth="80px"
+              >
                 <Flex
                   height="100%"
                   flexDirection="column"
@@ -71,6 +79,8 @@ function GenreCarousel() {
             .map((_, index) => (
               <SwiperSlide key={index} className="swiper-genre-slide">
                 <Link
+                  to="/genre/test"
+                  as={ReactRouterLink}
                   height="100%"
                   minWidth="200px"
                   className="swiper-genre-slide-wrapper"

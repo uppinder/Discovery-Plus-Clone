@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { Flex, Grid, Link, Text } from '@chakra-ui/react';
+import { Flex, Grid, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import channelAnimalPlanet from '../Assets/Images/premium_channel_animal_planet.png';
 import channelDiscovery from '../Assets/Images/premium_channel_discovery.png';
@@ -23,8 +23,14 @@ import ChannelItem from './ChannelItem';
 import ExploreItem from './ExploreItem';
 
 function Explore() {
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+
   return (
-    <Flex width="100%" flexDirection="column" paddingTop="40px">
+    <Flex
+      width="100%"
+      flexDirection="column"
+      paddingTop={isMobile ? '10px' : '40px'}
+    >
       <Flex paddingX="40px" flexDirection="column" gap="16px">
         <Text fontSize="24px" fontWeight="500" lineHeight="1.1">
           Live Channels

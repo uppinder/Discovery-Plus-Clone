@@ -207,6 +207,11 @@ function Navbar() {
       return channelIdPattern.test(location.pathname);
     }
 
+    if (navName === 'genre') {
+      const genreIdPattern = new RegExp('^/genre/[A-Za-z0-9-_]+$');
+      return genreIdPattern.test(location.pathname);
+    }
+
     return location.pathname === `/${navName}`;
   };
 
@@ -217,6 +222,7 @@ function Navbar() {
       '|' +
       '^/channel/[A-Za-z0-9-_]+$'
   );
+
   if (isMobile && showIdPattern.test(location.pathname)) {
     return (
       <Flex
@@ -236,6 +242,41 @@ function Navbar() {
     );
   }
 
+  const genreIdPattern = new RegExp('^/genre/[A-Za-z0-9-_]+$');
+
+  // Genre
+  if (isMobile && genreIdPattern.test(location.pathname)) {
+    return (
+      <Flex
+        className="navbar"
+        height="50px"
+        width="100vw"
+        paddingX="3%"
+        alignItems="center"
+        top="0"
+        position="fixed"
+        zIndex="10"
+      >
+        <Link onClick={() => navigate(-1)}>
+          <ArrowLeft size={25} />
+        </Link>
+        <Text
+          fontSize="18px"
+          fontWeight="700"
+          flex="1"
+          display="flex"
+          justifyContent="center"
+          paddingRight="5%"
+        >
+          Shows
+        </Text>
+
+        <FixedBottomNavbar />
+      </Flex>
+    );
+  }
+
+  //   Premium
   if (isMobile && location.pathname === '/go-premium-web') {
     return (
       <Flex
@@ -688,7 +729,8 @@ function Navbar() {
         {isActiveLink('go-premium-web') ||
         isActiveLink('show') ||
         isActiveLink('video') ||
-        isActiveLink('channel') ? null : (
+        isActiveLink('channel') ||
+        isActiveLink('genre') ? null : (
           <Link
             as={ReactRouterLink}
             to="/go-premium-web"

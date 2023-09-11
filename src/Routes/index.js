@@ -13,6 +13,7 @@ import Page500 from '../Pages/ErrorPages/Page500';
 import Video from '../Components/Video';
 import Channel from '../Components/Channel';
 import Explore from '../Components/Explore';
+import Genre from '../Components/Genre';
 
 export default function Router() {
   return useRoutes([
@@ -47,6 +48,10 @@ export default function Router() {
         {
           path: 'channel/:channelId',
           element: <Channel />,
+        },
+        {
+          path: 'genre/:genreId',
+          element: <Genre />,
         },
       ],
     },
