@@ -313,6 +313,8 @@ function Show() {
                           .map((_, index) => (
                             <Link
                               key={index}
+                              as={ReactRouterLink}
+                              to="/video/man-vs-wild/the-rockies"
                               position="relative"
                               height={isShowPageMobileView ? null : '190px'}
                               _hover={{ textDecoration: 'none' }}
@@ -339,10 +341,3 @@ function Show() {
 }
 
 export default Show;
-
-// 1. HomeShowItem ki jagah create custom for this page - done
-// 2. Responsive grid - done
-// 3. Show page responsive for mobile
-//    - Episodes/shorts tabs - done
-//    - Three dots menu - done
-// 4. Video page

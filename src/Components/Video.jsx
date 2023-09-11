@@ -85,10 +85,11 @@ function Video() {
         {/* Thumbnail */}
         <Image
           src={showImage}
+          height={isShowPageMobileView ? '210px' : null}
           borderRadius={isShowPageMobileView ? '0px' : '10px'}
-          //   position={isShowPageMobileView ? 'fixed' : null}
-          //   top={isShowPageMobileView ? '0' : null}
-          //   zIndex={isShowPageMobileView ? '100' : null}
+          position={isShowPageMobileView ? 'sticky' : null}
+          top={isShowPageMobileView ? '0' : null}
+          zIndex={isShowPageMobileView ? '9' : null}
         />
 
         {/* Description */}
@@ -193,8 +194,10 @@ function Video() {
               color="#9ba1a9"
               border="transparent"
               gap="24px"
-              //   position={isShowPageMobileView ? 'sticky' : null}
-              //   top={isShowPageMobileView ? '0' : null}
+              backgroundColor="#1a1c21"
+              position={isShowPageMobileView ? 'sticky' : null}
+              top={isShowPageMobileView ? '210px' : null}
+              zIndex={isShowPageMobileView ? '9' : null}
             >
               <Tab
                 paddingX="0"
@@ -225,17 +228,22 @@ function Video() {
             <TabPanels width="100%">
               <TabPanel
                 paddingLeft="4px"
-                paddingTop="15px"
+                paddingTop={isShowPageMobileView ? '2px' : '15px'}
                 paddingRight="4px"
                 paddingBottom="0px"
+                backgroundColor="#1a1c21"
               >
                 <Tabs variant="unstyled" isLazy onChange={handleTabsChange}>
                   <TabList
                     color="#838991"
                     gap="10px"
                     paddingLeft={isShowPageMobileView ? '8px' : '0'}
-                    // position={isShowPageMobileView ? 'sticky' : null}
-                    // top={isShowPageMobileView ? '0' : null}
+                    paddingTop={isShowPageMobileView ? '10px' : '0'}
+                    paddingBottom={isShowPageMobileView ? '8px' : '0'}
+                    backgroundColor="#1a1c21"
+                    position={isShowPageMobileView ? 'sticky' : null}
+                    top={isShowPageMobileView ? '253px' : null}
+                    zIndex={isShowPageMobileView ? '8' : null}
                   >
                     <Tab
                       fontWeight="500"

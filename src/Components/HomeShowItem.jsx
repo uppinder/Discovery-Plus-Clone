@@ -7,7 +7,7 @@ import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
-function HomeShowItem() {
+function HomeShowItem({ isChannelPageMobileView = false }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const [isHovered, setIsHovered] = useState(false);
@@ -17,7 +17,11 @@ function HomeShowItem() {
   };
 
   return (
-    <Box onMouseEnter={handleHover} onMouseLeave={handleHover}>
+    <Box
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
+      position="relative"
+    >
       <Image src={showThumbnail} borderRadius={isMobile ? '1px' : '4px'} />
 
       {/* Premium Icon Overlay*/}
@@ -33,7 +37,7 @@ function HomeShowItem() {
         backgroundColor="#2175d9"
         borderRadius="3px"
         padding={isMobile ? '0px 6px' : '2px 12px'}
-        bottom={isMobile ? '14%' : '5%'}
+        bottom={isChannelPageMobileView ? '4%' : isMobile ? '14%' : '5%'}
         left={isMobile ? '20%' : '25%'}
       >
         <Text fontSize={isMobile ? '12px' : '16px'} fontWeight="500">

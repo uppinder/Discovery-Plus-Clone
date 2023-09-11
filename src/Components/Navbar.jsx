@@ -200,11 +200,20 @@ function Navbar() {
       return videoIdPattern.test(location.pathname);
     }
 
+    if (navName === 'channel') {
+      const channelIdPattern = new RegExp('^/channel/[A-Za-z0-9-_]+$');
+      return channelIdPattern.test(location.pathname);
+    }
+
     return location.pathname === `/${navName}`;
   };
 
   const showIdPattern = new RegExp(
-    '^/show/[A-Za-z0-9-_]+$' + '|' + '^/video/[A-Za-z0-9-_]+/[A-Za-z0-9-_]+$'
+    '^/show/[A-Za-z0-9-_]+$' +
+      '|' +
+      '^/video/[A-Za-z0-9-_]+/[A-Za-z0-9-_]+$' +
+      '|' +
+      '^/channel/[A-Za-z0-9-_]+$'
   );
   if (isMobile && showIdPattern.test(location.pathname)) {
     return (
@@ -672,7 +681,8 @@ function Navbar() {
         </Flex>
         {isActiveLink('go-premium-web') ||
         isActiveLink('show') ||
-        isActiveLink('video') ? null : (
+        isActiveLink('video') ||
+        isActiveLink('channel') ? null : (
           <Link
             as={ReactRouterLink}
             to="/go-premium-web"

@@ -11,6 +11,7 @@ import Login from '../Pages/AuthPages/Login';
 import Page404 from '../Pages/ErrorPages/Page404';
 import Page500 from '../Pages/ErrorPages/Page500';
 import Video from '../Components/Video';
+import Channel from '../Components/Channel';
 
 export default function Router() {
   return useRoutes([
@@ -37,6 +38,10 @@ export default function Router() {
         {
           path: 'video/:showId/:videoId',
           element: <Video />,
+        },
+        {
+          path: 'channel/:channelId',
+          element: <Channel />,
         },
       ],
     },

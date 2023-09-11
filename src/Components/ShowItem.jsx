@@ -54,7 +54,7 @@ function ShowItem({ isShowPageMobileView = false }) {
             height="100%"
             top="0"
             left="0"
-            zIndex="10"
+            zIndex="7"
             justifyContent="center"
             alignItems="center"
           >
