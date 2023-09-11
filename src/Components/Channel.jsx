@@ -84,3 +84,5 @@ function Channel() {
 }
 
 export default Channel;
+
+// Channel Carousel

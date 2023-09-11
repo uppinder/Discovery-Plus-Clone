@@ -12,6 +12,7 @@ import Page404 from '../Pages/ErrorPages/Page404';
 import Page500 from '../Pages/ErrorPages/Page500';
 import Video from '../Components/Video';
 import Channel from '../Components/Channel';
+import Explore from '../Components/Explore';
 
 export default function Router() {
   return useRoutes([
@@ -30,6 +31,10 @@ export default function Router() {
         {
           path: 'go-premium-web',
           element: <Premium />,
+        },
+        {
+          path: 'explore',
+          element: <Explore />,
         },
         {
           path: 'show/:showId',
