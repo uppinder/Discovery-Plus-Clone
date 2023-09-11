@@ -31,8 +31,16 @@ function Explore() {
       flexDirection="column"
       paddingTop={isMobile ? '10px' : '40px'}
     >
-      <Flex paddingX="40px" flexDirection="column" gap="16px">
-        <Text fontSize="24px" fontWeight="500" lineHeight="1.1">
+      <Flex
+        paddingX={isMobile ? '20px' : '40px'}
+        flexDirection="column"
+        gap="16px"
+      >
+        <Text
+          fontSize={isMobile ? '22px' : '24px'}
+          fontWeight="500"
+          lineHeight="1.1"
+        >
           Live Channels
         </Text>
 
@@ -84,8 +92,8 @@ function Explore() {
         </Grid>
 
         <Text
-          marginTop="50px"
-          fontSize="24px"
+          marginTop={isMobile ? '20px' : '50px'}
+          fontSize={isMobile ? '22px' : '24px'}
           fontWeight="500"
           lineHeight="1.1"
         >
