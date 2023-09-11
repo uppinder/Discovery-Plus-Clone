@@ -17,7 +17,7 @@ import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 
 import showImage from '../Assets/Images/show_image.jpeg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
-import { DotOutline, Heart, Play, ShareNetwork } from '@phosphor-icons/react';
+import { DotOutline, Heart, ShareNetwork } from '@phosphor-icons/react';
 import ShowItem from './ShowItem';
 import HomeShowItem from './HomeShowItem';
 

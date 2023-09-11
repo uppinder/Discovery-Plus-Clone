@@ -1,6 +1,7 @@
-import { Flex, Grid, Text, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as ReactRouterLink } from 'react-router-dom';
+import { Flex, Grid, Link, Text, useBreakpointValue } from '@chakra-ui/react';
+
 import HomeShowItem from './HomeShowItem';
 
 function Genre() {
@@ -26,13 +27,13 @@ function Genre() {
           lg: 'repeat(3, minmax(0, 100%))',
           xl: 'repeat(4, minmax(0, 100%))',
         }}
-        gridColumnGap="12px"
-        gridRowGap="12px"
+        gridColumnGap={isMobile ? '12px' : '16px'}
+        gridRowGap={isMobile ? '12px' : '18px'}
       >
         {Array(25)
           .fill(null)
           .map((_, index) => (
-            <Link key={index}>
+            <Link to="/show/test" as={ReactRouterLink} key={index}>
               <HomeShowItem isChannelPageMobileView={true} />
             </Link>
           ))}
