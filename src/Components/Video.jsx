@@ -2,8 +2,13 @@ import {
   Divider,
   Flex,
   Grid,
+  IconButton,
   Image,
   Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Tab,
   TabList,
   TabPanel,
@@ -18,6 +23,8 @@ import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import showImage from '../Assets/Images/show_image.jpeg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import { DotOutline, Heart, ShareNetwork } from '@phosphor-icons/react';
+import { DotsThreeOutlineVertical } from '@phosphor-icons/react';
+
 import ShowItem from './ShowItem';
 import HomeShowItem from './HomeShowItem';
 
@@ -290,16 +297,58 @@ function Video() {
                         {Array(15)
                           .fill(null)
                           .map((_, index) => (
-                            <Link
-                              key={index}
-                              position="relative"
-                              height={isShowPageMobileView ? null : '190px'}
-                              _hover={{ textDecoration: 'none' }}
-                            >
-                              <ShowItem
-                                isShowPageMobileView={isShowPageMobileView}
-                              />
-                            </Link>
+                            <Flex position="relative">
+                              <Link
+                                to="/video/man-vs-wild/the-rockies"
+                                as={ReactRouterLink}
+                                key={index}
+                                position="relative"
+                                height={isShowPageMobileView ? null : '190px'}
+                                _hover={{ textDecoration: 'none' }}
+                              >
+                                <ShowItem
+                                  isShowPageMobileView={isShowPageMobileView}
+                                />
+                              </Link>
+                              {isShowPageMobileView && (
+                                <Menu>
+                                  <MenuButton
+                                    size={20}
+                                    as={IconButton}
+                                    icon={
+                                      <DotsThreeOutlineVertical
+                                        size={24}
+                                        color="#9b9b9b"
+                                        weight="fill"
+                                      />
+                                    }
+                                    variant="unstyled"
+                                    position="absolute"
+                                    top="6px"
+                                    right="0"
+                                  />
+                                  <MenuList
+                                    backgroundColor="#121317"
+                                    minWidth="120px"
+                                    borderRadius="0px"
+                                    paddingY="4px"
+                                  >
+                                    <MenuItem
+                                      backgroundColor="#121317"
+                                      fontSize="14px"
+                                    >
+                                      Add to Favourite
+                                    </MenuItem>
+                                    <MenuItem
+                                      backgroundColor="#121317"
+                                      fontSize="14px"
+                                    >
+                                      Share
+                                    </MenuItem>
+                                  </MenuList>
+                                </Menu>
+                              )}
+                            </Flex>
                           ))}
                       </Grid>
                     </TabPanel>

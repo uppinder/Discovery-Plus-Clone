@@ -1,24 +1,11 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Flex,
-  IconButton,
-  Image,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Text,
-  useBreakpointValue,
-} from '@chakra-ui/react';
+import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import showThumbnail from '../Assets/Images/shows_test_1.jpeg';
 
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import { DotsThreeOutlineVertical } from '@phosphor-icons/react';
 
 function ShowItem({ isShowPageMobileView = false }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -108,36 +95,6 @@ function ShowItem({ isShowPageMobileView = false }) {
             </Text>
           </Flex>
         </Flex>
-        <Menu>
-          <MenuButton
-            size={20}
-            as={IconButton}
-            icon={
-              <DotsThreeOutlineVertical
-                size={20}
-                color="#9b9b9b"
-                weight="fill"
-              />
-            }
-            variant="unstyled"
-            position="absolute"
-            top="6px"
-            right="0"
-          />
-          <MenuList
-            backgroundColor="#121317"
-            minWidth="120px"
-            borderRadius="0px"
-            paddingY="4px"
-          >
-            <MenuItem backgroundColor="#121317" fontSize="14px">
-              Add to Favourite
-            </MenuItem>
-            <MenuItem backgroundColor="#121317" fontSize="14px">
-              Share
-            </MenuItem>
-          </MenuList>
-        </Menu>
       </Flex>
     );
   }

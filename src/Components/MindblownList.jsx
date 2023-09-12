@@ -1,8 +1,7 @@
 import React from 'react';
 import { Flex, Grid, Link, useBreakpointValue } from '@chakra-ui/react';
-import HomeShowItem from './HomeShowItem';
-import { useLocation } from 'react-router-dom';
-import MindblownItem from './MindblownItem';
+import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
+import MindblownListItem from './MindblownListItem';
 
 function MindblownList() {
   const location = useLocation();
@@ -35,8 +34,13 @@ function MindblownList() {
         {Array(19)
           .fill(null)
           .map((_, index) => (
-            <Link key={index} position="relative">
-              <MindblownItem
+            <Link
+              to="/mindblown/test"
+              as={ReactRouterLink}
+              key={index}
+              position="relative"
+            >
+              <MindblownListItem
                 isMindblownPageMobileView={isMindblownPageMobileView}
               />
             </Link>

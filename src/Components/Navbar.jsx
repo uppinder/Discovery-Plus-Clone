@@ -217,6 +217,11 @@ function Navbar() {
       return mindblownIdPattern.test(location.pathname);
     }
 
+    if (navName === 'mindblown') {
+      const mindblownIdPattern = new RegExp('^/mindblown/[A-Za-z0-9-_]+$');
+      return mindblownIdPattern.test(location.pathname);
+    }
+
     return location.pathname === `/${navName}`;
   };
 
@@ -225,7 +230,9 @@ function Navbar() {
       '|' +
       '^/video/[A-Za-z0-9-_]+/[A-Za-z0-9-_]+$' +
       '|' +
-      '^/channel/[A-Za-z0-9-_]+$'
+      '^/channel/[A-Za-z0-9-_]+$' +
+      '|' +
+      '^/mindblown/[A-Za-z0-9-_]+$'
   );
 
   if (isMobile && showIdPattern.test(location.pathname)) {

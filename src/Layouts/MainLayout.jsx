@@ -13,7 +13,9 @@ function MainLayout() {
       '|' +
       '^/channel/[A-Za-z0-9-_]+$' +
       '|' +
-      '^/genre/[A-Za-z0-9-_]+$'
+      '^/genre/[A-Za-z0-9-_]+$' +
+      '|' +
+      '^/mindblown/[A-Za-z0-9-_]+$'
   );
   const isMobile = useBreakpointValue({ base: true, sm: false });
   const isShowPage = showIdPattern.test(location.pathname);

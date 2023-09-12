@@ -5,7 +5,7 @@ import showThumbnail from '../Assets/Images/shows_test_1.jpeg';
 
 import videoOverlayIcon from '../Assets/Images/mindblown_video_icon.svg';
 
-function MindblownItem({ isMindblownPageMobileView = false }) {
+function MindblownListItem({ isMindblownPageMobileView = false }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const [isHovered, setIsHovered] = useState(false);
@@ -97,4 +97,4 @@ function MindblownItem({ isMindblownPageMobileView = false }) {
   );
 }
 
-export default MindblownItem;
+export default MindblownListItem;
