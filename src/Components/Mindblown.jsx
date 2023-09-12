@@ -80,10 +80,10 @@ function Mindblown() {
                 backgroundColor="#2175d9"
                 justifyContent="center"
                 alignItems="center"
-                gap="5px"
                 padding="10px 12px"
                 cursor="pointer"
                 order={isMindblownPageMobileView ? '2' : '1'}
+                gap="5px"
               >
                 <Play size={18} color="white" weight="fill" />
                 <Text color="white" fontWeight="700" lineHeight="1.2">

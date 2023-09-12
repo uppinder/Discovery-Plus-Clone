@@ -21,7 +21,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 
-function ShowCarousel() {
+function ShowCarousel({ kidsPage = false }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const carouselData = [
@@ -47,6 +47,31 @@ function ShowCarousel() {
     },
   ];
 
+  const kidsCarouselData = [
+    {
+      showTitle: 'CoComelon',
+      showDesc: `Baby JJ and his siblings go on fun everyday adventures set to catchy songs.`,
+      showTags: ['All Time Fav', 'Stream Now'],
+      showImage: require(`../Assets/Images/kids_carousel_image_test.jpeg`),
+      showImageMobile: require(`../Assets/Images/carousel_image_test2_mobile.jpeg`),
+      showIsPremium: true,
+      showHasNewEpisodes: false,
+      showWatch: false,
+    },
+    {
+      showTitle: 'Zig & Sharko',
+      showDesc: `A shark will do anything to protect a mermaid from a famished hyena.`,
+      showTags: ["Editor's Pick", 'Must Watch'],
+      showImage: require(`../Assets/Images/kids_carousel_image_test2.jpeg`),
+      showImageMobile: require(`../Assets/Images/carousel_image_test_mobile.jpeg`),
+      showIsPremium: true,
+      showHasNewEpisodes: true,
+      showWatch: true,
+    },
+  ];
+
+  let cData = kidsPage ? kidsCarouselData : carouselData;
+
   return (
     <Swiper
       spaceBetween={30}
@@ -65,7 +90,7 @@ function ShowCarousel() {
       modules={[Autoplay, Pagination, Navigation]}
       className="swiper-home-carousel"
     >
-      {carouselData.map((showData, idx) => (
+      {cData.map((showData, idx) => (
         <LinkBox key={idx}>
           <SwiperSlide>
             <Flex

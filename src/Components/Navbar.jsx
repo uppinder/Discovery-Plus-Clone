@@ -108,6 +108,8 @@ const FixedBottomNavbar = () => {
         </Text>
       </Link>
       <Link
+        to="/kids/home"
+        as={ReactRouterLink}
         display="flex"
         flexDir="column"
         justifyContent="center"
@@ -411,6 +413,8 @@ function Navbar() {
                     Explore
                   </Link>
                   <Link
+                    to="/kids/home"
+                    as={ReactRouterLink}
                     display="flex"
                     alignItems="center"
                     gap="12px"
@@ -668,6 +672,8 @@ function Navbar() {
             Explore
           </Link>
           <Link
+            to="/kids/home"
+            as={ReactRouterLink}
             _hover={headerLinkStyle}
             style={{
               color: isActiveLink('kids') ? 'white' : null,
