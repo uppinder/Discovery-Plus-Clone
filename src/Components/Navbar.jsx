@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Link as ReactRouterLink,
   useLocation,
@@ -212,6 +212,11 @@ function Navbar() {
       return genreIdPattern.test(location.pathname);
     }
 
+    if (navName === 'mindblown') {
+      const mindblownIdPattern = new RegExp('^/mindblown$');
+      return mindblownIdPattern.test(location.pathname);
+    }
+
     return location.pathname === `/${navName}`;
   };
 
@@ -417,6 +422,8 @@ function Navbar() {
                     Shorts
                   </Link>
                   <Link
+                    to="mindblown"
+                    as={ReactRouterLink}
                     display="flex"
                     alignItems="center"
                     gap="12px"
@@ -607,7 +614,7 @@ function Navbar() {
         </Link>
 
         {/* For mobile screen */}
-        {isActiveLink('go-premium-web') ? null : (
+        {isActiveLink('go-premium-web') || isActiveLink('mindblown') ? null : (
           <Link
             as={ReactRouterLink}
             to="/go-premium-web"
@@ -670,6 +677,8 @@ function Navbar() {
             Shorts
           </Link>
           <Link
+            to="/mindblown"
+            as={ReactRouterLink}
             _hover={headerLinkStyle}
             style={{
               color: isActiveLink('mindblown') ? 'white' : null,
@@ -730,7 +739,8 @@ function Navbar() {
         isActiveLink('show') ||
         isActiveLink('video') ||
         isActiveLink('channel') ||
-        isActiveLink('genre') ? null : (
+        isActiveLink('genre') ||
+        isActiveLink('mindblown') ? null : (
           <Link
             as={ReactRouterLink}
             to="/go-premium-web"

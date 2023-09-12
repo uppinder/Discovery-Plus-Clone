@@ -14,6 +14,7 @@ import Video from '../Components/Video';
 import Channel from '../Components/Channel';
 import Explore from '../Components/Explore';
 import Genre from '../Components/Genre';
+import MindblownList from '../Components/MindblownList';
 
 export default function Router() {
   return useRoutes([
@@ -52,6 +53,10 @@ export default function Router() {
         {
           path: 'genre/:genreId',
           element: <Genre />,
+        },
+        {
+          path: 'mindblown',
+          element: <MindblownList />,
         },
       ],
     },
