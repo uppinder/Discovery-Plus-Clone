@@ -7,7 +7,7 @@ import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
-function ShowItem({ isShowPageMobileView = false }) {
+function ShowItem({ isShowPageMobileView = false, timeOverlay = false }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const [isHovered, setIsHovered] = useState(false);
@@ -117,6 +117,19 @@ function ShowItem({ isShowPageMobileView = false }) {
         {/* Premium Icon Overlay*/}
         <Image src={premiumIcon} position="absolute" top="1.5%" left="1%" />
 
+        {timeOverlay && (
+          <Flex
+            position="absolute"
+            bottom="4px"
+            right="4px"
+            backgroundColor="#000000"
+            opacity="0.65"
+            paddingX="3px"
+          >
+            <Text fontSize="12px">43:32</Text>
+          </Flex>
+        )}
+
         {/* Play Button Overlay*/}
         <Flex
           display={isHovered ? 'flex' : 'none'}
@@ -131,8 +144,8 @@ function ShowItem({ isShowPageMobileView = false }) {
         >
           <Image
             src={playButtonImage}
-            height={{ base: '20px', xl: '40px' }}
-            width={{ base: '20px', xl: '40px' }}
+            height={{ base: '20px', lg: '40px' }}
+            width={{ base: '20px', lg: '40px' }}
           />
         </Flex>
 

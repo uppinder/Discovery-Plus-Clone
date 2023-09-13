@@ -17,6 +17,7 @@ import Genre from '../Components/Genre';
 import MindblownList from '../Components/MindblownList';
 import Mindblown from '../Components/Mindblown';
 import Kids from '../Components/Kids';
+import Superstar from '../Components/Superstar';
 
 export default function Router() {
   return useRoutes([
@@ -67,6 +68,10 @@ export default function Router() {
         {
           path: 'kids/home',
           element: <Kids />,
+        },
+        {
+          path: 'superstars/:superstarId',
+          element: <Superstar />,
         },
       ],
     },

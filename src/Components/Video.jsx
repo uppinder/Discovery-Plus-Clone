@@ -308,6 +308,7 @@ function Video() {
                               >
                                 <ShowItem
                                   isShowPageMobileView={isShowPageMobileView}
+                                  timeOverlay={true}
                                 />
                               </Link>
                               {isShowPageMobileView && (

@@ -28,7 +28,7 @@ function Kids() {
         <Flex
           top="540px"
           position="absolute"
-          zIndex="10"
+          zIndex="5"
           width="100vw"
           paddingX="10px"
           overflowX="scroll"

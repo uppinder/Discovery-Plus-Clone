@@ -321,6 +321,7 @@ function Show() {
                             >
                               <ShowItem
                                 isShowPageMobileView={isShowPageMobileView}
+                                timeOverlay={true}
                               />
                             </Link>
                           ))}
