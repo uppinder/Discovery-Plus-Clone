@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Divider, Flex, Image, Link, Text } from '@chakra-ui/react';
+import {
+  Divider,
+  Flex,
+  Image,
+  Link,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 import ShortsCard from './ShortsCard';
 
 import shortAdImage from '../Assets/Images/shorts_app_ad.png';
@@ -15,6 +22,7 @@ const sampleShortsData = {
 };
 
 function Shorts() {
+  const isMobile = useBreakpointValue({ base: true, sm: false });
   const [category, setCategory] = useState('all');
   const [isLoading, setIsLoading] = useState(false);
   const [shortsData, setShortsData] = useState(Array(4).fill(sampleShortsData));
@@ -60,123 +68,187 @@ function Shorts() {
     };
   }, [isLoading]);
 
+  const categories = [
+    'all',
+    'adventure',
+    'food',
+    'science',
+    'animals',
+    'lifestyle',
+  ];
+
+  const capitalize = text => {
+    return text[0].toUpperCase() + text.substring(1);
+  };
+
   return (
     <Flex
       width="100%"
       height="100%"
-      gap="28px"
-      paddingX="27px"
-      paddingTop="25px"
+      gap={isMobile ? '0px' : '28px'}
+      paddingX={isMobile ? '0px' : '27px'}
+      paddingTop={isMobile ? '0px' : '25px'}
+      flexDirection={isMobile ? 'column' : 'row'}
     >
-      <Flex
-        minWidth="258px"
-        height="324px"
-        backgroundColor="#121317"
-        flexDirection="column"
-        paddingY="10px"
-        paddingX="10px"
-        position="sticky"
-      >
-        <Flex width="100%" height="100%" paddingX="24px" alignItems="center">
-          <Text fontSize="18px" fontWeight="700">
-            Categories
-          </Text>
+      {isMobile ? (
+        <Flex
+          width="100vw"
+          overflowX="scroll"
+          background="#1f2227"
+          marginTop="-10px"
+          css={{
+            '&::-webkit-scrollbar': {
+              width: '0',
+              height: '0',
+            },
+          }}
+        >
+          {categories.map((value, id) => (
+            <Flex
+              key={id}
+              height="100%"
+              gap="5px"
+              flexDirection="column"
+              alignItems="center"
+              minWidth="90px"
+              borderBottom={category === value ? '1.5px solid white' : null}
+              onClick={() => setCategory(value)}
+            >
+              <Image
+                src={require(`../Assets/Images/genre_thumbnail_${value}.png`)}
+                width="70px"
+                height="70px"
+              />
+              <Text
+                fontSize="12px"
+                color="#c7c7c7"
+                fontWeight="500"
+                marginBottom="10px"
+              >
+                {capitalize(value)}
+              </Text>
+            </Flex>
+          ))}
         </Flex>
-        <Divider />
-        <Link
-          width="100%"
-          height="100%"
-          paddingX="24px"
-          display="flex"
-          alignItems="center"
-          color={category === 'all' ? 'white' : '#838991'}
-          _hover={{ textDecoration: 'none', color: 'white' }}
-          onClick={() => setCategory('all')}
+      ) : (
+        <Flex
+          minWidth="258px"
+          height="324px"
+          backgroundColor="#121317"
+          flexDirection="column"
+          paddingY="10px"
+          paddingX="10px"
+          position="sticky"
         >
-          <Text fontSize="17px" fontWeight="500">
-            All
-          </Text>
-        </Link>
-        <Divider borderColor={category === 'all' ? 'white' : null} />
-        <Link
-          width="100%"
-          height="100%"
-          paddingX="24px"
-          display="flex"
-          alignItems="center"
-          color={category === 'adventure' ? 'white' : '#838991'}
-          _hover={{ textDecoration: 'none', color: 'white' }}
-          onClick={() => setCategory('adventure')}
-        >
-          <Text fontSize="17px" fontWeight="500">
-            Adventure
-          </Text>
-        </Link>
-        <Divider borderColor={category === 'adventure' ? 'white' : null} />
-        <Link
-          width="100%"
-          height="100%"
-          paddingX="24px"
-          display="flex"
-          alignItems="center"
-          color={category === 'food' ? 'white' : '#838991'}
-          _hover={{ textDecoration: 'none', color: 'white' }}
-          onClick={() => setCategory('food')}
-        >
-          <Text fontSize="17px" fontWeight="500">
-            Food
-          </Text>
-        </Link>
-        <Divider borderColor={category === 'food' ? 'white' : null} />
-        <Link
-          width="100%"
-          height="100%"
-          paddingX="24px"
-          display="flex"
-          alignItems="center"
-          color={category === 'science' ? 'white' : '#838991'}
-          _hover={{ textDecoration: 'none', color: 'white' }}
-          onClick={() => setCategory('science')}
-        >
-          <Text fontSize="17px" fontWeight="500">
-            Science
-          </Text>
-        </Link>
-        <Divider borderColor={category === 'science' ? 'white' : null} />
-        <Link
-          width="100%"
-          height="100%"
-          paddingX="24px"
-          display="flex"
-          alignItems="center"
-          color={category === 'animals' ? 'white' : '#838991'}
-          _hover={{ textDecoration: 'none', color: 'white' }}
-          onClick={() => setCategory('animals')}
-        >
-          <Text fontSize="17px" fontWeight="500">
-            Animals
-          </Text>
-        </Link>
-        <Divider borderColor={category === 'animals' ? 'white' : null} />
-        <Link
-          width="100%"
-          height="100%"
-          paddingX="24px"
-          display="flex"
-          alignItems="center"
-          color={category === 'lifestyle' ? 'white' : '#838991'}
-          _hover={{ textDecoration: 'none', color: 'white' }}
-          onClick={() => setCategory('lifestyle')}
-        >
-          <Text fontSize="17px" fontWeight="500">
-            Lifestyle
-          </Text>
-        </Link>
-      </Flex>
+          <Flex width="100%" height="100%" paddingX="24px" alignItems="center">
+            <Text fontSize="18px" fontWeight="700">
+              Categories
+            </Text>
+          </Flex>
+          <Divider />
+          <Link
+            width="100%"
+            height="100%"
+            paddingX="24px"
+            display="flex"
+            alignItems="center"
+            color={category === 'all' ? 'white' : '#838991'}
+            _hover={{ textDecoration: 'none', color: 'white' }}
+            onClick={() => setCategory('all')}
+          >
+            <Text fontSize="17px" fontWeight="500">
+              All
+            </Text>
+          </Link>
+          <Divider borderColor={category === 'all' ? 'white' : null} />
+          <Link
+            width="100%"
+            height="100%"
+            paddingX="24px"
+            display="flex"
+            alignItems="center"
+            color={category === 'adventure' ? 'white' : '#838991'}
+            _hover={{ textDecoration: 'none', color: 'white' }}
+            onClick={() => setCategory('adventure')}
+          >
+            <Text fontSize="17px" fontWeight="500">
+              Adventure
+            </Text>
+          </Link>
+          <Divider borderColor={category === 'adventure' ? 'white' : null} />
+          <Link
+            width="100%"
+            height="100%"
+            paddingX="24px"
+            display="flex"
+            alignItems="center"
+            color={category === 'food' ? 'white' : '#838991'}
+            _hover={{ textDecoration: 'none', color: 'white' }}
+            onClick={() => setCategory('food')}
+          >
+            <Text fontSize="17px" fontWeight="500">
+              Food
+            </Text>
+          </Link>
+          <Divider borderColor={category === 'food' ? 'white' : null} />
+          <Link
+            width="100%"
+            height="100%"
+            paddingX="24px"
+            display="flex"
+            alignItems="center"
+            color={category === 'science' ? 'white' : '#838991'}
+            _hover={{ textDecoration: 'none', color: 'white' }}
+            onClick={() => setCategory('science')}
+          >
+            <Text fontSize="17px" fontWeight="500">
+              Science
+            </Text>
+          </Link>
+          <Divider borderColor={category === 'science' ? 'white' : null} />
+          <Link
+            width="100%"
+            height="100%"
+            paddingX="24px"
+            display="flex"
+            alignItems="center"
+            color={category === 'animals' ? 'white' : '#838991'}
+            _hover={{ textDecoration: 'none', color: 'white' }}
+            onClick={() => setCategory('animals')}
+          >
+            <Text fontSize="17px" fontWeight="500">
+              Animals
+            </Text>
+          </Link>
+          <Divider borderColor={category === 'animals' ? 'white' : null} />
+          <Link
+            width="100%"
+            height="100%"
+            paddingX="24px"
+            display="flex"
+            alignItems="center"
+            color={category === 'lifestyle' ? 'white' : '#838991'}
+            _hover={{ textDecoration: 'none', color: 'white' }}
+            onClick={() => setCategory('lifestyle')}
+          >
+            <Text fontSize="17px" fontWeight="500">
+              Lifestyle
+            </Text>
+          </Link>
+        </Flex>
+      )}
 
-      <Flex width="100%" maxWidth="800px" flexDirection="column" gap="12px">
+      <Flex
+        width="100%"
+        maxWidth="800px"
+        flexDirection="column"
+        gap={isMobile ? '0px' : '12px'}
+      >
         {shortsData.map((currData, id) => (
-          <ShortsCard key={id} {...currData} />
+          <>
+            <ShortsCard key={id} {...currData} />
+            <Divider borderWidth="1.5px" />
+          </>
         ))}
       </Flex>
 
@@ -225,5 +297,5 @@ function Shorts() {
 
 export default Shorts;
 
-// 1. Mobile responsive
+// 1. Mobile responsive - done
 // 2. Infinite scroll - first draft done
