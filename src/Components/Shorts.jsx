@@ -96,6 +96,8 @@ function Shorts() {
           overflowX="scroll"
           background="#1f2227"
           marginTop="-10px"
+          position="sticky"
+          top="-20px"
           css={{
             '&::-webkit-scrollbar': {
               width: '0',
@@ -146,100 +148,32 @@ function Shorts() {
             </Text>
           </Flex>
           <Divider />
-          <Link
-            width="100%"
-            height="100%"
-            paddingX="24px"
-            display="flex"
-            alignItems="center"
-            color={category === 'all' ? 'white' : '#838991'}
-            _hover={{ textDecoration: 'none', color: 'white' }}
-            onClick={() => setCategory('all')}
-          >
-            <Text fontSize="17px" fontWeight="500">
-              All
-            </Text>
-          </Link>
-          <Divider borderColor={category === 'all' ? 'white' : null} />
-          <Link
-            width="100%"
-            height="100%"
-            paddingX="24px"
-            display="flex"
-            alignItems="center"
-            color={category === 'adventure' ? 'white' : '#838991'}
-            _hover={{ textDecoration: 'none', color: 'white' }}
-            onClick={() => setCategory('adventure')}
-          >
-            <Text fontSize="17px" fontWeight="500">
-              Adventure
-            </Text>
-          </Link>
-          <Divider borderColor={category === 'adventure' ? 'white' : null} />
-          <Link
-            width="100%"
-            height="100%"
-            paddingX="24px"
-            display="flex"
-            alignItems="center"
-            color={category === 'food' ? 'white' : '#838991'}
-            _hover={{ textDecoration: 'none', color: 'white' }}
-            onClick={() => setCategory('food')}
-          >
-            <Text fontSize="17px" fontWeight="500">
-              Food
-            </Text>
-          </Link>
-          <Divider borderColor={category === 'food' ? 'white' : null} />
-          <Link
-            width="100%"
-            height="100%"
-            paddingX="24px"
-            display="flex"
-            alignItems="center"
-            color={category === 'science' ? 'white' : '#838991'}
-            _hover={{ textDecoration: 'none', color: 'white' }}
-            onClick={() => setCategory('science')}
-          >
-            <Text fontSize="17px" fontWeight="500">
-              Science
-            </Text>
-          </Link>
-          <Divider borderColor={category === 'science' ? 'white' : null} />
-          <Link
-            width="100%"
-            height="100%"
-            paddingX="24px"
-            display="flex"
-            alignItems="center"
-            color={category === 'animals' ? 'white' : '#838991'}
-            _hover={{ textDecoration: 'none', color: 'white' }}
-            onClick={() => setCategory('animals')}
-          >
-            <Text fontSize="17px" fontWeight="500">
-              Animals
-            </Text>
-          </Link>
-          <Divider borderColor={category === 'animals' ? 'white' : null} />
-          <Link
-            width="100%"
-            height="100%"
-            paddingX="24px"
-            display="flex"
-            alignItems="center"
-            color={category === 'lifestyle' ? 'white' : '#838991'}
-            _hover={{ textDecoration: 'none', color: 'white' }}
-            onClick={() => setCategory('lifestyle')}
-          >
-            <Text fontSize="17px" fontWeight="500">
-              Lifestyle
-            </Text>
-          </Link>
+          {categories.map((value, id) => (
+            <>
+              <Link
+                width="100%"
+                height="100%"
+                paddingX="24px"
+                display="flex"
+                alignItems="center"
+                color={category === value ? 'white' : '#838991'}
+                _hover={{ textDecoration: 'none', color: 'white' }}
+                onClick={() => setCategory(value)}
+              >
+                <Text fontSize="17px" fontWeight="500">
+                  {capitalize(value)}
+                </Text>
+              </Link>
+              {id !== categories.length - 1 && (
+                <Divider borderColor={category === value ? 'white' : null} />
+              )}
+            </>
+          ))}
         </Flex>
       )}
 
       <Flex
-        width="100%"
+        width="100vw"
         maxWidth="800px"
         flexDirection="column"
         gap={isMobile ? '0px' : '12px'}
