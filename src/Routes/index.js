@@ -18,6 +18,7 @@ import MindblownList from '../Components/MindblownList';
 import Mindblown from '../Components/Mindblown';
 import Kids from '../Components/Kids';
 import Superstar from '../Components/Superstar';
+import Shorts from '../Components/Shorts';
 
 export default function Router() {
   return useRoutes([
@@ -72,6 +73,10 @@ export default function Router() {
         {
           path: 'superstars/:superstarId',
           element: <Superstar />,
+        },
+        {
+          path: 'shorts',
+          element: <Shorts />,
         },
       ],
     },
