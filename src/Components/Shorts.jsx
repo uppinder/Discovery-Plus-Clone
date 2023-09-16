@@ -181,7 +181,7 @@ function Shorts() {
         {shortsData.map((currData, id) => (
           <>
             <ShortsCard key={id} {...currData} />
-            <Divider borderWidth="1.5px" />
+            {isMobile && <Divider borderWidth="1.5px" />}
           </>
         ))}
       </Flex>

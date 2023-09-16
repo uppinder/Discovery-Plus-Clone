@@ -43,6 +43,7 @@ import kidsLogoBottomNavbar from '../Assets/Images/kids_logo_bottom_navbar.svg';
 import kidsLogoBottomNavbarActive from '../Assets/Images/kids_logo_bottom_navbar_active.svg';
 import avatarLogo from '../Assets/Images/avatar_icon.svg';
 import crownLogo from '../Assets/Images/crown_logo.svg';
+import Search from './Search';
 
 const FixedBottomNavbar = () => {
   const location = useLocation();
@@ -726,20 +727,7 @@ function Navbar() {
       />
 
       <HStack spacing="8px" marginRight="8px" display={['none', 'flex']}>
-        <InputGroup width="340px" marginRight="8px" display={['none', 'block']}>
-          <Input
-            placeholder="Search for a show, episode, shorts etc."
-            variant="flushed"
-            css={{
-              '&:focus': {
-                borderBottom: '1px solid #121317', // Your desired border bottom style on focus
-              },
-            }}
-          />
-          <InputRightElement>
-            <SearchIcon boxSize="20px" />
-          </InputRightElement>
-        </InputGroup>
+        <Search />
 
         <Flex
           border="1px solid white"
