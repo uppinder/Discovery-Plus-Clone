@@ -10,7 +10,8 @@ import {
   Spinner,
 } from '@chakra-ui/react';
 import SearchDropdownItem from './SearchDropdownItem';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
+import { XCircle } from '@phosphor-icons/react';
 
 const sampleResult = {
   title: 'Little Singham',
@@ -21,18 +22,28 @@ const sampleResult = {
 function Searchbar() {
   const [isLoading, setIsLoading] = useState(false);
   const [inputText, setInputText] = useState('');
+  const [showXCircle, setShowXCircle] = useState(false);
   const [showResultsDropDown, setShowResultsDropDown] = useState(false);
   const [results, setResults] = useState([]);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setInputText('');
+    setShowResultsDropDown(false);
+  }, [pathname]);
 
   useEffect(() => {
     const fetchResults = async () => {
       if (inputText === '') return;
+
+      setShowXCircle(false);
       setIsLoading(true);
 
       //   Dummy API call
       setTimeout(() => {
         setResults(Array(3).fill(sampleResult));
         setShowResultsDropDown(true);
+        setShowXCircle(true);
         setIsLoading(false);
       }, 500);
     };
@@ -40,8 +51,17 @@ function Searchbar() {
     // Debounce
     const timeout = setTimeout(fetchResults, 300);
 
+    if (inputText === '') {
+      setShowXCircle(false);
+      setShowResultsDropDown(false);
+    }
+
     return () => clearTimeout(timeout);
   }, [inputText]);
+
+  const handleClose = () => {
+    setInputText('');
+  };
 
   return (
     <Flex flexDirection="column" position="relative">
@@ -60,11 +80,17 @@ function Searchbar() {
           }}
         />
         <InputRightElement>
-          {isLoading ? (
-            <Spinner boxSize="20px" />
-          ) : (
-            <SearchIcon boxSize="20px" />
+          {isLoading && <Spinner boxSize="20px" />}
+          {showXCircle && (
+            <XCircle
+              size="26px"
+              color="#fff"
+              weight="fill"
+              cursor="pointer"
+              onClick={handleClose}
+            />
           )}
+          {!isLoading && !showXCircle && <SearchIcon boxSize="20px" />}
         </InputRightElement>
       </InputGroup>
       {showResultsDropDown && (
@@ -85,6 +111,7 @@ function Searchbar() {
                   to="/video/man-vs-wild/the-rockies"
                   as={ReactRouterLink}
                   _hover={{ textDecoration: 'none' }}
+                  reloadDocument
                 >
                   <SearchDropdownItem {...result} />
                 </Link>

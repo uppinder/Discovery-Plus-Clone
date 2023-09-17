@@ -12,7 +12,7 @@ function HomeShowItemHoverableIcon() {
     <Flex
       position="absolute"
       right="-8%"
-      zIndex="110"
+      zIndex="5"
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
     >

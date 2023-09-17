@@ -20,6 +20,7 @@ import Kids from '../Components/Kids';
 import Superstar from '../Components/Superstar';
 import Shorts from '../Components/Shorts';
 import Search from '../Components/Search';
+import CollectionView from '../Components/CollectionView';
 
 export default function Router() {
   return useRoutes([
@@ -82,6 +83,10 @@ export default function Router() {
         {
           path: 'search',
           element: <Search />,
+        },
+        {
+          path: 'collection-view-all',
+          element: <CollectionView />,
         },
       ],
     },

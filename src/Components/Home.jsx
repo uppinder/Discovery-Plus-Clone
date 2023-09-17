@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 import { Flex, Grid, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 import ShowCarousel from './ShowCarousel';
@@ -37,6 +38,8 @@ function Home() {
             Shows You Love
           </Text>
           <Link
+            to="/collection-view-all?title=shows-you-love"
+            as={ReactRouterLink}
             color="#838991"
             fontSize="18px"
             _hover={{ textDecoration: 'none', color: 'white' }}
@@ -112,6 +115,8 @@ function Home() {
             Must Watch EPIC Shows
           </Text>
           <Link
+            to="/collection-view-all?title=must-watch-epic-shows"
+            as={ReactRouterLink}
             color="#838991"
             fontSize="18px"
             _hover={{ textDecoration: 'none', color: 'white' }}

@@ -53,7 +53,7 @@ function HomeShowItem({ isChannelPageMobileView = false }) {
         height="100%"
         top="0"
         left="0"
-        zIndex="10"
+        zIndex="5"
         justifyContent="center"
         alignItems="center"
       >

@@ -25,6 +25,7 @@ import { ArrowLeft, MagnifyingGlass, XCircle } from '@phosphor-icons/react';
 import playButtonImage from '../Assets/Images/play_button.svg';
 import showThumbnail from '../Assets/Images/shows_test_1.jpeg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
+import noSearchResultsImage from '../Assets/Images/search_no_results.png';
 
 function Search() {
   const navigate = useNavigate();
@@ -35,14 +36,21 @@ function Search() {
     type: 'Show',
   });
 
+  const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showXCircle, setShowXCircle] = useState(false);
+  const [recentSearches, setRecentSearches] = useState([]);
   const [showResults, setShowResults] = useState(false);
-  const [inputText, setInputText] = useState('');
+  const [results, setResults] = useState({
+    shows: [],
+    episodes: [],
+    shorts: [],
+  });
 
   useEffect(() => {
     const fetchResults = async () => {
       if (inputText === '') return;
+
       setShowXCircle(false);
       setIsLoading(true);
 
@@ -65,9 +73,31 @@ function Search() {
     return () => clearTimeout(timeout);
   }, [inputText]);
 
+  const addToRecentSearch = () => {
+    const newSearch = inputText;
+    const newState = [...recentSearches];
+
+    const itemIndex = newState.findIndex(({ text }) => text === inputText);
+
+    // If it's already there, then push it to the top
+    if (itemIndex !== -1) {
+      newState[itemIndex].timestamp = new Date().getTime();
+    } else {
+      // Add inputText to recent search if not already present
+      newState.push({ text: newSearch, timestamp: new Date().getTime() });
+    }
+
+    const sortedArray = newState.sort((a, b) => b.timestamp - a.timestamp);
+    setRecentSearches(sortedArray.splice(0, 3)); // Store only top 3 results
+  };
+
+  const removeRecentSearch = index => {
+    setRecentSearches(prevState => prevState.filter((_, id) => id !== index));
+  };
+
   const handleClose = () => {
+    addToRecentSearch();
     setInputText('');
-    setShowXCircle(false);
   };
 
   if (isMobile) {
@@ -175,229 +205,294 @@ function Search() {
 
             <TabPanels backgroundColor="#1a1c21">
               <TabPanel paddingX="0" paddingTop="60px">
-                <Grid
-                  width="100%"
-                  height="100%"
-                  paddingX="12px"
-                  gridTemplateColumns="repeat(2, minmax(0, 100%))"
-                  gridColumnGap="10px"
-                  gridRowGap="16px"
-                >
-                  {Array(19)
-                    .fill(null)
-                    .map((_, index) => (
-                      <Link
-                        key={index}
-                        position="relative"
-                        display="flex"
-                        flexDirection="column"
-                        _focus={{ textDecoration: 'none' }}
-                        gap="5px"
-                      >
-                        <Box position="relative">
-                          <Image src={showThumbnail} />
+                {results.shows.length > 0 ? (
+                  <Grid
+                    width="100%"
+                    height="100%"
+                    paddingX="12px"
+                    gridTemplateColumns="repeat(2, minmax(0, 100%))"
+                    gridColumnGap="10px"
+                    gridRowGap="16px"
+                  >
+                    {Array(19)
+                      .fill(null)
+                      .map((_, index) => (
+                        <Link
+                          key={index}
+                          position="relative"
+                          display="flex"
+                          flexDirection="column"
+                          _focus={{ textDecoration: 'none' }}
+                          gap="5px"
+                        >
+                          <Box position="relative">
+                            <Image src={showThumbnail} />
 
-                          {/* Premium Icon Overlay*/}
-                          <Image
-                            src={premiumIcon}
-                            position="absolute"
-                            top="1.5%"
-                            left="1%"
-                          />
+                            {/* Premium Icon Overlay*/}
+                            <Image
+                              src={premiumIcon}
+                              position="absolute"
+                              top="1.5%"
+                              left="1%"
+                            />
 
-                          {/* New Episodes Overlay */}
-                          <Flex
-                            position="absolute"
-                            height="18px"
-                            justifyContent="center"
-                            alignItems="center"
-                            backgroundColor="#2175d9"
-                            borderRadius="3px"
-                            padding="0px 6px"
-                            bottom="4%"
-                            left="20%"
+                            {/* New Episodes Overlay */}
+                            <Flex
+                              position="absolute"
+                              height="18px"
+                              justifyContent="center"
+                              alignItems="center"
+                              backgroundColor="#2175d9"
+                              borderRadius="3px"
+                              padding="0px 6px"
+                              bottom="4%"
+                              left="20%"
+                            >
+                              <Text fontSize="12px" fontWeight="500">
+                                New Episodes
+                              </Text>
+                            </Flex>
+                          </Box>
+
+                          <Text
+                            fontSize="12px"
+                            fontWeight="500"
+                            color="#bfc5cd"
                           >
-                            <Text fontSize="12px" fontWeight="500">
-                              New Episodes
-                            </Text>
-                          </Flex>
-                        </Box>
+                            Little Singham
+                          </Text>
+                        </Link>
+                      ))}
+                  </Grid>
+                ) : (
+                  <Image src={noSearchResultsImage} />
+                )}
+              </TabPanel>
+              <TabPanel paddingX="0" paddingTop="60px">
+                {results.episodes.length > 0 ? (
+                  <Flex flexDirection="column">
+                    {mostPopular.map(({ title, thumbnailImage, type }, id) => (
+                      <Link
+                        key={id}
+                        to="/video/man-vs-wild/the-rockies"
+                        as={ReactRouterLink}
+                        _hover={{ textDecoration: 'none' }}
+                      >
+                        <Flex
+                          flexDirection="row"
+                          width="100%"
+                          gap="8px"
+                          height="88px"
+                          paddingLeft="15px"
+                          paddingY="6px"
+                          alignItems="center"
+                        >
+                          <Box position="relative">
+                            <Image
+                              src={thumbnailImage}
+                              minWidth="112px"
+                              height="68px"
+                              objectFit="cover"
+                            />
 
-                        <Text fontSize="12px" fontWeight="500" color="#bfc5cd">
-                          Little Singham
-                        </Text>
+                            {/* Play Button Overlay*/}
+                            <Flex
+                              position="absolute"
+                              width="100%"
+                              height="100%"
+                              top="0"
+                              left="0"
+                              zIndex="7"
+                              justifyContent="center"
+                              alignItems="center"
+                            >
+                              <Image
+                                src={playButtonImage}
+                                height="24px"
+                                width="24px"
+                              />
+                            </Flex>
+
+                            {/* Bottom Text Overlay */}
+                            <Flex
+                              position="absolute"
+                              bottom="2px"
+                              right="2px"
+                              backgroundColor="#000000"
+                              opacity="0.65"
+                              paddingX="3px"
+                            >
+                              <Text fontSize="10px">43:32</Text>
+                            </Flex>
+                          </Box>
+
+                          <Flex
+                            flexDirection="column"
+                            height="72px"
+                            gap="5px"
+                            position="relative"
+                          >
+                            <Text
+                              fontSize="14px"
+                              fontWeight="500"
+                              lineHeight="1"
+                            >
+                              {title}
+                            </Text>
+                            <Flex alignItems="center" width="90%">
+                              <Text
+                                fontWeight="500"
+                                color="#838991"
+                                fontSize="13px"
+                                lineHeight="1.3"
+                              >
+                                {type}
+                              </Text>
+                            </Flex>
+                          </Flex>
+                        </Flex>
                       </Link>
                     ))}
-                </Grid>
+                  </Flex>
+                ) : (
+                  <Image src={noSearchResultsImage} />
+                )}
               </TabPanel>
               <TabPanel paddingX="0" paddingTop="60px">
-                <Flex flexDirection="column">
-                  {mostPopular.map(({ title, thumbnailImage, type }, id) => (
-                    <Link
-                      key={id}
-                      to="/video/man-vs-wild/the-rockies"
-                      as={ReactRouterLink}
-                      _hover={{ textDecoration: 'none' }}
-                    >
-                      <Flex
-                        flexDirection="row"
-                        width="100%"
-                        gap="8px"
-                        height="88px"
-                        paddingLeft="15px"
-                        paddingY="6px"
-                        alignItems="center"
+                {results.shorts.length > 0 ? (
+                  <Flex flexDirection="column">
+                    {mostPopular.map(({ title, thumbnailImage, type }, id) => (
+                      <Link
+                        key={id}
+                        to="/video/man-vs-wild/the-rockies"
+                        as={ReactRouterLink}
+                        _hover={{ textDecoration: 'none' }}
                       >
-                        <Box position="relative">
-                          <Image
-                            src={thumbnailImage}
-                            minWidth="112px"
-                            height="68px"
-                            objectFit="cover"
-                          />
-
-                          {/* Play Button Overlay*/}
-                          <Flex
-                            position="absolute"
-                            width="100%"
-                            height="100%"
-                            top="0"
-                            left="0"
-                            zIndex="7"
-                            justifyContent="center"
-                            alignItems="center"
-                          >
-                            <Image
-                              src={playButtonImage}
-                              height="24px"
-                              width="24px"
-                            />
-                          </Flex>
-
-                          {/* Bottom Text Overlay */}
-                          <Flex
-                            position="absolute"
-                            bottom="2px"
-                            right="2px"
-                            backgroundColor="#000000"
-                            opacity="0.65"
-                            paddingX="3px"
-                          >
-                            <Text fontSize="10px">43:32</Text>
-                          </Flex>
-                        </Box>
-
                         <Flex
-                          flexDirection="column"
-                          height="72px"
-                          gap="5px"
-                          position="relative"
+                          flexDirection="row"
+                          width="100%"
+                          gap="8px"
+                          height="88px"
+                          paddingLeft="15px"
+                          paddingY="6px"
+                          alignItems="center"
                         >
-                          <Text fontSize="14px" fontWeight="500" lineHeight="1">
-                            {title}
-                          </Text>
-                          <Flex alignItems="center" width="90%">
-                            <Text
-                              fontWeight="500"
-                              color="#838991"
-                              fontSize="13px"
-                              lineHeight="1.3"
+                          <Box position="relative">
+                            <Image
+                              src={thumbnailImage}
+                              minWidth="112px"
+                              height="68px"
+                              objectFit="cover"
+                            />
+
+                            {/* Play Button Overlay*/}
+                            <Flex
+                              position="absolute"
+                              width="100%"
+                              height="100%"
+                              top="0"
+                              left="0"
+                              zIndex="7"
+                              justifyContent="center"
+                              alignItems="center"
                             >
-                              {type}
+                              <Image
+                                src={playButtonImage}
+                                height="24px"
+                                width="24px"
+                              />
+                            </Flex>
+
+                            {/* Bottom Text Overlay */}
+                            <Flex
+                              position="absolute"
+                              bottom="2px"
+                              right="2px"
+                              backgroundColor="#000000"
+                              opacity="0.65"
+                              paddingX="3px"
+                            >
+                              <Text fontSize="10px">43:32</Text>
+                            </Flex>
+                          </Box>
+
+                          <Flex
+                            flexDirection="column"
+                            height="72px"
+                            gap="5px"
+                            position="relative"
+                          >
+                            <Text
+                              fontSize="14px"
+                              fontWeight="500"
+                              lineHeight="1"
+                            >
+                              {title}
                             </Text>
+                            <Flex alignItems="center" width="90%">
+                              <Text
+                                fontWeight="500"
+                                color="#838991"
+                                fontSize="13px"
+                                lineHeight="1.3"
+                              >
+                                Shorts
+                              </Text>
+                            </Flex>
                           </Flex>
                         </Flex>
-                      </Flex>
-                    </Link>
-                  ))}
-                </Flex>
-              </TabPanel>
-              <TabPanel paddingX="0" paddingTop="60px">
-                <Flex flexDirection="column">
-                  {mostPopular.map(({ title, thumbnailImage, type }, id) => (
-                    <Link
-                      key={id}
-                      to="/video/man-vs-wild/the-rockies"
-                      as={ReactRouterLink}
-                      _hover={{ textDecoration: 'none' }}
-                    >
-                      <Flex
-                        flexDirection="row"
-                        width="100%"
-                        gap="8px"
-                        height="88px"
-                        paddingLeft="15px"
-                        paddingY="6px"
-                        alignItems="center"
-                      >
-                        <Box position="relative">
-                          <Image
-                            src={thumbnailImage}
-                            minWidth="112px"
-                            height="68px"
-                            objectFit="cover"
-                          />
-
-                          {/* Play Button Overlay*/}
-                          <Flex
-                            position="absolute"
-                            width="100%"
-                            height="100%"
-                            top="0"
-                            left="0"
-                            zIndex="7"
-                            justifyContent="center"
-                            alignItems="center"
-                          >
-                            <Image
-                              src={playButtonImage}
-                              height="24px"
-                              width="24px"
-                            />
-                          </Flex>
-
-                          {/* Bottom Text Overlay */}
-                          <Flex
-                            position="absolute"
-                            bottom="2px"
-                            right="2px"
-                            backgroundColor="#000000"
-                            opacity="0.65"
-                            paddingX="3px"
-                          >
-                            <Text fontSize="10px">43:32</Text>
-                          </Flex>
-                        </Box>
-
-                        <Flex
-                          flexDirection="column"
-                          height="72px"
-                          gap="5px"
-                          position="relative"
-                        >
-                          <Text fontSize="14px" fontWeight="500" lineHeight="1">
-                            {title}
-                          </Text>
-                          <Flex alignItems="center" width="90%">
-                            <Text
-                              fontWeight="500"
-                              color="#838991"
-                              fontSize="13px"
-                              lineHeight="1.3"
-                            >
-                              Shorts
-                            </Text>
-                          </Flex>
-                        </Flex>
-                      </Flex>
-                    </Link>
-                  ))}
-                </Flex>
+                      </Link>
+                    ))}
+                  </Flex>
+                ) : (
+                  <Image src={noSearchResultsImage} />
+                )}
               </TabPanel>
             </TabPanels>
           </Tabs>
         ) : (
           <Flex flexDirection="column" paddingY="25px">
+            {/* Recent Searches */}
+            {recentSearches.length > 0 && (
+              <Flex
+                marginBottom="15px"
+                paddingBottom="25px"
+                flexDirection="column"
+                gap="12px"
+                borderBottom="0.25px solid rgba(255, 255, 255, 0.20)"
+              >
+                <Text paddingLeft="12px" color="#838991" fontSize="15px">
+                  Recent Searches
+                </Text>
+                {recentSearches.map(({ text }, id) => (
+                  <Flex
+                    key={id}
+                    paddingLeft="18px"
+                    paddingRight="10px"
+                    gap="10px"
+                    justifyContent="space-between"
+                  >
+                    <Link
+                      to={`/search?q=${text}`}
+                      as={ReactRouterLink}
+                      fontSize="18px"
+                      fontWeight="500"
+                      lineHeight="1.2"
+                      _hover={{ textDecoration: 'none' }}
+                    >
+                      {text}
+                    </Link>
+                    <XCircle
+                      size="24px"
+                      color="#fff"
+                      weight="fill"
+                      onClick={() => removeRecentSearch(id)}
+                    />
+                  </Flex>
+                ))}
+              </Flex>
+            )}
+
             <Text paddingLeft="12px" color="#838991" fontSize="15px">
               Most popular
             </Text>
@@ -464,5 +559,7 @@ function Search() {
 export default Search;
 
 // 1. Remove dropdown on blur - Searchbar.jsx
-// 2. Mobile responsive UI - recent searches, zero results (maybe move results to new component)
+// 2. Mobile responsive UI:
+// 2a. recent searches
+// 2b. zero results - done
 // 3. /search UI pages for desktop
