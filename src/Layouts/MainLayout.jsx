@@ -17,6 +17,7 @@ function MainLayout() {
       '|' +
       '^/mindblown/[A-Za-z0-9-_]+$'
   );
+
   const isMobile = useBreakpointValue({ base: true, sm: false });
   const isShowPage = showIdPattern.test(location.pathname);
   const isShowPageMobileView = isShowPage && isMobile;

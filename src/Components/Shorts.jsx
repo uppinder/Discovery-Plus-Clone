@@ -151,6 +151,7 @@ function Shorts() {
           {categories.map((value, id) => (
             <>
               <Link
+                key={id}
                 width="100%"
                 height="100%"
                 paddingX="24px"

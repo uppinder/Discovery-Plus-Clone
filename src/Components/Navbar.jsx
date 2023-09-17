@@ -14,9 +14,6 @@ import {
   HStack,
   IconButton,
   Image,
-  Input,
-  InputGroup,
-  InputRightElement,
   Link,
   Text,
   useBreakpointValue,
@@ -43,7 +40,8 @@ import kidsLogoBottomNavbar from '../Assets/Images/kids_logo_bottom_navbar.svg';
 import kidsLogoBottomNavbarActive from '../Assets/Images/kids_logo_bottom_navbar_active.svg';
 import avatarLogo from '../Assets/Images/avatar_icon.svg';
 import crownLogo from '../Assets/Images/crown_logo.svg';
-import Search from './Search';
+
+import Searchbar from './Searchbar';
 
 const FixedBottomNavbar = () => {
   const location = useLocation();
@@ -293,7 +291,7 @@ function Navbar() {
     );
   }
 
-  //   Premium
+  // Premium
   if (isMobile && location.pathname === '/go-premium-web') {
     return (
       <Flex
@@ -323,6 +321,11 @@ function Navbar() {
         <FixedBottomNavbar />
       </Flex>
     );
+  }
+
+  // Search
+  if (isMobile && location.pathname === '/search') {
+    return <></>;
   }
 
   return (
@@ -719,15 +722,19 @@ function Navbar() {
         </HStack>
       </HStack>
 
-      <IconButton
-        display={['block', 'none']}
-        icon={<SearchIcon boxSize="20px" />}
-        marginRight="-10px"
-        variant="unstyled"
-      />
+      {/* Search for mobile UI */}
+      {isMobile && (
+        <Link to="/search" as={ReactRouterLink}>
+          <IconButton
+            icon={<SearchIcon boxSize="20px" />}
+            marginRight="-10px"
+            variant="unstyled"
+          />
+        </Link>
+      )}
 
       <HStack spacing="8px" marginRight="8px" display={['none', 'flex']}>
-        <Search />
+        <Searchbar />
 
         <Flex
           border="1px solid white"

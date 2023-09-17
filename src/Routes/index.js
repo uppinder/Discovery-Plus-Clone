@@ -19,6 +19,7 @@ import Mindblown from '../Components/Mindblown';
 import Kids from '../Components/Kids';
 import Superstar from '../Components/Superstar';
 import Shorts from '../Components/Shorts';
+import Search from '../Components/Search';
 
 export default function Router() {
   return useRoutes([
@@ -77,6 +78,10 @@ export default function Router() {
         {
           path: 'shorts',
           element: <Shorts />,
+        },
+        {
+          path: 'search',
+          element: <Search />,
         },
       ],
     },
