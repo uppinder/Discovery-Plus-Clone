@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { SearchIcon } from '@chakra-ui/icons';
 import {
   Divider,
@@ -23,13 +23,13 @@ function Searchbar() {
   const [isLoading, setIsLoading] = useState(false);
   const [inputText, setInputText] = useState('');
   const [showXCircle, setShowXCircle] = useState(false);
-  const [showResultsDropDown, setShowResultsDropDown] = useState(false);
+  const [showResultsDropdown, setShowResultsDropdown] = useState(false);
   const [results, setResults] = useState([]);
   const { pathname } = useLocation();
 
   useEffect(() => {
     setInputText('');
-    setShowResultsDropDown(false);
+    setShowResultsDropdown(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function Searchbar() {
       //   Dummy API call
       setTimeout(() => {
         setResults(Array(3).fill(sampleResult));
-        setShowResultsDropDown(true);
+        setShowResultsDropdown(true);
         setShowXCircle(true);
         setIsLoading(false);
       }, 500);
@@ -53,7 +53,7 @@ function Searchbar() {
 
     if (inputText === '') {
       setShowXCircle(false);
-      setShowResultsDropDown(false);
+      setShowResultsDropdown(false);
     }
 
     return () => clearTimeout(timeout);
@@ -62,6 +62,29 @@ function Searchbar() {
   const handleClose = () => {
     setInputText('');
   };
+
+  const resultsDropdownRef = useRef();
+  const hideResultsDropdown = useCallback(
+    evt => {
+      console.log(resultsDropdownRef.current, evt.target);
+
+      if (
+        resultsDropdownRef?.current &&
+        showResultsDropdown &&
+        !resultsDropdownRef.current.contains(evt.target)
+      ) {
+        setShowResultsDropdown(false);
+      }
+    },
+    [showResultsDropdown]
+  );
+
+  useEffect(() => {
+    window.addEventListener('mousedown', hideResultsDropdown);
+    return () => {
+      window.removeEventListener('mousedown', hideResultsDropdown);
+    };
+  }, [hideResultsDropdown]);
 
   return (
     <Flex flexDirection="column" position="relative">
@@ -93,8 +116,9 @@ function Searchbar() {
           {!isLoading && !showXCircle && <SearchIcon boxSize="20px" />}
         </InputRightElement>
       </InputGroup>
-      {showResultsDropDown && (
+      {showResultsDropdown && (
         <Flex
+          ref={resultsDropdownRef}
           width="340px"
           paddingTop="2px"
           left="0"

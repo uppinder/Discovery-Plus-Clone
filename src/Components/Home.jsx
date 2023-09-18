@@ -86,7 +86,7 @@ function Home() {
               .fill(null)
               .map((_, index) => (
                 <Link key={index} position="relative">
-                  <HomeShowItem />
+                  <HomeShowItem isChannelPageMobileView={true} />
                 </Link>
               ))}
           </Grid>

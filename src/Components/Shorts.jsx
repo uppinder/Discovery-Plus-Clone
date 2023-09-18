@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
+  Box,
   Divider,
   Flex,
   Image,
@@ -77,9 +78,7 @@ function Shorts() {
     'lifestyle',
   ];
 
-  const capitalize = text => {
-    return text[0].toUpperCase() + text.substring(1);
-  };
+  const observer = useRef(null);
 
   return (
     <Flex
@@ -126,8 +125,9 @@ function Shorts() {
                 color="#c7c7c7"
                 fontWeight="500"
                 marginBottom="10px"
+                textTransform="capitalize"
               >
-                {capitalize(value)}
+                {value}
               </Text>
             </Flex>
           ))}
@@ -161,8 +161,12 @@ function Shorts() {
                 _hover={{ textDecoration: 'none', color: 'white' }}
                 onClick={() => setCategory(value)}
               >
-                <Text fontSize="17px" fontWeight="500">
-                  {capitalize(value)}
+                <Text
+                  fontSize="17px"
+                  fontWeight="500"
+                  textTransform="capitalize"
+                >
+                  {value}
                 </Text>
               </Link>
               {id !== categories.length - 1 && (
@@ -180,10 +184,10 @@ function Shorts() {
         gap={isMobile ? '0px' : '12px'}
       >
         {shortsData.map((currData, id) => (
-          <>
-            <ShortsCard key={id} {...currData} />
+          <Box key={id}>
+            <ShortsCard {...currData} />
             {isMobile && <Divider borderWidth="1.5px" />}
-          </>
+          </Box>
         ))}
       </Flex>
 
