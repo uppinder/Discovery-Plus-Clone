@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Box,
   Divider,
@@ -24,50 +24,6 @@ const sampleShortsData = {
 
 function Shorts() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
-  const [category, setCategory] = useState('all');
-  const [isLoading, setIsLoading] = useState(false);
-  const [shortsData, setShortsData] = useState(Array(4).fill(sampleShortsData));
-
-  const fetchShorts = () => {
-    try {
-      console.log('Fetching data...');
-
-      setTimeout(() => {
-        setShortsData(prevData => [
-          ...prevData,
-          ...Array(4).fill(sampleShortsData),
-        ]);
-
-        console.log('Data fetched');
-      }, 2000);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchShorts();
-  }, [isLoading]);
-
-  useEffect(() => {
-    const handleInfiniteScroll = () => {
-      if (
-        !isLoading &&
-        document.documentElement.scrollTop + window.innerHeight >=
-          document.documentElement.scrollHeight
-      ) {
-        setIsLoading(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleInfiniteScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleInfiniteScroll);
-    };
-  }, [isLoading]);
 
   const categories = [
     'all',
@@ -77,8 +33,51 @@ function Shorts() {
     'animals',
     'lifestyle',
   ];
+  const [category, setCategory] = useState('all');
 
-  const observer = useRef(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [pageNumber, setPageNumber] = useState(0);
+  const [shortsData, setShortsData] = useState(Array(4).fill(sampleShortsData));
+
+  useEffect(() => {
+    const fetchShorts = () => {
+      try {
+        console.log('Fetching data...');
+
+        setTimeout(() => {
+          setShortsData(prevData => [
+            ...prevData,
+            ...Array(4).fill(sampleShortsData),
+          ]);
+
+          console.log('Data fetched');
+        }, 300);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    setIsLoading(true);
+    fetchShorts();
+  }, [pageNumber]);
+
+  const observer = useRef();
+  const lastShortsRef = useCallback(
+    node => {
+      if (isLoading) return; // Don't make more fetchShorts() calls if already in loading state
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          setPageNumber(prev => prev + 1);
+        }
+      });
+
+      if (node) observer.current.observe(node);
+    },
+    [isLoading]
+  );
 
   return (
     <Flex
@@ -183,12 +182,24 @@ function Shorts() {
         flexDirection="column"
         gap={isMobile ? '0px' : '12px'}
       >
-        {shortsData.map((currData, id) => (
-          <Box key={id}>
-            <ShortsCard {...currData} />
-            {isMobile && <Divider borderWidth="1.5px" />}
-          </Box>
-        ))}
+        {shortsData.map((data, id) => {
+          if (id === shortsData.length - 1) {
+            return (
+              <Box key={id} ref={lastShortsRef}>
+                {id}
+                <ShortsCard {...data} />
+                {isMobile && <Divider borderWidth="1.5px" />}
+              </Box>
+            );
+          } else {
+            return (
+              <Box key={id}>
+                <ShortsCard {...data} />
+                {isMobile && <Divider borderWidth="1.5px" />}
+              </Box>
+            );
+          }
+        })}
       </Flex>
 
       <Flex

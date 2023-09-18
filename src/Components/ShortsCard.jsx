@@ -18,7 +18,8 @@ function ShortsCard({
   return (
     <Flex
       width="100%"
-      paddingY="20px"
+      paddingTop="15px"
+      paddingBottom="20px"
       flexDirection="column"
       backgroundColor={cardHovered ? '#121317' : '#262931'}
       onMouseEnter={() => setCardHovered(true)}

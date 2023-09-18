@@ -66,10 +66,8 @@ function Searchbar() {
   const resultsDropdownRef = useRef();
   const hideResultsDropdown = useCallback(
     evt => {
-      console.log(resultsDropdownRef.current, evt.target);
-
       if (
-        resultsDropdownRef?.current &&
+        resultsDropdownRef.current &&
         showResultsDropdown &&
         !resultsDropdownRef.current.contains(evt.target)
       ) {
