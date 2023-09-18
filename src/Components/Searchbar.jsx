@@ -118,6 +118,8 @@ function Searchbar() {
               ))}
               <Divider border="0.5px solid #35393f" />
               <Link
+                to={`/search?q=${inputText}`}
+                as={ReactRouterLink}
                 display="flex"
                 justifyContent="center"
                 alignItems="center"

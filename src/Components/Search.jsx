@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Link as ReactRouterLink, useNavigate } from 'react-router-dom';
+import {
+  Link as ReactRouterLink,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 
 import {
   Box,
+  Center,
+  Divider,
   Flex,
   Grid,
   Image,
@@ -26,6 +32,7 @@ import playButtonImage from '../Assets/Images/play_button.svg';
 import showThumbnail from '../Assets/Images/shows_test_1.jpeg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import noSearchResultsImage from '../Assets/Images/search_no_results.png';
+import HomeShowItem from './HomeShowItem';
 
 function Search() {
   const navigate = useNavigate();
@@ -46,6 +53,18 @@ function Search() {
     episodes: [],
     shorts: [],
   });
+
+  // For desktop
+  const location = useLocation();
+  const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+
+    if (queryParams.has('q')) {
+      setQuery(queryParams.get('q'));
+    }
+  }, [location]);
 
   useEffect(() => {
     const fetchResults = async () => {
@@ -552,14 +571,167 @@ function Search() {
     );
   } else {
     // Desktop
-    return <></>;
+    return (
+      <Flex
+        width="100%"
+        flexDirection="column"
+        paddingTop={isMobile ? '10px' : '20px'}
+      >
+        <Flex
+          alignItems="center"
+          gap="10px"
+          borderBottom="solid 1px #393e46"
+          paddingBottom="15px"
+        >
+          <Text
+            color="#979797"
+            fontSize="15px"
+            fontWeight="500"
+            lineHeight="1.1"
+            paddingLeft="20px"
+          >
+            Showing Results for:{' '}
+          </Text>
+          <Text color="#fff" fontSize="15px" fontWeight="600" lineHeight="1.1">
+            {query}
+          </Text>
+        </Flex>
+
+        {/* Shows */}
+        <Flex justifyContent="space-between" paddingTop="10px" paddingX="20px">
+          <Text fontSize="20px" fontWeight="500" color="#fff">
+            Shows
+          </Text>
+          <Link
+            to={`/collection-view-all?q=${query}&type=Shows`}
+            as={ReactRouterLink}
+            color="#838991"
+            fontSize="18px"
+            _hover={{ textDecoration: 'none', color: 'white' }}
+          >
+            View All
+          </Link>
+        </Flex>
+        <Grid
+          width="100%"
+          height="100%"
+          paddingY="20px"
+          paddingX="20px"
+          gridTemplateColumns={{
+            base: 'repeat(2, minmax(0, 100%))',
+            lg: 'repeat(3, minmax(0, 100%))',
+            xl: 'repeat(4, minmax(0, 100%))',
+          }}
+          gridColumnGap="16px"
+          gridRowGap="18px"
+        >
+          {Array(5)
+            .fill(null)
+            .map((_, index) => (
+              <Link to="/show/test" as={ReactRouterLink} key={index}>
+                <HomeShowItem isChannelPageMobileView={true} />
+              </Link>
+            ))}
+        </Grid>
+
+        <Center>
+          <Divider
+            borderBottom="1px solid rgb(255,255,255, 0.4)"
+            marginY="10px"
+            marginX="20px"
+          />
+        </Center>
+
+        {/* Episodes */}
+        <Flex justifyContent="space-between" paddingTop="10px" paddingX="20px">
+          <Text fontSize="20px" fontWeight="500" color="#fff">
+            Episodes
+          </Text>
+          <Link
+            to={`/collection-view-all?q=${query}&type=Episodes`}
+            as={ReactRouterLink}
+            color="#838991"
+            fontSize="18px"
+            _hover={{ textDecoration: 'none', color: 'white' }}
+          >
+            View All
+          </Link>
+        </Flex>
+        <Grid
+          width="100%"
+          height="100%"
+          paddingY="20px"
+          paddingX="20px"
+          gridTemplateColumns={{
+            base: 'repeat(2, minmax(0, 100%))',
+            lg: 'repeat(3, minmax(0, 100%))',
+            xl: 'repeat(4, minmax(0, 100%))',
+          }}
+          gridColumnGap="16px"
+          gridRowGap="18px"
+        >
+          {Array(5)
+            .fill(null)
+            .map((_, index) => (
+              <Link to="/show/test" as={ReactRouterLink} key={index}>
+                <HomeShowItem isChannelPageMobileView={true} />
+              </Link>
+            ))}
+        </Grid>
+
+        <Center>
+          <Divider
+            borderBottom="1px solid rgb(255,255,255, 0.4)"
+            marginY="10px"
+            marginX="20px"
+          />
+        </Center>
+
+        {/* Shorts */}
+        <Flex justifyContent="space-between" paddingTop="10px" paddingX="20px">
+          <Text fontSize="20px" fontWeight="500" color="#fff">
+            Shorts
+          </Text>
+          <Link
+            to={`/collection-view-all?q=${query}&type=Shorts`}
+            as={ReactRouterLink}
+            color="#838991"
+            fontSize="18px"
+            _hover={{ textDecoration: 'none', color: 'white' }}
+          >
+            View All
+          </Link>
+        </Flex>
+        <Grid
+          width="100%"
+          height="100%"
+          paddingY="20px"
+          paddingX="20px"
+          gridTemplateColumns={{
+            base: 'repeat(2, minmax(0, 100%))',
+            lg: 'repeat(3, minmax(0, 100%))',
+            xl: 'repeat(4, minmax(0, 100%))',
+          }}
+          gridColumnGap="16px"
+          gridRowGap="18px"
+        >
+          {Array(5)
+            .fill(null)
+            .map((_, index) => (
+              <Link to="/show/test" as={ReactRouterLink} key={index}>
+                <HomeShowItem isChannelPageMobileView={true} />
+              </Link>
+            ))}
+        </Grid>
+      </Flex>
+    );
   }
 }
 
 export default Search;
 
-// 1. Remove dropdown on blur - Searchbar.jsx
+// 1. Remove dropdown on blur - Searchbar.jsx - pending (useRef?)
 // 2. Mobile responsive UI:
-// 2a. recent searches
+// 2a. recent searches - done
 // 2b. zero results - done
-// 3. /search UI pages for desktop
+// 3. /search UI pages for desktop - done
