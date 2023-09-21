@@ -42,7 +42,7 @@ function Shorts() {
   useEffect(() => {
     const fetchShorts = () => {
       try {
-        console.log('Fetching data...');
+        console.log('Fetching data...', pageNumber);
 
         setTimeout(() => {
           setShortsData(prevData => [
@@ -59,8 +59,10 @@ function Shorts() {
       }
     };
 
-    setIsLoading(true);
-    fetchShorts();
+    if (pageNumber > 0) {
+      setIsLoading(true);
+      fetchShorts();
+    }
   }, [pageNumber]);
 
   const observer = useRef();
@@ -148,9 +150,8 @@ function Shorts() {
           </Flex>
           <Divider />
           {categories.map((value, id) => (
-            <>
+            <Box key={id} width="100%" height="100%">
               <Link
-                key={id}
                 width="100%"
                 height="100%"
                 paddingX="24px"
@@ -171,7 +172,7 @@ function Shorts() {
               {id !== categories.length - 1 && (
                 <Divider borderColor={category === value ? 'white' : null} />
               )}
-            </>
+            </Box>
           ))}
         </Flex>
       )}

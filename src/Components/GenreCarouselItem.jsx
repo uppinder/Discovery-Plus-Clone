@@ -11,7 +11,12 @@ function GenreCarouselItem() {
   };
 
   return (
-    <Box height="100%" onMouseEnter={handleHover} onMouseLeave={handleHover}>
+    <Box
+      position="relative"
+      height="100%"
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
+    >
       <Image
         src={genreThumbnailDesktop}
         objectFit="cover"

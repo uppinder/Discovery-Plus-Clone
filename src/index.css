@@ -135,7 +135,7 @@ body {
   }
 }
 
-.swiper-genre-carousel {
+/* .swiper-genre-carousel {
   width: 100vw;
   height: 180px;
   padding: 20px 0px;
@@ -150,9 +150,22 @@ body {
 .swiper-genre-carousel .swiper-wrapper {
   margin-left: 50px;
 }
+*/
 
-.swiper-genre-slide-wrapper:hover .swiper-genre-text {
-  bottom: 25%;
+.inner-slider {
+  margin: 0 auto;
+}
+
+.slick-next,
+.slick-prev {
+  height: 24px;
+  width: 24px;
+  opacity: 0;
+}
+
+.slick-next::before,
+.slick-prev::before {
+  content: '';
 }
 
 .premium-offer-table {

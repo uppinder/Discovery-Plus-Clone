@@ -70,7 +70,7 @@ function Home() {
                   minWidth="160px"
                   height="100px"
                 >
-                  <HomeShowItem />
+                  <HomeShowItem isChannelPageMobileView={true} />
                 </Link>
               ))}
           </Flex>
@@ -86,7 +86,7 @@ function Home() {
               .fill(null)
               .map((_, index) => (
                 <Link key={index} position="relative">
-                  <HomeShowItem isChannelPageMobileView={true} />
+                  <HomeShowItem />
                 </Link>
               ))}
           </Grid>
