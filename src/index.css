@@ -135,23 +135,6 @@ body {
   }
 }
 
-/* .swiper-genre-carousel {
-  width: 100vw;
-  height: 180px;
-  padding: 20px 0px;
-  background-color: #121317;
-}
-
-.swiper-genre-slide {
-  padding-top: 0px;
-  position: relative;
-}
-
-.swiper-genre-carousel .swiper-wrapper {
-  margin-left: 50px;
-}
-*/
-
 .inner-slider {
   margin: 0 auto;
 }
@@ -166,6 +149,19 @@ body {
 .slick-next::before,
 .slick-prev::before {
   content: '';
+}
+
+.slick-dots li {
+  margin: 0 -2px;
+}
+
+.slick-dots li button::before {
+  opacity: 0.75;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fff;
+  opacity: 1;
 }
 
 .premium-offer-table {
@@ -204,11 +200,3 @@ td {
   width: 100%;
   position: relative;
 }
-
-/* 
-.swiper-premium-testimonial-carousel .swiper-pagination-bullets {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-} */

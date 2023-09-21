@@ -1,9 +1,24 @@
-import { Flex, Grid, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import {
+  Link as ReactRouterLink,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
+
+import {
+  Divider,
+  Flex,
+  Grid,
+  Image,
+  Link,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 
 import channelImage from '../Assets/Images/show_image.jpeg';
+import channelImageMobile from '../Assets/Images/channel_carousel_image_mobile.png';
 import HomeShowItem from './HomeShowItem';
+import ChannelCarousel from './ChannelCarousel';
 
 function Channel() {
   const channelId = useParams().channelId;
@@ -23,9 +38,9 @@ function Channel() {
       paddingBottom="20px"
     >
       <Flex
-        width={isChannelPageMobileView ? '100%' : '80%'}
         flexDirection="column"
-        backgroundColor="#1a1c21"
+        width={isChannelPageMobileView ? '100%' : '80%'}
+        backgroundColor={isChannelPageMobileView ? '#121317' : '#1a1c21'}
         gap={isChannelPageMobileView ? '12px' : '20px'}
         position={isChannelPageMobileView ? 'sticky' : null}
         top={isChannelPageMobileView ? '0' : null}
@@ -42,8 +57,51 @@ function Channel() {
           Animal Planet
         </Text>
 
-        <Flex width="100%" height="50px"></Flex>
+        {isChannelPageMobileView && <Divider width="95%" marginX="auto" />}
+
+        {isChannelPageMobileView ? (
+          <Flex
+            width="100vw"
+            paddingX="10px"
+            overflowX="scroll"
+            css={{
+              '&::-webkit-scrollbar': {
+                display: 'none',
+              },
+            }}
+          >
+            {Array(11)
+              .fill(null)
+              .map((_, index) => (
+                <Link
+                  key={index}
+                  to="/channel/test"
+                  as={ReactRouterLink}
+                  position="relative"
+                  minWidth="80px"
+                  paddingBottom="20px"
+                  borderBottom={index === 0 ? '4px solid #2175d9' : null}
+                >
+                  <Flex
+                    height="100%"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <Image
+                      src={channelImageMobile}
+                      width="70px"
+                      height="70px"
+                    />
+                  </Flex>
+                </Link>
+              ))}
+          </Flex>
+        ) : (
+          <></>
+        )}
       </Flex>
+
+      {!isChannelPageMobileView && <ChannelCarousel />}
 
       <Flex
         width="100%"
@@ -84,5 +142,3 @@ function Channel() {
 }
 
 export default Channel;
-
-// Channel Carousel
