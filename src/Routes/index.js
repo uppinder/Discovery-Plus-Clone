@@ -98,6 +98,10 @@ export default function Router() {
           path: 'login',
           element: <Login />,
         },
+        {
+          path: 'login/providers',
+          element: <Login />,
+        },
       ],
     },
 

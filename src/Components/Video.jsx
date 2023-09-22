@@ -297,7 +297,7 @@ function Video() {
                         {Array(15)
                           .fill(null)
                           .map((_, index) => (
-                            <Flex position="relative">
+                            <Flex key={index} position="relative">
                               <Link
                                 to="/video/man-vs-wild/the-rockies"
                                 as={ReactRouterLink}
@@ -386,6 +386,8 @@ function Video() {
             You May Also Like
           </Text>
           <Link
+            to="/collection-view-all?title=shows-you-love"
+            as={ReactRouterLink}
             color="#838991"
             fontSize="18px"
             _hover={{ textDecoration: 'none', color: 'white' }}

@@ -543,6 +543,8 @@ function Navbar() {
                 <Text>Go Premium</Text>
               </Link>
               <Link
+                to="/login"
+                as={ReactRouterLink}
                 marginLeft="25px"
                 alignSelf="flex-start"
                 display="flex"
@@ -736,7 +738,9 @@ function Navbar() {
       <HStack spacing="8px" marginRight="8px" display={['none', 'flex']}>
         <Searchbar />
 
-        <Flex
+        <Link
+          to="/login"
+          as={ReactRouterLink}
           border="1px solid white"
           borderRadius="3px"
           fontSize="16px"
@@ -746,9 +750,10 @@ function Navbar() {
           cursor="pointer"
           whiteSpace="nowrap"
           padding="3px 9px"
+          _hover={{ textDecoration: 'none' }}
         >
           Sign In
-        </Flex>
+        </Link>
         {isActiveLink('go-premium-web') ||
         isActiveLink('show') ||
         isActiveLink('video') ||

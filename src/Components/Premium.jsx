@@ -993,11 +993,3 @@ function Premium() {
 }
 
 export default Premium;
-
-// TODO
-// Finish premium show carousel - 90% done
-// - figure out how to move pagination below swiper container
-// - styling in desktop screen (might need siddharth's help)
-
-// In mobile screen:
-// 1. Replicate the video player on premium page

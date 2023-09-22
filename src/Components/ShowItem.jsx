@@ -41,7 +41,7 @@ function ShowItem({ isShowPageMobileView = false, timeOverlay = false }) {
             height="100%"
             top="0"
             left="0"
-            zIndex="7"
+            zIndex="5"
             justifyContent="center"
             alignItems="center"
           >
@@ -138,7 +138,7 @@ function ShowItem({ isShowPageMobileView = false, timeOverlay = false }) {
           height="100%"
           top="0"
           left="0"
-          zIndex="10"
+          zIndex="5"
           justifyContent="center"
           alignItems="center"
         >
