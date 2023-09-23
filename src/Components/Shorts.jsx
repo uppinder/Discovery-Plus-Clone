@@ -189,14 +189,14 @@ function Shorts() {
               <Box key={id} ref={lastShortsRef}>
                 {id}
                 <ShortsCard {...data} />
-                {isMobile && <Divider borderWidth="1.5px" />}
+                {isMobile && <Divider borderWidth="1.5px" width="99%" />}
               </Box>
             );
           } else {
             return (
               <Box key={id}>
                 <ShortsCard {...data} />
-                {isMobile && <Divider borderWidth="1.5px" />}
+                {isMobile && <Divider borderWidth="1.5px" width="99%" />}
               </Box>
             );
           }

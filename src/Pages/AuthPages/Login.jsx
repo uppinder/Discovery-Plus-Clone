@@ -16,6 +16,7 @@ import {
   InputLeftElement,
   Link,
   Text,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 
 import googleIcon from '../../Assets/Images/signin_google_logo.svg';
@@ -23,6 +24,8 @@ import facebookIcon from '../../Assets/Images/signin_facebook_icon.svg';
 import appleIcon from '../../Assets/Images/signin_apple_logo.svg';
 
 function Login() {
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -72,13 +75,21 @@ function Login() {
             marginTop="12px"
             marginBottom="18px"
           >
-            Please sign in with your mobile number
+            Please sign in with your {isMobile && <br />} mobile number
           </Text>
 
           <form onSubmit={formik.handleSubmit}>
-            <InputGroup width="380px" marginBottom="40px">
+            <InputGroup
+              width={isMobile ? '280px' : '380px'}
+              marginBottom="40px"
+              marginX="auto"
+            >
               {(inputFocus || formik.values.mobileNum.length > 0) && (
-                <InputLeftElement color="#c7c7c7" left="115px" input>
+                <InputLeftElement
+                  color="#c7c7c7"
+                  left={isMobile ? '64px' : '115px'}
+                  input
+                >
                   +91
                 </InputLeftElement>
               )}
@@ -109,7 +120,7 @@ function Login() {
                   color="#ff4040"
                   fontSize="13px"
                   textAlign="center"
-                  left="60px"
+                  left={isMobile ? '10px' : '60px'}
                   bottom="-20px"
                   as="i"
                 >
@@ -122,7 +133,8 @@ function Login() {
               type="submit"
               variant="unstyled"
               height="44px"
-              width="380px"
+              width={isMobile ? '280px' : '380px'}
+              marginX="auto"
               justifyContent="center"
               alignItems="center"
               padding="6px 8px"
@@ -157,7 +169,7 @@ function Login() {
         </Flex>
 
         <Text fontSize="14px" fontWeight="500" marginTop="20px">
-          Social sign in options only for existing users
+          Social sign in options only for
         </Text>
 
         {pathname.endsWith('providers') ? (
@@ -211,8 +223,13 @@ function Login() {
           </Link>
         )}
 
-        <Text color="#9ba1a9" fontWeight="300" fontSize="13px">
-          By signing in, you agree to our{' '}
+        <Text
+          color="#9ba1a9"
+          fontWeight="300"
+          fontSize="13px"
+          textAlign="center"
+        >
+          By signing in, you agree to {isMobile && <br />} our{' '}
           <Link color="white" fontWeight="500">
             Privacy Policy
           </Link>{' '}

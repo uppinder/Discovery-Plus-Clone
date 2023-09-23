@@ -109,8 +109,11 @@ export default function Router() {
         },
       ],
     },
-
-    { path: '404', element: <Page404 /> },
+    {
+      path: '404',
+      element: <MainLayout />,
+      children: [{ path: '', element: <Page404 /> }],
+    },
     { path: '500', element: <Page500 /> },
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
