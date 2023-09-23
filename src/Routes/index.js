@@ -21,6 +21,7 @@ import Superstar from '../Components/Superstar';
 import Shorts from '../Components/Shorts';
 import Search from '../Components/Search';
 import CollectionView from '../Components/CollectionView';
+import LoginOTP from '../Pages/AuthPages/LoginOTP';
 
 export default function Router() {
   return useRoutes([
@@ -101,6 +102,10 @@ export default function Router() {
         {
           path: 'login/providers',
           element: <Login />,
+        },
+        {
+          path: 'login/otp',
+          element: <LoginOTP />,
         },
       ],
     },

@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
+import {
+  Link as ReactRouterLink,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import {
   Button,
   Flex,
@@ -19,11 +23,10 @@ import facebookIcon from '../../Assets/Images/signin_facebook_icon.svg';
 import appleIcon from '../../Assets/Images/signin_apple_logo.svg';
 
 function Login() {
-  const [inputFocus, setInputFocus] = useState(false);
-  const [buttonActive, setButtonActive] = useState(true);
-
+  const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  const [inputFocus, setInputFocus] = useState(false);
   const formik = useFormik({
     initialValues: {
       mobileNum: '',
@@ -35,7 +38,7 @@ function Login() {
       ),
     }),
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      navigate('/login/otp', { state: { mobileNum: values.mobileNum } });
     },
   });
 
@@ -61,7 +64,7 @@ function Login() {
           flexDirection="column"
           border="1px solid #fff"
           borderRadius="6px"
-          padding="10px 24px 40px 24px"
+          padding="24px 24px 44px 24px"
         >
           <Text
             textAlign="center"
@@ -82,8 +85,8 @@ function Login() {
               <Input
                 id="mobileNum"
                 name="mobileNum"
-                type="text"
-                maxLength={10}
+                type="number"
+                onInput={e => (e.target.value = e.target.value.slice(0, 10))}
                 onChange={formik.handleChange}
                 onFocus={() => setInputFocus(true)}
                 onBlur={formik.handleBlur}
@@ -224,9 +227,3 @@ function Login() {
 }
 
 export default Login;
-
-// 1. Formik&yup ->
-// 1a. Modify validation so that only 10 digit mobile number; activateButton set to true when this happens - done
-// 1b. Error message styling - done
-//
-// 2. Get OTP click karne pe go to /login/otp
