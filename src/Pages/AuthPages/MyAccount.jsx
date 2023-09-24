@@ -2,16 +2,26 @@ import React from 'react';
 import { Link as ReactRouterLink, useNavigate } from 'react-router-dom';
 
 import {
+  Button,
   Divider,
   Flex,
   Link,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Text,
   useBreakpointValue,
+  useDisclosure,
 } from '@chakra-ui/react';
 
 function MyAccount() {
-  const isMobile = useBreakpointValue({ base: true, sm: false });
   const navigate = useNavigate();
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex width="100%" justifyContent="center">
@@ -26,7 +36,7 @@ function MyAccount() {
         paddingBottom={isMobile ? '0px' : '10px'}
         marginTop={isMobile ? '0px' : '10px'}
       >
-        <Text fontWeight="500" textAlign="center">
+        <Text fontSize="20px" fontWeight="500" textAlign="center">
           Account
         </Text>
         <Divider marginTop="15px" borderBottom="solid 1px #383e47" />
@@ -97,6 +107,7 @@ function MyAccount() {
               cursor="pointer"
               paddingY="8px"
               backgroundImage="linear-gradient(112deg, #383e47, #475058 100%)"
+              onClick={onOpen}
             >
               Sign Out
             </Flex>
@@ -119,6 +130,44 @@ function MyAccount() {
               Back
             </Link>
           </Flex>
+
+          <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
+            <ModalOverlay backgroundColor="rgba(22,23,25,0.83)" />
+            <ModalContent
+              paddingY="25px"
+              backgroundColor="#000"
+              textAlign="center"
+              borderRadius="4px"
+            >
+              <ModalHeader>Are you sure you want to sign out?</ModalHeader>
+              <ModalBody marginTop="-20px">
+                <Text color="#9ba1a9">
+                  You will have to sign in again to access your Favourites and
+                  other custom content.
+                </Text>
+              </ModalBody>
+
+              <ModalFooter flexDirection="column" gap="10px">
+                <Flex
+                  width="100px"
+                  borderRadius="3px"
+                  fontSize="15px"
+                  fontWeight="500"
+                  justifyContent="center"
+                  alignItems="center"
+                  whiteSpace="nowrap"
+                  cursor="pointer"
+                  paddingY="8px"
+                  backgroundImage="linear-gradient(112deg, #383e47, #475058 100%)"
+                >
+                  Sign Out
+                </Flex>
+                <Text color="#2175d9" cursor="pointer" onClick={onClose}>
+                  Cancel
+                </Text>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
 
           <Text color="#2175d9" cursor="pointer">
             Sign out from all devices
