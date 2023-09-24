@@ -22,6 +22,7 @@ import Shorts from '../Components/Shorts';
 import Search from '../Components/Search';
 import CollectionView from '../Components/CollectionView';
 import LoginOTP from '../Pages/AuthPages/LoginOTP';
+import MyAccount from '../Pages/AuthPages/MyAccount';
 
 export default function Router() {
   return useRoutes([
@@ -106,6 +107,10 @@ export default function Router() {
         {
           path: 'login/otp',
           element: <LoginOTP />,
+        },
+        {
+          path: 'my-account',
+          element: <MyAccount />,
         },
       ],
     },
