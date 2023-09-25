@@ -7,7 +7,11 @@ import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
-function ShowItem({ isShowPageMobileView = false, timeOverlay = false }) {
+function ShowItem({
+  isShowPageMobileView = false,
+  timeOverlay = false,
+  isFavourite = false,
+}) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const [isHovered, setIsHovered] = useState(false);
@@ -168,7 +172,7 @@ function ShowItem({ isShowPageMobileView = false, timeOverlay = false }) {
             lineHeight="1.2"
             position="relative"
           >
-            <HomeShowItemHoverableIcon />
+            <HomeShowItemHoverableIcon isFavourite={isFavourite} />
           </Flex>
         </Flex>
       </Box>

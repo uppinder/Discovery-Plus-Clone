@@ -291,6 +291,41 @@ function Navbar() {
     );
   }
 
+  const favouritesIdPattern = new RegExp('^/liked-videos$');
+
+  // Favourites
+  if (isMobile && favouritesIdPattern.test(location.pathname)) {
+    return (
+      <Flex
+        className="navbar"
+        height="80px"
+        width="100vw"
+        paddingX="5%"
+        alignItems="center"
+        top="0"
+        position="fixed"
+        zIndex="10"
+        backgroundColor="#1a1c21"
+      >
+        <Link onClick={() => navigate(-1)}>
+          <ArrowLeft size={25} />
+        </Link>
+        <Text
+          fontSize="18px"
+          fontWeight="500"
+          flex="1"
+          display="flex"
+          justifyContent="center"
+          paddingRight="5%"
+        >
+          Favourites
+        </Text>
+
+        <FixedBottomNavbar />
+      </Flex>
+    );
+  }
+
   // Premium
   if (isMobile && location.pathname === '/go-premium-web') {
     return (

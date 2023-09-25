@@ -2,7 +2,7 @@ import { Flex } from '@chakra-ui/react';
 import { Heart } from '@phosphor-icons/react';
 import React, { useState } from 'react';
 
-function HomeShowItemHoverableIcon() {
+function HomeShowItemHoverableIcon({ isFavourite = false }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -21,7 +21,7 @@ function HomeShowItemHoverableIcon() {
         right="0"
         bottom="0"
         color="white"
-        weight={isHovered ? 'fill' : null}
+        weight={isHovered || isFavourite ? 'fill' : null}
       />
     </Flex>
   );

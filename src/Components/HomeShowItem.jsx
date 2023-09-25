@@ -7,7 +7,11 @@ import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
-function HomeShowItem({ isChannelPageMobileView = false }) {
+function HomeShowItem({
+  isChannelPageMobileView = false,
+  isFavourite = false,
+  isFavouriteMobileView = false,
+}) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const [isHovered, setIsHovered] = useState(false);
@@ -31,14 +35,14 @@ function HomeShowItem({ isChannelPageMobileView = false }) {
       <Flex
         display={isHovered ? 'none' : 'flex'}
         position="absolute"
-        height={isMobile ? '18px' : '24px'}
+        height={isFavouriteMobileView ? '20px' : isMobile ? '18px' : '24px'}
         justifyContent="center"
         alignItems="center"
         backgroundColor="#2175d9"
         borderRadius="3px"
         padding={isMobile ? '0px 6px' : '2px 12px'}
         bottom={isChannelPageMobileView ? '4%' : isMobile ? '14%' : '5%'}
-        left={isMobile ? '20%' : '25%'}
+        left={isFavouriteMobileView ? '38%' : isMobile ? '20%' : '25%'}
       >
         <Text fontSize={isMobile ? '12px' : '16px'} fontWeight="500">
           New Episodes
@@ -98,7 +102,7 @@ function HomeShowItem({ isChannelPageMobileView = false }) {
               chaos.
             </Text>
           </Flex>
-          <HomeShowItemHoverableIcon />
+          <HomeShowItemHoverableIcon isFavourite={isFavourite} />
         </Flex>
       </Flex>
     </Box>
