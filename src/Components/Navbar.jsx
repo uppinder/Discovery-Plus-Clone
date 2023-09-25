@@ -475,6 +475,8 @@ function Navbar() {
                     <Text>Redeem Voucher</Text>
                   </Link>
                   <Link
+                    to="/liked-videos"
+                    as={ReactRouterLink}
                     display="flex"
                     alignItems="center"
                     gap="12px"
@@ -599,6 +601,8 @@ function Navbar() {
                   <Text>Redeem Voucher</Text>
                 </Link>
                 <Link
+                  to="/liked-videos"
+                  as={ReactRouterLink}
                   display="flex"
                   alignItems="center"
                   gap="12px"

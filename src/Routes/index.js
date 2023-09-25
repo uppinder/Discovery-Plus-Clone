@@ -23,6 +23,7 @@ import Search from '../Components/Search';
 import CollectionView from '../Components/CollectionView';
 import LoginOTP from '../Pages/AuthPages/LoginOTP';
 import MyAccount from '../Pages/AuthPages/MyAccount';
+import Favourites from '../Components/Favourites';
 
 export default function Router() {
   return useRoutes([
@@ -89,6 +90,10 @@ export default function Router() {
         {
           path: 'collection-view-all',
           element: <CollectionView />,
+        },
+        {
+          path: 'liked-videos',
+          element: <Favourites />,
         },
       ],
     },
