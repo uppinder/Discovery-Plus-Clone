@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
+import axios from 'axios';
 
 import { Flex, Grid, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 import ShowCarousel from './ShowCarousel';
@@ -10,6 +11,21 @@ import GenreCarousel from './GenreCarousel';
 
 function Home() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
+
+  const [showMetadataList, setShowMetadataList] = useState([]);
+
+  const fetchShowMetadataList = async () => {
+    try {
+      const { data } = await axios.get('http://localhost:9000/homeShowsList');
+      setShowMetadataList(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchShowMetadataList();
+  }, []);
 
   return (
     <Flex minWidth="100vw" flexDirection="column">
@@ -62,15 +78,15 @@ function Home() {
             }}
           >
             {Array(8)
-              .fill(null)
-              .map((_, index) => (
+              .fill(showMetadataList[0])
+              .map((metadata, index) => (
                 <Link
                   key={index}
                   position="relative"
                   minWidth="160px"
                   height="100px"
                 >
-                  <HomeShowItem isChannelPageMobileView={true} />
+                  <HomeShowItem {...metadata} isChannelPageMobileView={true} />
                 </Link>
               ))}
           </Flex>
@@ -83,10 +99,10 @@ function Home() {
             gridColumnGap="10px"
           >
             {Array(4)
-              .fill(null)
-              .map((_, index) => (
+              .fill(showMetadataList[0])
+              .map((metadata, index) => (
                 <Link key={index} position="relative">
-                  <HomeShowItem />
+                  <HomeShowItem {...metadata} />
                 </Link>
               ))}
           </Grid>

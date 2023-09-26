@@ -1,0 +1,11 @@
+{
+    "homeShowsList": [
+        {
+            "title": "Little Singham",
+            "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+            "thumbnail": "assets/images/shows_test_1.jpeg",
+            "hasNewEpisodes": false,
+            "isPremium": true
+        }
+    ]
+}

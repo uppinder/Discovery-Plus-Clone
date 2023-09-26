@@ -8,6 +8,11 @@ import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
 function HomeShowItem({
+  title = '',
+  desc = '',
+  thumbnail = '',
+  hasNewEpisodes = false,
+  isPremium = false,
   isChannelPageMobileView = false,
   isFavourite = false,
   isFavouriteMobileView = false,
@@ -17,6 +22,8 @@ function HomeShowItem({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
+    console.log(thumbnail);
+    console.log(process.env.PUBLIC_URL);
     setIsHovered(!isHovered);
   };
 
@@ -26,28 +33,32 @@ function HomeShowItem({
       onMouseLeave={handleHover}
       position="relative"
     >
-      <Image src={showThumbnail} borderRadius={isMobile ? '1px' : '4px'} />
+      <Image src={thumbnail} borderRadius={isMobile ? '1px' : '4px'} />
 
       {/* Premium Icon Overlay*/}
-      <Image src={premiumIcon} position="absolute" top="1.5%" left="1%" />
+      {isPremium && (
+        <Image src={premiumIcon} position="absolute" top="1.5%" left="1%" />
+      )}
 
       {/* New Episodes Overlay */}
-      <Flex
-        display={isHovered ? 'none' : 'flex'}
-        position="absolute"
-        height={isFavouriteMobileView ? '20px' : isMobile ? '18px' : '24px'}
-        justifyContent="center"
-        alignItems="center"
-        backgroundColor="#2175d9"
-        borderRadius="3px"
-        padding={isMobile ? '0px 6px' : '2px 12px'}
-        bottom={isChannelPageMobileView ? '4%' : isMobile ? '14%' : '5%'}
-        left={isFavouriteMobileView ? '38%' : isMobile ? '20%' : '25%'}
-      >
-        <Text fontSize={isMobile ? '12px' : '16px'} fontWeight="500">
-          New Episodes
-        </Text>
-      </Flex>
+      {hasNewEpisodes && (
+        <Flex
+          display={isHovered ? 'none' : 'flex'}
+          position="absolute"
+          height={isFavouriteMobileView ? '20px' : isMobile ? '18px' : '24px'}
+          justifyContent="center"
+          alignItems="center"
+          backgroundColor="#2175d9"
+          borderRadius="3px"
+          padding={isMobile ? '0px 6px' : '2px 12px'}
+          bottom={isChannelPageMobileView ? '4%' : isMobile ? '14%' : '5%'}
+          left={isFavouriteMobileView ? '38%' : isMobile ? '20%' : '25%'}
+        >
+          <Text fontSize={isMobile ? '12px' : '16px'} fontWeight="500">
+            New Episodes
+          </Text>
+        </Flex>
+      )}
 
       {/* Play Button Overlay*/}
       <Flex
@@ -88,7 +99,7 @@ function HomeShowItem({
           position="relative"
         >
           <Text fontSize="16px" fontWeight="600">
-            Little Singham
+            {title}
           </Text>
           <Flex alignItems="center">
             <Text
@@ -98,8 +109,7 @@ function HomeShowItem({
               whiteSpace="nowrap"
               overflow="hidden"
             >
-              A nine-year-old boy battles evil villains that are out to create
-              chaos.
+              {desc}
             </Text>
           </Flex>
           <HomeShowItemHoverableIcon isFavourite={isFavourite} />
