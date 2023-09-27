@@ -22,8 +22,6 @@ function HomeShowItem({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
-    console.log(thumbnail);
-    console.log(process.env.PUBLIC_URL);
     setIsHovered(!isHovered);
   };
 

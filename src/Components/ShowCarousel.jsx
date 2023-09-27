@@ -92,8 +92,9 @@ function ShowCarousel({ kidsPage = false }) {
     >
       {cData.map((showData, idx) => (
         <LinkBox key={idx}>
-          <SwiperSlide>
+          <SwiperSlide key={idx}>
             <Flex
+              key={idx}
               display={{ base: 'none', md: 'flex' }}
               flexDirection="column"
               justifyContent="flex-start"

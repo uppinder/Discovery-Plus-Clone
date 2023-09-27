@@ -42,9 +42,9 @@ function Kids() {
             .fill(null)
             .map((_, index) => (
               <Link
+                key={index}
                 to="/superstars/test"
                 as={ReactRouterLink}
-                key={index}
                 position="relative"
                 minWidth="108px"
               >

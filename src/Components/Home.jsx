@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchShowList } from '../Actions';
 
 import { Flex, Grid, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 import ShowCarousel from './ShowCarousel';
@@ -13,19 +14,18 @@ function Home() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const [showMetadataList, setShowMetadataList] = useState([]);
-
-  const fetchShowMetadataList = async () => {
-    try {
-      const { data } = await axios.get('http://localhost:9000/homeShowsList');
-      setShowMetadataList(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const showList = useSelector(state => state.showList);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchShowMetadataList();
-  }, []);
+    // setLoading(true);
+    if (showList.length === 0) {
+      dispatch(fetchShowList());
+    }
+
+    console.log(showList);
+    // setLoading(false);
+  }, [dispatch, showList]);
 
   return (
     <Flex minWidth="100vw" flexDirection="column">
@@ -78,7 +78,7 @@ function Home() {
             }}
           >
             {Array(8)
-              .fill(showMetadataList[0])
+              .fill(showList[0])
               .map((metadata, index) => (
                 <Link
                   key={index}
@@ -99,7 +99,7 @@ function Home() {
             gridColumnGap="10px"
           >
             {Array(4)
-              .fill(showMetadataList[0])
+              .fill(showList[0])
               .map((metadata, index) => (
                 <Link key={index} position="relative">
                   <HomeShowItem {...metadata} />
