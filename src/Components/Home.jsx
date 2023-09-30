@@ -14,13 +14,6 @@ import GenreCarousel from './GenreCarousel';
 function Home() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
-  //   const verticalMetadata = {
-  //     title: 'Raja Rasoi Aur Anya Kahaaniyan',
-  //     desc: 'Explore the history and flavors of regional Indian cuisine.',
-  //     isPremium: true,
-  //     thumbnail: 'assets/images/shows_vertical_test_1.jpeg',
-  //   };
-
   const homeData = useSelector(state => state.home);
   const dispatch = useDispatch();
 
@@ -86,38 +79,34 @@ function Home() {
                   },
                 }}
               >
-                {Array(8)
-                  .fill(
-                    isEmpty(homeData)
-                      ? {}
-                      : homeData['homeShowLists'][0]['showList']
-                  )
-                  .map((metadata, index) => (
-                    <Link
-                      key={index}
-                      position="relative"
-                      minWidth={
-                        homeShowListData['showCardOrientation'] === 'horizontal'
-                          ? '160px'
-                          : '105px'
-                      }
-                      height={
-                        homeShowListData['showCardOrientation'] === 'horizontal'
-                          ? '100px'
-                          : '140px'
-                      }
-                    >
-                      {homeShowListData['showCardOrientation'] ===
-                      'horizontal' ? (
-                        <HomeShowItem
-                          {...metadata}
-                          isChannelPageMobileView={true}
-                        />
-                      ) : (
-                        <HomeShowItemVertical {...metadata} />
-                      )}
-                    </Link>
-                  ))}
+                {homeShowListData['showList'].map((showData, index) => (
+                  <Link
+                    key={index}
+                    to={`/show/${showData['id']}`}
+                    as={ReactRouterLink}
+                    position="relative"
+                    minWidth={
+                      homeShowListData['showCardOrientation'] === 'horizontal'
+                        ? '160px'
+                        : '105px'
+                    }
+                    height={
+                      homeShowListData['showCardOrientation'] === 'horizontal'
+                        ? '100px'
+                        : '140px'
+                    }
+                  >
+                    {homeShowListData['showCardOrientation'] ===
+                    'horizontal' ? (
+                      <HomeShowItem
+                        {...showData}
+                        isChannelPageMobileView={true}
+                      />
+                    ) : (
+                      <HomeShowItemVertical {...showData} />
+                    )}
+                  </Link>
+                ))}
               </Flex>
             ) : (
               <Grid
@@ -131,15 +120,16 @@ function Home() {
                 }
                 gridColumnGap="10px"
               >
-                {Array(4)
-                  .fill(
-                    isEmpty(homeData)
-                      ? {}
-                      : homeData['homeShowLists'][0]['showList']
-                  )
-                  .map((metadata, index) => (
-                    <Link key={index} position="relative">
-                      <HomeShowItem {...metadata} />
+                {homeShowListData['showList']
+                  .splice(0, 4)
+                  .map((showData, index) => (
+                    <Link
+                      key={index}
+                      to={`/show/${showData['id']}`}
+                      as={ReactRouterLink}
+                      position="relative"
+                    >
+                      <HomeShowItem {...showData} />
                     </Link>
                   ))}
               </Grid>

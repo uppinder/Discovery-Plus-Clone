@@ -126,16 +126,94 @@
                 "title": "Shows You Love",
                 "showCardOrientation": "horizontal",
                 "showList": [
-                    "little-singham",
-                    "little-singham",
-                    "little-singham",
-                    "little-singham",
-                    "little-singham",
-                    "little-singham",
-                    "little-singham",
-                    "little-singham",
-                    "little-singham",
-                    "little-singham"
+                    {
+                        "id": "little-singham",
+                        "title": "Little Singham",
+                        "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2023/03/05/bbd9636c-a15b-413d-a6c5-82283024ed5d.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": true,
+                        "hasNewEpisodes": false
+                    },
+                    {
+                        "id": "fukrey-boyzzz-in",
+                        "title": "Fukrey Boyzzz",
+                        "desc": "Choocha, Hunny and Laali are kids with limited means but great dreams.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2023/05/15/e75ded76-173d-4b3e-aa57-028d00bab525.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": true,
+                        "hasNewEpisodes": false
+                    },
+                    {
+                        "id": "swami-ramdev-ek-sangharsh-in",
+                        "title": "Swami Ramdev: Ek Sangharsh",
+                        "desc": "Discover how Swami Ramdev changed the health of the nation.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/01/37eb2e61-c013-40ec-b076-41f1c9ad7723.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": true,
+                        "hasNewEpisodes": false
+                    },
+                    {
+                        "id": "gold-rush",
+                        "title": "Gold Rush",
+                        "desc": "Hard-working gold miners risk their lives for a chance at striking it rich.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/26/293263a9-8d4f-4068-96d8-f3977cd1db95.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": false,
+                        "hasNewEpisodes": true
+                    },
+                    {
+                        "id": "secrets-of-in",
+                        "title": "Secrets of the Koh-i-noor",
+                        "desc": "Follow the journey of the world's most fabled diamond with Manoj Bajpayee.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2022/08/18/8accb6b7-de88-42b9-a129-bcf6107350b5.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": true,
+                        "hasNewEpisodes": false
+                    },
+                    {
+                        "id": "expedition-unknown",
+                        "title": "Expedition Unknown",
+                        "desc": "Josh Gates investigates the world's most iconic and captivating legends.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2023/07/13/89ee551f-46b2-41d2-89eb-ab47dd438a8e.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": false,
+                        "hasNewEpisodes": false
+                    },
+                    {
+                        "id": "the-pandavas-in",
+                        "title": "The Pandavas",
+                        "desc": "Discover the extraordinary lives of the Pandava brothers, Yudhishtir,",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/23/7040b588-3352-4ecd-b624-aab8ad099ded.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": true,
+                        "hasNewEpisodes": true
+                    },
+                    {
+                        "id": "caribbean-life-in",
+                        "title": "Caribbean Life",
+                        "desc": "Families leave behind the mainland for dream homes in the Caribbean.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/13/6df892cf-2c1e-4f2d-b345-ed30eb242326.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": true,
+                        "hasNewEpisodes": true
+                    },
+                    {
+                        "id": "ghost-adventures",
+                        "title": "Ghost Adventures",
+                        "desc": "Zak Bagans and his crew investigate the most haunted places in the world.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/22/5f9ca180-a497-4796-b3a9-2eb09745e449.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": true,
+                        "hasNewEpisodes": false
+                    },
+                    {
+                        "id": "kris-roll-no-21-in",
+                        "title": "Kris: Roll no 21",
+                        "desc": "See Kris, a boy with magical superpowers who wreaks havoc with his friends.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2023/02/26/9b90627b-bd69-4756-b0b2-aaec9a209e03.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": true,
+                        "hasNewEpisodes": false
+                    },
+                    {
+                        "id": "man-vs-wild",
+                        "title": "Man vs. Wild",
+                        "desc": "Bear Grylls shows how to survive the toughest and most remote environments.",
+                        "thumbnail": "https://ap2-prod-images.disco-api.com/2022/03/17/593e48b7-42fc-4923-a9e1-d340194aac62.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                        "isPremium": true,
+                        "hasNewEpisodes": false
+                    }
                 ]
             },
             {
@@ -154,6 +232,812 @@
                     "raja-rasoi-aur-anya-kahaniyaan-in",
                     "raja-rasoi-aur-anya-kahaniyaan-in"
                 ]
+            }
+        ]
+    },
+    "showLists": {
+        "id": "shows-you-love",
+        "title": "Shows You Love",
+        "showList": [
+            {
+                "id": "little-singham",
+                "title": "Little Singham",
+                "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/03/05/bbd9636c-a15b-413d-a6c5-82283024ed5d.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "fukrey-boyzzz-in",
+                "title": "Fukrey Boyzzz",
+                "desc": "Choocha, Hunny and Laali are kids with limited means but great dreams.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/05/15/e75ded76-173d-4b3e-aa57-028d00bab525.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "swami-ramdev-ek-sangharsh-in",
+                "title": "Swami Ramdev: Ek Sangharsh",
+                "desc": "Discover how Swami Ramdev changed the health of the nation.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/01/37eb2e61-c013-40ec-b076-41f1c9ad7723.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "gold-rush",
+                "title": "Gold Rush",
+                "desc": "Hard-working gold miners risk their lives for a chance at striking it rich.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/26/293263a9-8d4f-4068-96d8-f3977cd1db95.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "secrets-of-in",
+                "title": "Secrets of the Koh-i-noor",
+                "desc": "Follow the journey of the world's most fabled diamond with Manoj Bajpayee.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/08/18/8accb6b7-de88-42b9-a129-bcf6107350b5.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "expedition-unknown",
+                "title": "Expedition Unknown",
+                "desc": "Josh Gates investigates the world's most iconic and captivating legends.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/07/13/89ee551f-46b2-41d2-89eb-ab47dd438a8e.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "the-pandavas-in",
+                "title": "The Pandavas",
+                "desc": "Discover the extraordinary lives of the Pandava brothers, Yudhishtir,",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/23/7040b588-3352-4ecd-b624-aab8ad099ded.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "caribbean-life-in",
+                "title": "Caribbean Life",
+                "desc": "Families leave behind the mainland for dream homes in the Caribbean.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/13/6df892cf-2c1e-4f2d-b345-ed30eb242326.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "ghost-adventures",
+                "title": "Ghost Adventures",
+                "desc": "Zak Bagans and his crew investigate the most haunted places in the world.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/22/5f9ca180-a497-4796-b3a9-2eb09745e449.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "kris-roll-no-21-in",
+                "title": "Kris: Roll no 21",
+                "desc": "See Kris, a boy with magical superpowers who wreaks havoc with his friends.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/02/26/9b90627b-bd69-4756-b0b2-aaec9a209e03.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "man-vs-wild",
+                "title": "Man vs. Wild",
+                "desc": "Bear Grylls shows how to survive the toughest and most remote environments.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/03/17/593e48b7-42fc-4923-a9e1-d340194aac62.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "naked-and-afraid",
+                "title": "Naked and Afraid",
+                "desc": "A man and woman battle extreme environments without food, water or clothes.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/03/04/551b4ccd-d747-4d3b-9e2a-8cee0beb105a.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "how-the-universe-works",
+                "title": "How The Universe Works",
+                "desc": "We're looking under the celestial hood to tell the greatest story of all.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/04/27/e2c3c1e7-d311-499a-96fd-5b7e7dcfcc84.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "money-mafia-in",
+                "title": "Money Mafia",
+                "desc": "Some of the most shocking con stories in India are chronicled.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/31/335a1aad-fe9b-4b5d-8524-680078051d9f.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "i-should-have-stayed-home-in",
+                "title": "I Should Have Stayed Home",
+                "desc": "Two stranded brothers return home using their survival skills.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/25/d501c6c7-a950-44da-b446-ebaf000bbc18.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "man-vs-wild-with-sunny-leone-in",
+                "title": "Man vs. Wild with Sunny Leone",
+                "desc": "Bear Grylls shows how to survive the toughest and most remote environments.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/15/e90de9c8-c9a4-4c66-ac28-4150d186593a.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "oggy-and-the-cockroaches-in",
+                "title": "Oggy and the Cockroaches",
+                "desc": "A housecat is tormented by three nasty cockroaches.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/06/23/46d26da0-2c38-465e-9e00-9eb17e8ad736.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "top-gear-ft-clarkson-hammond-may",
+                "title": "Top Gear",
+                "desc": "Top Gear irreverently celebrates everything that's brilliant about cars.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/09/01/5f1a62b4-73eb-4922-92b2-d037225997d5.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "aew-dynamite-live-fights-replays",
+                "title": "AEW Dynamite: LIVE Fights & Replays",
+                "desc": "Stream fights from AEW (All Elite Wrestling) Dynamite, a new professional wrestling league featuring a roster of world-class talent like Cody & Brandi Rhodes, Kenny Omega, The Young Bucks (Matt & Nick Jackson), Chris Jericho, Sting, Hangman Page and Jon Moxley. Watch LIVE fights and replays, only on discovery+.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/05/30/2fdf0f60-addd-4164-a222-202e9b66ebb7.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "the-legend-of-ramayana-with-amish-in",
+                "title": "Legends of The Ramayana With Amish",
+                "desc": "Amish Tripathi traverses 5,000 kilometers in the footsteps of Rama.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/04/12/47db0637-c688-4991-a42e-88123117293a.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "naked-and-afraid-xl",
+                "title": "Naked and Afraid XL",
+                "desc": "Twelve Naked and Afraid All-Stars take on punishing locations as a group.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/07/531dad54-80eb-47bd-aa37-ab89b3cb8604.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "unearthed-seven-wonders-in",
+                "title": "Unearthed",
+                "desc": "The hidden secrets of iconic structures around the globe are revealed.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/10/6065a81c-aaad-4428-a5c8-70cbd3773872.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "undercover-billionaire",
+                "title": "Undercover Billionaire",
+                "desc": "Glenn Stearns has 90 days to turn $100 into a million-dollar business.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/03/17/7d510dca-c9a7-414e-b763-d04b80ab9d1e.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "cheetahs-against-all-odds-in",
+                "title": "Cheetahs: Against All Odds",
+                "desc": "This story follows two cheetah mothers struggling to raise their families.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/13/8ccf5525-7864-4695-9d07-31f81206f1f7.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "breaking-point-indian-submariners",
+                "title": "Breaking Point: Indian Submariners",
+                "desc": "The training it takes to become a submariner is revealed.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/03/03/0b5e031c-2106-4175-bc35-110de31689c7.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "planet-earth",
+                "title": "Planet Earth",
+                "desc": "David Attenborough narrates this highly-acclaimed nature series.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/01/29/42944c02-74f7-4855-85f7-687278516893.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "india-murder-mysteries-in",
+                "title": "Love Kills: Madhumita Shukla Hatyakand",
+                "desc": "Murder, passion, politics -- the Madhumita Shukla case is underway!",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/02/04/65ee595f-b352-4d2c-8c1f-f06139d1d767.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "ancient-aliens",
+                "title": "Ancient Aliens",
+                "desc": "Scientists investigate ancient ruins and texts from around the world.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/05/31/a69a221b-f00b-49e3-ae53-41ba6f04fa9c.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "devlok-with-devdutt-pattanaik-in",
+                "title": "Devlok With Devdutt Pattanaik",
+                "desc": "Devdutt Pattanaik goes on an engaging voyage into Hindu mythology.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/08/06/dd26ab3e-9aeb-46cc-b37e-ee07b83a7f4b.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "dual-survival",
+                "title": "Dual Survival",
+                "desc": "Dave and Cody demonstrate survival and creative thinking skills.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/09/10/651f18ec-6098-46ba-8483-a64de9730429.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "how-do-they-do-it",
+                "title": "How Do They Do It?",
+                "desc": "An insider's look shows the science and engineering of the modern world.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/08/19/aed94aa1-b80c-439e-a950-cfd64138ae32.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "90-day-fiance-the-other-way",
+                "title": "90 Day Fiance: The Other Way",
+                "desc": "Americans risk it all to move overseas for love.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/07/24/cfc649b7-c943-4484-9eb7-fc72cffb8441.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "cocomelon-in",
+                "title": "CoComelon",
+                "desc": "Baby JJ and his siblings go on fun everyday adventures set to catchy songs.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/28/de8a94f3-e500-4c8a-a210-dd6d8fcae991.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "hells-kitchen-in",
+                "title": "Hell's Kitchen",
+                "desc": "Ordinary chefs compete for a chance to have their own restaurant.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/05/28/76b956ae-285a-4f18-b35d-0dc8abb6c676.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "serengeti-in",
+                "title": "Serengeti",
+                "desc": "Serengeti gives viewers a front row seat to witness the animal experience.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/01/736f41f6-6515-436e-bb3c-0c8958b580cc.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "survive-the-raft-in",
+                "title": "Survive the Raft",
+                "desc": "Nine diverse Americans arrive in Panama for a social experiment.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/13/1e8cb7f6-efae-4e7d-8727-4db724c0b07f.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "21-sarfarosh-saragarhi-1897-in",
+                "title": "21 Sarfarosh: Saragarhi 1897",
+                "desc": "This drama recounts the battle of 21 Sikhs versus 12,000 Pashtuns.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/05/04/ef4d3595-3c30-4fe9-a1f3-9746ff7b5d03.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "deadliest-catch",
+                "title": "Deadliest Catch",
+                "desc": "Crab fishermen battle Arctic weather and brutal waves for big money.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/04/13/da6726e4-285a-442a-ab6a-9727f1aaf640.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "kisna",
+                "title": "Kisna",
+                "desc": "Kisna and his ability to solve problems with friends leads to adventures.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/02/10/70034152-5608-4ec2-804f-405ba8513204.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "living-with-a-superstar-shah-rukh-khan-in",
+                "title": "Living with a Superstar - Shah Rukh Khan",
+                "desc": "Cameras follow Shah Rukh Khan's every move in India and across the globe.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/04/17/ced7fb8c-c2f3-4a99-a95e-2b3910db4db6.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "naked-afraid-of-love-in",
+                "title": "Naked and Afraid of Love",
+                "desc": "Sixteen sexy singles bare it all for love in this 12-part dating series.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/26/2031394c-9450-4d13-b1f0-623658a9b5c6.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "raja-rasoi-aur-anya-kahaniyaan-in",
+                "title": "Raja Rasoi Aur Anya Kahaniyaan",
+                "desc": "Explore the history and flavors of regional Indian cuisine.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/782eaf34-617f-4d0e-ae5e-db3ce173dbd2.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "restaurant-impossible",
+                "title": "Restaurant Impossible",
+                "desc": "Robert Irvine is on a mission to save failing restaurants from collapse.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/22/a5751460-3015-48fb-925a-795d1a8ee69e.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "special-operations-india-in",
+                "title": "Special Operations: India",
+                "desc": "The stories of amazing special operations in Indian history are told.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/08/12/2c750527-8f53-4dd0-a956-b68e4c90be5b.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "a-perfect-planet-in",
+                "title": "A Perfect Planet",
+                "desc": "How the forces of nature shape and support Earth\u2019s great diversity of life.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/07/31/7d9b0628-b0ae-4f6e-9e36-39ec94b21c80.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "anjaan-special-crimes-unit-in",
+                "title": "Anjaan: Special Crimes Unit",
+                "desc": "Discover how Three police officers solve paranormal mysteries.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/10/14/864e718c-9f5e-4ac1-a699-dc6c81a2f8e5.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "love-kills-shabnam-aur-saleem-amroha-hatyakand-in",
+                "title": "Love Kills: Shabnam aur Saleem - Amroha Hatyakand",
+                "desc": "Two unlikely lovers Shabnam and Saleem are on death row for the brutal murders.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/04/04/2c19695c-76fa-4f0c-be6e-220678a78658.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "operation-sex-sting-in",
+                "title": "Operation Sex Sting",
+                "desc": "Sex is for sale -- but these undercover stings aim to end sex trafficking.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/18/54e66070-5ee8-4cb3-8d3f-42d080d43fc8.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "river-monsters",
+                "title": "River Monsters",
+                "desc": "Jeremy Wade hunts for freshwater fish with a taste for human flesh.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/03/30/e813c64e-6a59-4c33-804e-1b14385964c3.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "a-body-in-the-basement-in",
+                "title": "A Body in the Basement",
+                "desc": "If you want to know where the bodies are buried, first check the basement.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/16/c1d87a28-9004-4c09-ae67-345d08f94dfa.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "mother-may-i-murder-in",
+                "title": "Mother, May I Murder?",
+                "desc": "Dramatic stories of American moms and their kids who conspire to murder.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/28/7e6fdd51-5c7c-4b1b-baa0-3ba2760997d4.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "nasas-unexplained-files",
+                "title": "Nasa's Unexplained Files",
+                "desc": "Examine NASA's most curious missions that explore life beyond our planet.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/02/24/70c5caba-8975-4077-b25e-740be60af2fd.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "90-day-fiance",
+                "title": "90 Day Fiance",
+                "desc": "International couples have 90 days to either get married or call it quits.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/05/09/2b8c4108-db37-4555-a8c7-10e9e111e11f.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "a-haunting",
+                "title": "A Haunting",
+                "desc": "Eyewitnesses share their terrifying true tales of the paranormal.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/01/5dec6ac4-da9b-4e0b-b262-7f8e269d063e.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "africa",
+                "title": "Africa",
+                "desc": "A tour of Africa reveals the continent's stunning wildlife and terrain.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/04/16/0b395c21-940c-4bdf-b718-952498ae26d5.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "food-factory",
+                "title": "Food Factory",
+                "desc": "Raw ingredients are transformed into favorite tasty treats.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/02/26/37504c86-4739-4d18-9445-31c4bd3d9ced.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "himalayan-tsunami",
+                "title": "Himalayan Tsunami",
+                "desc": "An inside look at the devastating floods of Kedarnath in 2013.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2019/11/29/f95b5bca-6412-4a0c-9cd6-5cec5bbeb9ee.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "kids-baking-championship",
+                "title": "Kids Baking Championship",
+                "desc": "Young bakers contend for the title of Kids Baking Champion.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/12/31/95e8e9a4-d3db-425c-8562-64e047f3b1c0.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "little-singham-jet-set-adventures-in",
+                "title": "Little Singham : Jet Set Adventure",
+                "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/10/9f8e00a0-6aae-448e-b5b0-9b6665ef5ee7.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "say-yes-to-the-dress",
+                "title": "Say Yes To The Dress",
+                "desc": "This show is bridal story, fashion makeover and family therapy in one.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/12/06/04ccda77-4946-4c44-9024-df7b54a14771.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "bunty-billa-aur-babban-in",
+                "title": "Bunty Billa aur Babban",
+                "desc": "A cat tries every trick in the book to get rid of a resourceful parrot.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/02/06/8bc278af-c9e6-453b-b320-75f05c0eeb79.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "hunt-for-the-indian-mujahideen-in",
+                "title": "Hunt for the Indian Mujahideen",
+                "desc": "Discover how officials dismantled an Indian terrorist group from 2003-2007.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/02/06/f5de89f8-741f-4c6c-8948-92420c071912.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "jaag-utha-hai-kaal-in",
+                "title": "Jaag Utha hai Kaal",
+                "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/04/c56f5449-ebdb-4f8b-886e-52c4a87ec089.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "little-krishna-in",
+                "title": "Little Krishna",
+                "desc": "Little Krishna defends Vrindavan from the evil king Kamsa.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/03/02/e3183f61-1403-4a9e-8b1a-0becb1ab0f26.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "90-day-journey-jenny-sumit-in",
+                "title": "90 Day Journey: Jenny & Sumit",
+                "desc": "Jenny decides to move to India to be with the man who catfished her.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/07/793858ad-328a-4cc8-8b3e-fe4d685fa895.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": true
+            },
+            {
+                "id": "african-wild",
+                "title": "African Wild",
+                "desc": "This journey reveals the world of Africa's largest and fiercest animals.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/08/19/449d0083-fe52-451e-bd26-76c636bf839f.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "caught-in-the-net-in",
+                "title": "Caught in the Net",
+                "desc": "Detectives must enter the digital world to track down a killer.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/01a94dff-da18-4bfb-90f3-d14529fd154c.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "horrid-henry",
+                "title": "Horrid Henry",
+                "desc": "To his family's frustration, Henry is skilled at making trouble.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/05/03/ffe69674-a2da-4d2a-b3a2-296d52632a01.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "morgan-freemans-through-the-wormhole",
+                "title": "Morgan Freeman's Through the Wormhole",
+                "desc": "Host Morgan Freeman explores the mysteries of existence.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/03/04/0bc1cb72-2899-4b5c-b36e-fff7e4ecba6a.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "pawn-stars",
+                "title": "Pawn Stars",
+                "desc": "Pawn Stars follows three generations of the Harrison family.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/12/06/88295231-0380-47fc-be49-f6c600c895a4.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "surviving-the-serengeti-in",
+                "title": "Surviving the Serengeti",
+                "desc": "For those who call it home, Africa's Serengeti is a land of survival.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/03/04/bf8c1332-2b8a-4670-89a3-17241a75af22.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "90-day-fiance-before-the-90-days-in",
+                "title": "90 Day Fiance: Before the 90 Days",
+                "desc": "Americans travel abroad to meet their online soulmates for the first time.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/10/86c3594d-b869-471b-9f78-9ac2d6b15b24.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "anni-the-murder-in",
+                "title": "Anni: The Honeymoon Murder",
+                "desc": "Anni Dewani's dream South African honeymoon takes a detour to disaster.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/22/01f0413d-2312-409b-a48a-f183d4436435.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "contact-in",
+                "title": "Contact",
+                "desc": "Experts investigate if aliens have made contact with Earth.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/28/a3bef5ed-919c-47cd-90ba-88b6b0daffbd.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "cutthroat-kitchen",
+                "title": "Cutthroat Kitchen",
+                "desc": "Chefs do anything it takes, including sabotage, to win this competition.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/08/23/399a8e22-e194-4df7-9e42-98da6f6ae4be.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "decoding-disasters-in",
+                "title": "Decoding Disasters",
+                "desc": "How disasters in India unfold, told via tales from victims & rescue workers.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/22/4b0e6d10-8234-4474-aeb8-dd6e84678a54.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "dynasties",
+                "title": "Dynasties",
+                "desc": "Five animals are documented as they strive to produce the next generation.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/01/29/6eefa3e8-1c8b-4aca-a156-f111e509e0ee.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "food-paradise",
+                "title": "Food Paradise",
+                "desc": "Get a taste of America's one-of-a-kind dining experiences.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/08/25/c4c3e19b-de44-46e2-9875-a36736e6e7d7.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "impossible-engineering",
+                "title": "Impossible Engineering",
+                "desc": "Behind every marvel of modern engineering is a cast of heroic trailblazers.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/03/17/ccdecf25-98fa-46ee-bf0c-35d8f074d7f1.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "into-the-wild-with-bear-grylls-vicky-kaushal-in",
+                "title": "Into The Wild With Bear Grylls & Vicky Kaushal",
+                "desc": "Bear Grylls takes India's most well-known celebrities deep into the jungle.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/08/c6c2feb9-387a-4947-9350-ecc9fb3f4913.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "mahakaleshwar-legends-of-shiva-in",
+                "title": "Mahakaleshwar: Legends Of Shiva",
+                "desc": "The special follows life in Ujjain, leading up to Mahashivratri.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/08/27/c794a31e-defe-4327-aae0-a404d181f095.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "planet-earth-ii",
+                "title": "Planet Earth II",
+                "desc": "David Attenborough narrates this highly-acclaimed nature series.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/01/29/cee12013-bb8c-42ed-b058-588ed5369b36.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "the-city-of-ganpati-in",
+                "title": "The City Of Ganpati",
+                "desc": "This special captures the mammoth scale and spectacle of Ganeshotsav.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/09/03/c398adec-b908-4897-8a10-04b65fa7000c.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "truth-behind-the-moon-landing",
+                "title": "Truth Behind The Moon Landing",
+                "desc": "Investigators use science to refute moon landing conspiracy theories.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/03/06/f3d52001-84c1-45f2-b6ae-aabd4bf11687.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "arabia-a-journey-through-the-heart-of-the-middle-east",
+                "title": "Arabia: A Journey Through The Heart Of The Middle East",
+                "desc": "Levison Wood sets out to learn what Arabia means today.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/09/09/f630f470-8c10-4ed0-a3a6-a9f1b4fc0b9c.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "baby-little-singham-in",
+                "title": "Baby Little Singham",
+                "desc": "An infant boy battles evil villains that are out to create chaos.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/05/07/9e1fbbe2-b182-426a-9d2b-5117f3e38115.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "build-india-in",
+                "title": "Build India",
+                "desc": "Uncover how transformative infrastructure sweeping the Indian nation.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/12/21/e290d56d-ff1b-4aee-83ad-06f751c807d4.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "curiosity",
+                "title": "Curiosity",
+                "desc": "What do we really know about the sun & its inner workings?",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/08/18/bd696fd7-dd69-407f-8f17-458b3370567d.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "earths-tropical-islands-in",
+                "title": "Earth's Tropical Islands",
+                "desc": "Discover three of the most exotic, mysterious and remote islands on Earth.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/04/18/09335b0c-dc42-40e9-9f88-97350f08c826.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "ghost-asylum",
+                "title": "Ghost Asylum",
+                "desc": "The Tennessee Wraith Chasers investigate America's most haunted asylums.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/05/06/9a4e7d96-c226-44c4-b077-cc194f211754.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "kim-vs-kanye-the-divorce-in",
+                "title": "Kim vs Kanye: The Divorce",
+                "desc": "Inside the billion-dollar divorce battle of two global superstars.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/08/1d02d606-c9c5-4577-b537-91403e2712ec.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "naked-and-afraid-solo-in",
+                "title": "Naked and Afraid: Solo",
+                "desc": "Survivalists endure 21 days naked, afraid and without a partner.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/02/f24ff66e-a665-4521-9fcb-103cfd9cb5eb.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "mahasangraam-miniseries-in",
+                "title": "Paap aur Punya ka Mahasangraam",
+                "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2022/03/09/4397fa6d-0a70-48a5-b873-b0af5e88cc51.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "secrets-of-sinauli",
+                "title": "Secrets Of Sinauli",
+                "desc": "Uncover the mysteries behind the excavations of Sinauli.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/01/22/a37fd70e-a3ac-40d8-b801-bfe1d53cc7ea.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "storage-wars",
+                "title": "Storage Wars",
+                "desc": "Treasure hunters seek to score big in high-stakes storage auctions.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/04/22/9304f963-f393-4084-af5f-0ba9310b5625.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "the-hunt",
+                "title": "The Hunt",
+                "desc": "David Attenborough narrates an intimate look at the world of predators and prey.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/01/29/38706175-4e28-4f4f-b7ab-0a46c8ece442.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "undercover-underage-in",
+                "title": "Undercover Underage",
+                "desc": "Roo Powell and her team work to keep minors safe from sex abuse.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/05/04/2d52a827-c026-4a52-96f6-4f351f8937b2.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "web-of-lies",
+                "title": "Web of Lies",
+                "desc": "The dark web is home to the most insidious crimes of the modern era.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2020/05/06/502fe718-3b06-45c0-b878-c4e3e63ef9ba.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "wheeler-dealers",
+                "title": "Wheeler Dealers",
+                "desc": "Automobile enthusiasts embark on a mission to restore cars.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2021/02/05/6f10b6ee-1460-44a4-9edb-e424b4fb9786.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": false,
+                "hasNewEpisodes": false
+            },
+            {
+                "id": "zig-sharko-in",
+                "title": "Zig & Sharko",
+                "desc": "A shark will do anything to protect a mermaid from a famished hyena.",
+                "thumbnail": "https://ap2-prod-images.disco-api.com/2023/01/02/dd669e41-a7d9-4b80-88cd-1a404d1f14b6.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+                "isPremium": true,
+                "hasNewEpisodes": false
             }
         ]
     },
