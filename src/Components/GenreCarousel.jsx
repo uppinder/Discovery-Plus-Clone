@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
 import {
@@ -10,27 +10,15 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 
-import genreThumbnail from '../Assets/Images/genre_image.png';
-import genreThumbnailOverlay from '../Assets/Images/genre_image_2.png';
-
 import Slider from 'react-slick';
 import leftArrow from '../Assets/Images/carousel_left_arrow.svg';
 import rightArrow from '../Assets/Images/carousel_right_arrow.svg';
 import GenreCarouselItem from './GenreCarouselItem';
+import { isEmpty } from 'lodash';
 
-function GenreCarousel({
-  genreDataList = [
-    {
-      genreId: 'adventure',
-      genreName: 'Adventure',
-      genreImageUrl:
-        'https://ap2-prod-images.disco-api.com/2021/03/01/2a76ce95-fdcc-492d-b78e-42932a724e0f.jpeg?w=1200&p=true&q=75',
-      genreImageUrlMobile:
-        'https://ap2-prod-images.disco-api.com/2021/05/24/24992b84-e726-4ef3-a4a7-c26f227bc6c1.png?w=100',
-    },
-  ],
-}) {
+function GenreCarousel({ genreDataList = [] }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
+  const [settings, setSettings] = useState({});
 
   function CarouselNextArrow(props) {
     const { className, style, onClick } = props;
@@ -64,32 +52,49 @@ function GenreCarousel({
     );
   }
 
-  const settings = {
-    infinite: false,
-    speed: 1500,
-    slidesToShow: 6,
-    slidesToScroll: 5,
-    nextArrow: <CarouselNextArrow />,
-    prevArrow: <CarouselPrevArrow />,
-    className: 'inner-slider',
-    onInit: () => {
-      const leftArrowEl = document.querySelector('.slick-prev');
-      const nextArrowEl = document.querySelector('.slick-next');
-      leftArrowEl.style.opacity = '0';
-      nextArrowEl.style.opacity = '1';
-    },
-    afterChange: index => {
-      const leftArrowEl = document.querySelector('.slick-prev');
-      const rightArrowEl = document.querySelector('.slick-next');
-      if (index === 4) {
-        leftArrowEl.style.opacity = '1';
-        rightArrowEl.style.opacity = '0';
-      } else {
-        leftArrowEl.style.opacity = '0';
-        rightArrowEl.style.opacity = '1';
-      }
-    },
-  };
+  useEffect(() => {
+    if (!isEmpty(genreDataList)) {
+      setSettings({
+        infinite: false,
+        speed: 1500,
+        slidesToShow: 6,
+        slidesToScroll: 5,
+        nextArrow: <CarouselNextArrow />,
+        prevArrow: <CarouselPrevArrow />,
+        className: 'inner-slider',
+        onInit: () => {
+          const leftArrowEl = document.querySelector('.slick-prev');
+          const nextArrowEl = document.querySelector('.slick-next');
+
+          try {
+            leftArrowEl.style.opacity = '0';
+            nextArrowEl.style.opacity = '1';
+          } catch (error) {
+            console.log(error);
+          }
+        },
+        afterChange: index => {
+          const leftArrowEl = document.querySelector('.slick-prev');
+          const rightArrowEl = document.querySelector('.slick-next');
+          if (index === 4) {
+            try {
+              leftArrowEl.style.opacity = '1';
+              rightArrowEl.style.opacity = '0';
+            } catch (error) {
+              console.log(error);
+            }
+          } else {
+            try {
+              leftArrowEl.style.opacity = '0';
+              rightArrowEl.style.opacity = '1';
+            } catch (error) {
+              console.log(error);
+            }
+          }
+        },
+      });
+    }
+  }, [genreDataList]);
 
   return (
     <>

@@ -1,7 +1,5 @@
-import { Box, Image, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
-
-import genreThumbnailDesktop from '../Assets/Images/genre_image_desktop.jpeg';
+import { Box, Image, Text } from '@chakra-ui/react';
 
 function GenreCarouselItem({ genreName = '', genreImageUrl = '' }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -25,17 +23,17 @@ function GenreCarouselItem({ genreName = '', genreImageUrl = '' }) {
         borderRadius="10px"
       />
 
-      <Text
+      <Box
+        width="100%"
         className="swiper-genre-text"
         position="absolute"
-        left="35%"
         bottom={isHovered ? '28%' : '3%'}
-        fontSize="18px"
-        fontWeight="700"
         zIndex="10"
       >
-        {genreName}
-      </Text>
+        <Text marginLeft="29%" fontSize="18px" fontWeight="700">
+          {genreName}
+        </Text>
+      </Box>
     </Box>
   );
 }
