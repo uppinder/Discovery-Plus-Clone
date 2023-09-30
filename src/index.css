@@ -139,11 +139,16 @@ body {
   margin: 0 auto;
 }
 
-.slick-next,
 .slick-prev {
   height: 24px;
   width: 24px;
   opacity: 0;
+}
+
+.slick-next {
+  height: 24px;
+  width: 24px;
+  opacity: 1;
 }
 
 .slick-next::before,

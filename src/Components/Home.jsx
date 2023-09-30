@@ -33,9 +33,9 @@ function Home() {
       <GenreCarousel genreDataList={homeData['homeGenreList']} />
 
       {!isEmpty(homeData) &&
-        homeData['homeShowLists'].map((homeShowListData, id) => (
+        homeData['homeShowLists'].map((homeShowListData, _) => (
           <Flex
-            key={id}
+            key={homeShowListData['id']}
             width="100%"
             flexDirection="column"
             paddingTop={isMobile ? '0px' : '22px'}
@@ -79,9 +79,9 @@ function Home() {
                   },
                 }}
               >
-                {homeShowListData['showList'].map((showData, index) => (
+                {homeShowListData['showList'].map((showData, _) => (
                   <Link
-                    key={index}
+                    key={showData['id']}
                     to={`/show/${showData['id']}`}
                     as={ReactRouterLink}
                     position="relative"
@@ -122,9 +122,9 @@ function Home() {
               >
                 {homeShowListData['showList']
                   .splice(0, 4)
-                  .map((showData, index) => (
+                  .map((showData, _) => (
                     <Link
-                      key={index}
+                      key={showData['id']}
                       to={`/show/${showData['id']}`}
                       as={ReactRouterLink}
                       position="relative"

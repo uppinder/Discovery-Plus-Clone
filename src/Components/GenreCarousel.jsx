@@ -62,17 +62,6 @@ function GenreCarousel({ genreDataList = [] }) {
         nextArrow: <CarouselNextArrow />,
         prevArrow: <CarouselPrevArrow />,
         className: 'inner-slider',
-        onInit: () => {
-          const leftArrowEl = document.querySelector('.slick-prev');
-          const nextArrowEl = document.querySelector('.slick-next');
-
-          try {
-            leftArrowEl.style.opacity = '0';
-            nextArrowEl.style.opacity = '1';
-          } catch (error) {
-            console.log(error);
-          }
-        },
         afterChange: index => {
           const leftArrowEl = document.querySelector('.slick-prev');
           const rightArrowEl = document.querySelector('.slick-next');
@@ -102,7 +91,7 @@ function GenreCarousel({ genreDataList = [] }) {
         <Flex
           top="525px"
           position="absolute"
-          zIndex="10"
+          zIndex="5"
           width="100vw"
           paddingX="10px"
           overflowX="scroll"
