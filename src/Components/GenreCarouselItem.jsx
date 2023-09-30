@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import genreThumbnailDesktop from '../Assets/Images/genre_image_desktop.jpeg';
 
-function GenreCarouselItem() {
+function GenreCarouselItem({ genreName = '', genreImageUrl = '' }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -18,7 +18,7 @@ function GenreCarouselItem() {
       onMouseLeave={handleHover}
     >
       <Image
-        src={genreThumbnailDesktop}
+        src={genreImageUrl}
         objectFit="cover"
         height="100%"
         width="auto"
@@ -34,7 +34,7 @@ function GenreCarouselItem() {
         fontWeight="700"
         zIndex="10"
       >
-        History
+        {genreName}
       </Text>
     </Box>
   );

@@ -1,9 +1,9 @@
-const initialState = { showList: [] };
+const initialState = { home: {} };
 
 const showReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_SHOW_LIST':
-      return { ...state, showList: [...action.payload] };
+      return { ...state, home: { ...action.payload } };
     default:
       return state;
   }

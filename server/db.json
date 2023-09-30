@@ -1,0 +1,67 @@
+{
+    "home": {
+        "homeCarouselShowsList": [
+            {
+                "id": "",
+                "title": "Naked and Afraid",
+                "desc": "A man and woman battle extreme environments without food, water or clothes.",
+                "tags": [
+                    "All Time Fave",
+                    "Stream Now"
+                ],
+                "imageUrl": "https://ap2-prod-images.disco-api.com/2023/03/04/551b4ccd-d747-4d3b-9e2a-8cee0beb105a.jpeg?w=1200&p=true&q=75"
+            }
+        ],
+        "homeShowLists": [
+            {
+                "id": "shows-you-love",
+                "title": "Shows You Love",
+                "showCardOrientation": "horizontal",
+                "showList": [
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham"
+                ]
+            },
+            {
+                "id": "must-watch-epic-shows",
+                "title": "Must Watch EPIC Shows",
+                "showCardOrientation": "vertical",
+                "showList": [
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in"
+                ]
+            }
+        ]
+    },
+    "shows": {
+        "little-singham": {
+            "title": "Little Singham",
+            "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+            "thumbnail": "assets/images/shows_test_1.jpeg",
+            "hasNewEpisodes": false,
+            "isPremium": true
+        },
+        "raja-rasoi-aur-anya-kahaniyaan-in": {
+            "title": "Raja Rasoi Aur Anya Kahaaniyan",
+            "desc": "Explore the history and flavors of regional Indian cuisine.",
+            "isPremium": true,
+            "thumbnail": "assets/images/shows_vertical_test_1.jpeg"
+        }
+    }
+}

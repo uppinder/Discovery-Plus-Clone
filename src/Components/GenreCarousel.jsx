@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
 import {
@@ -18,7 +18,18 @@ import leftArrow from '../Assets/Images/carousel_left_arrow.svg';
 import rightArrow from '../Assets/Images/carousel_right_arrow.svg';
 import GenreCarouselItem from './GenreCarouselItem';
 
-function GenreCarousel() {
+function GenreCarousel({
+  genreDataList = [
+    {
+      genreId: 'adventure',
+      genreName: 'Adventure',
+      genreImageUrl:
+        'https://ap2-prod-images.disco-api.com/2021/03/01/2a76ce95-fdcc-492d-b78e-42932a724e0f.jpeg?w=1200&p=true&q=75',
+      genreImageUrlMobile:
+        'https://ap2-prod-images.disco-api.com/2021/05/24/24992b84-e726-4ef3-a4a7-c26f227bc6c1.png?w=100',
+    },
+  ],
+}) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   function CarouselNextArrow(props) {
@@ -96,47 +107,41 @@ function GenreCarousel() {
             },
           }}
         >
-          {Array(8)
-            .fill(null)
-            .map((_, index) => (
-              <Link
-                to="/genre/test"
-                as={ReactRouterLink}
-                key={index}
-                position="relative"
-                minWidth="80px"
+          {genreDataList.map((genreData, index) => (
+            <Link
+              to="/genre/test"
+              as={ReactRouterLink}
+              key={index}
+              position="relative"
+              minWidth="80px"
+            >
+              <Flex
+                height="100%"
+                flexDirection="column"
+                alignItems="center"
+                gap="5px"
               >
-                <Flex
-                  height="100%"
-                  flexDirection="column"
-                  alignItems="center"
-                  gap="5px"
-                >
-                  <Image
-                    src={
-                      index % 2 === 0 ? genreThumbnail : genreThumbnailOverlay
-                    }
-                    width="70px"
-                    height="70px"
-                  />
-                  <Text fontSize="12px" color="#c7c7c7" fontWeight="500">
-                    {index % 2 === 0 ? 'Adventure' : 'Free Watch'}
-                  </Text>
-                </Flex>
-              </Link>
-            ))}
+                <Image
+                  src={genreData.genreImageUrlMobile}
+                  width="70px"
+                  height="70px"
+                />
+                <Text fontSize="12px" color="#c7c7c7" fontWeight="500">
+                  {genreData.genreName}
+                </Text>
+              </Flex>
+            </Link>
+          ))}
         </Flex>
       ) : (
         <Flex width="100%" justifyContent="center" backgroundColor="#121317">
           <Box className="swiper-genre-carousel" width="92%" paddingY="15px">
             <Slider {...settings}>
-              {Array(10)
-                .fill(null)
-                .map((_, id) => (
-                  <Link key={id} height="118px">
-                    <GenreCarouselItem />
-                  </Link>
-                ))}
+              {genreDataList.map((genreData, id) => (
+                <Link key={id} height="118px">
+                  <GenreCarouselItem {...genreData} />
+                </Link>
+              ))}
             </Slider>
           </Box>
         </Flex>

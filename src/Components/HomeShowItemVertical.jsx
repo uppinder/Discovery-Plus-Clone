@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 
-import showThumbnailVertical from '../Assets/Images/shows_vertical_test_1.jpeg';
-
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
-function HomeShowItemVertical() {
+function HomeShowItemVertical({
+  title = '',
+  desc = '',
+  thumbnail = '',
+  hasNewEpisodes = false,
+  isPremium = false,
+}) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const [isHovered, setIsHovered] = useState(false);
@@ -18,13 +22,12 @@ function HomeShowItemVertical() {
 
   return (
     <Box onMouseEnter={handleHover} onMouseLeave={handleHover}>
-      <Image
-        src={showThumbnailVertical}
-        borderRadius={isMobile ? '1px' : '4px'}
-      />
+      <Image src={thumbnail} borderRadius={isMobile ? '1px' : '4px'} />
 
       {/* Premium Icon Overlay*/}
-      <Image src={premiumIcon} position="absolute" top="1.5%" left="1%" />
+      {isPremium && (
+        <Image src={premiumIcon} position="absolute" top="1.5%" left="1%" />
+      )}
 
       {/* Play Button Overlay*/}
       <Flex
@@ -71,7 +74,7 @@ function HomeShowItemVertical() {
             textOverflow="ellipsis"
             maxH="2.4em" // 1.2em * 2 lines
           >
-            Raja Rasoi Aur Anya Kahaaniyan
+            {title}
           </Text>
           <Flex alignItems="center">
             <Text
@@ -81,7 +84,7 @@ function HomeShowItemVertical() {
               textOverflow="ellipsis"
               maxH="2.4em" // 1.2em * 2 lines
             >
-              Explore the history and flavors of regional Indian cuisine.
+              {desc}
             </Text>
           </Flex>
           <HomeShowItemHoverableIcon />

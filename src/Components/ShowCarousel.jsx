@@ -21,31 +21,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 
-function ShowCarousel({ kidsPage = false }) {
+function ShowCarousel({ kidsPage = false, carouselData = [] }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
-
-  const carouselData = [
-    {
-      showTitle: 'Pawn Stars',
-      showDesc: `Pawn Stars follows three generations of the Harrison family`,
-      showTags: ['All Time Fav', 'Stream Now'],
-      showImage: require(`../Assets/Images/carousel_image_test2.jpeg`),
-      showImageMobile: require(`../Assets/Images/carousel_image_test2_mobile.jpeg`),
-      showIsPremium: true,
-      showHasNewEpisodes: false,
-      showWatch: false,
-    },
-    {
-      showTitle: 'Caribbean Life',
-      showDesc: `Families leave behind the mainland for dream homes in the caribbean.`,
-      showTags: ["Editor's Pick", 'Must Watch'],
-      showImage: require(`../Assets/Images/carousel_image_test.jpeg`),
-      showImageMobile: require(`../Assets/Images/carousel_image_test_mobile.jpeg`),
-      showIsPremium: true,
-      showHasNewEpisodes: true,
-      showWatch: true,
-    },
-  ];
 
   const kidsCarouselData = [
     {
@@ -156,11 +133,15 @@ function ShowCarousel({ kidsPage = false }) {
                 </Text>
               </Flex>
             </Flex>
-            <LinkOverlay as={RouterLink} to="404" height="100%">
+            <LinkOverlay
+              as={RouterLink}
+              to={`/show/${showData.showId}`}
+              height="100%"
+            >
               {isMobile ? (
                 <Flex width="100%" height="100%" position="relative">
                   <Image
-                    src={showData.showImageMobile}
+                    src={showData.showImageUrlMobile}
                     height="100%"
                     width="auto"
                     objectFit="cover"
@@ -236,7 +217,7 @@ function ShowCarousel({ kidsPage = false }) {
                     alignItems="center"
                   >
                     <Image
-                      src={showData.showImage}
+                      src={showData.showImageUrl}
                       borderRadius="10px"
                       width="100%"
                       height="100%"

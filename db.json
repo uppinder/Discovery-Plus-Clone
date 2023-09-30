@@ -1,11 +1,121 @@
 {
-    "homeShowsList": [
-        {
+    "home": {
+        "homeCarouselShowsList": [
+            {
+                "showId": "i-should-have-stayed-home-in",
+                "showTitle": "I Should Have Stayed Home",
+                "showDesc": "Two stranded brothers return home using their survival skills.",
+                "showTags": [
+                    "Don't Miss",
+                    "All New Episodes"
+                ],
+                "showImageUrl": "https://ap2-prod-images.disco-api.com/2023/09/25/d501c6c7-a950-44da-b446-ebaf000bbc18.jpeg?w=1200&p=true&q=75",
+                "showImageUrlMobile": "https://ap2-prod-images.disco-api.com/2023/09/25/23d41880-8fd5-49a5-9085-8397759eabf7.jpeg?w=1100&p=true&q=75",
+                "showIsPremium": true,
+                "showHasNewEpisodes": true,
+                "showWatch": true
+            },
+            {
+                "showId": "man-vs-wild-with-sunny-leone-in",
+                "showTitle": "Man vs. Wild with Sunny Leone",
+                "showDesc": "Bear Grylls shows how to survive the toughest and most remote environments.",
+                "showTags": [
+                    "Editor's Pick",
+                    "Must Watch"
+                ],
+                "showImageUrl": "https://ap2-prod-images.disco-api.com/2023/08/15/e90de9c8-c9a4-4c66-ac28-4150d186593a.jpeg?w=1200&p=true&q=75",
+                "showImageUrlMobile": "https://ap2-prod-images.disco-api.com/2023/08/15/c499a02d-40f7-4f7d-8abe-7cb2630390d5.jpeg?w=1100&p=true&q=75",
+                "showIsPremium": true,
+                "showHasNewEpisodes": true,
+                "showWatch": true
+            },
+            {
+                "showId": "ghost-adventures",
+                "showTitle": "Ghost Adventures",
+                "showDesc": "Zak Bagans and his crew investigate the most haunted places in the world.",
+                "showTags": [
+                    "Trending",
+                    "Recommended"
+                ],
+                "showImageUrl": "https://ap2-prod-images.disco-api.com/2023/08/22/5f9ca180-a497-4796-b3a9-2eb09745e449.jpeg?w=1200&p=true&q=75",
+                "showImageUrlMobile": "https://ap2-prod-images.disco-api.com/2023/08/22/e00808d0-5494-4a80-b34b-f824f45be27f.jpeg?w=1100&p=true&q=75",
+                "showIsPremium": true,
+                "showHasNewEpisodes": false,
+                "showWatch": true
+            },
+            {
+                "showId": "naked-and-afraid",
+                "showTitle": "Naked and Afraid",
+                "showDesc": "A man and woman battle extreme environments without food, water or clothes.",
+                "showTags": [
+                    "All Time Fave",
+                    "Stream Now"
+                ],
+                "showImageUrl": "https://ap2-prod-images.disco-api.com/2023/03/04/551b4ccd-d747-4d3b-9e2a-8cee0beb105a.jpeg?w=1200&p=true&q=75",
+                "showImageUrlMobile": "https://ap2-prod-images.disco-api.com/2023/03/04/f9cd2986-2e88-4b01-814b-9382917ca45b.jpeg?w=1100&p=true&q=75",
+                "showIsPremium": true,
+                "showHasNewEpisodes": false,
+                "showWatch": true
+            }
+        ],
+        "homeGenreList": [
+            {
+                "genreId": "adventure",
+                "genreName": "Adventure",
+                "genreImageUrl": "https://ap2-prod-images.disco-api.com/2021/03/01/2a76ce95-fdcc-492d-b78e-42932a724e0f.jpeg?w=1200&p=true&q=75",
+                "genreImageUrlMobile": "https://ap2-prod-images.disco-api.com/2021/05/24/24992b84-e726-4ef3-a4a7-c26f227bc6c1.png?w=100"
+            }
+        ],
+        "homeShowLists": [
+            {
+                "id": "shows-you-love",
+                "title": "Shows You Love",
+                "showCardOrientation": "horizontal",
+                "showList": [
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham",
+                    "little-singham"
+                ]
+            },
+            {
+                "id": "must-watch-epic-shows",
+                "title": "Must Watch EPIC Shows",
+                "showCardOrientation": "vertical",
+                "showList": [
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in",
+                    "raja-rasoi-aur-anya-kahaniyaan-in"
+                ]
+            }
+        ]
+    },
+    "shows": {
+        "little-singham": {
             "title": "Little Singham",
             "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
             "thumbnail": "assets/images/shows_test_1.jpeg",
             "hasNewEpisodes": false,
             "isPremium": true
+        },
+        "raja-rasoi-aur-anya-kahaniyaan-in": {
+            "title": "Raja Rasoi Aur Anya Kahaaniyan",
+            "desc": "Explore the history and flavors of regional Indian cuisine.",
+            "isPremium": true,
+            "thumbnail": "assets/images/shows_vertical_test_1.jpeg"
         }
-    ]
+    }
 }

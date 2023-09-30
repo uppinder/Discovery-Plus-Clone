@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 
-import showThumbnail from '../Assets/Images/shows_test_1.jpeg';
-
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
