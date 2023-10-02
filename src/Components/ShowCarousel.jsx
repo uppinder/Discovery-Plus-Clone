@@ -24,33 +24,9 @@ import premiumIcon from '../Assets/Images/premium_icon.svg';
 function ShowCarousel({ kidsPage = false, carouselData = [] }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
-  const kidsCarouselData = [
-    {
-      showTitle: 'CoComelon',
-      showDesc: `Baby JJ and his siblings go on fun everyday adventures set to catchy songs.`,
-      showTags: ['All Time Fav', 'Stream Now'],
-      showImage: require(`../Assets/Images/kids_carousel_image_test.jpeg`),
-      showImageMobile: require(`../Assets/Images/carousel_image_test2_mobile.jpeg`),
-      showIsPremium: true,
-      showHasNewEpisodes: false,
-      showWatch: false,
-    },
-    {
-      showTitle: 'Zig & Sharko',
-      showDesc: `A shark will do anything to protect a mermaid from a famished hyena.`,
-      showTags: ["Editor's Pick", 'Must Watch'],
-      showImage: require(`../Assets/Images/kids_carousel_image_test2.jpeg`),
-      showImageMobile: require(`../Assets/Images/carousel_image_test_mobile.jpeg`),
-      showIsPremium: true,
-      showHasNewEpisodes: true,
-      showWatch: true,
-    },
-  ];
-
-  let cData = kidsPage ? kidsCarouselData : carouselData;
-
   return (
     <Swiper
+      speed={1000}
       spaceBetween={30}
       centeredSlides={true}
       autoplay={{
@@ -67,7 +43,7 @@ function ShowCarousel({ kidsPage = false, carouselData = [] }) {
       modules={[Autoplay, Pagination, Navigation]}
       className="swiper-home-carousel"
     >
-      {cData.map((showData, idx) => (
+      {carouselData.map((showData, idx) => (
         <LinkBox key={idx}>
           <SwiperSlide key={idx}>
             <Flex
@@ -94,23 +70,25 @@ function ShowCarousel({ kidsPage = false, carouselData = [] }) {
               >
                 {showData.showDesc}
               </Text>
-              <Flex gap="8px">
-                {showData.showTags.map((showTag, idx) => (
-                  <Box
-                    key={idx}
-                    backgroundColor="rgb(40, 46, 61)"
-                    width="fit-content"
-                    color="#9ba1a9"
-                    fontSize="12px"
-                    fontWeight="600"
-                    lineHeight="1.4"
-                    borderRadius="2px"
-                    padding="2.5px 5px"
-                  >
-                    {showTag}
-                  </Box>
-                ))}
-              </Flex>
+              {!kidsPage && (
+                <Flex gap="8px">
+                  {showData.showTags.map((showTag, idx) => (
+                    <Box
+                      key={idx}
+                      backgroundColor="rgb(40, 46, 61)"
+                      width="fit-content"
+                      color="#9ba1a9"
+                      fontSize="12px"
+                      fontWeight="600"
+                      lineHeight="1.4"
+                      borderRadius="2px"
+                      padding="2.5px 5px"
+                    >
+                      {showTag}
+                    </Box>
+                  ))}
+                </Flex>
+              )}
 
               <Flex alignItems="center">
                 <Image
@@ -155,29 +133,31 @@ function ShowCarousel({ kidsPage = false, carouselData = [] }) {
                   <Flex
                     position="absolute"
                     bottom="30%"
-                    left="30%"
+                    left={kidsPage ? '40%' : '30%'}
                     flexDirection="column"
                     justifyContent="center"
                     alignItems="center"
                     gap="7px"
                   >
-                    <Flex gap="8px">
-                      {showData.showTags.map((showTag, idx) => (
-                        <Box
-                          key={idx}
-                          backgroundColor="rgb(40, 46, 61)"
-                          width="fit-content"
-                          color="#9ba1a9"
-                          fontSize="12px"
-                          fontWeight="600"
-                          lineHeight="1.4"
-                          borderRadius="2px"
-                          padding="2.5px 5px"
-                        >
-                          {showTag}
-                        </Box>
-                      ))}
-                    </Flex>
+                    {!kidsPage && (
+                      <Flex gap="8px">
+                        {showData.showTags.map((showTag, idx) => (
+                          <Box
+                            key={idx}
+                            backgroundColor="rgb(40, 46, 61)"
+                            width="fit-content"
+                            color="#9ba1a9"
+                            fontSize="12px"
+                            fontWeight="600"
+                            lineHeight="1.4"
+                            borderRadius="2px"
+                            padding="2.5px 5px"
+                          >
+                            {showTag}
+                          </Box>
+                        ))}
+                      </Flex>
+                    )}
                     {showData.showWatch && (
                       <Flex
                         alignItems="center"

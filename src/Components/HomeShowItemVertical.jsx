@@ -29,6 +29,26 @@ function HomeShowItemVertical({
         <Image src={premiumIcon} position="absolute" top="1.5%" left="1%" />
       )}
 
+      {/* New Episodes Overlay */}
+      {hasNewEpisodes && (
+        <Flex
+          display={isHovered ? 'none' : 'flex'}
+          position="absolute"
+          height={isMobile ? '18px' : '24px'}
+          justifyContent="center"
+          alignItems="center"
+          backgroundColor="#2175d9"
+          borderRadius="3px"
+          padding={isMobile ? '0px 6px' : '2px 12px'}
+          bottom={isMobile ? '3%' : '5%'}
+          left={isMobile ? '10%' : '25%'}
+        >
+          <Text fontSize={isMobile ? '10px' : '16px'} fontWeight="500">
+            New Episodes
+          </Text>
+        </Flex>
+      )}
+
       {/* Play Button Overlay*/}
       <Flex
         display={isHovered ? 'flex' : 'none'}
@@ -37,7 +57,7 @@ function HomeShowItemVertical({
         height="100%"
         top="0"
         left="0"
-        zIndex="10"
+        zIndex="4"
         justifyContent="center"
         alignItems="center"
       >

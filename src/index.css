@@ -84,7 +84,6 @@ body {
 
 @media screen and (max-width: 30em) {
   .swiper-pagination {
-    padding-left: 50%;
     padding-bottom: 30%;
   }
 }
@@ -103,7 +102,7 @@ body {
 
 @media screen and (max-width: 30em) {
   .swiper-pagination {
-    padding-left: 50%;
+    padding-left: 48%;
   }
 
   .swiper-pagination-bullet {

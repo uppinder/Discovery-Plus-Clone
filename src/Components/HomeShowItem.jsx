@@ -64,7 +64,7 @@ function HomeShowItem({
         height="100%"
         top="0"
         left="0"
-        zIndex="5"
+        zIndex="4"
         justifyContent="center"
         alignItems="center"
       >

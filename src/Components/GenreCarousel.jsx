@@ -101,11 +101,11 @@ function GenreCarousel({ genreDataList = [] }) {
             },
           }}
         >
-          {genreDataList.map((genreData, index) => (
+          {genreDataList.map((genreData, id) => (
             <Link
-              to="/genre/test"
+              key={id}
+              to={`/genre/${genreData.genreId}`}
               as={ReactRouterLink}
-              key={index}
               position="relative"
               minWidth="80px"
             >
@@ -132,7 +132,12 @@ function GenreCarousel({ genreDataList = [] }) {
           <Box className="swiper-genre-carousel" width="92%" paddingY="15px">
             <Slider {...settings}>
               {genreDataList.map((genreData, id) => (
-                <Link key={id} height="118px">
+                <Link
+                  key={id}
+                  to={`/genre/${genreData.genreId}`}
+                  as={ReactRouterLink}
+                  height="118px"
+                >
                   <GenreCarouselItem {...genreData} />
                 </Link>
               ))}

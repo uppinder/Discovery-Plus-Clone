@@ -2,9 +2,15 @@ import React, { useEffect } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { isEmpty } from 'lodash';
-import { fetchShowList } from '../Actions';
+import { fetchHomeData } from '../Actions';
 
-import { Flex, Grid, Link, Text, useBreakpointValue } from '@chakra-ui/react';
+import {
+  Flex,
+  Link,
+  Spinner,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 import ShowCarousel from './ShowCarousel';
 
 import HomeShowItem from './HomeShowItem';
@@ -18,22 +24,31 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // setLoading(true);
     if (isEmpty(homeData)) {
-      dispatch(fetchShowList());
+      dispatch(fetchHomeData());
     }
 
     console.log(homeData);
-    // setLoading(false);
   }, [dispatch, homeData]);
 
-  return (
-    <Flex minWidth="100vw" flexDirection="column">
-      <ShowCarousel carouselData={homeData['homeCarouselShowsList']} />
-      <GenreCarousel genreDataList={homeData['homeGenreList']} />
+  if (isEmpty(homeData)) {
+    return (
+      <Flex
+        minWidth="100vw"
+        height="400px"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Spinner size="xl" speed="0.56s" />
+      </Flex>
+    );
+  } else {
+    return (
+      <Flex minWidth="100vw" flexDirection="column">
+        <ShowCarousel carouselData={homeData['homeCarouselShowsList']} />
+        <GenreCarousel genreDataList={homeData['homeGenreList']} />
 
-      {!isEmpty(homeData) &&
-        homeData['homeShowLists'].map((homeShowListData, _) => (
+        {homeData['homeShowLists'].map((homeShowListData, _) => (
           <Flex
             key={homeShowListData['id']}
             width="100%"
@@ -44,22 +59,22 @@ function Home() {
             <Flex
               width="100%"
               justifyContent="space-between"
-              paddingBottom={isMobile ? '6px' : '12px'}
+              paddingBottom={isMobile ? '8px' : '12px'}
               paddingLeft={isMobile ? '10px' : '16px'}
               paddingRight={isMobile ? '15px' : '24px'}
             >
               <Text
-                fontSize={isMobile ? '20px' : '22px'}
+                fontSize={isMobile ? '18px' : '22px'}
                 fontWeight="600"
                 lineHeight="1.4"
               >
                 {homeShowListData['title']}
               </Text>
               <Link
-                to={`/collection-view-all?title=${homeShowListData['id']}`}
+                to={`/collection-view-all?id=${homeShowListData['id']}`}
                 as={ReactRouterLink}
                 color="#838991"
-                fontSize="18px"
+                fontSize={isMobile ? '16px' : '18px'}
                 _hover={{ textDecoration: 'none', color: 'white' }}
               >
                 View All
@@ -79,7 +94,7 @@ function Home() {
                   },
                 }}
               >
-                {homeShowListData['showList'].map((showData, _) => (
+                {homeData[homeShowListData['id']].map((showData, _) => (
                   <Link
                     key={showData['id']}
                     to={`/show/${showData['id']}`}
@@ -109,35 +124,37 @@ function Home() {
                 ))}
               </Flex>
             ) : (
-              <Grid
-                width="100%"
-                height="100%"
-                paddingX="20px"
-                gridTemplateColumns={
-                  homeShowListData['showCardOrientation'] === 'horizontal'
-                    ? 'repeat(4, minmax(0, 100%))'
-                    : 'repeat(6, minmax(0, 100%))'
-                }
-                gridColumnGap="10px"
-              >
-                {homeShowListData['showList']
-                  .splice(0, 4)
+              <Flex width="100%" height="100%" paddingX="20px" gap="10px">
+                {homeData[homeShowListData['id']]
+                  .slice(
+                    0,
+                    homeShowListData['showCardOrientation'] === 'horizontal'
+                      ? 4
+                      : 6
+                  )
                   .map((showData, _) => (
                     <Link
                       key={showData['id']}
                       to={`/show/${showData['id']}`}
                       as={ReactRouterLink}
                       position="relative"
+                      width="100%"
                     >
-                      <HomeShowItem {...showData} />
+                      {homeShowListData['showCardOrientation'] ===
+                      'horizontal' ? (
+                        <HomeShowItem {...showData} />
+                      ) : (
+                        <HomeShowItemVertical {...showData} />
+                      )}
                     </Link>
                   ))}
-              </Grid>
+              </Flex>
             )}
           </Flex>
         ))}
-    </Flex>
-  );
+      </Flex>
+    );
+  }
 }
 
 export default Home;
