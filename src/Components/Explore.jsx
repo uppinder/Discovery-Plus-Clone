@@ -6,7 +6,7 @@ import channelAnimalPlanet from '../Assets/Images/premium_channel_animal_planet.
 import channelDiscovery from '../Assets/Images/premium_channel_discovery.png';
 import channelDmax from '../Assets/Images/premium_channel_dmax.png';
 import channelEurosport from '../Assets/Images/premium_channel_eurosport.png';
-import channelHGTV from '../Assets/Images/premium_channel_hgtv.png';
+import channelFoodNetwork from '../Assets/Images/premium_channel_food_network.jpeg';
 import channelIP from '../Assets/Images/premium_channel_ip.png';
 import channelKids from '../Assets/Images/premium_channel_kids.png';
 import channelScience from '../Assets/Images/premium_channel_science.png';
@@ -56,37 +56,37 @@ function Explore() {
           gridColumnGap="10px"
           gridRowGap="12px"
         >
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/animal-planet" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelAnimalPlanet} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/discovery-channel" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelDiscovery} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/dmax" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelDmax} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/eurosport" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelEurosport} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
-            <ChannelItem thumbnail={channelHGTV} />
+          <Link to="/channel/food-network" as={ReactRouterLink}>
+            <ChannelItem thumbnail={channelFoodNetwork} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/investigation-discovery" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelIP} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/discovery-kids" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelKids} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/discovery-science" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelScience} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/tlc" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelTLC} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/trvl-channel" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelTrivia} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/discovery-turbo" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelTurbo} />
           </Link>
         </Grid>
@@ -111,16 +111,16 @@ function Explore() {
           gridColumnGap="12px"
           gridRowGap="12px"
         >
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/bbc" as={ReactRouterLink}>
             <ExploreItem thumbnail={channelBBC} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/ae-network" as={ReactRouterLink}>
             <ExploreItem thumbnail={channelAnE} />
           </Link>
           <Link to="/channel/test" as={ReactRouterLink}>
             <ExploreItem thumbnail={channelAllAccess} />
           </Link>
-          <Link to="/channel/test" as={ReactRouterLink}>
+          <Link to="/channel/mindblown" as={ReactRouterLink}>
             <ExploreItem thumbnail={channelMindBlown} />
           </Link>
         </Grid>

@@ -27,8 +27,6 @@ function Kids() {
     if (isEmpty(kidsData)) {
       dispatch(fetchKidsData());
     }
-
-    console.log(kidsData);
   }, [dispatch, kidsData]);
 
   if (isEmpty(kidsData)) {

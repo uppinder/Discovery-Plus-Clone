@@ -27,8 +27,6 @@ function Home() {
     if (isEmpty(homeData)) {
       dispatch(fetchHomeData());
     }
-
-    console.log(homeData);
   }, [dispatch, homeData]);
 
   if (isEmpty(homeData)) {

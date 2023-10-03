@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react';
-
-import showThumbnail from '../Assets/Images/shows_test_1.jpeg';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
 
 import videoOverlayIcon from '../Assets/Images/mindblown_video_icon.svg';
 
-function MindblownListItem({ isMindblownPageMobileView = false }) {
-  const isMobile = useBreakpointValue({ base: true, sm: false });
-
+function MindblownListItem({
+  title = '',
+  desc = '',
+  thumbnail = '',
+  videoCount = '',
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -20,7 +21,7 @@ function MindblownListItem({ isMindblownPageMobileView = false }) {
       onMouseLeave={handleHover}
       position="relative"
     >
-      <Image src={showThumbnail} borderRadius="10px" />
+      <Image src={thumbnail} borderRadius="10px" />
 
       {/* New Episodes Overlay */}
       <Flex
@@ -34,7 +35,7 @@ function MindblownListItem({ isMindblownPageMobileView = false }) {
       >
         <Image src={videoOverlayIcon} />
         <Text fontSize="15px" fontWeight="500">
-          3 Videos
+          {videoCount}
         </Text>
       </Flex>
 
@@ -71,12 +72,13 @@ function MindblownListItem({ isMindblownPageMobileView = false }) {
           position="relative"
         >
           <Text fontSize="16px" fontWeight="600">
-            Little Singham
+            {title}
           </Text>
           <Flex alignItems="center" display={isHovered ? 'flex' : 'none'}>
             <Text
               color="#838991"
-              fontSize="16px"
+              fontSize="14px"
+              fontWeight="500"
               lineHeight="1.2em"
               css={{
                 display: '-webkit-box',
@@ -87,8 +89,7 @@ function MindblownListItem({ isMindblownPageMobileView = false }) {
                 maxHeight: '2.8em', // You can adjust this value for your design
               }}
             >
-              A nine-year-old boy battles evil villains that are out to create
-              chaos.
+              {desc}
             </Text>
           </Flex>
         </Flex>

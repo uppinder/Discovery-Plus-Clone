@@ -28,4 +28,18 @@ const fetchKidsData = () => {
   };
 };
 
-export { fetchHomeData, fetchKidsData };
+const fetchMindblownListData = () => {
+  return async dispatch => {
+    try {
+      const { data } = await discoveryPlusApi(`/mindblownList`);
+      dispatch({
+        type: 'FETCH_MINDBLOWN_LIST_DATA',
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export { fetchHomeData, fetchKidsData, fetchMindblownListData };

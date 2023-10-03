@@ -19,7 +19,12 @@ function ChannelItem({ thumbnail }) {
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
     >
-      <Image src={thumbnail} width="100%" height="100%" objectFit="cover" />
+      <Image
+        src={thumbnail}
+        width="100%"
+        height="100%"
+        objectFit="scale-down"
+      />
 
       {/* Live overlay */}
       {isHovered && (

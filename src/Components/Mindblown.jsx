@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
+
 import {
   Divider,
   Flex,
@@ -12,8 +15,6 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
-import React from 'react';
-import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 
 import showImage from '../Assets/Images/show_image.jpeg';
 import { DotsThreeOutlineVertical, Play } from '@phosphor-icons/react';
