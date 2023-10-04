@@ -42,4 +42,28 @@ const fetchMindblownListData = () => {
   };
 };
 
-export { fetchHomeData, fetchKidsData, fetchMindblownListData };
+const fetchShortsData = pageNumber => {
+  const start = pageNumber * 10;
+  const end = (pageNumber + 1) * 10;
+
+  return async dispatch => {
+    try {
+      const { data } = await discoveryPlusApi(
+        `/shorts?_start=${start}&_end=${end}`
+      );
+      dispatch({
+        type: 'FETCH_SHORTS_DATA',
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export {
+  fetchHomeData,
+  fetchKidsData,
+  fetchMindblownListData,
+  fetchShortsData,
+};

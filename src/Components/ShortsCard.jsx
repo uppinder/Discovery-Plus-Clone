@@ -5,13 +5,7 @@ import shortsFullEpIcon from '../Assets/Images/short_play_icon.svg';
 
 import { Heart, ShareNetwork } from '@phosphor-icons/react';
 
-function ShortsCard({
-  index,
-  title,
-  rating,
-  shortsImageThumbnail,
-  episodeUrl,
-}) {
+function ShortsCard({ index, title, rating, thumbnail, episodeUrl }) {
   const [cardHovered, setCardHovered] = useState(false);
   const [iconHovered, setIconHovered] = useState(false);
 
@@ -31,7 +25,7 @@ function ShortsCard({
       <Text marginX="12px" color="#9ba1a9" fontSize="14px">
         {rating}
       </Text>
-      <Image src={shortsImageThumbnail} marginY="12px" />
+      <Image src={thumbnail} marginY="12px" />
       <Flex justifyContent="space-between" paddingX="16px" marginTop="6px">
         <Flex gap="6px">
           <Box

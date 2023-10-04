@@ -1,4 +1,4 @@
-const initialState = { home: {}, kids: {}, mindblownList: {} };
+const initialState = { home: {}, kids: {}, mindblownList: [], shorts: [] };
 
 const showReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -8,6 +8,8 @@ const showReducer = (state = initialState, action) => {
       return { ...state, kids: { ...action.payload } };
     case 'FETCH_MINDBLOWN_LIST_DATA':
       return { ...state, mindblownList: action.payload };
+    case 'FETCH_SHORTS_DATA':
+      return { ...state, shorts: [...state.shorts, ...action.payload] };
     default:
       return state;
   }

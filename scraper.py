@@ -1,22 +1,6 @@
-
-# Horizontal w=327 to w=700
-#
-# styles-thumbnailContainer-1oi5QPkx
-# styles-thumbnailImageWrapper-3rF4G4fj
-# Premium icon - class: styles-premiumIcon-3D3gTh8F
-# Show title - class: styles-basicShowName-1UIRr8Z0
-# Show desc - id: #desc
-# Image thumbnail - class: styles-thumbnailImage-2I_Mrm9L
-# New episodes - class: styles-Episodes-2eohupVc
-
-# Portrait (Vertical) w=214 to w=428
-#
-# Premium icon - class: styles-premiumIcon-384gksj1
-# Show title - class: styles-basicShowName-2gClxIxX
-# Show desc - class: styles-basicShowDesc-3RVyVMPP
-# Image thumbnail - class: styles-thumbnailImage-3_Ss8vN_
-
 import json
+import time
+import random
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -24,12 +8,12 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 
-page = 'mindblown'
+page = 'shorts'  # shows, mindblown, shorts
 orientation = 'horizontal'
-url = 'https://www.discoveryplus.in/mindblown'
+url = 'https://www.discoveryplus.in/shorts'
 
 options = webdriver.ChromeOptions()
-options.add_argument('--headless')
+# options.add_argument('--headless')
 browser = webdriver.Chrome(
     options=options, executable_path='/Users/uppinder/Downloads/Software/chromedriver-mac-x64/chromedriver')
 browser.get(url)
@@ -47,6 +31,14 @@ try:
     elif page == 'mindblown':
         myElem = WebDriverWait(browser, 30).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'styles-gridContainer-2oo0Qu1Z')))
+    elif page == 'shorts':
+        myElem = WebDriverWait(browser, 30).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'styles-containerWeb-1JtmYkko')))
+        # Scroll to bottom
+        for _ in range(10):
+            browser.execute_script(
+                "window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(3)
 
     html = browser.page_source
     soup = BeautifulSoup(html, features="html.parser")
@@ -110,7 +102,6 @@ try:
             showList.append(show)
 
     elif page == 'mindblown':
-        grid_container = None
         grid_container = soup.find(
             attrs={"class": "styles-gridContainer-2oo0Qu1Z"}).find_all('a')
 
@@ -135,6 +126,44 @@ try:
             mindblown['videoCount'] = video_count.text.strip()
 
             showList.append(mindblown)
+
+    elif page == 'shorts':
+        categories = ['adventure',
+                      'food',
+                      'science',
+                      'animals',
+                      'lifestyle']
+
+        shortsCards = soup.find_all(
+            attrs={"id": "shortsCard"})
+
+        for item in shortsCards:
+            card = {}
+
+            show_title = item.find(
+                attrs={"class": "styles-chevronTitle-29PRaGHu"})
+            show_rating = item.find_all(
+                attrs={"class": "styles-contentRatingTexts-2kBylqSd"})
+            show_thumbnail = item.find(
+                attrs={"class": "styles-bannerImage-2hTagx3I"})
+
+            card['title'] = show_title.text.strip()
+            card['category'] = random.choice(categories)
+            card['thumbnail'] = show_thumbnail['src'].replace(
+                '&w=700', '&w=1600')
+
+            rating_texts = [t.text.strip() for t in show_rating]
+            if rating_texts:
+                card['rating'] = rating_texts[0] + ' ' + rating_texts[1]
+
+                if len(rating_texts) > 2:
+                    card['rating'] += ' | ' + \
+                        rating_texts[2] + ' ' + rating_texts[3]
+                    if len(rating_texts) > 4:
+                        card['rating'] += ' DOT ' + \
+                            ' DOT '.join(rating_texts[4:])
+
+            showList.append(card)
 
     print(json.dumps(showList))
 
