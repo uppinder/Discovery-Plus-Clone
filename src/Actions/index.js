@@ -1,3 +1,4 @@
+import { isEmpty } from 'lodash';
 import discoveryPlusApi from '../Api';
 
 const fetchHomeData = () => {
@@ -51,6 +52,11 @@ const fetchShortsData = pageNumber => {
       const { data } = await discoveryPlusApi(
         `/shorts?_start=${start}&_end=${end}`
       );
+
+      if (isEmpty(data)) {
+        return;
+      }
+
       dispatch({
         type: 'FETCH_SHORTS_DATA',
         payload: data,

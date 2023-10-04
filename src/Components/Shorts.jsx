@@ -46,13 +46,12 @@ function Shorts() {
   useEffect(() => {
     const fetchShorts = () => {
       try {
-        setIsLoading(true);
-        // console.log('Fetching data...', pageNumber);
+        console.log('Fetching data...', pageNumber);
 
         setTimeout(() => {
           dispatch(fetchShortsData(pageNumber));
 
-          //   console.log('Data fetched');
+          console.log('Data fetched');
         }, 300);
       } catch (error) {
         console.log(error);
@@ -62,6 +61,7 @@ function Shorts() {
     };
 
     if (pageNumber > 0) {
+      setIsLoading(true);
       fetchShorts();
     }
   }, [pageNumber, dispatch]);
@@ -203,14 +203,7 @@ function Shorts() {
           marginBottom="-32px"
         >
           {shortsData.map((data, id) => {
-            if (id === shortsData.length - 1) {
-              return (
-                <Box key={id} ref={lastShortsRef}>
-                  <ShortsCard {...data} />
-                  {isMobile && <Divider borderWidth="1.5px" width="99%" />}
-                </Box>
-              );
-            } else {
+            if (category === 'all' || category === data.category) {
               return (
                 <Box key={id}>
                   <ShortsCard {...data} />
@@ -219,7 +212,9 @@ function Shorts() {
               );
             }
           })}
-          <Spinner size="lg" marginX="auto" />
+          <Box height="1px" width="100%" ref={lastShortsRef}></Box>
+          {isLoading ? 'true' : 'false'}
+          {isLoading && <Spinner size="lg" marginX="auto" />}
         </Flex>
 
         <Flex
@@ -268,5 +263,6 @@ function Shorts() {
 
 export default Shorts;
 
-// 1. Mobile responsive - done
-// 2. Infinite scroll - first draft done
+// 1. isLoading - second
+// 2. Filtering based on category - done
+// 3. /superstars

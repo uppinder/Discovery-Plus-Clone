@@ -96,12 +96,22 @@ const Testimonial = ({ content, name, numOfStars }) => {
           {Array(numOfStars)
             .fill(null)
             .map((_, index) => (
-              <Star size={16} color="rgb(255, 164, 36)" weight="fill" />
+              <Star
+                key={index}
+                size={16}
+                color="rgb(255, 164, 36)"
+                weight="fill"
+              />
             ))}
           {Array(5 - numOfStars)
             .fill(null)
             .map((_, index) => (
-              <Star size={16} color="rgb(108, 114, 122)" weight="fill" />
+              <Star
+                key={index}
+                size={16}
+                color="rgb(108, 114, 122)"
+                weight="fill"
+              />
             ))}
         </Flex>
       </Flex>

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
+import reactStringReplace from 'react-string-replace';
 
 import shortsFullEpIcon from '../Assets/Images/short_play_icon.svg';
 
-import { Heart, ShareNetwork } from '@phosphor-icons/react';
+import { DotOutline, Heart, ShareNetwork } from '@phosphor-icons/react';
 
-function ShortsCard({ index, title, rating, thumbnail, episodeUrl }) {
+function ShortsCard({ title, rating, thumbnail }) {
   const [cardHovered, setCardHovered] = useState(false);
   const [iconHovered, setIconHovered] = useState(false);
 
@@ -22,9 +23,12 @@ function ShortsCard({ index, title, rating, thumbnail, episodeUrl }) {
       <Text marginX="12px" marginBottom="8px" fontWeight="500">
         {title}
       </Text>
-      <Text marginX="12px" color="#9ba1a9" fontSize="14px">
-        {rating}
-      </Text>
+      {rating && (
+        <Text marginX="12px" color="#9ba1a9" fontSize="14px">
+          {rating.replaceAll('DOT', '•')}
+        </Text>
+      )}
+
       <Image src={thumbnail} marginY="12px" />
       <Flex justifyContent="space-between" paddingX="16px" marginTop="6px">
         <Flex gap="6px">
