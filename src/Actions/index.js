@@ -29,6 +29,20 @@ const fetchKidsData = () => {
   };
 };
 
+const fetchSuperstarData = superstarId => {
+  return async dispatch => {
+    try {
+      const { data } = await discoveryPlusApi(`/superstars/${superstarId}`);
+      dispatch({
+        type: 'FETCH_SUPERSTAR_DATA',
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 const fetchMindblownListData = () => {
   return async dispatch => {
     try {
@@ -70,6 +84,7 @@ const fetchShortsData = pageNumber => {
 export {
   fetchHomeData,
   fetchKidsData,
+  fetchSuperstarData,
   fetchMindblownListData,
   fetchShortsData,
 };

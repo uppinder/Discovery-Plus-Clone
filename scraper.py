@@ -8,12 +8,12 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 
-page = 'shorts'  # shows, mindblown, shorts
+page = 'superstars'  # shows, mindblown, shorts, superstars
 orientation = 'horizontal'
-url = 'https://www.discoveryplus.in/shorts'
+url = 'https://www.discoveryplus.in/superstars/mister-maker'
 
 options = webdriver.ChromeOptions()
-# options.add_argument('--headless')
+options.add_argument('--headless')
 browser = webdriver.Chrome(
     options=options, executable_path='/Users/uppinder/Downloads/Software/chromedriver-mac-x64/chromedriver')
 browser.get(url)
@@ -39,6 +39,9 @@ try:
             browser.execute_script(
                 "window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(3)
+    elif page == 'superstars':
+        myElem = WebDriverWait(browser, 30).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'styles-gridContainer-3yULnzY0')))
 
     html = browser.page_source
     soup = BeautifulSoup(html, features="html.parser")
@@ -162,6 +165,36 @@ try:
                     if len(rating_texts) > 4:
                         card['rating'] += ' DOT ' + \
                             ' DOT '.join(rating_texts[4:])
+
+            showList.append(card)
+
+    elif page == 'superstars':
+        grid_container = soup.find_all(
+            attrs={"class": "styles-wrapper-2EYq-6WB"})
+
+        for item in grid_container:
+            card = {}
+
+            show_link = item.find(
+                attrs={"class": "styles-href-1fNufSlc"})
+            show_title = item.find(
+                attrs={"class": "styles-title-1nosiuwi"})
+            show_desc = item.find(
+                attrs={"class": "styles-descriptionContent-28A8egQw"})
+            show_thumbnail = item.find(
+                attrs={"class": "styles-thumbnailImage-1ZuUX8wm"})
+            show_duration = item.find(
+                attrs={"class": "styles-duration-WeX9hpws"})
+            premium_icon = item.find(
+                attrs={"class": "styles-premiumIcon-1cFRuPCc"})
+
+            card['id'] = show_link['href'].split('/')[3].split('?')[0]
+            card['title'] = show_title.text.strip()
+            card['desc'] = show_desc.text.strip()
+            card['thumbnail'] = show_thumbnail['srcset'].split()[0].replace(
+                '?w=300', '?w=600')
+            card['isPremium'] = True if premium_icon else False
+            card['duration'] = show_duration.text.strip()
 
             showList.append(card)
 

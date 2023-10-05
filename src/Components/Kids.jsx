@@ -192,12 +192,12 @@ function Kids() {
                   >
                     {kidsShowListData['showCardOrientation'] ===
                     'horizontal' ? (
-                      <homeShowItem
+                      <HomeShowItem
                         {...showData}
                         isChannelPageMobileView={true}
                       />
                     ) : (
-                      <homeShowItemVertical {...showData} />
+                      <HomeShowItemVertical {...showData} />
                     )}
                   </Link>
                 ))}

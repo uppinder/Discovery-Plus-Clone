@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 
-import showThumbnail from '../Assets/Images/shows_test_1.jpeg';
-
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
 function ShowItem({
+  title = '',
+  desc = '',
+  thumbnail = '',
+  duration = '',
+  isPremium = false,
   isShowPageMobileView = false,
   timeOverlay = false,
   isFavourite = false,
@@ -32,7 +35,7 @@ function ShowItem({
       >
         <Box position="relative">
           <Image
-            src={showThumbnail}
+            src={thumbnail}
             minWidth="128px"
             height="72px"
             objectFit="cover"
@@ -61,7 +64,7 @@ function ShowItem({
             opacity="0.65"
             paddingX="3px"
           >
-            <Text fontSize="10px">43:32</Text>
+            <Text fontSize="10px">{duration}</Text>
           </Flex>
         </Box>
 
@@ -76,7 +79,7 @@ function ShowItem({
             fontWeight={isShowPageMobileView ? '500' : '600'}
             lineHeight="1"
           >
-            Little Singham
+            {title}
           </Text>
           <Flex alignItems="center" width="90%">
             <Text
@@ -94,8 +97,7 @@ function ShowItem({
                 maxHeight: `${isShowPageMobileView ? '2.8em' : '2.4em'}`, // You can adjust this value for your design
               }}
             >
-              A nine-year-old boy battles evil villains that are out to create
-              chaos.
+              {desc}
             </Text>
           </Flex>
         </Flex>
@@ -111,7 +113,7 @@ function ShowItem({
         position="relative"
       >
         <Image
-          src={showThumbnail}
+          src={thumbnail}
           borderRadius={isMobile ? '1px' : '4px'}
           //   height="100%"
           //   width="auto"
@@ -119,7 +121,9 @@ function ShowItem({
         />
 
         {/* Premium Icon Overlay*/}
-        <Image src={premiumIcon} position="absolute" top="1.5%" left="1%" />
+        {isPremium && (
+          <Image src={premiumIcon} position="absolute" top="1.5%" left="1%" />
+        )}
 
         {timeOverlay && (
           <Flex
@@ -130,7 +134,7 @@ function ShowItem({
             opacity="0.65"
             paddingX="3px"
           >
-            <Text fontSize="12px">43:32</Text>
+            <Text fontSize="12px">{duration}</Text>
           </Flex>
         )}
 
@@ -178,7 +182,7 @@ function ShowItem({
       </Box>
 
       <Text fontSize="15px" fontWeight="600">
-        Little Singham
+        {title}
       </Text>
       <Flex alignItems="center" width="90%">
         <Text
@@ -195,8 +199,7 @@ function ShowItem({
             maxHeight: '2.4em', // You can adjust this value for your design
           }}
         >
-          A nine-year-old boy battles evil villains that are out to create
-          chaos.
+          {desc}
         </Text>
       </Flex>
     </Flex>
