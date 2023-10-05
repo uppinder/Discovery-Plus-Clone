@@ -102,6 +102,13 @@ const fetchShortsData = pageNumber => {
   };
 };
 
+const updateChannelCarouselData = channelId => {
+  return {
+    type: 'UPDATE_CHANNEL_CAROUSEL_DATA',
+    payload: channelId,
+  };
+};
+
 export {
   fetchHomeData,
   fetchKidsData,
@@ -109,4 +116,5 @@ export {
   fetchCollectionsData,
   fetchMindblownListData,
   fetchShortsData,
+  updateChannelCarouselData,
 };

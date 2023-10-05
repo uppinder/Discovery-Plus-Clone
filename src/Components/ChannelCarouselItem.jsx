@@ -1,10 +1,10 @@
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 import channelThumbnailDesktop from '../Assets/Images/channel_carousel_image.jpeg';
 import liveIcon from '../Assets/Images/live_icon.svg';
 
-function ChannelCarouselItem({ first }) {
+function ChannelCarouselItem({ first = false, thumbnail = '' }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -19,7 +19,7 @@ function ChannelCarouselItem({ first }) {
       width="fit-content"
     >
       <Image
-        src={channelThumbnailDesktop}
+        src={thumbnail}
         minWidth="150px"
         height="190px"
         border={first ? '3px solid #2175d9' : null}

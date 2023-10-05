@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateChannelCarouselData } from '../Actions';
+
 import {
   Link as ReactRouterLink,
   useLocation,
@@ -16,12 +19,18 @@ import {
 } from '@chakra-ui/react';
 
 import channelImage from '../Assets/Images/show_image.jpeg';
-import channelImageMobile from '../Assets/Images/channel_carousel_image_mobile.png';
 import HomeShowItem from './HomeShowItem';
 import ChannelCarousel from './ChannelCarousel';
 
 function Channel() {
   const channelId = useParams().channelId;
+  const channelData = useSelector(state => state.channelCarouselData);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(updateChannelCarouselData(channelId));
+  }, [dispatch, channelId]);
+
   const location = useLocation();
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
@@ -54,7 +63,7 @@ function Channel() {
           lineHeight="1.1"
           paddingX={isChannelPageMobileView ? '6px' : '0'}
         >
-          Animal Planet
+          {channelData[0]['title']}
         </Text>
 
         {isChannelPageMobileView && <Divider width="95%" marginX="auto" />}
@@ -70,38 +79,34 @@ function Channel() {
               },
             }}
           >
-            {Array(11)
-              .fill(null)
-              .map((_, index) => (
-                <Link
-                  key={index}
-                  to="/channel/test"
-                  as={ReactRouterLink}
-                  position="relative"
-                  minWidth="80px"
-                  paddingBottom="20px"
-                  borderBottom={index === 0 ? '4px solid #2175d9' : null}
-                >
-                  <Flex
-                    height="100%"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <Image
-                      src={channelImageMobile}
-                      width="70px"
-                      height="70px"
-                    />
-                  </Flex>
-                </Link>
-              ))}
+            {channelData.map((channelItem, index) => (
+              <Link
+                key={index}
+                to={`/channel/${channelItem.id}`}
+                as={ReactRouterLink}
+                position="relative"
+                minWidth="80px"
+                paddingBottom="20px"
+                borderBottom={index === 0 ? '4px solid #2175d9' : null}
+              >
+                <Flex height="100%" flexDirection="column" alignItems="center">
+                  <Image
+                    src={channelItem.thumbnailMobile}
+                    width="70px"
+                    height="70px"
+                  />
+                </Flex>
+              </Link>
+            ))}
           </Flex>
         ) : (
           <></>
         )}
       </Flex>
 
-      {!isChannelPageMobileView && <ChannelCarousel />}
+      {!isChannelPageMobileView && (
+        <ChannelCarousel channelData={channelData} />
+      )}
 
       <Flex
         width="100%"
@@ -111,7 +116,7 @@ function Channel() {
         gap="12px"
       >
         <Text fontSize="20px" fontWeight="600" lineHeight="1.1">
-          Animal Planet Shows
+          {channelData[0]['title']} Shows
         </Text>
 
         <Grid

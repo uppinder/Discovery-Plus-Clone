@@ -8,7 +8,7 @@ import leftArrow from '../Assets/Images/carousel_left_arrow.svg';
 import rightArrow from '../Assets/Images/carousel_right_arrow.svg';
 import ChannelCarouselItem from './ChannelCarouselItem';
 
-function ChannelCarousel() {
+function ChannelCarousel({ channelData = [] }) {
   function CarouselNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -56,10 +56,9 @@ function ChannelCarousel() {
       nextArrowEl.style.opacity = '1';
     },
     afterChange: index => {
-      console.log(index);
       const leftArrowEl = document.querySelector('.slick-prev');
       const rightArrowEl = document.querySelector('.slick-next');
-      if (index === 5) {
+      if (index === 4) {
         leftArrowEl.style.opacity = '1';
         rightArrowEl.style.opacity = '0';
       } else {
@@ -73,13 +72,18 @@ function ChannelCarousel() {
     <Flex width="100%" justifyContent="center">
       <Box className="swiper-genre-carousel" width="78%" paddingY="15px">
         <Slider {...settings}>
-          {Array(12)
-            .fill(null)
-            .map((_, id) => (
-              <Link key={id} to="/channel/test" as={ReactRouterLink}>
-                <ChannelCarouselItem first={id === 0} />
-              </Link>
-            ))}
+          {channelData.map((channelItem, index) => (
+            <Link
+              key={channelItem.id}
+              to={`/channel/${channelItem.id}`}
+              as={ReactRouterLink}
+            >
+              <ChannelCarouselItem
+                first={index === 0}
+                thumbnail={channelItem.thumbnail}
+              />
+            </Link>
+          ))}
         </Slider>
       </Box>
     </Flex>
