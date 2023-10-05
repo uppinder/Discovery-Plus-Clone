@@ -43,6 +43,27 @@ const fetchSuperstarData = superstarId => {
   };
 };
 
+const fetchCollectionsData = (params, isSearchView = false) => {
+  let endpoint = '';
+  //   if (isSearchView) {
+  //     endpoint = `/collection-view-all`;
+  //   } else {
+  endpoint = `/collection-view-all/${params.id}`;
+  //   }
+
+  return async dispatch => {
+    try {
+      const { data } = await discoveryPlusApi(endpoint);
+      dispatch({
+        type: 'FETCH_COLLECTIONS_DATA',
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 const fetchMindblownListData = () => {
   return async dispatch => {
     try {
@@ -85,6 +106,7 @@ export {
   fetchHomeData,
   fetchKidsData,
   fetchSuperstarData,
+  fetchCollectionsData,
   fetchMindblownListData,
   fetchShortsData,
 };

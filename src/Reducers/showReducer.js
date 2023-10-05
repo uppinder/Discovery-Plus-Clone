@@ -4,6 +4,7 @@ const initialState = {
   mindblownList: [],
   shorts: [],
   superstars: {},
+  collection: {},
 };
 
 const showReducer = (state = initialState, action) => {
@@ -22,6 +23,14 @@ const showReducer = (state = initialState, action) => {
         superstars: {
           ...state.superstars,
           [action.payload.id]: action.payload.episodes,
+        },
+      };
+    case 'FETCH_COLLECTIONS_DATA':
+      return {
+        ...state,
+        collection: {
+          ...state.collection,
+          [action.payload.id]: action.payload,
         },
       };
     default:

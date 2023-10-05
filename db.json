@@ -1205,8 +1205,8 @@
             }
         ]
     },
-    "collection-view-all": {
-        "shows-you-love": {
+    "collection-view-all": [
+        {
             "id": "shows-you-love",
             "title": "Shows You Love",
             "showList": [
@@ -2012,7 +2012,7 @@
                 }
             ]
         },
-        "newly-added-shows": {
+        {
             "id": "newly-added-shows",
             "title": "Newly Added Shows",
             "showList": [
@@ -2218,7 +2218,7 @@
                 }
             ]
         },
-        "newly-added-seasons": {
+        {
             "id": "newly-added-seasons",
             "title": "Newly Added Seasons",
             "showList": [
@@ -2344,7 +2344,7 @@
                 }
             ]
         },
-        "discoveryplus-india-originals": {
+        {
             "id": "discoveryplus-india-originals",
             "title": "discovery+ India Originals",
             "showList": [
@@ -2526,7 +2526,7 @@
                 }
             ]
         },
-        "stream-for-free-now": {
+        {
             "id": "stream-for-free-now",
             "title": "Stream For Free Now",
             "showList": [
@@ -2716,7 +2716,7 @@
                 }
             ]
         },
-        "need-some-space": {
+        {
             "id": "need-some-space",
             "title": "Need Some 'Space'?",
             "showList": [
@@ -2850,7 +2850,7 @@
                 }
             ]
         },
-        "family-time": {
+        {
             "id": "family-time",
             "title": "Family Time",
             "showList": [
@@ -3064,7 +3064,7 @@
                 }
             ]
         },
-        "everyones-watching": {
+        {
             "id": "everyones-watching",
             "title": "Everyone's Watching",
             "showList": [
@@ -3870,7 +3870,7 @@
                 }
             ]
         },
-        "little-singham-vs-kaal": {
+        {
             "id": "little-singham-vs-kaal",
             "title": "Little Singham VS Kaal",
             "showList": [
@@ -3948,7 +3948,7 @@
                 }
             ]
         },
-        "top-toons": {
+        {
             "id": "top-toons",
             "title": "Top Toons",
             "showList": [
@@ -4034,7 +4034,7 @@
                 }
             ]
         },
-        "new-releases-kids": {
+        {
             "id": "new-releases-kids",
             "title": "New Releases",
             "showList": [
@@ -4456,7 +4456,7 @@
                 }
             ]
         },
-        "junior-chefs-who-impress": {
+        {
             "id": "junior-chefs-who-impress",
             "title": "Junior Chefs Who Impress!",
             "showList": [
@@ -4510,7 +4510,7 @@
                 }
             ]
         }
-    },
+    ],
     "shows": {},
     "mindblownList": [
         {
