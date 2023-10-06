@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { isEmpty } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchChannelListData, updateChannelCarouselData } from '../Actions';
 
@@ -22,7 +23,6 @@ import {
 import channelImage from '../Assets/Images/show_image.jpeg';
 import HomeShowItem from './HomeShowItem';
 import ChannelCarousel from './ChannelCarousel';
-import { isEmpty } from 'lodash';
 
 function Channel() {
   const channelId = useParams().channelId;
@@ -146,7 +146,12 @@ function Channel() {
             gridRowGap={isChannelPageMobileView ? '10px' : '20px'}
           >
             {channelShowListData[channelId].map((showData, index) => (
-              <Link key={index} position="relative">
+              <Link
+                key={index}
+                to={`/show/${showData.id}`}
+                as={ReactRouterLink}
+                position="relative"
+              >
                 <HomeShowItem
                   {...showData}
                   isChannelPageMobileView={isChannelPageMobileView}
