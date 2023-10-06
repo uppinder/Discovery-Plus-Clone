@@ -241,7 +241,7 @@ function Premium() {
   return (
     <Flex
       height="100%"
-      width="100vw"
+      minWidth="100%"
       flexDirection="column"
       position="relative"
     >

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateChannelCarouselData } from '../Actions';
+import { fetchChannelListData, updateChannelCarouselData } from '../Actions';
 
 import {
   Link as ReactRouterLink,
@@ -14,6 +14,7 @@ import {
   Grid,
   Image,
   Link,
+  Spinner,
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
@@ -21,15 +22,20 @@ import {
 import channelImage from '../Assets/Images/show_image.jpeg';
 import HomeShowItem from './HomeShowItem';
 import ChannelCarousel from './ChannelCarousel';
+import { isEmpty } from 'lodash';
 
 function Channel() {
   const channelId = useParams().channelId;
-  const channelData = useSelector(state => state.channelCarouselData);
+  const channelCarouselData = useSelector(state => state.channelCarouselData);
+  const channelShowListData = useSelector(state => state.channelShowListData);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(updateChannelCarouselData(channelId));
-  }, [dispatch, channelId]);
+    if (isEmpty(channelShowListData[channelId])) {
+      dispatch(fetchChannelListData(channelId));
+    }
+  }, [dispatch, channelId, channelShowListData]);
 
   const location = useLocation();
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -63,12 +69,12 @@ function Channel() {
           lineHeight="1.1"
           paddingX={isChannelPageMobileView ? '6px' : '0'}
         >
-          {channelData[0]['title']}
+          {channelCarouselData[0]['title']}
         </Text>
 
         {isChannelPageMobileView && <Divider width="95%" marginX="auto" />}
 
-        {isChannelPageMobileView ? (
+        {isChannelPageMobileView && (
           <Flex
             width="100vw"
             paddingX="10px"
@@ -79,7 +85,7 @@ function Channel() {
               },
             }}
           >
-            {channelData.map((channelItem, index) => (
+            {channelCarouselData.map((channelItem, index) => (
               <Link
                 key={index}
                 to={`/channel/${channelItem.id}`}
@@ -99,13 +105,11 @@ function Channel() {
               </Link>
             ))}
           </Flex>
-        ) : (
-          <></>
         )}
       </Flex>
 
       {!isChannelPageMobileView && (
-        <ChannelCarousel channelData={channelData} />
+        <ChannelCarousel channelCarouselData={channelCarouselData} />
       )}
 
       <Flex
@@ -116,31 +120,41 @@ function Channel() {
         gap="12px"
       >
         <Text fontSize="20px" fontWeight="600" lineHeight="1.1">
-          {channelData[0]['title']} Shows
+          {channelCarouselData[0]['title']} Shows
         </Text>
 
-        <Grid
-          width="100%"
-          height="100%"
-          paddingX={isChannelPageMobileView ? '5px' : '20px'}
-          gridTemplateColumns={{
-            base: 'repeat(2, minmax(0, 100%))',
-            lg: 'repeat(3, minmax(0, 100%))',
-            xl: 'repeat(4, minmax(0, 100%))',
-          }}
-          gridColumnGap={isChannelPageMobileView ? '13px' : '16px'}
-          gridRowGap={isChannelPageMobileView ? '10px' : '20px'}
-        >
-          {Array(19)
-            .fill(null)
-            .map((_, index) => (
+        {isEmpty(channelShowListData[channelId]) ? (
+          <Flex
+            minWidth="100vw"
+            height="400px"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Spinner size="xl" speed="0.56s" />
+          </Flex>
+        ) : (
+          <Grid
+            width="100%"
+            height="100%"
+            paddingX={isChannelPageMobileView ? '5px' : '20px'}
+            gridTemplateColumns={{
+              base: 'repeat(2, minmax(0, 100%))',
+              lg: 'repeat(3, minmax(0, 100%))',
+              xl: 'repeat(4, minmax(0, 100%))',
+            }}
+            gridColumnGap={isChannelPageMobileView ? '13px' : '16px'}
+            gridRowGap={isChannelPageMobileView ? '10px' : '20px'}
+          >
+            {channelShowListData[channelId].map((showData, index) => (
               <Link key={index} position="relative">
                 <HomeShowItem
+                  {...showData}
                   isChannelPageMobileView={isChannelPageMobileView}
                 />
               </Link>
             ))}
-        </Grid>
+          </Grid>
+        )}
       </Flex>
     </Flex>
   );

@@ -109,6 +109,20 @@ const updateChannelCarouselData = channelId => {
   };
 };
 
+const fetchChannelListData = channelId => {
+  return async dispatch => {
+    try {
+      const { data } = await discoveryPlusApi(`/channels/${channelId}`);
+      dispatch({
+        type: 'FETCH_CHANNEL_SHOW_LIST_DATA',
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export {
   fetchHomeData,
   fetchKidsData,
@@ -117,4 +131,5 @@ export {
   fetchMindblownListData,
   fetchShortsData,
   updateChannelCarouselData,
+  fetchChannelListData,
 };

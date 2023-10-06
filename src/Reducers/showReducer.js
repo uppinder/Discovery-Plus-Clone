@@ -64,7 +64,7 @@ const initialState = {
     },
     {
       id: 'eurosport-india',
-      title: 'Eurosport',
+      title: 'Eurosport India',
       thumbnail:
         'https://ap2-prod-images.disco-api.com/2020/12/03/373989eb-46a9-4d3e-8d2e-80a76d77caee.png?bf=0&f=jpg&p=true&q=85&w=400',
       thumbnailMobile:
@@ -95,6 +95,7 @@ const initialState = {
         'https://ap2-prod-images.disco-api.com/2020/12/17/bf0cf5be-1b09-41be-b651-53fc15ff6ea9.png?bf=0&f=png&p=true&q=75&w=100',
     },
   ],
+  channelShowListData: {},
 };
 
 const showReducer = (state = initialState, action) => {
@@ -127,15 +128,30 @@ const showReducer = (state = initialState, action) => {
       const targetObject = state.channelCarouselData.find(
         item => item.id === action.payload
       );
+
+      if (targetObject) {
+        return {
+          ...state,
+          channelCarouselData: [
+            targetObject,
+            ...state.channelCarouselData.filter(
+              item => item.id !== action.payload
+            ),
+          ],
+        };
+      } else {
+        return state;
+      }
+
+    case 'FETCH_CHANNEL_SHOW_LIST_DATA':
       return {
         ...state,
-        channelCarouselData: [
-          targetObject,
-          ...state.channelCarouselData.filter(
-            item => item.id !== action.payload
-          ),
-        ],
+        channelShowListData: {
+          ...state.channelShowListData,
+          [action.payload.id]: action.payload.showList,
+        },
       };
+
     default:
       return state;
   }

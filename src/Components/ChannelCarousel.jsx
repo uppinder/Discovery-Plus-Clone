@@ -8,7 +8,7 @@ import leftArrow from '../Assets/Images/carousel_left_arrow.svg';
 import rightArrow from '../Assets/Images/carousel_right_arrow.svg';
 import ChannelCarouselItem from './ChannelCarouselItem';
 
-function ChannelCarousel({ channelData = [] }) {
+function ChannelCarousel({ channelCarouselData = [] }) {
   function CarouselNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -72,7 +72,7 @@ function ChannelCarousel({ channelData = [] }) {
     <Flex width="100%" justifyContent="center">
       <Box className="swiper-genre-carousel" width="78%" paddingY="15px">
         <Slider {...settings}>
-          {channelData.map((channelItem, index) => (
+          {channelCarouselData.map((channelItem, index) => (
             <Link
               key={channelItem.id}
               to={`/channel/${channelItem.id}`}

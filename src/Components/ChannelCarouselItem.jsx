@@ -1,7 +1,6 @@
 import { Box, Image } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
-import channelThumbnailDesktop from '../Assets/Images/channel_carousel_image.jpeg';
 import liveIcon from '../Assets/Images/live_icon.svg';
 
 function ChannelCarouselItem({ first = false, thumbnail = '' }) {

@@ -8,9 +8,9 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 
-page = 'superstars'  # shows, mindblown, shorts, superstars
+page = 'channel'  # shows, mindblown, shorts, superstars, channel
 orientation = 'horizontal'
-url = 'https://www.discoveryplus.in/superstars/mister-maker'
+url = 'https://www.discoveryplus.in/channel/trvl-channel?liveStream=true'
 
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
@@ -40,6 +40,9 @@ try:
                 "window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(3)
     elif page == 'superstars':
+        myElem = WebDriverWait(browser, 30).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'styles-gridContainer-3yULnzY0')))
+    elif page == 'channel':
         myElem = WebDriverWait(browser, 30).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'styles-gridContainer-3yULnzY0')))
 
@@ -197,6 +200,36 @@ try:
             card['duration'] = show_duration.text.strip()
 
             showList.append(card)
+
+    elif page == 'channel':
+        grid_container = soup.find_all(
+            attrs={"class": "styles-gridTemplate-vIOBVqX5"})
+
+        for item in grid_container:
+            show = {}
+
+            show_link = item.find(
+                attrs={"class": "styles-href-1fNufSlc"})
+            show_title = item.find(
+                attrs={"class": "styles-basicShowName-1UIRr8Z0"})
+            show_desc = item.find(
+                attrs={"id": "#desc"})
+            show_thumbnail = item.find(
+                attrs={"class": "styles-thumbnailImage-2I_Mrm9L"})
+            premium_icon = item.find(
+                attrs={"class": "styles-premiumIcon-3D3gTh8F"})
+            show_new_episodes = item.find(
+                attrs={"class": "styles-Episodes-2eohupVc"})
+
+            show['id'] = show_link['href'].split('/')[-1]
+            show['title'] = show_title.text.strip()
+            show['desc'] = show_desc.text.strip()
+            show['thumbnail'] = show_thumbnail['src'].replace(
+                '&w=327', '&w=700')
+            show['isPremium'] = True if premium_icon else False
+            show['hasNewEpisodes'] = True if show_new_episodes else False
+
+            showList.append(show)
 
     print(json.dumps(showList))
 

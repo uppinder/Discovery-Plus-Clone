@@ -65,7 +65,7 @@ function Explore() {
           <Link to="/channel/dmax" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelDmax} />
           </Link>
-          <Link to="/channel/eurosport" as={ReactRouterLink}>
+          <Link to="/channel/eurosport-india" as={ReactRouterLink}>
             <ChannelItem thumbnail={channelEurosport} />
           </Link>
           <Link to="/channel/food-network" as={ReactRouterLink}>
