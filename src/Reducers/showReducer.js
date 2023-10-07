@@ -97,6 +97,7 @@ const initialState = {
   ],
   channelShowListData: {},
   genreShowListData: {},
+  showListData: {},
 };
 
 const showReducer = (state = initialState, action) => {
@@ -159,6 +160,15 @@ const showReducer = (state = initialState, action) => {
         genreShowListData: {
           ...state.genreShowListData,
           [action.payload.id]: action.payload.showList,
+        },
+      };
+
+    case 'FETCH_SHOW_DATA':
+      return {
+        ...state,
+        showListData: {
+          ...state.showListData,
+          [action.payload.id]: action.payload,
         },
       };
 

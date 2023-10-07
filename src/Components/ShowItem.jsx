@@ -112,13 +112,7 @@ function ShowItem({
         onMouseLeave={handleHover}
         position="relative"
       >
-        <Image
-          src={thumbnail}
-          borderRadius={isMobile ? '1px' : '4px'}
-          //   height="100%"
-          //   width="auto"
-          //   objectFit="cover"
-        />
+        <Image src={thumbnail} borderRadius={isMobile ? '1px' : '4px'} />
 
         {/* Premium Icon Overlay*/}
         {isPremium && (
@@ -131,7 +125,7 @@ function ShowItem({
             bottom="4px"
             right="4px"
             backgroundColor="#000000"
-            opacity="0.65"
+            opacity="0.72"
             paddingX="3px"
           >
             <Text fontSize="12px">{duration}</Text>

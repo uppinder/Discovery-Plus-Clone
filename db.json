@@ -9772,7 +9772,1224 @@
             ]
         }
     ],
-    "shows": {},
+    "shows": [
+        {
+            "id": "i-should-have-stayed-home-in",
+            "banner": "https://ap2-prod-images.disco-api.com/2023/09/25/d501c6c7-a950-44da-b446-ebaf000bbc18.jpeg?bf=0&f=jpg&p=true&q=85&w=1600",
+            "title": "I Should Have Stayed Home",
+            "desc": "Two stranded brothers return home using their survival skills.",
+            "genres": [
+                "Adventure",
+                "Survival"
+            ],
+            "languages": [
+                "Telugu",
+                "Bengali",
+                "Malayalam",
+                "Hindi",
+                "English",
+                "Kannada",
+                "Tamil"
+            ],
+            "numOfSeasons": 0,
+            "episodes": [
+                {
+                    "id": "far-from-home",
+                    "title": "Far From Home",
+                    "desc": "Sid and Shanky are challenged when left blindfolded in a remote area.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/11/03bd3674-8e8e-3d48-9912-74fb28c1bc8d.jpeg?w=600&p=true&q=75",
+                    "duration": "43:04",
+                    "isPremium": true
+                },
+                {
+                    "id": "beware-of-the-bears",
+                    "title": "Beware of the Bears!",
+                    "desc": "Sid and Shanky continue their journey through rough Himalayan terrain.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/18/6ac28be9-93d5-38cd-9f24-dd718781fcd7.jpeg?w=600&p=true&q=75",
+                    "duration": "43:04",
+                    "isPremium": true
+                },
+                {
+                    "id": "dude-wheres-my-fuel",
+                    "title": "Dude, Where's My Fuel?",
+                    "desc": "Sid and Shanky journey on the treacherous road to Zanskar Valley.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/25/751c08d4-5bb4-3a96-a646-99a1d1e1fccb.jpeg?w=600&p=true&q=75",
+                    "duration": "43:04",
+                    "isPremium": true
+                },
+                {
+                    "id": "i-want-to-go-home",
+                    "title": "I Want To Go Home!",
+                    "desc": "Sid and Shanky have one more obstacle to tackle in order to get home.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/01/54d0b4e0-f69b-34c6-9c93-2e647a98f974.jpeg?w=600&p=true&q=75",
+                    "duration": "43:04",
+                    "isPremium": true
+                }
+            ],
+            "rating": "Age Rating : UA-16+ | Contains : Foul Language DOT Smoking"
+        },
+        {
+            "id": "man-vs-wild-with-sunny-leone-in",
+            "banner": "https://ap2-prod-images.disco-api.com/2023/08/15/e90de9c8-c9a4-4c66-ac28-4150d186593a.jpeg?bf=0&f=jpg&p=true&q=85&w=1600",
+            "title": "Man vs. Wild with Sunny Leone",
+            "desc": "Bear Grylls shows how to survive the toughest and most remote environments.",
+            "genres": [
+                "Adventure",
+                "Survival"
+            ],
+            "languages": [
+                "Telugu",
+                "Hindi",
+                "Tamil"
+            ],
+            "numOfSeasons": 0,
+            "episodes": [
+                {
+                    "id": "borneo",
+                    "title": "Borneo",
+                    "desc": "Sunny Leon reveals her adventurous side in Borneo.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/eaaf6fd5-4cc0-31ec-b282-9837f5872e63.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "red-rock-country",
+                    "title": "Red Rock Country",
+                    "desc": "Sunny Leone and Bear Grylls head to the red rock canyons of southern Utah.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/381be841-453d-355d-b65f-d4e01a912d8b.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "oregon",
+                    "title": "Oregon",
+                    "desc": "Bear Grylls and Sunny Leone travel to the wilds of the Oregon Coast.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/d5fce92f-c082-3618-a8fa-5ff5c3ee980c.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "arnhem-land",
+                    "title": "Arnhem Land",
+                    "desc": "Bear Grylls and Sunny Leone head to Australia's Arnhem Land.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/124ea135-6839-3286-b075-3143e9df2e0d.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "south-dakota",
+                    "title": "South Dakota",
+                    "desc": "Bear Grylls and Sunny Leone explore South Dakota.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/4cb966d6-fca8-3142-a45c-36383835001b.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "norway",
+                    "title": "Norway",
+                    "desc": "Bear Grylls and Sunny Leone venture to Norway.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/129f1e90-2db6-3a8a-a94f-f2220cdafdd2.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "malaysian-archipelago",
+                    "title": "Malaysian Archipelago",
+                    "desc": "Bear and Sunny head to an archipelago of islands off the coast of Borneo.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/20/6d8ee6c3-de03-33d7-b6f3-2f980367aeef.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "arizona",
+                    "title": "Arizona",
+                    "desc": "Bear Grylls and Sunny Leone travel to Arizona, the land of the Apache.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/d2bab124-4a86-3c5f-84bc-3befe71c228f.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "sahara",
+                    "title": "Sahara",
+                    "desc": "Bear Grylls and Sunny Leone head to Morocco's searing Sahara Desert.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/5936d8c4-d0b4-3a1b-b1b7-7bc66ff0a135.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "land-of-maori",
+                    "title": "Land of Maori",
+                    "desc": "Bear Grylls and Sunny Leone head to the remote Maori land in New Zealand.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/7300a73f-3ea9-3626-8015-f774e8c3cc78.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "iceland-land-of-fire-and-ice",
+                    "title": "Iceland: Land of Fire and Ice",
+                    "desc": "Bear Grylls and Sunny Leone survive Iceland's Arctic conditions.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/6548eea0-2c6f-3b88-87fd-fde3e5d38265.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "guatemala",
+                    "title": "Guatemala",
+                    "desc": "Bear Grylls and Sunny Leone head to Guatemala and see ancient Mayan ruins.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/266a3d55-b6df-35df-9116-79339823e05f.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "south-island-new-zealand",
+                    "title": "South Island, New Zealand",
+                    "desc": "Bear Grylls and Sunny Leone travel to the remote New Zealand South Island.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/d70ea356-3871-3d6d-83fd-d085b4b22e34.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "mojave-desert",
+                    "title": "Mojave Desert",
+                    "desc": "Bear Grylls and Sunny Leone travel and experience the Mojave Desert.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/7b8fd612-791d-36d9-8f68-949fcb807a90.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "western-pacific",
+                    "title": "Western Pacific",
+                    "desc": "Bear and Sunny explore a desert island south of Papua New Guinea.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/4407750b-033e-32a7-9951-1d3755f08832.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "alaska",
+                    "title": "Alaska",
+                    "desc": "Bear Grylls and Sunny Leone travel to the wilds of Alaska.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/08194c1c-441e-38a8-bef5-cb23fabe8a0b.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "turkey",
+                    "title": "Turkey",
+                    "desc": "Bear Grylls and Sunny Leone explore the Anatolian plateau in Turkey.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/04090c7f-8681-3fbd-bdbb-bea9731c5473.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "vietnam",
+                    "title": "Vietnam",
+                    "desc": "Bear Grylls and Sunny Leone travel to and explore the heart of Vietnam.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/02/75ee41fb-bbf1-3ee5-9e65-58f5ef86a594.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "arctic-circle",
+                    "title": "Arctic Circle",
+                    "desc": "Bear Grylls and Sunny Leone travel to the icy wastes of the Arctic Circle.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/02/d6db89ab-4389-35db-9a60-8774cdc6b783.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "alabama",
+                    "title": "Alabama",
+                    "desc": "Bear Grylls and Sunny Leone travel to the deep back-woods of Alabama.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/5ab31e35-de90-32f7-a5e0-551c717fda96.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "romania",
+                    "title": "Romania",
+                    "desc": "Bear Grylls takes Sunny Leone to explore Romania.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/9e512e6d-5896-3fb7-8b23-397e6af9421f.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "scotland",
+                    "title": "Scotland",
+                    "desc": "Bear Grylls and Sunny Leone travel to Scotland's Cairngorm mountains.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/bbaa8b60-fc5d-3e4f-ae05-a9151d2272e3.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "dominican-republic",
+                    "title": "Dominican Republic",
+                    "desc": "Bear Grylls and Sunny Leone travel to the Dominican Republic.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/7af6f483-e2fa-3736-82e0-6adbbf3507bd.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "texas",
+                    "title": "Texas",
+                    "desc": "Bear Grylls and Sunny Leone explore the terrain of Texas.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/5e2a05ca-94a4-3fa5-a490-b9f50b992d6a.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "urban-survivor",
+                    "title": "Urban Survivor",
+                    "desc": "Bear Grylls and Sunny Leone explore a concrete jungle.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/907d9e7c-13f4-3ee0-b09c-d4abf31b8d34.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "georgia",
+                    "title": "Georgia",
+                    "desc": "Bear Grylls and Sunny Leone travel to the Georgian Republic.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/87c431a7-36fb-3692-a490-49a7e517cc51.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "yukon",
+                    "title": "Yukon",
+                    "desc": "Bear Grylls and Sunny Leone travel to North America's Yukon.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/fd21c871-2221-354a-80b6-404d5d3c4e0e.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "canadian-rockies",
+                    "title": "Canadian Rockies",
+                    "desc": "Bear Grylls and Sunny Leone head into the Canadian Rockies.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/752fe1cf-71a7-3d57-80ae-5fd8ceb40d46.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "belize",
+                    "title": "Belize",
+                    "desc": "Bear Grylls and Sunny Leone head into the jungles of Belize.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/02/85106812-200d-37aa-ba94-08abb24d88fe.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "baja-desert",
+                    "title": "Baja Desert",
+                    "desc": "Bear Grylls and Sunny Leone travel to the Baja desert in Mexico.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/21/c9754c18-035a-3e6d-ba50-ca8de67394a8.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "siberia",
+                    "title": "Siberia",
+                    "desc": "Bear Grylls and Sunny Leone travel to Siberia.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/02/3b9ff8da-bf92-3030-9569-1c29ec5ca13d.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "ireland",
+                    "title": "Ireland",
+                    "desc": "Bear Grylls and Sunny Leone travel to the rugged west coast of Ireland.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/24/265bec41-5ddb-332d-a8d0-72e69c7d0a2b.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "china",
+                    "title": "China",
+                    "desc": "Bear Grylls and Sunny Leone head to southern China post typhoon.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/24/8a23ce6b-7683-395b-9fd4-6eaa1579e45f.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "mexico",
+                    "title": "Mexico",
+                    "desc": "Bear Grylls and Sunny Leone head to Mexico's Copper Canyon.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/24/24b0028b-c421-3ccc-8493-7f3c1c304ce2.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "kimberley",
+                    "title": "Kimberley",
+                    "desc": "Bear Grylls and Sunny Leone head out to explore Kimberley, Australia.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/02/4a5de794-6ebd-37d1-8333-47b78db89c6f.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "sierra-nevada",
+                    "title": "Sierra Nevada",
+                    "desc": "Bear Grylls and Sunny Leone explore the Sierra Nevada.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/01/6481fa7b-e31a-3144-af4e-a6eeb1bf11d6.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "european-alps",
+                    "title": "European Alps",
+                    "desc": "Bear Grylls and Sunny Leone travel to the European Alps.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/01/8312dc9e-6879-3c16-98c5-4ee6d09848be.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "costa-rica",
+                    "title": "Costa Rica",
+                    "desc": "Bear Grylls and Sunny Leone travel to the Costa Rican rainforest.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/01/524a41e5-e580-355d-a6cb-90d70298657d.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "kenya",
+                    "title": "Kenya",
+                    "desc": "Bear Grylls and Sunny Leone travel to explore Kenya.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/01/373a3c9e-66af-313f-8ba0-a0910927ce85.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "ecuador",
+                    "title": "Ecuador",
+                    "desc": "Bear Grylls and Sunny Leone travel to the jungles of Ecuador.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/01/f6a1f709-d1c0-388f-9b0e-e52cc4e485ca.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                },
+                {
+                    "id": "deserted-island",
+                    "title": "Deserted Island",
+                    "desc": "Bear Grylls and Sunny Leone go on a wild adventure to a deserted island.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/10/01/528159c5-be96-3e29-af48-cdadf51cd67f.jpeg?w=600&p=true&q=75",
+                    "duration": "45:11",
+                    "isPremium": true
+                }
+            ],
+            "rating": "Age Rating : UA-13+ | Contains : Frightening Scenes"
+        },
+        {
+            "id": "ghost-adventures",
+            "banner": "https://ap2-prod-images.disco-api.com/2023/08/22/5f9ca180-a497-4796-b3a9-2eb09745e449.jpeg?bf=0&f=jpg&p=true&q=85&w=1600",
+            "title": "Ghost Adventures",
+            "desc": "Zak Bagans and his crew investigate the most haunted places in the world.",
+            "genres": [
+                "Supernatural",
+                "Investigation"
+            ],
+            "languages": [
+                "Hindi",
+                "English"
+            ],
+            "numOfSeasons": 8,
+            "episodes": [
+                {
+                    "id": "stone-lion-inn",
+                    "title": "Stone Lion Inn",
+                    "desc": "The crew unravels the mystery behind a mortuary-turned-inn in Guthrie, OK.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/e21c60f1-1f1a-3f33-88f0-036d66678c24.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "samaritan-cult-house",
+                    "title": "Samaritan Cult House",
+                    "desc": "Zak and the crew probe the dark and mysterious Samaritan cult.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/91abf4f5-e0d5-31f9-9442-ec9350720c38.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "freak-show-murder-house",
+                    "title": "Freak Show Murder House",
+                    "desc": "The crew investigates the site of a 1996 double murder in Los Angeles.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/f4bc5aed-2d34-334a-a70e-19c83ae17960.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "double-eagle-restaurant",
+                    "title": "Double Eagle Restaurant",
+                    "desc": "Zak investigates a menacing jail and a 150-year-old murder in New Mexico.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/d38bbe81-ac7c-390d-9f49-1bebb2f0ae96.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "exorcism-in-erie",
+                    "title": "Exorcism in Erie",
+                    "desc": "Zak investigates a demonic possession and its impact on a Colorado family.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/3c606421-1a51-3dd8-a1c7-a744b9e1a513.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "upper-fruitland-curse",
+                    "title": "Upper Fruitland Curse",
+                    "desc": "Zak and his crew investigate faceless entities in New Mexico.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/f84f2c80-f135-33e7-96c8-ea891fcdf66d.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "skinwalker-canyon",
+                    "title": "Skinwalker Canyon",
+                    "desc": "The crew investigates reports of shape-shifting creatures in New Mexico.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/4485ae54-52c0-30a5-a1d0-1ce4689259b3.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "witches-in-magna",
+                    "title": "Witches in Magna",
+                    "desc": "Zak and the crew investigate a cursed pizzeria in Magna, UT.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/b64b5045-b8b7-3484-940b-f002301a4df6.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "the-viper-room",
+                    "title": "The Viper Room",
+                    "desc": "Zak and the crew investigate the infamous West Hollywood nightclub.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/7977f054-23b3-3b90-bee6-c1d270322da5.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "asylum-49",
+                    "title": "Asylum 49",
+                    "desc": "The crew returns to Tooele, UT, to investigate an abandoned nursing home.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/cb1d40b2-e640-3543-8b83-31acf253257a.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "ogden-possession",
+                    "title": "Ogden Possession",
+                    "desc": "The crew travels to Utah to help a family plagued by a demonic figure.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/655a7f2b-63fb-31b4-8d2b-082169123476.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                },
+                {
+                    "id": "eureka-mining-town",
+                    "title": "Eureka Mining Town",
+                    "desc": "The crew investigates two locations haunted by the same violent entity.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/08/4ae7dfac-f41e-3e78-86b7-e70271da3f7b.jpeg?w=600&p=true&q=75",
+                    "duration": "41:05",
+                    "isPremium": true
+                }
+            ],
+            "rating": "Age Rating : UA-16+ | Contains : Frightening Scenes"
+        },
+        {
+            "id": "naked-and-afraid",
+            "banner": "https://ap2-prod-images.disco-api.com/2023/03/04/551b4ccd-d747-4d3b-9e2a-8cee0beb105a.jpeg?bf=0&f=jpg&p=true&q=85&w=1600",
+            "title": "Naked and Afraid",
+            "desc": "A man and woman battle extreme environments without food, water or clothes.",
+            "genres": [
+                "Adventure",
+                "Survival"
+            ],
+            "languages": [
+                "Telugu",
+                "Bengali",
+                "Malayalam",
+                "Hindi",
+                "English",
+                "Kannada",
+                "Tamil"
+            ],
+            "numOfSeasons": 9,
+            "episodes": [
+                {
+                    "id": "terror-in-tanzania",
+                    "title": "Terror In Tanzania",
+                    "desc": "Survivalists brave the Serengeti with no food, water or clothes.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/71ed6bf7-ca7f-362a-9f2d-d5f2294f7da2.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "punishment-in-panama",
+                    "title": "Punishment in Panama",
+                    "desc": "Survivalists take on an island in Panama teeming with hidden dangers.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/09/24/0003fe59-afd9-39f3-9361-09b0b5ad606b.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "island-from-hell",
+                    "title": "Island From Hell",
+                    "desc": "Personalities clash when two survivalists battle the Maldives' environment.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/3ed25310-e742-3d93-93c5-cb7161babc9b.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "the-jungle-curse",
+                    "title": "The Jungle Curse",
+                    "desc": "Survivalists face life-threatening challenges in Costa Rica's rain forest.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/45e1948b-3804-3d4e-8128-57e353178389.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "breaking-borneo",
+                    "title": "Breaking Borneo",
+                    "desc": "Survivalists battle sickness and starvation in the jungles of Borneo.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/81f0d4ee-0602-36f5-9a20-767b2da52e19.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "beware-the-bayou",
+                    "title": "Beware The Bayou",
+                    "desc": "Two survivalists endure a waterlogged, snake-infested bayou in Louisiana.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/07/df075c88-e628-3122-809e-92fdf9085f45.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "bares-all",
+                    "title": "Bares All",
+                    "desc": "The survivors and their families share behind-the-scenes insights.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/09/30/f9cd0826-b9a6-3808-9c50-38f28c88b5ab.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "man-vs-amazon",
+                    "title": "Man vs. Amazon",
+                    "desc": "Survivalists battle the Amazon in the most hostile environment on Earth.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/07/b05f919b-d40e-3def-8374-28599f990d3e.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "damned-in-africa",
+                    "title": "Damned in Africa",
+                    "desc": "Two survivalists take on the unforgiving and arid plains of Madagascar.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/03/30/85c90c81-e931-3bf0-96eb-d3a0ebce67e3.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "mayan-misery",
+                    "title": "Mayan Misery",
+                    "desc": "Two survivalists are challenged to endure a flooded jungle in Belize.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/1085485d-27c0-3b5f-83c3-384d1187a387.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "paradise-lost",
+                    "title": "Paradise Lost",
+                    "desc": "Survivalists battle each other and the elements on a deserted Fiji island.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/171916fb-7040-357b-917d-57cdbce869d0.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "meltdown-in-bolivia",
+                    "title": "Meltdown In Bolivia",
+                    "desc": "Survivalists battle heat exhaustion and an appendicitis attack in Bolivia.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/a639ded6-ab74-3dca-affb-afda247fec19.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "the-pain-forest",
+                    "title": "The Pain Forest",
+                    "desc": "Survivalists battle hypothermia and bloodthirsty insects in Malaysia.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/d2ed1a8f-dc6f-39f0-a43f-8fa33125c8bb.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "hearts-of-darkness",
+                    "title": "Hearts Of Darkness",
+                    "desc": "Survivalists butt heads in a scorching, crocodile-filled Cambodian jungle.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/8813ab43-8951-3f31-9ae3-ad4a13b27e90.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "blood-in-the-water",
+                    "title": "Blood in the Water",
+                    "desc": "Survivalists test their skills a Bahamian island's razor-sharp terrain.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/35ad2b5f-4474-3553-85ad-9196cc61c388.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "argentina-impossible",
+                    "title": "Argentina Impossible",
+                    "desc": "A pair of survivalists battles hypothermia and starvation in Argentina.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/7dc3ea1a-cb29-3f30-95da-03df95710a32.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "primal-fear",
+                    "title": "Primal Fear",
+                    "desc": "Two survivalists take on the unforgiving, thorny landscape of Namibia.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/e422d727-d0bd-3d5b-ac1b-e316afca5a67.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "jungle-love",
+                    "title": "Jungle Love",
+                    "desc": "A vegetarian and an avid hunter try to survive the Nicaraguan rain forest.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/af57796a-95ac-3d61-9cee-545c6dc601d0.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "playing-with-fire",
+                    "title": "Playing With Fire",
+                    "desc": "Survivalists battle starvation and each other on a deserted Dominica beach.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/09/23/9651c9ac-bc97-3ec9-8276-e87d4a02af1a.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "himalayan-hell",
+                    "title": "Himalayan Hell",
+                    "desc": "Survivalists take on the extreme cold in the Himalayan foothills of India.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/bcf0bcac-d41d-32b7-9ca2-c389f0bcdb41.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "nicaragua-nightmare",
+                    "title": "Nicaragua Nightmare",
+                    "desc": "Survivalists take on the jungles armed with only a machete and duct tape.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/07/f185834b-1656-3410-b8ab-593d44f9190a.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "botswana-breakdown",
+                    "title": "Botswana Breakdown",
+                    "desc": "A pair of survivalists test their skills on the barren plains of Botswana.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/0e4a3ec4-ef2f-3a1d-8e62-bb086887ad58.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "fire-on-the-mountain",
+                    "title": "Fire on the Mountain",
+                    "desc": "Two survivalists take on high elevations and a wildfire in Udhampur, India.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/fd4c1919-f441-3548-b515-1493e32c4b1c.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "dunes-of-despair",
+                    "title": "Dunes Of Despair",
+                    "desc": "Two survivalists battle the sun-scorched, desolate sand dunes of Brazil.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/f67e1c4f-a5a1-3569-b771-ec419919ab56.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "mayan-sacrifice",
+                    "title": "Mayan Sacrifice",
+                    "desc": "Survivalists battle a lack of food and deadly caiman in Mexico's Yucatan.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/07/2cdec500-758a-30fe-873f-290b49ca7381.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "alligator-alley",
+                    "title": "Alligator Alley",
+                    "desc": "Survivalists are shipped to the sweltering swamps in Florida's Everglades.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/8d6cd386-52b3-30e1-ad64-7ccc59880df8.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "colombian-conflict",
+                    "title": "Colombian Conflict",
+                    "desc": "Survivalists with opposite personalities battle the jungles of Colombia.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/86679e58-9769-3b13-ad7b-e5c6731d5dc8.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "starvation-snakes-and-strife",
+                    "title": "Starvation, Snakes and Strife",
+                    "desc": "Controversies, fights and other wild, unseen moments are revealed.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/8e346497-f8d7-3a25-99db-d049793144b9.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "blood-sweat-and-fears-25330",
+                    "title": "Bares All: Blood, Sweat And Fears",
+                    "desc": "Unseen footage of fights, pain and tears from the challenges is revealed.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/a5ee8534-58b0-30f2-979e-6d28818c41e4.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "bares-all-survival-in-close-quarters",
+                    "title": "Bares All: Survival In Close Quarters",
+                    "desc": "Survivalists shed new light on their highs and lows, fears and frustrations, and more. Exclusive, never-before-seen footage reveals the good, the bad, the awkward and the downright weirdest moments from their adventures.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2019/12/09/17044322-18c0-3657-9445-225308ab28c8.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "snaketacular",
+                    "title": "Snaketacular",
+                    "desc": "All the encounters the survivalists have had with snakes are revealed.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/07/d0b06b98-e4e1-33d1-bd61-ab3957a48bf3.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                },
+                {
+                    "id": "naked-and-awkward",
+                    "title": "Naked & Awkward",
+                    "desc": "The survivalists detail all the embarrassing moments they endured.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/ccb843ed-2ca4-3c8d-9246-7feb45b4fc21.jpeg?w=600&p=true&q=75",
+                    "duration": "43:26",
+                    "isPremium": true
+                }
+            ],
+            "rating": "Age Rating : A | Contains : Foul Language DOT Frightening Scenes DOT Nudity"
+        },
+        {
+            "id": "little-singham",
+            "banner": "https://ap2-prod-images.disco-api.com/2023/03/05/bbd9636c-a15b-413d-a6c5-82283024ed5d.jpeg?bf=0&f=jpg&p=true&q=85&w=1600",
+            "title": "Little Singham",
+            "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+            "genres": [
+                "Animated",
+                "Kids"
+            ],
+            "languages": [
+                "Telugu",
+                "Malayalam",
+                "Hindi",
+                "Kannada",
+                "Tamil"
+            ],
+            "numOfSeasons": 9,
+            "episodes": [
+                {
+                    "id": "panja-vs-ninja-part1",
+                    "title": "Panja vs. Ninja Part1",
+                    "desc": "Ninja Fui seeks the help of Little Singham to defeat Ganja Ninja.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/918795a9-b067-397c-80ec-8b1f727bf9ad.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "panja-vs-ninja-part2",
+                    "title": "Panja vs. Ninja Part2",
+                    "desc": "Little Singham helps Ninja Fui defeat Ganja Ninja.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/f0cfded9-243a-32d2-bdaa-1762837236a5.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "airport-mission-part-1",
+                    "title": "Airport Mission Part 1",
+                    "desc": "King Cobra hijacks Avishkar's plane to obtain his super-energy device.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/ee804cce-d485-34fa-a59d-c6d3e7d0d14d.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "airport-mission-part-2",
+                    "title": "Airport Mission Part 2",
+                    "desc": "King Cobra hijacks Avishkar's plane to obtain his super-energy device.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/e07c296f-48e7-336c-a2bf-8d467d50fd29.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "mission-mangalyaan-part-1",
+                    "title": "Mission Mangalyaan Part 1",
+                    "desc": "Chikki is sent to Mars, but Khatarnaak Khatri takes over the spaceship.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/8aef6579-3351-3a52-b300-48b2f2485e6f.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "mission-mangalyaan-part-2",
+                    "title": "Mission Mangalyaan Part 2",
+                    "desc": "Chikki is sent to Mars, but Khatarnaak Khatri takes over the spaceship.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/26/7323e22e-dba8-3a3e-86a3-be0339812f2e.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-squad-part-1",
+                    "title": "Little Singham Squad Part 1",
+                    "desc": "Little Singham recruits Lattu and Babli to help him find three bombs.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/c8667a21-e6e5-30ba-849b-06adc8457dc1.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-squad-part-2",
+                    "title": "Little Singham Squad Part 2",
+                    "desc": "Little Singham, Lattu and Babli search for three bombs.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/ece4ab7a-0326-3df9-97f3-5616c9b60c51.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "mission-submarine-part-1",
+                    "title": "Mission Submarine Part 1",
+                    "desc": "King Cobra tries to capture Shadow X to hide his submarine from radar.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/b2097a1c-c797-3d7d-9220-c819b2fa346c.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "mission-submarine-part-2",
+                    "title": "Mission Submarine Part 2",
+                    "desc": "Little Singham fights King Cobra in an underwater submarine fight.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/39657cd6-e8ba-3ed4-a0db-7b52af5885a4.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-vs-eel-mutant",
+                    "title": "Little Singham vs. Eel Mutant",
+                    "desc": "Little Singham must defeat the electric shocks of an eel mutant.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/1d025900-3e20-3d2b-b6ff-e757718a78b6.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-kavya-sherni",
+                    "title": "Little Kavya Sherni",
+                    "desc": "Little Singham narrates the story of \"Sherni-Kavya.\"",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/06ac829d-e5d2-3e2a-a301-38b76df3d021.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "rang-berang",
+                    "title": "Rang Berang",
+                    "desc": "Jangli Joker tries to ruin Holi for the kids by stealing all the colors.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/de475d14-5eb1-3ab6-b9b1-804b054d7c0c.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "commissioner-lallu-lafanga",
+                    "title": "Commissioner Lallu Lafanga",
+                    "desc": "Lallu Lafanga pretends to be the police commissioner of Mirchi Nagar.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/434f54b1-e299-3d3c-af2c-d607064cf375.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "exam-ka-bhoot-returns",
+                    "title": "Exam ka Bhoot Returns",
+                    "desc": "Shambhala steals all the books of Mirchi Nagar.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/9d9de5e9-a9f3-3c01-8d6c-7319eafab1d9.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "bhootiya-bangla",
+                    "title": "Bhootiya Bangla",
+                    "desc": "Lattu, Ajay and Babli get trapped by ghosts in a haunted bungalow.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/5e73c48c-2baa-3167-9a92-957312d41b44.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "maushi-aayi-mirchi-nagar",
+                    "title": "Maushi Aayi Mirchi Nagar",
+                    "desc": "Karate lies about being an Inspector to his Maushi.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/d3f93318-005a-316c-88ef-69c4bd43b046.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "haanikarak-hippo",
+                    "title": "Haanikarak Hippo",
+                    "desc": "Khatarnak Khatri unleashes a mutated hippopotamus on Mirchi Nagar.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/11/e7b6b215-62d9-3f2b-b266-6e0cd8628b5e.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "master-makoda",
+                    "title": "Master Makoda",
+                    "desc": "A mutant made from a cockroach, a dragonfly and a scorpion attacks.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/673c51d7-9ef5-33e0-b528-5b49b57d1e6b.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-vs-pokey-pasha",
+                    "title": "Little Singham vs. Pokey Pasha",
+                    "desc": "Khatarnaak Khatri sends a mutated porcupine to attack Mirchi Nagar.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/4321bd4c-4ca8-31c3-a129-0fac61dfeffe.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "harr-koi-little-singham",
+                    "title": "Harr Koi Little Singham",
+                    "desc": "Boga kidnaps kids dressed as Little Singham because of a dress-up contest.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/0a280f79-ec4b-3e52-a57f-18d9f8716930.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "junglee-video-game",
+                    "title": "Junglee Video game",
+                    "desc": "Jungli Joker traps Lattu and Babli in a video game at the arcade.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/3f6c2291-db8d-3fe4-926e-882cbf3e6141.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "ls-aur-hyenas-ka-hungama",
+                    "title": "LS aur Hyenas ka Hungama",
+                    "desc": "Khatri sends three mutant hyenas to create havoc in Mirchi Nagar.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/2d24e71b-fc8a-3ef3-b6c0-bbb42a65f54d.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "nani-ki-unlimited-thali",
+                    "title": "Nani Ki Unlimited Thali",
+                    "desc": "Shambala and Bhukkad Bhai try to ruin the Unlimited Thali Competition.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/103e8761-b141-38fd-a470-0dbd4daaad7f.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "bull-dozer-aur-rhino",
+                    "title": "Bull Dozer Aur Rhino",
+                    "desc": "Rowdy Rhino and Bull Dozer attack during a water crisis in Mirchi Nagar.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/013ad68c-6564-3dcd-887d-64ffcbeda4d7.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "muniya-makdi",
+                    "title": "Muniya Makdi",
+                    "desc": "A mutated black widow named Muniya Makdi traps everyone in the school lab.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/96631011-8101-3eb9-9b04-85fcc02d009d.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "mission-junglee-gufa",
+                    "title": "Mission Junglee Gufa",
+                    "desc": "Jungli Joker puts kidnapped kids in a cave where he can control the water.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/8c7d059a-686f-352a-9d47-c03dccc56409.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-vs-jazzy-genie",
+                    "title": "Little Singham vs. Jazzy Genie",
+                    "desc": "An eccentric genie has come to Mirchi Nagar.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/26/06205ec8-155c-3cb0-a845-063b34013f00.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "gutter-ganjoo-returns",
+                    "title": "Gutter Ganjoo Returns",
+                    "desc": "Little Singham and Nani must stop Gutter Ganjoo and his army of rats.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/2e45c838-6c62-3245-a0cc-25b8606cf611.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "sher-ki-cheenk",
+                    "title": "Sher Ki Cheenk",
+                    "desc": "Little Singham must stop Lord Boga while fighting nasty allergies.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/982d29b9-d237-34bf-8b1d-e45cc60416e1.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-in-assam",
+                    "title": "Little Singham in Assam",
+                    "desc": "A music-loving villain named Taaka declares himself the King of Assam.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/2bd108d3-9e1a-3469-99e9-26368c7084c1.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "baba-tirchi-topiwala",
+                    "title": "Baba Tirchi Topiwala",
+                    "desc": "Baba Tirchhi Topiwal tricks the people with fake predictions.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/28113529-494b-3812-840f-2b04033d4a86.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "bollywood-keeda",
+                    "title": "Bollywood Keeda",
+                    "desc": "Bollywood Keeda turns everyone in town into a Bollywood character.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/5f725d8a-dd7c-3e9b-a142-4686d3a81f7b.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "jungle-mein-dangal",
+                    "title": "Jungle Mein Dangal",
+                    "desc": "Lallu Lafanga and his goons attempt to sabotage the Jungle Dhamaal Camp.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/14/2c112eaf-5cc0-3ee9-8c45-ac3916194b9d.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "kans-ka-aatank-part-1",
+                    "title": "Kans ka Aatank Part 1",
+                    "desc": "Kansa and Shambhala summon demons to bring Kanas to life.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/04/0bd990c5-2902-3ccf-9aba-cb0db9e06709.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "kans-ka-aatank-part-2",
+                    "title": "Kans ka Aatank Part 2",
+                    "desc": "Little Singham and Krishna fight demons summoned by Kansa and Shambhala.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/04/96118d0e-8b02-360b-a5f3-294e6d5226ca.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-in-africa",
+                    "title": "Little Singham in Africa",
+                    "desc": "Little Singham fights against Boga, who steals a magical mask in Africa.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/57fd968a-0df8-3490-a26d-23f6138040c6.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "merry-christmas",
+                    "title": "Merry Christmas",
+                    "desc": "Junglee Joker becomes an evil Santa to ruin Christmas for the kids.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/905c64a4-1e4c-3db9-af6c-920966060790.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "tamma-tamma-madhugola-part-1",
+                    "title": "Tamma Tamma Madhugola Part 1",
+                    "desc": "LS helps the bees of Planet Madhu Gola save their honey from an evil toad.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/8e177027-4884-312c-a693-8de3eba12c8c.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "tamma-tamma-madhugola-part-2",
+                    "title": "Tamma Tamma Madhugola Part 2",
+                    "desc": "Tarrrkaal tries to steal the honey from the bees of Planet Madhu Gola.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/938a18ad-686d-3c88-8116-bcd7923b0eee.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "naagin-noodles",
+                    "title": "Naagin Noodles",
+                    "desc": "Nagin Noodles wreck havoc during a lunch hosted for the Queen of England.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/1cb174c2-e116-3d61-8fb6-1e45fcafbc27.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "tamma-tamma-chocola-part-1",
+                    "title": "Tamma Tamma Chocola Part 1",
+                    "desc": "Halwa Halwai's sweet-making factory has gone berserk on Mithai Mandal.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/a39b1ff9-5499-39ee-8407-1ba09236e4bb.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "tamma-tamma-chocola-part-2",
+                    "title": "Tamma Tamma Chocola Part 2",
+                    "desc": "Little Singham and team try to pacify baker Halwa Halwai on Mithai Mandal.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/56e3530f-24dc-3c74-9bb3-948753b09075.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-bollywood-star",
+                    "title": "Little Singham Bollywood Star",
+                    "desc": "Lord Boga and Kallu Ballu disguise themselves as filmmakers to rob banks.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/be3aaa8a-7d4a-357e-bd28-b7da2f287304.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-in-japan-part-1",
+                    "title": "Little Singham in Japan Part 1",
+                    "desc": "Little Singham must stop Khatarnaak Khatri from making Mount Fuji erupt.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/16/b8467338-df06-3bab-8264-ae4017615d77.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "little-singham-in-japan-part-2",
+                    "title": "Little Singham in Japan Part 2",
+                    "desc": "Little Singham must stop Khatarnaak Khatri from making Mount Fuji erupt.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/16/b1fb4fa3-5365-302a-8f01-7f5171fad84f.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "kahaan-hai-little-singham",
+                    "title": "Kahaan Hai Little Singham",
+                    "desc": "Little Singham is left without his powers as villains attack the school.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/9a623e55-65e2-3d94-ab00-49d2f2d738c0.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "chooran-ka-jholmol",
+                    "title": "Chooran Ka Jholmol",
+                    "desc": "Little Singham has to defeat Junglee Joker while taking loo breaks.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/94b1a9e5-eb59-34d3-b702-c9214d811674.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "babu-khushboo-ka-perfume",
+                    "title": "Babu Khushboo ka Perfume",
+                    "desc": "Babu Khushboo forces the people of Mirchi Nagar to buy his perfume.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/bd900cc8-01a1-3319-84d6-796f6ec3696f.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                },
+                {
+                    "id": "jungli-timli-cards",
+                    "title": "Jungli Timli Cards",
+                    "desc": "Junglee Joker uses magical cards to suck kids into his Junglee card world.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/2f34b800-4a56-32d8-9240-7fd49d1876b9.jpeg?w=600&p=true&q=75",
+                    "duration": "10:33",
+                    "isPremium": true
+                }
+            ],
+            "rating": "Age Rating : U | Contains : Suitable for All Ages"
+        }
+    ],
     "mindblownList": [
         {
             "id": "thats-elephantastic",

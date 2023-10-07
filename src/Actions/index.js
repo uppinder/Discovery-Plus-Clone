@@ -137,6 +137,20 @@ const fetchGenreListData = genreId => {
   };
 };
 
+const fetchShowData = showId => {
+  return async dispatch => {
+    try {
+      const { data } = await discoveryPlusApi(`/shows/${showId}`);
+      dispatch({
+        type: 'FETCH_SHOW_DATA',
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export {
   fetchHomeData,
   fetchKidsData,
@@ -147,4 +161,5 @@ export {
   updateChannelCarouselData,
   fetchChannelListData,
   fetchGenreListData,
+  fetchShowData,
 };

@@ -8,11 +8,12 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 
-page = 'genre'  # shows, mindblown, shorts, superstars, channel, genre
+page = 'show'  # shows, mindblown, shorts, superstars, channel, genre, show
 orientation = 'horizontal'
-url = 'https://www.discoveryplus.in/genre/food'
+url = 'https://www.discoveryplus.in/show/little-singham'
 
 options = webdriver.ChromeOptions()
+options.add_argument("--start-maximized")
 options.add_argument('--headless')
 browser = webdriver.Chrome(
     options=options, executable_path='/Users/uppinder/Downloads/Software/chromedriver-mac-x64/chromedriver')
@@ -48,6 +49,9 @@ try:
     elif page == 'genre':
         myElem = WebDriverWait(browser, 30).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'styles-gridTemplate-vIOBVqX5')))
+    elif page == 'show':
+        myElem = WebDriverWait(browser, 30).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'styles-languageWrapper-1nlUJ2h8')))
 
     html = browser.page_source
     soup = BeautifulSoup(html, features="html.parser")
@@ -234,33 +238,80 @@ try:
 
             showList.append(show)
 
-    elif page == 'genre':
-        grid_container = soup.find_all(
-            attrs={"class": "styles-gridTemplate-vIOBVqX5"})
+    elif page == 'show':
+        grid_container = soup.find(
+            attrs={"id": "app"})
 
         for item in grid_container:
             show = {}
 
-            show_link = item.find(
-                attrs={"class": "styles-href-1fNufSlc"})
+            show_banner = item.find(
+                attrs={"class": "styles-bannerImage-2hTagx3I"})
             show_title = item.find(
-                attrs={"class": "styles-basicShowName-1UIRr8Z0"})
+                attrs={"class": "styles-showTitle-1ssdSkqf"})
             show_desc = item.find(
-                attrs={"id": "#desc"})
-            show_thumbnail = item.find(
-                attrs={"class": "styles-thumbnailImage-2I_Mrm9L"})
-            premium_icon = item.find(
-                attrs={"class": "styles-premiumIcon-3D3gTh8F"})
-            show_new_episodes = item.find(
-                attrs={"class": "styles-Episodes-2eohupVc"})
+                attrs={"class": "styles-description-1Fwm4oln"})
+            show_genres = item.find_all(
+                attrs={"class": "styles-genresType-3P377gji"})
+            show_languages = item.find_all(
+                attrs={"class": "styles-languageList-2qBfWU8O"})
+            show_rating = item.find_all(
+                attrs={"class": "styles-contentRatingTexts-2kBylqSd"})
+            show_seasons = item.find(
+                attrs={"class": "styles-cellContainer-2RT7pCce"})
+            show_episodes = item.find_all(
+                attrs={"class": "styles-wrapper-2EYq-6WB"})
 
-            show['id'] = show_link['href'].split('/')[-1]
+            show['id'] = url.split('/')[-1]
+            show['banner'] = show_banner['src'].replace(
+                '&w=700', '&w=1600')
             show['title'] = show_title.text.strip()
             show['desc'] = show_desc.text.strip()
-            show['thumbnail'] = show_thumbnail['src'].replace(
-                '&w=327', '&w=700')
-            show['isPremium'] = True if premium_icon else False
-            show['hasNewEpisodes'] = True if show_new_episodes else False
+            show['genres'] = [genre.text.strip() for genre in show_genres]
+            show['languages'] = [language.text.strip()
+                                 for language in show_languages]
+            show['numOfSeasons'] = 0 if not show_seasons else len(
+                show_seasons)
+            show['episodes'] = []
+
+            # Episodes
+            for episode_item in show_episodes:
+                episode = {}
+
+                episode_link = episode_item.find(
+                    attrs={"class": "styles-href-1fNufSlc"})
+                episode_title = episode_item.find(
+                    attrs={"class": "styles-title-1nosiuwi"})
+                episode_desc = episode_item.find(
+                    attrs={"id": "#desc"})
+                episode_thumbnail = episode_item.find(
+                    attrs={"class": "styles-thumbnailImage-1ZuUX8wm"})
+                episode_duration = item.find(
+                    attrs={"class": "styles-duration-WeX9hpws"})
+                premium_icon = episode_item.find(
+                    attrs={"class": "styles-premiumIcon-1cFRuPCc"})
+
+                episode['id'] = episode_link['href'].split(
+                    '/')[-1].split('?')[0]
+                episode['title'] = episode_title.text.strip()
+                episode['desc'] = episode_desc.text.strip()
+                episode['thumbnail'] = episode_thumbnail['srcset'].split()[0].replace(
+                    '?w=300', '?w=600')
+                episode['duration'] = episode_duration.text.strip()
+                episode['isPremium'] = True if premium_icon else False
+
+                show['episodes'].append(episode)
+
+            rating_texts = [t.text.strip() for t in show_rating]
+            if rating_texts:
+                show['rating'] = rating_texts[0] + ' ' + rating_texts[1]
+
+                if len(rating_texts) > 2:
+                    show['rating'] += ' | ' + \
+                        rating_texts[2] + ' ' + rating_texts[3]
+                    if len(rating_texts) > 4:
+                        show['rating'] += ' DOT ' + \
+                            ' DOT '.join(rating_texts[4:])
 
             showList.append(show)
 
@@ -269,6 +320,5 @@ try:
 
 except TimeoutException:
     print('Timed out.')
-
 
 browser.quit()

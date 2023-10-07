@@ -262,7 +262,3 @@ function Shorts() {
 }
 
 export default Shorts;
-
-// 1. isLoading - second
-// 2. Filtering based on category - done
-// 3. /superstars
