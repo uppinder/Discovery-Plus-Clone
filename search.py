@@ -20,6 +20,7 @@ with open(file_path, 'r') as json_file:
     # For episodes
     for show in data['shows']:
         for episode_obj in show['episodes']:
+            episode_obj['showId'] = show['id']
             episodes[episode_obj['id']] = episode_obj
 
     for episode_id, episode_obj in episodes.items():

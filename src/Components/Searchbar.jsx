@@ -1,4 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
+import discoveryPlusApi from '../Api';
+
 import { SearchIcon } from '@chakra-ui/icons';
 import {
   Divider,
@@ -10,15 +13,7 @@ import {
   Spinner,
 } from '@chakra-ui/react';
 import SearchDropdownItem from './SearchDropdownItem';
-import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import { XCircle } from '@phosphor-icons/react';
-import discoveryPlusApi from '../Api';
-
-const sampleResult = {
-  title: 'Little Singham',
-  thumbnailImage: require('../Assets/Images/shows_test_1.jpeg'),
-  desc: 'A nine-year-old boy battles evil villains that are out to create chaos.',
-};
 
 function Searchbar() {
   const [isLoading, setIsLoading] = useState(false);
@@ -141,8 +136,11 @@ function Searchbar() {
               {results.slice(0, 3).map((result, id) => (
                 <Link
                   key={id}
-                  to="/home"
-                  //   to={result.duration ? `/video/man-vs-wild/the-rockies`}
+                  to={
+                    result.duration
+                      ? `/video/${result['showId']}/${result['id']}`
+                      : `/show/${result['id']}`
+                  }
                   as={ReactRouterLink}
                   _hover={{ textDecoration: 'none' }}
                   reloadDocument

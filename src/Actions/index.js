@@ -45,23 +45,38 @@ const fetchSuperstarData = superstarId => {
 
 const fetchCollectionsData = (params, isSearchView = false) => {
   let endpoint = '';
-  //   if (isSearchView) {
-  //     endpoint = `/collection-view-all`;
-  //   } else {
-  endpoint = `/collection-view-all/${params.id}`;
-  //   }
-
-  return async dispatch => {
-    try {
-      const { data } = await discoveryPlusApi(endpoint);
-      dispatch({
-        type: 'FETCH_COLLECTIONS_DATA',
-        payload: data,
-      });
-    } catch (error) {
-      console.log(error);
+  if (isSearchView) {
+    if (params.type === 'Shows') {
+      endpoint = `/search_shows?q=${params.q}`;
+    } else {
+      endpoint = `/search_shows?q=${params.q}`;
     }
-  };
+
+    return async dispatch => {
+      try {
+        const { data } = await discoveryPlusApi(endpoint);
+        dispatch({
+          type: 'FETCH_SEARCH_COLLECTIONS_DATA',
+          payload: data,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  } else {
+    endpoint = `/collection-view-all/${params.id}`;
+    return async dispatch => {
+      try {
+        const { data } = await discoveryPlusApi(endpoint);
+        dispatch({
+          type: 'FETCH_COLLECTIONS_DATA',
+          payload: data,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  }
 };
 
 const fetchMindblownListData = () => {

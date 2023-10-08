@@ -5,6 +5,7 @@ const initialState = {
   shorts: [],
   superstars: {},
   collection: {},
+  searchCollection: {},
   channelCarouselData: [
     {
       id: 'investigation-discovery',
@@ -164,6 +165,13 @@ const showReducer = (state = initialState, action) => {
           [action.payload.id]: action.payload,
         },
       };
+
+    case 'FETCH_SEARCH_COLLECTIONS_DATA':
+      return {
+        ...state,
+        searchCollection: action.payload,
+      };
+
     case 'UPDATE_CHANNEL_CAROUSEL_DATA':
       const targetObject = state.channelCarouselData.find(
         item => item.id === action.payload

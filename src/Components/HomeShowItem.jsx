@@ -14,6 +14,7 @@ function HomeShowItem({
   isChannelPageMobileView = false,
   isFavourite = false,
   isFavouriteMobileView = false,
+  isSearchDesktopView = false,
 }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
@@ -29,7 +30,14 @@ function HomeShowItem({
       onMouseLeave={handleHover}
       position="relative"
     >
-      <Image src={thumbnail} borderRadius={isMobile ? '1px' : '4px'} />
+      <Image
+        src={thumbnail}
+        maxHeight={isSearchDesktopView ? (isMobile ? '95px' : '190px') : null}
+        width={isSearchDesktopView ? '100%' : null}
+        objectPosition={isSearchDesktopView ? 'center' : null}
+        objectFit={isSearchDesktopView ? 'cover' : null}
+        borderRadius={isMobile ? '1px' : '4px'}
+      />
 
       {/* Premium Icon Overlay*/}
       {isPremium && (

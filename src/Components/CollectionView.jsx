@@ -22,7 +22,9 @@ function CollectionView() {
   const [searchQuery, setSearchQuery] = useState({ q: '', type: '' });
 
   const collectionData = useSelector(state => state.collection);
+  const searchCollectionData = useSelector(state => state.searchCollection);
   const dispatch = useDispatch();
+  const queryParams = new URLSearchParams(location.search);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -34,22 +36,43 @@ function CollectionView() {
         dispatch(fetchCollectionsData({ id: collId }, false));
       }
     }
-
-    // if (queryParams.has('q') && queryParams.has('type')) {
-    //   setSearchQuery({
-    //     q: queryParams.get('q'),
-    //     type: queryParams.get('type'),
-    //   });
-
-    //   if (isEmpty(collectionData)) {
-    //     dispatch(fetchCollectionsData(searchQuery, true));
-    //   }
-    // }
-
-    console.log(collectionData);
   }, [dispatch, location, collectionData, collectionId]);
 
-  if (isEmpty(collectionData[collectionId])) {
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+
+    if (queryParams.has('q') && queryParams.has('type')) {
+      setSearchQuery({
+        q: queryParams.get('q'),
+        type: queryParams.get('type'),
+      });
+    }
+  }, [location]);
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+
+    if (isEmpty(searchCollectionData)) {
+      dispatch(
+        fetchCollectionsData(
+          {
+            q: queryParams.get('q'),
+            type: queryParams.get('type'),
+          },
+          true
+        )
+      );
+    }
+
+    console.log(searchCollectionData);
+  }, [dispatch, searchCollectionData, location]);
+
+  if (
+    (queryParams.has('q') &&
+      queryParams.has('type') &&
+      isEmpty(searchCollectionData)) ||
+    (queryParams.has('id') && isEmpty(collectionData[collectionId]))
+  ) {
     return (
       <Flex
         minWidth="100vw"
@@ -115,27 +138,64 @@ function CollectionView() {
           </Text>
         )}
 
-        {!isEmpty(collectionData[collectionId]['showList']) && (
-          <Grid
-            width="100%"
-            height="100%"
-            paddingY="20px"
-            paddingX={isMobile ? '12px' : '30px'}
-            gridTemplateColumns={{
-              base: 'repeat(2, minmax(0, 100%))',
-              lg: 'repeat(3, minmax(0, 100%))',
-              xl: 'repeat(4, minmax(0, 100%))',
-            }}
-            gridColumnGap={isMobile ? '12px' : '16px'}
-            gridRowGap={isMobile ? '12px' : '18px'}
-          >
-            {collectionData[collectionId]['showList'].map((showData, id) => (
-              <Link to={`/show/${showData.id}`} as={ReactRouterLink} key={id}>
-                <HomeShowItem {...showData} isChannelPageMobileView={true} />
-              </Link>
-            ))}
-          </Grid>
-        )}
+        {queryParams.has('id') &&
+          !isEmpty(collectionData[collectionId]['showList']) && (
+            <Grid
+              width="100%"
+              height="100%"
+              paddingY="20px"
+              paddingX={isMobile ? '12px' : '30px'}
+              gridTemplateColumns={{
+                base: 'repeat(2, minmax(0, 100%))',
+                lg: 'repeat(3, minmax(0, 100%))',
+                xl: 'repeat(4, minmax(0, 100%))',
+              }}
+              gridColumnGap={isMobile ? '12px' : '16px'}
+              gridRowGap={isMobile ? '12px' : '18px'}
+            >
+              {collectionData[collectionId]['showList'].map((showData, id) => (
+                <Link to={`/show/${showData.id}`} as={ReactRouterLink} key={id}>
+                  <HomeShowItem {...showData} isChannelPageMobileView={true} />
+                </Link>
+              ))}
+            </Grid>
+          )}
+
+        {queryParams.has('q') &&
+          queryParams.has('type') &&
+          !isEmpty(searchCollectionData) && (
+            <Grid
+              width="100%"
+              height="100%"
+              paddingY="20px"
+              paddingX={isMobile ? '12px' : '30px'}
+              gridTemplateColumns={{
+                base: 'repeat(2, minmax(0, 100%))',
+                lg: 'repeat(3, minmax(0, 100%))',
+                xl: 'repeat(4, minmax(0, 100%))',
+              }}
+              gridColumnGap={isMobile ? '12px' : '16px'}
+              gridRowGap={isMobile ? '12px' : '18px'}
+            >
+              {searchCollectionData.slice(0, 25).map((searchData, id) => (
+                <Link
+                  to={
+                    searchData.duration
+                      ? `/video/${searchData['showId']}/${searchData['id']}`
+                      : `/show/${searchData['id']}`
+                  }
+                  as={ReactRouterLink}
+                  key={id}
+                >
+                  <HomeShowItem
+                    {...searchData}
+                    isSearchDesktopView={true}
+                    isChannelPageMobileView={true}
+                  />
+                </Link>
+              ))}
+            </Grid>
+          )}
       </Flex>
     );
   }

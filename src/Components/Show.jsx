@@ -289,6 +289,7 @@ function Show() {
                       paddingLeft={isShowPageMobileView ? '8px' : '0'}
                     >
                       {Array(showListData[showId]['numOfSeasons'])
+                        .slice(0, 4)
                         .fill({})
                         .map((_, id) => (
                           <Tab
@@ -305,7 +306,7 @@ function Show() {
                             }}
                             _hover={{ color: 'white' }}
                           >
-                            Season {`${id + 1}`}
+                            {`Season ${id + 1}`}
                           </Tab>
                         ))}
                     </TabList>

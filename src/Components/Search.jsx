@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   Link as ReactRouterLink,
   useLocation,
@@ -29,19 +29,73 @@ import {
 import { ArrowLeft, MagnifyingGlass, XCircle } from '@phosphor-icons/react';
 
 import playButtonImage from '../Assets/Images/play_button.svg';
-import showThumbnail from '../Assets/Images/shows_test_1.jpeg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import noSearchResultsImage from '../Assets/Images/search_no_results.png';
 import HomeShowItem from './HomeShowItem';
+import discoveryPlusApi from '../Api';
 
 function Search() {
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({ base: true, sm: false });
-  const mostPopular = Array(6).fill({
-    title: 'Little Singham',
-    thumbnailImage: require('../Assets/Images/shows_test_1.jpeg'),
-    type: 'Show',
-  });
+  const mostPopular = useMemo(
+    () => [
+      {
+        id: 'little-singham',
+        title: 'Little Singham',
+        desc: 'A nine-year-old boy battles evil villains that are out to create chaos.',
+        thumbnail:
+          'https://ap2-prod-images.disco-api.com/2023/03/05/bbd9636c-a15b-413d-a6c5-82283024ed5d.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+        isPremium: true,
+        hasNewEpisodes: false,
+      },
+      {
+        id: 'fukrey-boyzzz-in',
+        title: 'Fukrey Boyzzz',
+        desc: 'Choocha, Hunny and Laali are kids with limited means but great dreams.',
+        thumbnail:
+          'https://ap2-prod-images.disco-api.com/2023/05/15/e75ded76-173d-4b3e-aa57-028d00bab525.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+        isPremium: true,
+        hasNewEpisodes: false,
+      },
+      {
+        id: 'swami-ramdev-ek-sangharsh-in',
+        title: 'Swami Ramdev: Ek Sangharsh',
+        desc: 'Discover how Swami Ramdev changed the health of the nation.',
+        thumbnail:
+          'https://ap2-prod-images.disco-api.com/2023/06/01/37eb2e61-c013-40ec-b076-41f1c9ad7723.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+        isPremium: true,
+        hasNewEpisodes: false,
+      },
+      {
+        id: 'gold-rush',
+        title: 'Gold Rush',
+        desc: 'Hard-working gold miners risk their lives for a chance at striking it rich.',
+        thumbnail:
+          'https://ap2-prod-images.disco-api.com/2023/09/26/293263a9-8d4f-4068-96d8-f3977cd1db95.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+        isPremium: false,
+        hasNewEpisodes: true,
+      },
+      {
+        id: 'secrets-of-in',
+        title: 'Secrets of the Koh-i-noor',
+        desc: "Follow the journey of the world's most fabled diamond with Manoj Bajpayee.",
+        thumbnail:
+          'https://ap2-prod-images.disco-api.com/2022/08/18/8accb6b7-de88-42b9-a129-bcf6107350b5.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+        isPremium: true,
+        hasNewEpisodes: false,
+      },
+      {
+        id: 'expedition-unknown',
+        title: 'Expedition Unknown',
+        desc: "Josh Gates investigates the world's most iconic and captivating legends.",
+        thumbnail:
+          'https://ap2-prod-images.disco-api.com/2023/07/13/89ee551f-46b2-41d2-89eb-ab47dd438a8e.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+        isPremium: false,
+        hasNewEpisodes: false,
+      },
+    ],
+    []
+  );
 
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -63,8 +117,31 @@ function Search() {
 
     if (queryParams.has('q')) {
       setQuery(queryParams.get('q'));
+      setInputText(queryParams.get('q'));
     }
   }, [location]);
+
+  useEffect(() => {
+    const fetchResults = async () => {
+      try {
+        const { data: data_shows } = await discoveryPlusApi(
+          `/search_shows?q=${query}`
+        );
+
+        const { data: data_episodes } = await discoveryPlusApi(
+          `/search_episodes?q=${query}`
+        );
+
+        // console.log(data_shows, data_episodes);
+
+        setResults({ shows: data_shows, episodes: data_episodes });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchResults();
+  }, [query]);
 
   useEffect(() => {
     const fetchResults = async () => {
@@ -72,13 +149,24 @@ function Search() {
 
       setShowXCircle(false);
       setIsLoading(true);
+      try {
+        const { data: data_shows } = await discoveryPlusApi(
+          `/search_shows?q=${inputText}`
+        );
 
-      //   Dummy API call
-      setTimeout(() => {
+        const { data: data_episodes } = await discoveryPlusApi(
+          `/search_episodes?q=${inputText}`
+        );
+
+        // console.log(data_shows, data_episodes);
+        setResults({ shows: data_shows, episodes: data_episodes });
+      } catch (error) {
+        console.log(error);
+      } finally {
         setShowResults(true);
         setIsLoading(false);
         setShowXCircle(true);
-      }, 500);
+      }
     };
 
     // Debounce
@@ -88,7 +176,6 @@ function Search() {
       setShowXCircle(false);
       setShowResults(false);
     }
-
     return () => clearTimeout(timeout);
   }, [inputText]);
 
@@ -224,38 +311,44 @@ function Search() {
 
             <TabPanels backgroundColor="#1a1c21">
               <TabPanel paddingX="0" paddingTop="60px">
-                {results.shows.length > 0 ? (
+                {results.shows && results.shows.length > 0 ? (
                   <Grid
                     width="100%"
                     height="100%"
                     paddingX="12px"
                     gridTemplateColumns="repeat(2, minmax(0, 100%))"
                     gridColumnGap="10px"
-                    gridRowGap="16px"
+                    gridRowGap="10px"
                   >
-                    {Array(19)
-                      .fill(null)
-                      .map((_, index) => (
-                        <Link
-                          key={index}
-                          position="relative"
-                          display="flex"
-                          flexDirection="column"
-                          _focus={{ textDecoration: 'none' }}
-                          gap="5px"
-                        >
-                          <Box position="relative">
-                            <Image src={showThumbnail} />
+                    {results.shows.slice(0, 25).map((showData, index) => (
+                      <Link
+                        key={index}
+                        position="relative"
+                        display="flex"
+                        flexDirection="column"
+                        _focus={{ textDecoration: 'none' }}
+                        gap="5px"
+                      >
+                        <Box position="relative">
+                          <Image
+                            src={showData['thumbnail']}
+                            maxHeight="95px"
+                            width="100%"
+                            objectFit="cover"
+                          />
 
-                            {/* Premium Icon Overlay*/}
+                          {/* Premium Icon Overlay*/}
+                          {showData['isPremium'] && (
                             <Image
                               src={premiumIcon}
                               position="absolute"
                               top="1.5%"
                               left="1%"
                             />
+                          )}
 
-                            {/* New Episodes Overlay */}
+                          {/* New Episodes Overlay */}
+                          {showData['hasNewEpisodes'] && (
                             <Flex
                               position="absolute"
                               height="18px"
@@ -271,29 +364,26 @@ function Search() {
                                 New Episodes
                               </Text>
                             </Flex>
-                          </Box>
+                          )}
+                        </Box>
 
-                          <Text
-                            fontSize="12px"
-                            fontWeight="500"
-                            color="#bfc5cd"
-                          >
-                            Little Singham
-                          </Text>
-                        </Link>
-                      ))}
+                        <Text fontSize="12px" fontWeight="500" color="#bfc5cd">
+                          {showData['title']}
+                        </Text>
+                      </Link>
+                    ))}
                   </Grid>
                 ) : (
                   <Image src={noSearchResultsImage} />
                 )}
               </TabPanel>
               <TabPanel paddingX="0" paddingTop="60px">
-                {results.episodes.length > 0 ? (
+                {results.episodes && results.episodes.length > 0 ? (
                   <Flex flexDirection="column">
-                    {mostPopular.map(({ title, thumbnailImage, type }, id) => (
+                    {results.episodes.slice(0, 25).map((showEpisode, id) => (
                       <Link
                         key={id}
-                        to="/video/man-vs-wild/the-rockies"
+                        to={`/video/${showEpisode['showId']}/${showEpisode['id']}`}
                         as={ReactRouterLink}
                         _hover={{ textDecoration: 'none' }}
                       >
@@ -308,7 +398,7 @@ function Search() {
                         >
                           <Box position="relative">
                             <Image
-                              src={thumbnailImage}
+                              src={showEpisode['thumbnail']}
                               minWidth="112px"
                               height="68px"
                               objectFit="cover"
@@ -341,7 +431,9 @@ function Search() {
                               opacity="0.65"
                               paddingX="3px"
                             >
-                              <Text fontSize="10px">43:32</Text>
+                              <Text fontSize="10px">
+                                {showEpisode['duration']}
+                              </Text>
                             </Flex>
                           </Box>
 
@@ -356,7 +448,7 @@ function Search() {
                               fontWeight="500"
                               lineHeight="1"
                             >
-                              {title}
+                              {showEpisode['title']}
                             </Text>
                             <Flex alignItems="center" width="90%">
                               <Text
@@ -364,8 +456,9 @@ function Search() {
                                 color="#838991"
                                 fontSize="13px"
                                 lineHeight="1.3"
+                                textTransform="capitalize"
                               >
-                                {type}
+                                {showEpisode['showId'].split('-').join(' ')}
                               </Text>
                             </Flex>
                           </Flex>
@@ -378,7 +471,7 @@ function Search() {
                 )}
               </TabPanel>
               <TabPanel paddingX="0" paddingTop="60px">
-                {results.shorts.length > 0 ? (
+                {results.shorts && results.shorts.length > 0 ? (
                   <Flex flexDirection="column">
                     {mostPopular.map(({ title, thumbnailImage, type }, id) => (
                       <Link
@@ -516,10 +609,10 @@ function Search() {
               Most popular
             </Text>
             <Flex flexDirection="column">
-              {mostPopular.map(({ title, thumbnailImage, type }, id) => (
+              {mostPopular.map(({ id, title, thumbnail, type }, index) => (
                 <Link
-                  key={id}
-                  to="/video/man-vs-wild/the-rockies"
+                  key={index}
+                  to={`/show/${id}`}
                   as={ReactRouterLink}
                   _hover={{ textDecoration: 'none' }}
                 >
@@ -534,7 +627,7 @@ function Search() {
                   >
                     <Box position="relative">
                       <Image
-                        src={thumbnailImage}
+                        src={thumbnail}
                         minWidth="112px"
                         height="68px"
                         objectFit="cover"
@@ -625,13 +718,19 @@ function Search() {
           gridColumnGap="16px"
           gridRowGap="18px"
         >
-          {Array(5)
-            .fill(null)
-            .map((_, index) => (
-              <Link to="/show/test" as={ReactRouterLink} key={index}>
-                <HomeShowItem isChannelPageMobileView={true} />
-              </Link>
-            ))}
+          {results['shows'].slice(0, 4).map((showData, index) => (
+            <Link
+              to={`/show/${showData['id']}`}
+              as={ReactRouterLink}
+              key={index}
+            >
+              <HomeShowItem
+                {...showData}
+                isSearchDesktopView={true}
+                isChannelPageMobileView={true}
+              />
+            </Link>
+          ))}
         </Grid>
 
         <Center>
@@ -670,13 +769,23 @@ function Search() {
           gridColumnGap="16px"
           gridRowGap="18px"
         >
-          {Array(5)
-            .fill(null)
-            .map((_, index) => (
-              <Link to="/show/test" as={ReactRouterLink} key={index}>
-                <HomeShowItem isChannelPageMobileView={true} />
-              </Link>
-            ))}
+          {results['shows'].slice(0, 4).map((episodeData, index) => (
+            <Link
+              to={
+                episodeData.duration
+                  ? `/video/${episodeData['showId']}/${episodeData['id']}`
+                  : `/show/${episodeData['id']}`
+              }
+              as={ReactRouterLink}
+              key={index}
+            >
+              <HomeShowItem
+                {...episodeData}
+                isSearchDesktopView={true}
+                isChannelPageMobileView={true}
+              />
+            </Link>
+          ))}
         </Grid>
 
         <Center>
