@@ -729,9 +729,3 @@ function Search() {
 }
 
 export default Search;
-
-// 1. Remove dropdown on blur - Searchbar.jsx - pending (useRef?)
-// 2. Mobile responsive UI:
-// 2a. recent searches - done
-// 2b. zero results - done
-// 3. /search UI pages for desktop - done

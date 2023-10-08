@@ -12,6 +12,7 @@ import {
 import SearchDropdownItem from './SearchDropdownItem';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import { XCircle } from '@phosphor-icons/react';
+import discoveryPlusApi from '../Api';
 
 const sampleResult = {
   title: 'Little Singham',
@@ -24,7 +25,7 @@ function Searchbar() {
   const [inputText, setInputText] = useState('');
   const [showXCircle, setShowXCircle] = useState(false);
   const [showResultsDropdown, setShowResultsDropdown] = useState(false);
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState({});
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -39,13 +40,23 @@ function Searchbar() {
       setShowXCircle(false);
       setIsLoading(true);
 
-      //   Dummy API call
-      setTimeout(() => {
-        setResults(Array(3).fill(sampleResult));
+      try {
+        const { data: data_shows } = await discoveryPlusApi(
+          `/search_shows?q=${inputText}`
+        );
+
+        const { data: data_episodes } = await discoveryPlusApi(
+          `/search_episodes?q=${inputText}`
+        );
+
+        setResults(data_shows.concat(data_episodes));
+      } catch (error) {
+        console.log(error);
+      } finally {
         setShowResultsDropdown(true);
         setShowXCircle(true);
         setIsLoading(false);
-      }, 500);
+      }
     };
 
     // Debounce
@@ -127,10 +138,11 @@ function Searchbar() {
         >
           {results && results.length ? (
             <>
-              {results.map((result, id) => (
+              {results.slice(0, 3).map((result, id) => (
                 <Link
                   key={id}
-                  to="/video/man-vs-wild/the-rockies"
+                  to="/home"
+                  //   to={result.duration ? `/video/man-vs-wild/the-rockies`}
                   as={ReactRouterLink}
                   _hover={{ textDecoration: 'none' }}
                   reloadDocument

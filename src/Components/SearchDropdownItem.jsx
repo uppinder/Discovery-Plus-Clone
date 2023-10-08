@@ -4,7 +4,12 @@ import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 
-function SearchDropdownItem({ title, thumbnailImage, desc }) {
+function SearchDropdownItem({
+  title = '',
+  desc = '',
+  thumbnail = '',
+  isPremium = false,
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -27,20 +32,22 @@ function SearchDropdownItem({ title, thumbnailImage, desc }) {
     >
       <Box position="relative">
         <Image
-          src={thumbnailImage}
+          src={thumbnail}
           minWidth="115px"
           height="70px"
           objectFit="cover"
         />
 
-        <Image
-          src={premiumIcon}
-          position="absolute"
-          top="0"
-          left="0"
-          width="18px"
-          height="18px"
-        />
+        {isPremium && (
+          <Image
+            src={premiumIcon}
+            position="absolute"
+            top="0"
+            left="0"
+            width="18px"
+            height="18px"
+          />
+        )}
 
         {/* Play Button Overlay*/}
         {isHovered && (

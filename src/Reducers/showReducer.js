@@ -98,6 +98,44 @@ const initialState = {
   channelShowListData: {},
   genreShowListData: {},
   showListData: {},
+  youMayAlsoLike: [
+    {
+      id: 'little-singham',
+      title: 'Little Singham',
+      desc: 'A nine-year-old boy battles evil villains that are out to create chaos.',
+      thumbnail:
+        'https://ap2-prod-images.disco-api.com/2023/03/05/bbd9636c-a15b-413d-a6c5-82283024ed5d.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+      isPremium: true,
+      hasNewEpisodes: false,
+    },
+    {
+      id: 'fukrey-boyzzz-in',
+      title: 'Fukrey Boyzzz',
+      desc: 'Choocha, Hunny and Laali are kids with limited means but great dreams.',
+      thumbnail:
+        'https://ap2-prod-images.disco-api.com/2023/05/15/e75ded76-173d-4b3e-aa57-028d00bab525.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+      isPremium: true,
+      hasNewEpisodes: false,
+    },
+    {
+      id: 'swami-ramdev-ek-sangharsh-in',
+      title: 'Swami Ramdev: Ek Sangharsh',
+      desc: 'Discover how Swami Ramdev changed the health of the nation.',
+      thumbnail:
+        'https://ap2-prod-images.disco-api.com/2023/06/01/37eb2e61-c013-40ec-b076-41f1c9ad7723.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+      isPremium: true,
+      hasNewEpisodes: false,
+    },
+    {
+      id: 'gold-rush',
+      title: 'Gold Rush',
+      desc: 'Hard-working gold miners risk their lives for a chance at striking it rich.',
+      thumbnail:
+        'https://ap2-prod-images.disco-api.com/2023/09/26/293263a9-8d4f-4068-96d8-f3977cd1db95.jpeg?bf=0&f=jpg&p=true&q=75&w=700',
+      isPremium: false,
+      hasNewEpisodes: true,
+    },
+  ],
 };
 
 const showReducer = (state = initialState, action) => {
