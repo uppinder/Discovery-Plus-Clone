@@ -78,6 +78,7 @@ function ShowItem({
             fontSize="15px"
             fontWeight={isShowPageMobileView ? '500' : '600'}
             lineHeight="1"
+            width={isShowPageMobileView ? '85%' : null}
           >
             {title}
           </Text>

@@ -29,7 +29,6 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
-import showImage from '../Assets/Images/show_image.jpeg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import { DotOutline, Heart, ShareNetwork } from '@phosphor-icons/react';
 import { DotsThreeOutlineVertical } from '@phosphor-icons/react';
@@ -95,7 +94,7 @@ function Video() {
       dispatch(fetchShowData(showId));
     }
 
-    // console.log(showListData);
+    console.log(showListData);
   }, [dispatch, showId, showListData]);
 
   if (isEmpty(showListData[showId])) {
@@ -124,15 +123,20 @@ function Video() {
           alignItems="center"
           width={isMobile ? '100%' : '80%'}
         >
-          {/* Thumbnail */}
-          <Image
-            src={showListData[showId]['banner']}
-            height={isShowPageMobileView ? '210px' : null}
-            borderRadius={isShowPageMobileView ? '0px' : '10px'}
-            position={isShowPageMobileView ? 'sticky' : null}
-            top={isShowPageMobileView ? '0' : null}
-            zIndex={isShowPageMobileView ? '9' : null}
-          />
+          <Flex
+            width="100%"
+            // zIndex={isShowPageMobileView ? '9' : null}
+            position="relative"
+          >
+            <iframe
+              width="100%"
+              height={isShowPageMobileView ? '300' : '800'}
+              position={isShowPageMobileView ? 'sticky' : null}
+              src={showListData[showId]['videoSrc']}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+          </Flex>
 
           {/* Description */}
           <Flex
@@ -162,7 +166,11 @@ function Video() {
                     <Image src={premiumIcon} width="24px" height="24px" />
                   )}
                   <Text color="#bfc5cd" fontWeight="500" fontSize="14px">
-                    Man vs. Wild
+                    {
+                      showListData[showId]['episodes'].find(
+                        item => item.id === videoId
+                      )['title']
+                    }
                   </Text>
                 </Flex>
                 <Flex alignItems="center">
@@ -292,6 +300,7 @@ function Video() {
                       zIndex={isShowPageMobileView ? '8' : null}
                     >
                       {Array(showListData[showId]['numOfSeasons'])
+                        .slice(0, 4)
                         .fill({})
                         .map((_, id) => (
                           <Tab
@@ -349,6 +358,7 @@ function Video() {
                                     <MenuButton
                                       size={20}
                                       as={IconButton}
+                                      zIndex="4"
                                       icon={
                                         <DotsThreeOutlineVertical
                                           size={24}

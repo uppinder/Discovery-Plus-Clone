@@ -323,6 +323,8 @@ function Search() {
                     {results.shows.slice(0, 25).map((showData, index) => (
                       <Link
                         key={index}
+                        to={`/show/${showData['id']}`}
+                        as={ReactRouterLink}
                         position="relative"
                         display="flex"
                         flexDirection="column"

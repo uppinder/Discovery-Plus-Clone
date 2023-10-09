@@ -156,7 +156,11 @@ function Show() {
               </Flex>
 
               <Flex width="100%" flexDirection="column" gap="12px">
-                <Flex
+                <Link
+                  display="flex"
+                  _hover={{ textDecoration: 'none' }}
+                  as={ReactRouterLink}
+                  to={`/video/${showId}/${showListData[showId]['episodes'][0]['id']}`}
                   width={isShowPageMobileView ? '100%' : 'fit-content'}
                   height="40px"
                   borderRadius="4px"
@@ -172,7 +176,7 @@ function Show() {
                   <Text color="white" fontWeight="700" lineHeight="1.2">
                     Watch Now
                   </Text>
-                </Flex>
+                </Link>
 
                 <Text
                   order={isShowPageMobileView ? '1' : '2'}
