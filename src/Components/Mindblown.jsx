@@ -28,10 +28,6 @@ function Mindblown() {
   const isMindblownPage = mindblownIdPattern.test(location.pathname);
   const isMindblownPageMobileView = isMindblownPage && isMobile;
 
-  const handleTabsChange = index => {
-    console.log(index);
-  };
-
   return (
     <Flex
       flexDirection="column"

@@ -1,6 +1,5 @@
 import { Box, Image } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 function ExploreItem({ thumbnail }) {
   const [isHovered, setIsHovered] = useState(false);

@@ -30,13 +30,6 @@ import channelTLC from '../Assets/Images/premium_channel_tlc.png';
 import channelTrivia from '../Assets/Images/premium_channel_trivia.png';
 import channelTurbo from '../Assets/Images/premium_channel_turbo.png';
 
-// Swiper imports
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-
 import Slider from 'react-slick';
 
 import premiumCarouselImage1 from '../Assets/Images/premium_show_carousel_image_1.jpeg';

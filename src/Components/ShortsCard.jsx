@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
-import reactStringReplace from 'react-string-replace';
 
 import shortsFullEpIcon from '../Assets/Images/short_play_icon.svg';
 
-import { DotOutline, Heart, ShareNetwork } from '@phosphor-icons/react';
+import { Heart, ShareNetwork } from '@phosphor-icons/react';
 
 function ShortsCard({ title, rating, thumbnail }) {
   const [cardHovered, setCardHovered] = useState(false);

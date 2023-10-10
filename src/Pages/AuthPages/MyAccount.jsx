@@ -2,13 +2,11 @@ import React from 'react';
 import { Link as ReactRouterLink, useNavigate } from 'react-router-dom';
 
 import {
-  Button,
   Divider,
   Flex,
   Link,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,

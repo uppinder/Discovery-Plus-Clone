@@ -210,6 +210,8 @@ function Shorts() {
                 </Box>
               );
             }
+
+            return <></>;
           })}
           <Box height="1px" width="100%" ref={lastShortsRef}></Box>
           {isLoading && <Spinner size="lg" marginX="auto" />}
