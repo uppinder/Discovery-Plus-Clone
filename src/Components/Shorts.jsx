@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { isEmpty } from 'lodash';
 import { fetchShortsData } from '../Actions';
 import { useDispatch, useSelector } from 'react-redux';
+
 import {
   Box,
   Divider,
@@ -46,17 +47,15 @@ function Shorts() {
   useEffect(() => {
     const fetchShorts = () => {
       try {
-        console.log('Fetching data...', pageNumber);
+        // console.log('Fetching data...', pageNumber);
 
         setTimeout(() => {
           dispatch(fetchShortsData(pageNumber));
-
-          console.log('Data fetched');
+          //   console.log('Data fetched');
+          setIsLoading(false);
         }, 300);
       } catch (error) {
         console.log(error);
-      } finally {
-        setIsLoading(false);
       }
     };
 
@@ -64,7 +63,7 @@ function Shorts() {
       setIsLoading(true);
       fetchShorts();
     }
-  }, [pageNumber, dispatch]);
+  }, [dispatch, pageNumber, isLoading]);
 
   const observer = useRef();
   const lastShortsRef = useCallback(
@@ -213,7 +212,6 @@ function Shorts() {
             }
           })}
           <Box height="1px" width="100%" ref={lastShortsRef}></Box>
-          {isLoading ? 'true' : 'false'}
           {isLoading && <Spinner size="lg" marginX="auto" />}
         </Flex>
 

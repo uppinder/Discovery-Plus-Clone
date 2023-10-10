@@ -131,8 +131,9 @@ function Video() {
             <iframe
               width="100%"
               height={isShowPageMobileView ? '300' : '800'}
-              position={isShowPageMobileView ? 'sticky' : null}
+              //   position={isShowPageMobileView ? 'sticky' : null}
               src={showListData[showId]['videoSrc']}
+              //   zIndex={isShowPageMobileView ? '9' : null}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             ></iframe>
@@ -249,9 +250,9 @@ function Video() {
                 border="transparent"
                 gap="24px"
                 backgroundColor="#1a1c21"
-                position={isShowPageMobileView ? 'sticky' : null}
+                // position={isShowPageMobileView ? 'sticky' : null}
                 top={isShowPageMobileView ? '210px' : null}
-                zIndex={isShowPageMobileView ? '9' : null}
+                // zIndex={isShowPageMobileView ? '9' : null}
               >
                 <Tab
                   paddingX="0"
@@ -295,9 +296,9 @@ function Video() {
                       paddingTop={isShowPageMobileView ? '10px' : '0'}
                       paddingBottom={isShowPageMobileView ? '8px' : '0'}
                       backgroundColor="#1a1c21"
-                      position={isShowPageMobileView ? 'sticky' : null}
+                      //   position={isShowPageMobileView ? 'sticky' : null}
                       top={isShowPageMobileView ? '253px' : null}
-                      zIndex={isShowPageMobileView ? '8' : null}
+                      //   zIndex={isShowPageMobileView ? '8' : null}
                     >
                       {Array(showListData[showId]['numOfSeasons'])
                         .slice(0, 4)
@@ -358,7 +359,7 @@ function Video() {
                                     <MenuButton
                                       size={20}
                                       as={IconButton}
-                                      zIndex="4"
+                                      zIndex="5"
                                       icon={
                                         <DotsThreeOutlineVertical
                                           size={24}
@@ -376,6 +377,7 @@ function Video() {
                                       minWidth="120px"
                                       borderRadius="0px"
                                       paddingY="4px"
+                                      zIndex="6"
                                     >
                                       <MenuItem
                                         backgroundColor="#121317"
