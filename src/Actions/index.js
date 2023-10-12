@@ -1,6 +1,20 @@
 import { isEmpty } from 'lodash';
 import discoveryPlusApi from '../Api';
 
+const setUserProfile = userProfile => {
+  return {
+    type: 'SET_USER_PROFILE',
+    payload: { ...userProfile, loginTime: new Date().getTime() },
+  };
+};
+
+const unsetUserProfile = () => {
+  return {
+    type: 'UNSET_USER_PROFILE',
+    payload: null,
+  };
+};
+
 const fetchHomeData = () => {
   return async dispatch => {
     try {
@@ -93,6 +107,20 @@ const fetchMindblownListData = () => {
   };
 };
 
+const fetchMindblownData = mindblownId => {
+  return async dispatch => {
+    try {
+      const { data } = await discoveryPlusApi(`/mindblown/${mindblownId}`);
+      dispatch({
+        type: 'FETCH_MINDBLOWN_DATA',
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 const fetchShortsData = pageNumber => {
   const start = pageNumber * 10;
   const end = (pageNumber + 1) * 10;
@@ -167,10 +195,13 @@ const fetchShowData = showId => {
 };
 
 export {
+  setUserProfile,
+  unsetUserProfile,
   fetchHomeData,
   fetchKidsData,
   fetchSuperstarData,
   fetchCollectionsData,
+  fetchMindblownData,
   fetchMindblownListData,
   fetchShortsData,
   updateChannelCarouselData,

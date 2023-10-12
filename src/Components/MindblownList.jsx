@@ -12,7 +12,6 @@ import {
 } from '@chakra-ui/react';
 
 import MindblownListItem from './MindblownListItem';
-
 function MindblownList() {
   const location = useLocation();
   const isMobile = useBreakpointValue({ base: true, sm: false });

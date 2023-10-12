@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Link as ReactRouterLink,
   useLocation,
@@ -42,6 +42,8 @@ import avatarLogo from '../Assets/Images/avatar_icon.svg';
 import crownLogo from '../Assets/Images/crown_logo.svg';
 
 import Searchbar from './Searchbar';
+import { useDispatch, useSelector } from 'react-redux';
+import { isEmpty } from 'lodash';
 
 const FixedBottomNavbar = () => {
   const location = useLocation();
@@ -179,6 +181,11 @@ const FixedBottomNavbar = () => {
 
 function Navbar() {
   const headerLinkStyle = { textDecoration: 'none', color: 'white' };
+
+  // User login logic
+  const userData = useSelector(state => state.userProfile);
+  const dispatch = useDispatch();
+  useEffect(() => {}, [userData]);
 
   // Drawer
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -557,8 +564,13 @@ function Navbar() {
               gap="18px"
               paddingX="10px"
             >
-              <Image src={avatarLogo} />
-              <Text fontWeight="600">Guest User</Text>
+              <Image
+                src={isEmpty(userData) ? avatarLogo : userData['picture']}
+                borderRadius="full"
+              />
+              <Text fontWeight="600">
+                {isEmpty(userData) ? 'Guest User' : userData['name']}
+              </Text>
               <Link
                 as={ReactRouterLink}
                 to="/go-premium-web"
@@ -579,19 +591,21 @@ function Navbar() {
                 <Image src={crownLogo} width="18px" height="18px" />
                 <Text>Go Premium</Text>
               </Link>
-              <Link
-                to="/login"
-                as={ReactRouterLink}
-                marginLeft="25px"
-                alignSelf="flex-start"
-                display="flex"
-                alignItems="center"
-                gap="12px"
-                _hover={headerLinkStyle}
-              >
-                <SignIn size="20px" />
-                <Text>Sign In</Text>
-              </Link>
+              {isEmpty(userData) && (
+                <Link
+                  to="/login"
+                  as={ReactRouterLink}
+                  marginLeft="25px"
+                  alignSelf="flex-start"
+                  display="flex"
+                  alignItems="center"
+                  gap="12px"
+                  _hover={headerLinkStyle}
+                >
+                  <SignIn size="20px" />
+                  <Text>Sign In</Text>
+                </Link>
+              )}
 
               <Flex paddingY="5px">
                 <Center
@@ -777,22 +791,42 @@ function Navbar() {
       <HStack spacing="8px" marginRight="8px" display={['none', 'flex']}>
         <Searchbar />
 
-        <Link
-          to="/login"
-          as={ReactRouterLink}
-          border="1px solid white"
-          borderRadius="3px"
-          fontSize="16px"
-          fontWeight="600"
-          justifyContent="center"
-          alignItems="center"
-          cursor="pointer"
-          whiteSpace="nowrap"
-          padding="3px 9px"
-          _hover={{ textDecoration: 'none' }}
-        >
-          Sign In
-        </Link>
+        {isEmpty(userData) ? (
+          <Link
+            to="/login"
+            as={ReactRouterLink}
+            border="1px solid white"
+            borderRadius="3px"
+            fontSize="16px"
+            fontWeight="600"
+            justifyContent="center"
+            alignItems="center"
+            cursor="pointer"
+            whiteSpace="nowrap"
+            padding="3px 9px"
+            _hover={{ textDecoration: 'none' }}
+          >
+            Sign In
+          </Link>
+        ) : (
+          <Link
+            as={ReactRouterLink}
+            to="/my-account"
+            backgroundImage="linear-gradient(45deg, #2175d9 37%, #2789ff 77%)"
+            borderRadius="3px"
+            fontSize="16px"
+            fontWeight="600"
+            justifyContent="center"
+            alignItems="center"
+            whiteSpace="nowrap"
+            cursor="pointer"
+            padding="4px 10px"
+            _hover={{ textDecoration: 'none' }}
+          >
+            My Account
+          </Link>
+        )}
+
         {isActiveLink('go-premium-web') ||
         isActiveLink('show') ||
         isActiveLink('video') ||

@@ -529,8 +529,6 @@ function Premium() {
           height={isMobile ? '50%' : '550'} // Set the height of your video
           src="https://www.youtube.com/embed/VIDEO_ID_HERE" // Replace with your video's URL or embed code
           title="Embedded Video"
-          frameborder="0"
-          allowfullscreen
         ></iframe>
       </Flex>
 

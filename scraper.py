@@ -8,9 +8,10 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 
-page = 'show'  # shows, mindblown, shorts, superstars, channel, genre, show
+# shows, mindblownList, shorts, superstars, channel, genre, show, mindblown
+page = 'mindblown'
 orientation = 'horizontal'
-url = 'https://www.discoveryplus.in/show/little-singham'
+url = 'https://www.discoveryplus.in/mindblown/science-vs-god'
 
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
@@ -29,7 +30,7 @@ try:
         else:
             myElem = WebDriverWait(browser, 30).until(
                 EC.presence_of_element_located((By.CLASS_NAME, 'styles-categoryWrapper-19ZEld4e')))
-    elif page == 'mindblown':
+    elif page == 'mindblownList':
         myElem = WebDriverWait(browser, 30).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'styles-gridContainer-2oo0Qu1Z')))
     elif page == 'shorts':
@@ -52,6 +53,9 @@ try:
     elif page == 'show':
         myElem = WebDriverWait(browser, 30).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'styles-languageWrapper-1nlUJ2h8')))
+    elif page == 'mindblown':
+        myElem = WebDriverWait(browser, 30).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'styles-bannerWrapper-308Tp-Wg')))
 
     html = browser.page_source
     soup = BeautifulSoup(html, features="html.parser")
@@ -114,12 +118,12 @@ try:
 
             showList.append(show)
 
-    elif page == 'mindblown':
+    elif page == 'mindblownList':
         grid_container = soup.find(
             attrs={"class": "styles-gridContainer-2oo0Qu1Z"}).find_all('a')
 
         for item in grid_container:
-            mindblown = {}
+            mindblownList = {}
 
             show_link = item
             show_title = item.find(
@@ -131,14 +135,14 @@ try:
             video_count = item.find(
                 attrs={"class": "styles-videoCount-2MpqnLs0"})
 
-            mindblown['id'] = show_link.get('href').split('/')[-1]
-            mindblown['title'] = show_title.text.strip()
-            mindblown['desc'] = show_desc.text.strip()
-            mindblown['thumbnail'] = show_thumbnail['srcset'].split()[0].replace(
+            mindblownList['id'] = show_link.get('href').split('/')[-1]
+            mindblownList['title'] = show_title.text.strip()
+            mindblownList['desc'] = show_desc.text.strip()
+            mindblownList['thumbnail'] = show_thumbnail['srcset'].split()[0].replace(
                 '?w=400', '?w=800')
-            mindblown['videoCount'] = video_count.text.strip()
+            mindblownList['videoCount'] = video_count.text.strip()
 
-            showList.append(mindblown)
+            showList.append(mindblownList)
 
     elif page == 'shorts':
         categories = ['adventure',
@@ -315,8 +319,58 @@ try:
 
             showList.append(show)
 
-    print(json.dumps(showList))
+    elif page == 'mindblown':
+        grid_container = soup.find(
+            attrs={"class": "styles-bannerWrapper-308Tp-Wg"})
 
+        show = {}
+        show_banner = grid_container.find(
+            attrs={"class": "styles-bannerImage-1jAECmNB"})
+        show_title = grid_container.find(
+            attrs={"class": "styles-mindBlownTitle-3jW7ku_n"})
+        show_desc = grid_container.find(
+            attrs={"class": "styles-description-19hkznWQ"})
+        show_episodes = soup.find(
+            attrs={"class": "styles-gridContainer-3SAJ3FK-"}).find_all(
+            attrs={"class": "styles-wrapper-2EYq-6WB"})
+
+        show['id'] = url.split('/')[-1]
+        show['banner'] = show_banner['src'].replace(
+            '&h=400', '&w=1024')
+        show['title'] = show_title.text.strip()
+        show['desc'] = show_desc.text.strip()
+        show['episodes'] = []
+
+        # Episodes
+        for episode_item in show_episodes:
+            episode = {}
+
+            episode_link = episode_item.find(
+                attrs={"class": "styles-href-1fNufSlc"})
+            episode_title = episode_item.find(
+                attrs={"class": "styles-title-1nosiuwi"})
+            episode_desc = episode_item.find(
+                attrs={"id": "#desc"})
+            episode_thumbnail = episode_item.find(
+                attrs={"class": "styles-thumbnailImage-1ZuUX8wm"})
+            episode_duration = episode_item.find(
+                attrs={"class": "styles-duration-WeX9hpws"})
+            premium_icon = episode_item.find(
+                attrs={"class": "styles-premiumIcon-1cFRuPCc"})
+
+            episode['id'] = episode_link['href'].split('?')[0]
+            episode['title'] = episode_title.text.strip()
+            episode['desc'] = episode_desc.text.strip()
+            episode['thumbnail'] = episode_thumbnail['srcset'].split()[0].replace(
+                '?w=300', '?w=600')
+            episode['duration'] = episode_duration.text.strip()
+            episode['isPremium'] = True if premium_icon else False
+
+            show['episodes'].append(episode)
+
+        showList.append(show)
+
+    print(json.dumps(showList))
 
 except TimeoutException:
     print('Timed out.')

@@ -1,12 +1,15 @@
-import { applyMiddleware, compose, createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './Reducers/showReducer';
-import thunk from 'redux-thunk';
+import { loadState, saveState } from './sessionStorage';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: getDefaultMiddleware => getDefaultMiddleware(),
+  preloadedState: loadState(),
+});
 
-const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk))
-);
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 export default store;

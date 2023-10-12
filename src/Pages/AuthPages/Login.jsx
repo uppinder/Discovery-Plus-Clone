@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import {
   Link as ReactRouterLink,
   useLocation,
   useNavigate,
 } from 'react-router-dom';
+
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
 import {
   Button,
   Flex,
@@ -22,6 +24,9 @@ import {
 import googleIcon from '../../Assets/Images/signin_google_logo.svg';
 import facebookIcon from '../../Assets/Images/signin_facebook_icon.svg';
 import appleIcon from '../../Assets/Images/signin_apple_logo.svg';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { setUserProfile } from '../../Actions';
 
 function Login() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -43,6 +48,36 @@ function Login() {
     onSubmit: values => {
       navigate('/login/otp', { state: { mobileNum: values.mobileNum } });
     },
+  });
+
+  const dispatch = useDispatch();
+
+  const login = useGoogleLogin({
+    onSuccess: tokenResponse => {
+      const fetchUserDetails = async access_token => {
+        try {
+          const { data } = await axios.get(
+            `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${access_token}`,
+            {
+              headers: {
+                Authorization: `Bearer ${access_token}`,
+                Accept: 'application/json',
+              },
+            }
+          );
+
+          //   console.log(data);
+          dispatch(setUserProfile(data));
+          navigate('/home');
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      //   console.log(tokenResponse);
+      fetchUserDetails(tokenResponse.access_token);
+    },
+    onError: error => console.log('Login Failed:', error),
   });
 
   return (
@@ -88,7 +123,6 @@ function Login() {
                 <InputLeftElement
                   color="#c7c7c7"
                   left={isMobile ? '64px' : '115px'}
-                  input
                 >
                   +91
                 </InputLeftElement>
@@ -183,6 +217,7 @@ function Login() {
               backgroundColor="#fff"
               borderRadius="50px"
               _hover={{ opacity: '0.8' }}
+              onClick={() => login()}
             >
               <Image src={googleIcon} width="14px" height="14px" />
             </Link>

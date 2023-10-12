@@ -1,7 +1,9 @@
 const initialState = {
+  userProfile: {},
   home: {},
   kids: {},
   mindblownList: [],
+  mindblown: {},
   shorts: [],
   superstars: {},
   collection: {},
@@ -141,12 +143,24 @@ const initialState = {
 
 const showReducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'SET_USER_PROFILE':
+      return { ...state, userProfile: { ...action.payload } };
+    case 'UNSET_USER_PROFILE':
+      return { ...state, userProfile: {} };
     case 'FETCH_HOME_DATA':
       return { ...state, home: { ...action.payload } };
     case 'FETCH_KIDS_DATA':
       return { ...state, kids: { ...action.payload } };
     case 'FETCH_MINDBLOWN_LIST_DATA':
       return { ...state, mindblownList: action.payload };
+    case 'FETCH_MINDBLOWN_DATA':
+      return {
+        ...state,
+        mindblown: {
+          ...state.mindblown,
+          [action.payload.id]: action.payload,
+        },
+      };
     case 'FETCH_SHORTS_DATA':
       return { ...state, shorts: [...state.shorts, ...action.payload] };
     case 'FETCH_SUPERSTAR_DATA':

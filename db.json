@@ -11298,6 +11298,120 @@
             "videoCount": "3 Videos"
         }
     ],
+    "mindblown": [
+        {
+            "id": "thats-elephantastic",
+            "banner": "https://ap2-prod-images.disco-api.com/2020/2/28/82f106f9-2e54-4eb4-b338-7fc71d15835c.jpg?f=jpg&p=true&q=85&w=1024",
+            "title": "That's Elephantastic!",
+            "desc": "Explore the world of these mighty mammals.",
+            "episodes": [
+                {
+                    "id": "/videos/the-zoo/an-elephants-trust",
+                    "title": "An Elephant's Trust",
+                    "desc": "An elephant requires delicate treatment and an otter visits the dentist.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2020/02/26/5f4ad1b6-e062-38ff-bbd0-52397c6cf56e.jpeg?w=600&p=true&q=75",
+                    "duration": "46:50",
+                    "isPremium": false
+                },
+                {
+                    "id": "/videos/kingdom-of-the-elephants/kingdom-of-the-elephants",
+                    "title": "Kingdom of the Elephants",
+                    "desc": "This story reveals the bond that the Thai mahouts share with elephants.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2023/07/05/77c24643-8505-3a66-b7af-e9575909473a.jpeg?w=600&p=true&q=75",
+                    "duration": "45:59",
+                    "isPremium": false
+                },
+                {
+                    "id": "/videos/dodo-heroes/derricks-elephant-challenge",
+                    "title": "Derrick's Elephant Challenge",
+                    "desc": "An elephant is fitted with the world's first orthotic leg brace.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/09/08/85b5bb82-7cf7-3fc2-8507-515400d86690.jpeg?w=600&p=true&q=75",
+                    "duration": "46:54",
+                    "isPremium": false
+                },
+                {
+                    "id": "/videos/chinas-last-elephants/chinas-last-elephants",
+                    "title": "China's Last Elephants",
+                    "desc": "Thousands of elephants once roamed China. What has caused their demise?",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/05/9c594b74-e5d0-3231-a4cc-15512a7589d5.jpeg?w=600&p=true&q=75",
+                    "duration": "46:54",
+                    "isPremium": true
+                },
+                {
+                    "id": "/videos/dodo-heroes/baby-elephant-rescue",
+                    "title": "Baby Elephant Rescue",
+                    "desc": "Discovering the road to rehabilitation for a baby elephant calf.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/05/6ac444a6-af74-383e-b81a-b787f07288c9.jpeg?w=600&p=true&q=75",
+                    "duration": "47:09",
+                    "isPremium": false
+                }
+            ]
+        },
+        {
+            "id": "on-the-indian-tiger-trail",
+            "banner": "https://ap2-prod-images.disco-api.com/2020/2/26/3347de81-d535-4eb7-8350-002e17b7b50d.jpg?f=jpg&p=true&q=85&w=1024",
+            "title": "On The Indian Tiger Trail",
+            "desc": "Beloved and feared in equal measures, few big cats inspire as much awe in India as the tiger.",
+            "episodes": [
+                {
+                    "id": "/videos/tigress-blood/tigress-blood",
+                    "title": "Tigress Blood",
+                    "desc": "Four tiger sisters battle each other for control of their homeland.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/12/31/23665779-984b-388f-8eed-7958169a9b3f.jpeg?w=600&p=true&q=75",
+                    "duration": "43:35",
+                    "isPremium": true
+                }
+            ]
+        },
+        {
+            "id": "science-vs-god",
+            "banner": "https://ap2-prod-images.disco-api.com/2020/1/23/1ba32b51-a3b6-4b62-af7c-5c0a0a06f084.jpg?f=jpg&p=true&q=85&w=1024",
+            "title": "Science vs God",
+            "desc": "Faith and fact have been at loggerheads for centuries. Watch some of the most compelling arguments by scientists here.",
+            "episodes": [
+                {
+                    "id": "/videos/morgan-freemans-through-the-wormhole/did-god-create-evolution",
+                    "title": "Did God Create Evolution?",
+                    "desc": "Scientists investigate whether life is the product of evolution or God.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2020/11/06/44316dc0-865b-355e-be03-0f4e71beb2f2.jpeg?w=600&p=true&q=75",
+                    "duration": "43:35",
+                    "isPremium": false
+                },
+                {
+                    "id": "/videos/morgan-freemans-through-the-wormhole/is-god-an-alien-concept",
+                    "title": "Is God an Alien Concept?",
+                    "desc": "Scientists explore how alien deities might differ from our own.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/08/16/d3594552-14db-3191-ae94-b7d05214bbd7.jpeg?w=600&p=true&q=75",
+                    "duration": "43:35",
+                    "isPremium": false
+                },
+                {
+                    "id": "/videos/morgan-freemans-through-the-wormhole/is-there-a-god-particle",
+                    "title": "Is There a God Particle?",
+                    "desc": "Scientists hunt for a particle to explain how matter came to exist.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2022/11/03/e39e3965-7819-31dc-9028-b66be1829f6d.jpeg?w=600&p=true&q=75",
+                    "duration": "42:55",
+                    "isPremium": false
+                },
+                {
+                    "id": "/videos/morgan-freemans-through-the-wormhole/will-we-become-god",
+                    "title": "Will We Become God?",
+                    "desc": "Scientists debate if we could become as powerful as God.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2021/08/16/1595d7f4-3890-3f4a-af62-540fa60f2609.jpeg?w=600&p=true&q=75",
+                    "duration": "43:41",
+                    "isPremium": false
+                },
+                {
+                    "id": "/videos/stephen-hawkings-grand-design/did-god-create-the-universe",
+                    "title": "Did God Create The Universe?",
+                    "desc": "Dr. Stephen Hawking looks at the historical evolution of science from the Vikings and the Greeks to Galileo and Einstein and probes deeper into the mysteries of the universe to investigate if there's any evidence of God in its creation.",
+                    "thumbnail": "https://ap2-prod-images.disco-api.com/2020/02/13/3d798ca9-7daf-3907-a5ac-030e8133208b.jpeg?w=600&p=true&q=75",
+                    "duration": "43:41",
+                    "isPremium": true
+                }
+            ]
+        }
+    ],
     "shorts": [
         {
             "title": "A Twisted Tale Of Love, Betrayal & Murder!",

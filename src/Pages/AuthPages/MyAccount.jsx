@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link as ReactRouterLink, useNavigate } from 'react-router-dom';
+import { googleLogout } from '@react-oauth/google';
+import { useDispatch } from 'react-redux';
+import { unsetUserProfile } from '../../Actions';
 
 import {
   Divider,
@@ -20,6 +23,14 @@ function MyAccount() {
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({ base: true, sm: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const dispatch = useDispatch();
+
+  const handleSignOut = () => {
+    googleLogout();
+    dispatch(unsetUserProfile());
+    navigate('/home');
+  };
 
   return (
     <Flex width="100%" justifyContent="center">
@@ -157,6 +168,7 @@ function MyAccount() {
                   cursor="pointer"
                   paddingY="8px"
                   backgroundImage="linear-gradient(112deg, #383e47, #475058 100%)"
+                  onClick={handleSignOut}
                 >
                   Sign Out
                 </Flex>
