@@ -182,10 +182,7 @@ const FixedBottomNavbar = () => {
 function Navbar() {
   const headerLinkStyle = { textDecoration: 'none', color: 'white' };
 
-  // User login logic
   const userData = useSelector(state => state.userProfile);
-  const dispatch = useDispatch();
-  useEffect(() => {}, [userData]);
 
   // Drawer
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -567,8 +564,9 @@ function Navbar() {
               <Image
                 src={isEmpty(userData) ? avatarLogo : userData['picture']}
                 borderRadius="full"
+                onClick={() => navigate('/my-account')}
               />
-              <Text fontWeight="600">
+              <Text fontWeight="600" onClick={() => navigate('/my-account')}>
                 {isEmpty(userData) ? 'Guest User' : userData['name']}
               </Text>
               <Link

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
 import {
   Link as ReactRouterLink,
   useLocation,
@@ -27,6 +27,7 @@ import appleIcon from '../../Assets/Images/signin_apple_logo.svg';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setUserProfile } from '../../Actions';
+import discoveryPlusApi from '../../Api';
 
 function Login() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -54,6 +55,32 @@ function Login() {
 
   const login = useGoogleLogin({
     onSuccess: tokenResponse => {
+      const saveUserDetails = async userId => {
+        try {
+          const { data: userData } = await discoveryPlusApi.get(
+            `/users/${userId}`
+          );
+
+          console.log(userData);
+        } catch (error) {
+          if (error.response.status === 404) {
+            // User not found in database, so include the dude
+            try {
+              const { data } = await discoveryPlusApi.post('/users', {
+                id: userId,
+                favourite_shows: [],
+                favourite_episodes: [],
+              });
+              //   console.log(data);
+            } catch (error) {
+              console.log(error);
+            }
+          } else {
+            console.log(error);
+          }
+        }
+      };
+
       const fetchUserDetails = async access_token => {
         try {
           const { data } = await axios.get(
@@ -66,8 +93,8 @@ function Login() {
             }
           );
 
-          //   console.log(data);
           dispatch(setUserProfile(data));
+          saveUserDetails(data['id']);
           navigate('/home');
         } catch (error) {
           console.log(error);

@@ -1,15 +1,20 @@
-import React from 'react';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link as ReactRouterLink, useNavigate } from 'react-router-dom';
+import { isEmpty } from 'lodash';
+import { useSelector } from 'react-redux';
+import discoveryPlusApi from '../Api';
 
 import {
   Flex,
   Grid,
   IconButton,
+  Image,
   Link,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Spinner,
   Tab,
   TabList,
   TabPanel,
@@ -20,14 +25,119 @@ import {
 } from '@chakra-ui/react';
 import ShowItem from './ShowItem';
 import { DotsThreeOutlineVertical } from '@phosphor-icons/react';
-import HomeShowItem from './HomeShowItem';
+
+import noContentDesktop from '../Assets/Images/favourites_none.svg';
+import noContentMobile from '../Assets/Images/favourite_no_mobile.svg';
+
+const NoContent = ({ section = '' }) => {
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+
+  return (
+    <Flex
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      gap="15px"
+    >
+      {isMobile ? (
+        <>
+          <Image src={noContentMobile} />
+          <Text fontWeight="500" textAlign="center">
+            Shows, Episodes and Shorts that you liked can be found here.
+          </Text>
+        </>
+      ) : (
+        <>
+          <Image src={noContentDesktop} marginTop="50px" />
+          <Text fontWeight="500" textAlign="center" marginBottom="50px">
+            Find all the {section} that you have liked at one place.
+          </Text>
+        </>
+      )}
+    </Flex>
+  );
+};
 
 function Favourites() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
-  const handleTabsChange = index => {
-    console.log(index);
+  const navigate = useNavigate();
+  const userData = useSelector(state => state.userProfile);
+  const [favouritesContent, setFavouritesContent] = useState({});
+  const [updatePending, setUpdatePending] = useState(false);
+
+  useEffect(() => {
+    if (isEmpty(userData)) {
+      navigate('/login');
+    }
+  }, [navigate, userData]);
+
+  useEffect(() => {
+    const fetchFavourites = async () => {
+      try {
+        const { data } = await discoveryPlusApi(`/users/${userData.id}`);
+        console.log(data);
+        setFavouritesContent(data);
+      } catch (error) {
+        if (error.response.status === 404) {
+          navigate('/home');
+        } else {
+          console.log(error);
+        }
+      }
+    };
+
+    if (!isEmpty(userData)) {
+      fetchFavourites();
+    }
+  }, [navigate, userData]);
+
+  useEffect(() => {
+    const updateUserFavourites = () => {
+      discoveryPlusApi
+        .delete(`/users/${userData['id']}`)
+        .then(response => {
+          if (response.status === 200) {
+            return discoveryPlusApi.post('/users', favouritesContent);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        })
+        .finally(() => setUpdatePending(false));
+    };
+
+    if (updatePending) {
+      updateUserFavourites();
+    }
+  }, [userData, favouritesContent, updatePending]);
+
+  const removeFavouriteEpisode = episodeId => {
+    setFavouritesContent(prevState => {
+      return {
+        ...prevState,
+        favourite_episodes: prevState.favourite_episodes.filter(
+          item => item.id !== episodeId
+        ),
+      };
+    });
+
+    setUpdatePending(true);
   };
+
+  const removeFavouriteShow = showId => {
+    setFavouritesContent(prevState => {
+      return {
+        ...prevState,
+        favourite_shows: prevState.favourite_shows.filter(
+          item => item.id !== showId
+        ),
+      };
+    });
+
+    setUpdatePending(true);
+  };
+
   return (
     <Flex
       width="100%"
@@ -43,7 +153,7 @@ function Favourites() {
         </Text>
       )}
 
-      <Tabs align="start" isFitted={isMobile} onChange={handleTabsChange}>
+      <Tabs align="start" isFitted={isMobile}>
         <TabList
           width="100%"
           color="#9ba1a9"
@@ -78,7 +188,7 @@ function Favourites() {
             }}
             _hover={{ color: 'white' }}
           >
-            Shorts
+            Shows
           </Tab>
           <Tab
             paddingX="0"
@@ -90,173 +200,141 @@ function Favourites() {
             }}
             _hover={{ color: 'white' }}
           >
-            Shows
+            Shorts
           </Tab>
         </TabList>
 
         <TabPanels paddingTop={isMobile ? '30px' : '20px'}>
           {/* Episodes */}
           <TabPanel paddingX={isMobile ? '6px' : '0'}>
-            <Grid
-              width="100%"
-              height="100%"
-              gridTemplateColumns={{
-                base: 'repeat(1, minmax(0, 100%))',
-                md: 'repeat(3, minmax(0, 100%))',
-                lg: 'repeat(4, minmax(0, 100%))',
-                xl: 'repeat(5, minmax(0, 100%))',
-              }}
-              gridColumnGap="10px"
-              gridRowGap={isMobile ? '2px' : '16px'}
-            >
-              {Array(2)
-                .fill(null)
-                .map((_, index) => (
-                  <Flex key={index} position="relative">
-                    <Link
-                      to="/video/man-vs-wild/the-rockies"
-                      as={ReactRouterLink}
-                      key={index}
-                      position="relative"
-                      height={isMobile ? null : '190px'}
-                      _hover={{ textDecoration: 'none' }}
-                    >
-                      <ShowItem
-                        isFavourite={true}
-                        isShowPageMobileView={isMobile}
-                        timeOverlay={true}
-                      />
-                    </Link>
-                    {isMobile && (
-                      <Menu>
-                        <MenuButton
-                          size={20}
-                          as={IconButton}
-                          icon={
-                            <DotsThreeOutlineVertical
-                              size={24}
-                              color="#9b9b9b"
-                              weight="fill"
-                            />
-                          }
-                          variant="unstyled"
-                          position="absolute"
-                          top="6px"
-                          right="0"
+            {isEmpty(favouritesContent) ? (
+              <Flex
+                minWidth="100vw"
+                height="400px"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Spinner size="xl" speed="0.56s" />
+              </Flex>
+            ) : isEmpty(favouritesContent['favourite_episodes']) ? (
+              <NoContent section={'Episodes'} />
+            ) : (
+              <Grid
+                width="100%"
+                height="100%"
+                gridTemplateColumns={{
+                  base: 'repeat(1, minmax(0, 100%))',
+                  md: 'repeat(3, minmax(0, 100%))',
+                  lg: 'repeat(4, minmax(0, 100%))',
+                  xl: 'repeat(5, minmax(0, 100%))',
+                }}
+                gridColumnGap="10px"
+                gridRowGap={isMobile ? '2px' : '16px'}
+              >
+                {favouritesContent['favourite_episodes'].map(
+                  (episodeData, index) => (
+                    <Flex key={index} position="relative">
+                      <Link
+                        to={`/video/${episodeData['showId']}/${episodeData['id']}`}
+                        as={ReactRouterLink}
+                        key={index}
+                        position="relative"
+                        height={isMobile ? null : '190px'}
+                        _hover={{ textDecoration: 'none' }}
+                      >
+                        <ShowItem
+                          {...episodeData}
+                          isFavourite={true}
+                          isShowPageMobileView={isMobile}
+                          timeOverlay={true}
                         />
-                        <MenuList
-                          backgroundColor="#121317"
-                          minWidth="120px"
-                          borderRadius="0px"
-                          paddingY="4px"
-                        >
-                          <MenuItem backgroundColor="#121317" fontSize="14px">
-                            Remove from Favourite
-                          </MenuItem>
-                          <MenuItem backgroundColor="#121317" fontSize="14px">
-                            Share
-                          </MenuItem>
-                        </MenuList>
-                      </Menu>
-                    )}
-                  </Flex>
-                ))}
-            </Grid>
-          </TabPanel>
-
-          {/* Shorts */}
-          <TabPanel paddingX={isMobile ? '6px' : '0'}>
-            <Grid
-              width="100%"
-              height="100%"
-              gridTemplateColumns={{
-                base: 'repeat(1, minmax(0, 100%))',
-                md: 'repeat(3, minmax(0, 100%))',
-                lg: 'repeat(4, minmax(0, 100%))',
-                xl: 'repeat(5, minmax(0, 100%))',
-              }}
-              gridColumnGap="10px"
-              gridRowGap={isMobile ? '2px' : '16px'}
-            >
-              {Array(2)
-                .fill(null)
-                .map((_, index) => (
-                  <Flex key={index} position="relative">
-                    <Link
-                      to="/video/man-vs-wild/the-rockies"
-                      as={ReactRouterLink}
-                      key={index}
-                      position="relative"
-                      height={isMobile ? null : '190px'}
-                      _hover={{ textDecoration: 'none' }}
-                    >
-                      <ShowItem
-                        isFavourite={true}
-                        isShowPageMobileView={isMobile}
-                        timeOverlay={true}
-                      />
-                    </Link>
-                    {isMobile && (
-                      <Menu>
-                        <MenuButton
-                          size={20}
-                          as={IconButton}
-                          icon={
-                            <DotsThreeOutlineVertical
-                              size={24}
-                              color="#9b9b9b"
-                              weight="fill"
-                            />
-                          }
-                          variant="unstyled"
-                          position="absolute"
-                          top="6px"
-                          right="0"
-                        />
-                        <MenuList
-                          backgroundColor="#121317"
-                          minWidth="120px"
-                          borderRadius="0px"
-                          paddingY="4px"
-                        >
-                          <MenuItem backgroundColor="#121317" fontSize="14px">
-                            Remove from Favourite
-                          </MenuItem>
-                          <MenuItem backgroundColor="#121317" fontSize="14px">
-                            Share
-                          </MenuItem>
-                        </MenuList>
-                      </Menu>
-                    )}
-                  </Flex>
-                ))}
-            </Grid>
+                      </Link>
+                      {isMobile && (
+                        <Menu>
+                          <MenuButton
+                            size={20}
+                            as={IconButton}
+                            icon={
+                              <DotsThreeOutlineVertical
+                                size={24}
+                                color="#9b9b9b"
+                                weight="fill"
+                              />
+                            }
+                            variant="unstyled"
+                            position="absolute"
+                            top="6px"
+                            right="0"
+                          />
+                          <MenuList
+                            backgroundColor="#121317"
+                            minWidth="120px"
+                            borderRadius="0px"
+                            paddingY="4px"
+                          >
+                            <MenuItem
+                              backgroundColor="#121317"
+                              fontSize="14px"
+                              onClick={() =>
+                                removeFavouriteEpisode(episodeData['id'])
+                              }
+                            >
+                              Remove from Favourite
+                            </MenuItem>
+                            <MenuItem backgroundColor="#121317" fontSize="14px">
+                              Share
+                            </MenuItem>
+                          </MenuList>
+                        </Menu>
+                      )}
+                    </Flex>
+                  )
+                )}
+              </Grid>
+            )}
           </TabPanel>
 
           {/* Shows */}
-          <TabPanel paddingX="0">
-            <Grid
-              width="100%"
-              height="100%"
-              paddingX="20px"
-              gridTemplateColumns={{
-                base: 'repeat(1, minmax(0, 100%))',
-                md: 'repeat(3, minmax(0, 100%))',
-                lg: 'repeat(4, minmax(0, 100%))',
-                xl: 'repeat(5, minmax(0, 100%))',
-              }}
-              gridColumnGap="10px"
-              gridRowGap="15px"
-            >
-              {Array(8)
-                .fill(null)
-                .map((_, index) => (
+          <TabPanel paddingX={isMobile ? '6px' : '0'}>
+            {isEmpty(favouritesContent) ? (
+              <Flex
+                minWidth="100vw"
+                height="400px"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Spinner size="xl" speed="0.56s" />
+              </Flex>
+            ) : isEmpty(favouritesContent['favourite_shows']) ? (
+              <NoContent section={'Shows'} />
+            ) : (
+              <Grid
+                width="100%"
+                height="100%"
+                gridTemplateColumns={{
+                  base: 'repeat(1, minmax(0, 100%))',
+                  md: 'repeat(3, minmax(0, 100%))',
+                  lg: 'repeat(4, minmax(0, 100%))',
+                  xl: 'repeat(5, minmax(0, 100%))',
+                }}
+                gridColumnGap="10px"
+                gridRowGap={isMobile ? '2px' : '16px'}
+              >
+                {favouritesContent['favourite_shows'].map((showData, index) => (
                   <Flex key={index} position="relative">
-                    <Link position="relative">
-                      <HomeShowItem
+                    <Link
+                      key={index}
+                      to={`/show/${showData['id']}`}
+                      as={ReactRouterLink}
+                      position="relative"
+                      height={isMobile ? null : '190px'}
+                      _hover={{ textDecoration: 'none' }}
+                    >
+                      <ShowItem
+                        {...showData}
                         isFavourite={true}
-                        isFavouriteMobileView={true}
-                        isChannelPageMobileView={true}
+                        isShowPageMobileView={isMobile}
+                        timeOverlay={true}
                       />
                     </Link>
                     {isMobile && (
@@ -267,14 +345,14 @@ function Favourites() {
                           icon={
                             <DotsThreeOutlineVertical
                               size={24}
-                              color="#fff"
+                              color="#9b9b9b"
                               weight="fill"
                             />
                           }
                           variant="unstyled"
                           position="absolute"
                           top="6px"
-                          right="2px"
+                          right="0"
                         />
                         <MenuList
                           backgroundColor="#121317"
@@ -282,7 +360,11 @@ function Favourites() {
                           borderRadius="0px"
                           paddingY="4px"
                         >
-                          <MenuItem backgroundColor="#121317" fontSize="14px">
+                          <MenuItem
+                            backgroundColor="#121317"
+                            fontSize="14px"
+                            onClick={() => removeFavouriteShow(showData['id'])}
+                          >
                             Remove from Favourite
                           </MenuItem>
                           <MenuItem backgroundColor="#121317" fontSize="14px">
@@ -293,7 +375,13 @@ function Favourites() {
                     )}
                   </Flex>
                 ))}
-            </Grid>
+              </Grid>
+            )}
+          </TabPanel>
+
+          {/* Shorts */}
+          <TabPanel paddingX="0">
+            <NoContent section={'Shorts'} />
           </TabPanel>
         </TabPanels>
       </Tabs>
