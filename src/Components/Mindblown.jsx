@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { isEmpty } from 'lodash';
 import { fetchMindblownData } from '../Actions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -27,6 +27,7 @@ import {
 import { DotsThreeOutlineVertical, Play } from '@phosphor-icons/react';
 
 import ShowItem from './ShowItem';
+import discoveryPlusApi from '../Api';
 
 function Mindblown() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -46,6 +47,80 @@ function Mindblown() {
 
     console.log(mindblownData[mindblownId]);
   }, [dispatch, mindblownData, mindblownId]);
+
+  const userData = useSelector(state => state.userProfile);
+  const [favouritesContent, setFavouritesContent] = useState({});
+  const [updatePending, setUpdatePending] = useState(false);
+
+  useEffect(() => {
+    const fetchFavourites = async () => {
+      try {
+        const { data } = await discoveryPlusApi(`/users/${userData.id}`);
+        console.log(data);
+        setFavouritesContent(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    if (!isEmpty(userData)) {
+      fetchFavourites();
+    }
+  }, [userData]);
+
+  const checkIsFavourite = useCallback(
+    episodeId => {
+      const isFavourite = favouritesContent['favourite_episodes'].some(
+        item => item.id === episodeId
+      );
+      return isFavourite;
+    },
+    [favouritesContent]
+  );
+
+  useEffect(() => {
+    const updateUserFavourites = () => {
+      discoveryPlusApi
+        .delete(`/users/${userData['id']}`)
+        .then(response => {
+          if (response.status === 200) {
+            return discoveryPlusApi.post('/users', favouritesContent);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        })
+        .finally(() => setUpdatePending(false));
+    };
+
+    if (updatePending) {
+      updateUserFavourites();
+    }
+  }, [userData, favouritesContent, updatePending]);
+
+  const addToFavouriteEpisodes = episodeId => {
+    const alreadyFavourited = favouritesContent['favourite_episodes'].some(
+      item => item.id === episodeId
+    );
+
+    if (!alreadyFavourited) {
+      const favouriteEpisode = mindblownData[mindblownId]['episodes'].find(
+        item => item.id === episodeId
+      );
+
+      setFavouritesContent(prevState => {
+        return {
+          ...prevState,
+          favourite_episodes: [
+            ...prevState.favourite_episodes,
+            favouriteEpisode,
+          ],
+        };
+      });
+
+      setUpdatePending(true);
+    }
+  };
 
   if (isEmpty(mindblownData[mindblownId])) {
     return (
@@ -162,6 +237,12 @@ function Mindblown() {
                       <ShowItem
                         {...episodeData}
                         timeOverlay={true}
+                        isFavourite={
+                          isEmpty(favouritesContent)
+                            ? false
+                            : checkIsFavourite(episodeData['id'])
+                        }
+                        addToFavouriteEpisodes={addToFavouriteEpisodes}
                         isShowPageMobileView={isMindblownPageMobileView}
                       />
                     </Link>

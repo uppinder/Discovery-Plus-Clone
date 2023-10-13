@@ -76,7 +76,7 @@ function Favourites() {
     const fetchFavourites = async () => {
       try {
         const { data } = await discoveryPlusApi(`/users/${userData.id}`);
-        console.log(data);
+        // console.log(data);
         setFavouritesContent(data);
       } catch (error) {
         if (error.response.status === 404) {
@@ -235,7 +235,11 @@ function Favourites() {
                   (episodeData, index) => (
                     <Flex key={index} position="relative">
                       <Link
-                        to={`/video/${episodeData['showId']}/${episodeData['id']}`}
+                        to={
+                          episodeData['id'].startsWith('/videos/')
+                            ? episodeData['id'].replace('/videos/', '/video/')
+                            : `/video/${episodeData['showId']}/${episodeData['id']}`
+                        }
                         as={ReactRouterLink}
                         key={index}
                         position="relative"
@@ -247,6 +251,7 @@ function Favourites() {
                           isFavourite={true}
                           isShowPageMobileView={isMobile}
                           timeOverlay={true}
+                          removefromFavourites={removeFavouriteEpisode}
                         />
                       </Link>
                       {isMobile && (
@@ -335,6 +340,7 @@ function Favourites() {
                         isFavourite={true}
                         isShowPageMobileView={isMobile}
                         timeOverlay={true}
+                        removefromFavourites={removeFavouriteShow}
                       />
                     </Link>
                     {isMobile && (

@@ -57,16 +57,14 @@ function Login() {
     onSuccess: tokenResponse => {
       const saveUserDetails = async userId => {
         try {
-          const { data: userData } = await discoveryPlusApi.get(
-            `/users/${userId}`
-          );
+          await discoveryPlusApi.get(`/users/${userId}`);
 
-          console.log(userData);
+          //   console.log(userData);
         } catch (error) {
           if (error.response.status === 404) {
-            // User not found in database, so include the dude
+            // If user not found in database, include them
             try {
-              const { data } = await discoveryPlusApi.post('/users', {
+              await discoveryPlusApi.post('/users', {
                 id: userId,
                 favourite_shows: [],
                 favourite_episodes: [],

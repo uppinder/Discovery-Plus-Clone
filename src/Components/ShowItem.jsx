@@ -6,6 +6,7 @@ import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
 function ShowItem({
+  id = '',
   title = '',
   desc = '',
   thumbnail = '',
@@ -14,6 +15,9 @@ function ShowItem({
   isShowPageMobileView = false,
   timeOverlay = false,
   isFavourite = false,
+  addToFavouriteShows = null,
+  addToFavouriteEpisodes = null,
+  removefromFavourites = null,
 }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
@@ -171,7 +175,13 @@ function ShowItem({
             lineHeight="1.2"
             position="relative"
           >
-            <HomeShowItemHoverableIcon isFavourite={isFavourite} />
+            <HomeShowItemHoverableIcon
+              id={id}
+              isFavourite={isFavourite}
+              addToFavouriteShows={addToFavouriteShows}
+              addToFavouriteEpisodes={addToFavouriteEpisodes}
+              removefromFavourites={removefromFavourites}
+            />
           </Flex>
         </Flex>
       </Box>

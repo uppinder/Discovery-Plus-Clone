@@ -64,7 +64,7 @@ function CollectionView() {
       );
     }
 
-    console.log(searchCollectionData);
+    // console.log(searchCollectionData);
   }, [dispatch, searchCollectionData, location]);
 
   if (

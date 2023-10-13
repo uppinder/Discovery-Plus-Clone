@@ -3,9 +3,11 @@ import { Heart } from '@phosphor-icons/react';
 import React, { useState } from 'react';
 
 function HomeShowItemHoverableIcon({
+  id = '',
   isFavourite = false,
-  favouriteShow = null,
-  favouriteEpisode = null,
+  addToFavouriteShows = null,
+  addToFavouriteEpisodes = null,
+  removefromFavourites = null,
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -23,8 +25,11 @@ function HomeShowItemHoverableIcon({
       onClick={e => {
         e.preventDefault();
 
-        if (favouriteShow) favouriteShow();
-        if (favouriteEpisode) favouriteEpisode();
+        console.log('click');
+
+        if (addToFavouriteShows) addToFavouriteShows(id);
+        if (addToFavouriteEpisodes) addToFavouriteEpisodes(id);
+        if (removefromFavourites) removefromFavourites(id);
       }}
     >
       <Heart
