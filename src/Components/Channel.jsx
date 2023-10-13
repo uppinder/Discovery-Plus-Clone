@@ -20,7 +20,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 
-import channelImage from '../Assets/Images/show_image.jpeg';
+import channelImage from '../Assets/Images/channel_image.svg';
 import HomeShowItem from './HomeShowItem';
 import ChannelCarousel from './ChannelCarousel';
 import discoveryPlusApi from '../Api';
@@ -170,7 +170,50 @@ function Channel() {
         top={isChannelPageMobileView ? '0' : null}
         zIndex={isChannelPageMobileView ? '9' : null}
       >
-        <Image src={channelImage} />
+        <Flex
+          width="100%"
+          height={isChannelPageMobileView ? '300px' : '600px'}
+          backgroundColor="black"
+          justifyContent={isChannelPageMobileView ? 'center' : 'center'}
+          alignItems="center"
+        >
+          <Flex gap="10px">
+            {!isChannelPageMobileView && (
+              <Image
+                src={channelImage}
+                height={isChannelPageMobileView ? '200px' : '280px'}
+              />
+            )}
+            <Flex
+              flexDirection="column"
+              justifyContent="center"
+              alignItems={isChannelPageMobileView ? 'center' : null}
+              gap="12px"
+              width="100%"
+            >
+              <Text
+                fontWeight="600"
+                fontSize={isChannelPageMobileView ? '20px' : '24px'}
+                textAlign={isChannelPageMobileView ? 'center' : null}
+              >
+                You will need to be a premium member to watch this video.
+              </Text>
+              <Link
+                to="/go-premium-web"
+                as={ReactRouterLink}
+                backgroundColor="rgb(39, 137, 255)"
+                width="fit-content"
+                padding="10px 20px"
+                borderRadius="10px"
+                fontWeight="500"
+                fontSize="15px"
+                _hover={{ textDecoration: 'none', color: 'black' }}
+              >
+                GO PREMIUM
+              </Link>
+            </Flex>
+          </Flex>
+        </Flex>
 
         <Text
           fontSize="24px"

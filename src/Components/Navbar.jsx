@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Link as ReactRouterLink,
   useLocation,
@@ -42,7 +42,7 @@ import avatarLogo from '../Assets/Images/avatar_icon.svg';
 import crownLogo from '../Assets/Images/crown_logo.svg';
 
 import Searchbar from './Searchbar';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { isEmpty } from 'lodash';
 
 const FixedBottomNavbar = () => {

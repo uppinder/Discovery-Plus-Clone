@@ -323,7 +323,7 @@ function Favourites() {
                   xl: 'repeat(5, minmax(0, 100%))',
                 }}
                 gridColumnGap="10px"
-                gridRowGap={isMobile ? '2px' : '16px'}
+                gridRowGap={isMobile ? '2px' : '48px'}
               >
                 {favouritesContent['favourite_shows'].map((showData, index) => (
                   <Flex key={index} position="relative">
