@@ -25,7 +25,7 @@ function HomeShowItemHoverableIcon({
       onClick={e => {
         e.preventDefault();
 
-        console.log('click');
+        // console.log('click');
 
         if (toggleFavouriteShow) toggleFavouriteShow(id);
         if (toggleFavouriteEpisode) toggleFavouriteEpisode(id);

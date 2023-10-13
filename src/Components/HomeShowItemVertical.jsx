@@ -6,11 +6,14 @@ import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
 function HomeShowItemVertical({
+  id = '',
   title = '',
   desc = '',
   thumbnail = '',
   hasNewEpisodes = false,
   isPremium = false,
+  isFavourite = false,
+  toggleFavouriteShow = null,
 }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
@@ -107,7 +110,11 @@ function HomeShowItemVertical({
               {desc}
             </Text>
           </Flex>
-          <HomeShowItemHoverableIcon />
+          <HomeShowItemHoverableIcon
+            id={id}
+            isFavourite={isFavourite}
+            toggleFavouriteShow={toggleFavouriteShow}
+          />
         </Flex>
       </Flex>
     </Box>

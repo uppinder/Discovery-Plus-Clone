@@ -4,12 +4,14 @@ import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 import playButtonImage from '../Assets/Images/play_button.svg';
 import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
+import { isEmpty } from 'lodash';
 
 function ShowItem({
   id = '',
   title = '',
   desc = '',
   thumbnail = '',
+  banner = '',
   duration = '',
   isPremium = false,
   isShowPageMobileView = false,
@@ -39,7 +41,7 @@ function ShowItem({
       >
         <Box position="relative">
           <Image
-            src={thumbnail}
+            src={isEmpty(thumbnail) ? banner : thumbnail}
             minWidth="128px"
             height="72px"
             objectFit="cover"
@@ -117,7 +119,10 @@ function ShowItem({
         onMouseLeave={handleHover}
         position="relative"
       >
-        <Image src={thumbnail} borderRadius={isMobile ? '1px' : '4px'} />
+        <Image
+          src={isEmpty(thumbnail) ? banner : thumbnail}
+          borderRadius={isMobile ? '1px' : '4px'}
+        />
 
         {/* Premium Icon Overlay*/}
         {isPremium && (

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import { fetchSuperstarData } from '../Actions';
@@ -14,6 +14,8 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import ShowItem from './ShowItem';
+import discoveryPlusApi from '../Api';
+import FavouriteNotification from './FavouriteNotification';
 
 function Superstar() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -28,6 +30,109 @@ function Superstar() {
       dispatch(fetchSuperstarData(superstarId));
     }
   }, [dispatch, superstarData, superstarId]);
+
+  const userData = useSelector(state => state.userProfile);
+  const [favouritesContent, setFavouritesContent] = useState({});
+  const [updatePending, setUpdatePending] = useState(false);
+  const [displayFavouriteNotification, setDisplayFavouriteNotification] =
+    useState({ show: false, operation: '' });
+
+  useEffect(() => {
+    const fetchFavourites = async () => {
+      try {
+        const { data } = await discoveryPlusApi(`/users/${userData.id}`);
+        // console.log(data);
+        setFavouritesContent(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    if (!isEmpty(userData)) {
+      fetchFavourites();
+    }
+  }, [userData]);
+
+  const checkIsFavouriteEpisode = useCallback(
+    episodeId => {
+      return favouritesContent['favourite_episodes'].some(
+        item => item.id === episodeId
+      );
+    },
+    [favouritesContent]
+  );
+
+  useEffect(() => {
+    const updateUserFavourites = () => {
+      discoveryPlusApi
+        .delete(`/users/${userData['id']}`)
+        .then(response => {
+          if (response.status === 200) {
+            return discoveryPlusApi.post('/users', favouritesContent);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        })
+        .finally(() => setUpdatePending(false));
+    };
+
+    if (updatePending) {
+      updateUserFavourites();
+    }
+  }, [userData, favouritesContent, updatePending]);
+
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => setDisplayFavouriteNotification({ show: false, operation: '' }),
+      1200
+    );
+
+    return () => clearTimeout(timeout);
+  }, [displayFavouriteNotification]);
+
+  const toggleFavouriteEpisode = episodeId => {
+    if (isEmpty(userData)) return;
+
+    const alreadyFavourited = favouritesContent['favourite_episodes'].some(
+      item => item.id === episodeId
+    );
+
+    if (alreadyFavourited) {
+      // Remove from favourites
+      setFavouritesContent(prevState => {
+        return {
+          ...prevState,
+          favourite_episodes: prevState.favourite_episodes.filter(
+            item => item.id !== episodeId
+          ),
+        };
+      });
+
+      // Toggle remove from favourite notification
+      setDisplayFavouriteNotification({ show: true, operation: 'remove' });
+    } else {
+      // Add to favourites
+      const favouriteEpisode = superstarData[superstarId].find(
+        item => item.id === episodeId
+      );
+
+      setFavouritesContent(prevState => {
+        return {
+          ...prevState,
+          favourite_episodes: [
+            ...prevState.favourite_episodes,
+            favouriteEpisode,
+          ],
+        };
+      });
+
+      // Toggle add to favourite notification
+      setDisplayFavouriteNotification({ show: true, operation: 'add' });
+    }
+
+    setUpdatePending(true);
+  };
 
   if (superstarId === 'fukrey-boys') {
     return (
@@ -60,6 +165,13 @@ function Superstar() {
         marginBottom={isMobile ? '0px' : '25px'}
         gap={isMobile ? '5px' : '20px'}
       >
+        {/* Add/Remove Favourite notification */}
+        {displayFavouriteNotification['show'] && (
+          <FavouriteNotification
+            operation={displayFavouriteNotification['operation']}
+          />
+        )}
+
         <Text
           fontSize="20px"
           fontWeight="500"
@@ -80,17 +192,23 @@ function Superstar() {
           gridColumnGap="12px"
           gridRowGap={isMobile ? '0px' : '85px'}
         >
-          {superstarData[superstarId].map((episode, id) => (
+          {superstarData[superstarId].map((episodeData, id) => (
             <Link
               key={id}
               as={ReactRouterLink}
-              to={`/video/${superstarId}/${episode.id}`}
+              to={`/video/${superstarId}/${episodeData.id}`}
               position="relative"
               height={isMobile ? null : '190px'}
               _hover={{ textDecoration: 'none' }}
             >
               <ShowItem
-                {...episode}
+                {...episodeData}
+                isFavourite={
+                  isEmpty(favouritesContent)
+                    ? false
+                    : checkIsFavouriteEpisode(episodeData['id'])
+                }
+                toggleFavouriteEpisode={toggleFavouriteEpisode}
                 isShowPageMobileView={isMobile}
                 timeOverlay={true}
               />

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { isEmpty } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchChannelListData, updateChannelCarouselData } from '../Actions';
@@ -23,8 +23,17 @@ import {
 import channelImage from '../Assets/Images/show_image.jpeg';
 import HomeShowItem from './HomeShowItem';
 import ChannelCarousel from './ChannelCarousel';
+import discoveryPlusApi from '../Api';
+import FavouriteNotification from './FavouriteNotification';
 
 function Channel() {
+  const location = useLocation();
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+
+  const channelIdPattern = new RegExp('^/channel/[A-Za-z0-9-_]+$');
+  const isChannelPage = channelIdPattern.test(location.pathname);
+  const isChannelPageMobileView = isChannelPage && isMobile;
+
   const channelId = useParams().channelId;
   const channelCarouselData = useSelector(state => state.channelCarouselData);
   const channelShowListData = useSelector(state => state.channelShowListData);
@@ -37,12 +46,105 @@ function Channel() {
     }
   }, [dispatch, channelId, channelShowListData]);
 
-  const location = useLocation();
-  const isMobile = useBreakpointValue({ base: true, sm: false });
+  const userData = useSelector(state => state.userProfile);
+  const [favouritesContent, setFavouritesContent] = useState({});
+  const [updatePending, setUpdatePending] = useState(false);
+  const [displayFavouriteNotification, setDisplayFavouriteNotification] =
+    useState({ show: false, operation: '' });
 
-  const channelIdPattern = new RegExp('^/channel/[A-Za-z0-9-_]+$');
-  const isChannelPage = channelIdPattern.test(location.pathname);
-  const isChannelPageMobileView = isChannelPage && isMobile;
+  useEffect(() => {
+    const fetchFavourites = async () => {
+      try {
+        const { data } = await discoveryPlusApi(`/users/${userData.id}`);
+        // console.log(data);
+        setFavouritesContent(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    if (!isEmpty(userData)) {
+      fetchFavourites();
+    }
+  }, [userData]);
+
+  const checkIsFavouriteShow = useCallback(
+    showId => {
+      return favouritesContent['favourite_shows'].some(
+        item => item.id === showId
+      );
+    },
+    [favouritesContent]
+  );
+
+  useEffect(() => {
+    const updateUserFavourites = () => {
+      discoveryPlusApi
+        .delete(`/users/${userData['id']}`)
+        .then(response => {
+          if (response.status === 200) {
+            return discoveryPlusApi.post('/users', favouritesContent);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        })
+        .finally(() => setUpdatePending(false));
+    };
+
+    if (updatePending) {
+      updateUserFavourites();
+    }
+  }, [userData, favouritesContent, updatePending]);
+
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => setDisplayFavouriteNotification({ show: false, operation: '' }),
+      1200
+    );
+
+    return () => clearTimeout(timeout);
+  }, [displayFavouriteNotification]);
+
+  const toggleFavouriteShow = showId => {
+    if (isEmpty(userData)) return;
+
+    const alreadyFavourited = favouritesContent['favourite_shows'].some(
+      item => item.id === showId
+    );
+
+    if (alreadyFavourited) {
+      // Remove from favourites
+      setFavouritesContent(prevState => {
+        return {
+          ...prevState,
+          favourite_shows: prevState.favourite_shows.filter(
+            item => item.id !== showId
+          ),
+        };
+      });
+
+      // Toggle remove from favourite notification
+      setDisplayFavouriteNotification({ show: true, operation: 'remove' });
+    } else {
+      // Add to favourites
+      const favouriteShow = channelShowListData[channelId].find(
+        item => item.id === showId
+      );
+
+      setFavouritesContent(prevState => {
+        return {
+          ...prevState,
+          favourite_shows: [...prevState.favourite_shows, favouriteShow],
+        };
+      });
+
+      // Toggle add to favourite notification
+      setDisplayFavouriteNotification({ show: true, operation: 'add' });
+    }
+
+    setUpdatePending(true);
+  };
 
   return (
     <Flex
@@ -52,6 +154,13 @@ function Channel() {
       paddingTop={isChannelPageMobileView ? '0px' : '20px'}
       paddingBottom="20px"
     >
+      {/* Add/Remove Favourite notification */}
+      {displayFavouriteNotification['show'] && (
+        <FavouriteNotification
+          operation={displayFavouriteNotification['operation']}
+        />
+      )}
+
       <Flex
         flexDirection="column"
         width={isChannelPageMobileView ? '100%' : '80%'}
@@ -154,6 +263,12 @@ function Channel() {
               >
                 <HomeShowItem
                   {...showData}
+                  isFavourite={
+                    isEmpty(favouritesContent)
+                      ? false
+                      : checkIsFavouriteShow(showData['id'])
+                  }
+                  toggleFavouriteShow={toggleFavouriteShow}
                   isChannelPageMobileView={isChannelPageMobileView}
                 />
               </Link>

@@ -28,6 +28,7 @@ import { DotsThreeOutlineVertical, Play } from '@phosphor-icons/react';
 
 import ShowItem from './ShowItem';
 import discoveryPlusApi from '../Api';
+import FavouriteNotification from './FavouriteNotification';
 
 function Mindblown() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -45,18 +46,20 @@ function Mindblown() {
       dispatch(fetchMindblownData(mindblownId));
     }
 
-    console.log(mindblownData[mindblownId]);
+    // console.log(mindblownData[mindblownId]);
   }, [dispatch, mindblownData, mindblownId]);
 
   const userData = useSelector(state => state.userProfile);
   const [favouritesContent, setFavouritesContent] = useState({});
   const [updatePending, setUpdatePending] = useState(false);
+  const [displayFavouriteNotification, setDisplayFavouriteNotification] =
+    useState({ show: false, operation: '' });
 
   useEffect(() => {
     const fetchFavourites = async () => {
       try {
         const { data } = await discoveryPlusApi(`/users/${userData.id}`);
-        console.log(data);
+        // console.log(data);
         setFavouritesContent(data);
       } catch (error) {
         console.log(error);
@@ -99,7 +102,18 @@ function Mindblown() {
     }
   }, [userData, favouritesContent, updatePending]);
 
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => setDisplayFavouriteNotification({ show: false, operation: '' }),
+      1200
+    );
+
+    return () => clearTimeout(timeout);
+  }, [displayFavouriteNotification]);
+
   const toggleFavouriteEpisode = episodeId => {
+    if (isEmpty(userData)) return;
+
     const alreadyFavourited = favouritesContent['favourite_episodes'].some(
       item => item.id === episodeId
     );
@@ -116,6 +130,7 @@ function Mindblown() {
       });
 
       // Toggle remove from favourite notification
+      setDisplayFavouriteNotification({ show: true, operation: 'remove' });
     } else {
       // Add to favourites
       const favouriteEpisode = mindblownData[mindblownId]['episodes'].find(
@@ -133,6 +148,7 @@ function Mindblown() {
       });
 
       // Toggle add to favourite notification
+      setDisplayFavouriteNotification({ show: true, operation: 'add' });
     }
 
     setUpdatePending(true);
@@ -157,6 +173,13 @@ function Mindblown() {
         alignItems="center"
         width="100%"
       >
+        {/* Add/Remove Favourite notification */}
+        {displayFavouriteNotification['show'] && (
+          <FavouriteNotification
+            operation={displayFavouriteNotification['operation']}
+          />
+        )}
+
         <Flex
           marginY="1%"
           flexDirection="column"
@@ -285,7 +308,13 @@ function Mindblown() {
                           borderRadius="0px"
                           paddingY="4px"
                         >
-                          <MenuItem backgroundColor="#121317" fontSize="14px">
+                          <MenuItem
+                            backgroundColor="#121317"
+                            fontSize="14px"
+                            onClick={() =>
+                              toggleFavouriteEpisode(episodeData['id'])
+                            }
+                          >
                             Add to Favourite
                           </MenuItem>
                           <MenuItem backgroundColor="#121317" fontSize="14px">

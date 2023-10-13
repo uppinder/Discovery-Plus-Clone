@@ -28,15 +28,96 @@
       "id": "111052287623217548237",
       "favourite_shows": [
         {
-          "id": "little-singham",
-          "title": "Little Singham",
-          "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
-          "thumbnail": "https://ap2-prod-images.disco-api.com/2023/03/05/bbd9636c-a15b-413d-a6c5-82283024ed5d.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+          "id": "harley-and-the-davidsons",
+          "title": "Harley and the Davidsons",
+          "desc": "Bill Harley and the Davidson brothers risk all for a motorcycle company.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2020/02/26/9dfe9ede-368b-4965-b60f-b63277e87695.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+          "isPremium": true,
+          "hasNewEpisodes": false
+        },
+        {
+          "id": "texas-metal-in",
+          "title": "Texas Metal",
+          "desc": "This Texas team can handle rowdy clients, tough builds and tight timelines.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2023/01/11/9180a156-55da-49bd-8f68-4c3e6e1a5867.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+          "isPremium": true,
+          "hasNewEpisodes": false
+        },
+        {
+          "id": "dirt-every-day-in",
+          "title": "Dirt Every Day",
+          "desc": "This 4x4 showcase shares off-roading know-how, technology and adventures.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2023/08/23/708367fb-3eee-48c4-85c8-8fc1a266a30e.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+          "isPremium": true,
+          "hasNewEpisodes": false
+        },
+        {
+          "id": "secrets-of-in",
+          "title": "Secrets of the Koh-i-noor",
+          "desc": "Follow the journey of the world's most fabled diamond with Manoj Bajpayee.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2022/08/18/8accb6b7-de88-42b9-a129-bcf6107350b5.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+          "isPremium": true,
+          "hasNewEpisodes": false
+        },
+        {
+          "id": "swami-ramdev-ek-sangharsh-in",
+          "title": "Swami Ramdev: Ek Sangharsh",
+          "desc": "Discover how Swami Ramdev changed the health of the nation.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2023/06/01/37eb2e61-c013-40ec-b076-41f1c9ad7723.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
+          "isPremium": true,
+          "hasNewEpisodes": false
+        },
+        {
+          "id": "rachael-rays-kids-cook-off-in",
+          "title": "Rachael Ray's Kids Cook-Off",
+          "desc": "Rachael Ray hosts a series of culinary challenges for talented young chefs.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2021/08/11/4a937c3d-a9c2-4133-b42f-44ab11fa9c4a.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
           "isPremium": true,
           "hasNewEpisodes": false
         }
       ],
-      "favourite_episodes": []
+      "favourite_episodes": [
+        {
+          "id": "/videos/the-zoo/an-elephants-trust",
+          "title": "An Elephant's Trust",
+          "desc": "An elephant requires delicate treatment and an otter visits the dentist.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2020/02/26/5f4ad1b6-e062-38ff-bbd0-52397c6cf56e.jpeg?w=600&p=true&q=75",
+          "duration": "46:50",
+          "isPremium": false
+        },
+        {
+          "id": "mission-mangalyaan-part-2",
+          "title": "Mission Mangalyaan Part 2",
+          "desc": "Chikki is sent to Mars, but Khatarnaak Khatri takes over the spaceship.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/26/7323e22e-dba8-3a3e-86a3-be0339812f2e.jpeg?w=600&p=true&q=75",
+          "duration": "10:33",
+          "isPremium": true
+        },
+        {
+          "id": "blood-in-the-water",
+          "title": "Blood in the Water",
+          "desc": "Survivalists test their skills a Bahamian island's razor-sharp terrain.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2021/10/09/35ad2b5f-4474-3553-85ad-9196cc61c388.jpeg?w=600&p=true&q=75",
+          "duration": "43:26",
+          "isPremium": true
+        },
+        {
+          "id": "bares-all",
+          "title": "Bares All",
+          "desc": "The survivors and their families share behind-the-scenes insights.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2021/09/30/f9cd0826-b9a6-3808-9c50-38f28c88b5ab.jpeg?w=600&p=true&q=75",
+          "duration": "43:26",
+          "isPremium": true
+        },
+        {
+          "id": "panja-vs-ninja-part2",
+          "title": "Panja vs. Ninja Part2",
+          "desc": "Little Singham helps Ninja Fui defeat Ganja Ninja.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/f0cfded9-243a-32d2-bdaa-1762837236a5.jpeg?w=600&p=true&q=75",
+          "duration": "10:33",
+          "isPremium": true
+        }
+      ]
     }
   ],
   "home": {

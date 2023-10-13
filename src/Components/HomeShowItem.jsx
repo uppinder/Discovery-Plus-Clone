@@ -6,6 +6,7 @@ import premiumIcon from '../Assets/Images/premium_icon.svg';
 import HomeShowItemHoverableIcon from './HomeShowItemHoverableIcon';
 
 function HomeShowItem({
+  id = '',
   title = '',
   desc = '',
   thumbnail = '',
@@ -13,6 +14,7 @@ function HomeShowItem({
   isPremium = false,
   isChannelPageMobileView = false,
   isFavourite = false,
+  toggleFavouriteShow = null,
   isFavouriteMobileView = false,
   isSearchDesktopView = false,
 }) {
@@ -116,7 +118,11 @@ function HomeShowItem({
               {desc}
             </Text>
           </Flex>
-          <HomeShowItemHoverableIcon isFavourite={isFavourite} />
+          <HomeShowItemHoverableIcon
+            id={id}
+            isFavourite={isFavourite}
+            toggleFavouriteShow={toggleFavouriteShow}
+          />
         </Flex>
       </Flex>
     </Box>
