@@ -189,6 +189,7 @@ function Mindblown() {
         >
           {/* Thumbnail */}
           <Image
+            width="100%"
             src={mindblownData[mindblownId]['banner']}
             borderRadius={isMindblownPageMobileView ? '0px' : '10px'}
           />
