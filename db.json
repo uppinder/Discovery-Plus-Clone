@@ -36,17 +36,7 @@
           "hasNewEpisodes": false
         }
       ],
-      "favourite_episodes": [
-        {
-          "showId": "i-should-have-stayed-home-in",
-          "id": "far-from-home",
-          "title": "Far From Home",
-          "desc": "Sid and Shanky are challenged when left blindfolded in a remote area.",
-          "thumbnail": "https://ap2-prod-images.disco-api.com/2023/09/11/03bd3674-8e8e-3d48-9912-74fb28c1bc8d.jpeg?w=600&p=true&q=75",
-          "duration": "43:04",
-          "isPremium": true
-        }
-      ]
+      "favourite_episodes": []
     }
   ],
   "home": {

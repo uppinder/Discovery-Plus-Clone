@@ -73,6 +73,7 @@ function Mindblown() {
       const isFavourite = favouritesContent['favourite_episodes'].some(
         item => item.id === episodeId
       );
+
       return isFavourite;
     },
     [favouritesContent]
@@ -98,12 +99,25 @@ function Mindblown() {
     }
   }, [userData, favouritesContent, updatePending]);
 
-  const addToFavouriteEpisodes = episodeId => {
+  const toggleFavouriteEpisode = episodeId => {
     const alreadyFavourited = favouritesContent['favourite_episodes'].some(
       item => item.id === episodeId
     );
 
-    if (!alreadyFavourited) {
+    if (alreadyFavourited) {
+      // Remove from favourites
+      setFavouritesContent(prevState => {
+        return {
+          ...prevState,
+          favourite_episodes: prevState.favourite_episodes.filter(
+            item => item.id !== episodeId
+          ),
+        };
+      });
+
+      // Toggle remove from favourite notification
+    } else {
+      // Add to favourites
       const favouriteEpisode = mindblownData[mindblownId]['episodes'].find(
         item => item.id === episodeId
       );
@@ -118,8 +132,10 @@ function Mindblown() {
         };
       });
 
-      setUpdatePending(true);
+      // Toggle add to favourite notification
     }
+
+    setUpdatePending(true);
   };
 
   if (isEmpty(mindblownData[mindblownId])) {
@@ -242,7 +258,7 @@ function Mindblown() {
                             ? false
                             : checkIsFavourite(episodeData['id'])
                         }
-                        addToFavouriteEpisodes={addToFavouriteEpisodes}
+                        toggleFavouriteEpisode={toggleFavouriteEpisode}
                         isShowPageMobileView={isMindblownPageMobileView}
                       />
                     </Link>

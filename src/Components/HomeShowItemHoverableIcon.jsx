@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 function HomeShowItemHoverableIcon({
   id = '',
   isFavourite = false,
-  addToFavouriteShows = null,
-  addToFavouriteEpisodes = null,
+  toggleFavouriteShow = null,
+  toggleFavouriteEpisode = null,
   removefromFavourites = null,
 }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -27,8 +27,8 @@ function HomeShowItemHoverableIcon({
 
         console.log('click');
 
-        if (addToFavouriteShows) addToFavouriteShows(id);
-        if (addToFavouriteEpisodes) addToFavouriteEpisodes(id);
+        if (toggleFavouriteShow) toggleFavouriteShow(id);
+        if (toggleFavouriteEpisode) toggleFavouriteEpisode(id);
         if (removefromFavourites) removefromFavourites(id);
       }}
     >

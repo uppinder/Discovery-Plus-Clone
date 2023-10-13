@@ -15,8 +15,8 @@ function ShowItem({
   isShowPageMobileView = false,
   timeOverlay = false,
   isFavourite = false,
-  addToFavouriteShows = null,
-  addToFavouriteEpisodes = null,
+  toggleFavouriteShow = null,
+  toggleFavouriteEpisode = null,
   removefromFavourites = null,
 }) {
   const isMobile = useBreakpointValue({ base: true, sm: false });
@@ -178,8 +178,8 @@ function ShowItem({
             <HomeShowItemHoverableIcon
               id={id}
               isFavourite={isFavourite}
-              addToFavouriteShows={addToFavouriteShows}
-              addToFavouriteEpisodes={addToFavouriteEpisodes}
+              toggleFavouriteShow={toggleFavouriteShow}
+              toggleFavouriteEpisode={toggleFavouriteEpisode}
               removefromFavourites={removefromFavourites}
             />
           </Flex>
