@@ -23,5 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 discovery-plus-clone.code-workspace
+db.json
 _db.json
 output.txt
