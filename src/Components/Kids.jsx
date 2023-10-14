@@ -91,51 +91,56 @@ function Kids() {
     return () => clearTimeout(timeout);
   }, [displayFavouriteNotification]);
 
-  const toggleFavouriteShow = showId => {
-    if (isEmpty(userData)) return;
+  const toggleFavouriteShow = useCallback(
+    showId => {
+      if (isEmpty(userData)) return;
 
-    const alreadyFavourited = favouritesContent['favourite_shows'].some(
-      item => item.id === showId
-    );
-
-    if (alreadyFavourited) {
-      // Remove from favourites
-      setFavouritesContent(prevState => {
-        return {
-          ...prevState,
-          favourite_shows: prevState.favourite_shows.filter(
-            item => item.id !== showId
-          ),
-        };
-      });
-
-      // Toggle remove from favourite notification
-      setDisplayFavouriteNotification({ show: true, operation: 'remove' });
-    } else {
-      // Add to favourites
-      const kidsShowList = kidsData['kidsShowLists'].find(kidsShowListData => {
-        return kidsData[kidsShowListData['id']].find(
-          item => item.id === showId
-        );
-      });
-
-      const favouriteShow = kidsData[kidsShowList['id']].find(
+      const alreadyFavourited = favouritesContent['favourite_shows'].some(
         item => item.id === showId
       );
 
-      setFavouritesContent(prevState => {
-        return {
-          ...prevState,
-          favourite_shows: [...prevState.favourite_shows, favouriteShow],
-        };
-      });
+      if (alreadyFavourited) {
+        // Remove from favourites
+        setFavouritesContent(prevState => {
+          return {
+            ...prevState,
+            favourite_shows: prevState.favourite_shows.filter(
+              item => item.id !== showId
+            ),
+          };
+        });
 
-      // Toggle add to favourite notification
-      setDisplayFavouriteNotification({ show: true, operation: 'add' });
-    }
+        // Toggle remove from favourite notification
+        setDisplayFavouriteNotification({ show: true, operation: 'remove' });
+      } else {
+        // Add to favourites
+        const kidsShowList = kidsData['kidsShowLists'].find(
+          kidsShowListData => {
+            return kidsData[kidsShowListData['id']].find(
+              item => item.id === showId
+            );
+          }
+        );
 
-    setUpdatePending(true);
-  };
+        const favouriteShow = kidsData[kidsShowList['id']].find(
+          item => item.id === showId
+        );
+
+        setFavouritesContent(prevState => {
+          return {
+            ...prevState,
+            favourite_shows: [...prevState.favourite_shows, favouriteShow],
+          };
+        });
+
+        // Toggle add to favourite notification
+        setDisplayFavouriteNotification({ show: true, operation: 'add' });
+      }
+
+      setUpdatePending(true);
+    },
+    [favouritesContent, kidsData, userData]
+  );
 
   if (isEmpty(kidsData)) {
     return (

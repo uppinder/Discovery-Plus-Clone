@@ -106,45 +106,48 @@ function Channel() {
     return () => clearTimeout(timeout);
   }, [displayFavouriteNotification]);
 
-  const toggleFavouriteShow = showId => {
-    if (isEmpty(userData)) return;
+  const toggleFavouriteShow = useCallback(
+    showId => {
+      if (isEmpty(userData)) return;
 
-    const alreadyFavourited = favouritesContent['favourite_shows'].some(
-      item => item.id === showId
-    );
-
-    if (alreadyFavourited) {
-      // Remove from favourites
-      setFavouritesContent(prevState => {
-        return {
-          ...prevState,
-          favourite_shows: prevState.favourite_shows.filter(
-            item => item.id !== showId
-          ),
-        };
-      });
-
-      // Toggle remove from favourite notification
-      setDisplayFavouriteNotification({ show: true, operation: 'remove' });
-    } else {
-      // Add to favourites
-      const favouriteShow = channelShowListData[channelId].find(
+      const alreadyFavourited = favouritesContent['favourite_shows'].some(
         item => item.id === showId
       );
 
-      setFavouritesContent(prevState => {
-        return {
-          ...prevState,
-          favourite_shows: [...prevState.favourite_shows, favouriteShow],
-        };
-      });
+      if (alreadyFavourited) {
+        // Remove from favourites
+        setFavouritesContent(prevState => {
+          return {
+            ...prevState,
+            favourite_shows: prevState.favourite_shows.filter(
+              item => item.id !== showId
+            ),
+          };
+        });
 
-      // Toggle add to favourite notification
-      setDisplayFavouriteNotification({ show: true, operation: 'add' });
-    }
+        // Toggle remove from favourite notification
+        setDisplayFavouriteNotification({ show: true, operation: 'remove' });
+      } else {
+        // Add to favourites
+        const favouriteShow = channelShowListData[channelId].find(
+          item => item.id === showId
+        );
 
-    setUpdatePending(true);
-  };
+        setFavouritesContent(prevState => {
+          return {
+            ...prevState,
+            favourite_shows: [...prevState.favourite_shows, favouriteShow],
+          };
+        });
+
+        // Toggle add to favourite notification
+        setDisplayFavouriteNotification({ show: true, operation: 'add' });
+      }
+
+      setUpdatePending(true);
+    },
+    [channelId, channelShowListData, userData, favouritesContent]
+  );
 
   return (
     <Flex
