@@ -33,7 +33,6 @@ function Login() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
 
   const navigate = useNavigate();
-  const { pathname } = useLocation();
 
   const [inputFocus, setInputFocus] = useState(false);
   const formik = useFormik({
@@ -122,7 +121,6 @@ function Login() {
         <Text fontSize="24px" fontWeight="600" color="#fff" marginBottom="14px">
           Sign In Now
         </Text>
-
         <Flex
           flexDirection="column"
           border="1px solid #fff"
@@ -226,62 +224,49 @@ function Login() {
             </Button>
           </form>
         </Flex>
-
-        <Text fontSize="14px" fontWeight="500" marginTop="20px">
-          Social sign in options only for
+        <Text fontSize="15px" fontWeight="500" marginTop="20px">
+          Social sign in options:
         </Text>
 
-        {pathname.endsWith('providers') ? (
-          <Flex marginTop="12px" marginBottom="20px" gap="36px">
-            <Link
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              width="45px"
-              height="45px"
-              backgroundColor="#fff"
-              borderRadius="50px"
-              _hover={{ opacity: '0.8' }}
-              onClick={() => login()}
-            >
-              <Image src={googleIcon} width="14px" height="14px" />
-            </Link>
-            <Link
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              width="45px"
-              height="45px"
-              backgroundColor="#4065b4"
-              borderRadius="50px"
-              _hover={{ opacity: '0.8' }}
-            >
-              <Image src={facebookIcon} width="14px" height="14px" />
-            </Link>
-            <Link
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              width="45px"
-              height="45px"
-              backgroundColor="#fff"
-              borderRadius="50px"
-              _hover={{ opacity: '0.8' }}
-            >
-              <Image src={appleIcon} width="14px" height="14px" />
-            </Link>
-          </Flex>
-        ) : (
+        <Flex marginTop="12px" marginBottom="20px" gap="36px">
           <Link
-            to="/login/providers"
-            as={ReactRouterLink}
-            marginY="8px"
-            color="#2789ff"
-            fontSize="14px"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            width="45px"
+            height="45px"
+            backgroundColor="#fff"
+            borderRadius="50px"
+            _hover={{ opacity: '0.8' }}
+            onClick={() => login()}
           >
-            Existing Users {'>'}
+            <Image src={googleIcon} width="14px" height="14px" />
           </Link>
-        )}
+          <Link
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            width="45px"
+            height="45px"
+            backgroundColor="#4065b4"
+            borderRadius="50px"
+            _hover={{ opacity: '0.8' }}
+          >
+            <Image src={facebookIcon} width="14px" height="14px" />
+          </Link>
+          <Link
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            width="45px"
+            height="45px"
+            backgroundColor="#fff"
+            borderRadius="50px"
+            _hover={{ opacity: '0.8' }}
+          >
+            <Image src={appleIcon} width="14px" height="14px" />
+          </Link>
+        </Flex>
 
         <Text
           color="#9ba1a9"

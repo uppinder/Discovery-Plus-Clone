@@ -106,10 +106,6 @@ export default function Router() {
           element: <Login />,
         },
         {
-          path: 'login/providers',
-          element: <Login />,
-        },
-        {
           path: 'login/otp',
           element: <LoginOTP />,
         },
