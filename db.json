@@ -140,6 +140,22 @@
           "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/f0cfded9-243a-32d2-bdaa-1762837236a5.jpeg?w=600&p=true&q=75",
           "duration": "10:33",
           "isPremium": true
+        },
+        {
+          "id": "/videos/dodo-heroes/derricks-elephant-challenge",
+          "title": "Derrick's Elephant Challenge",
+          "desc": "An elephant is fitted with the world's first orthotic leg brace.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2021/09/08/85b5bb82-7cf7-3fc2-8507-515400d86690.jpeg?w=600&p=true&q=75",
+          "duration": "46:54",
+          "isPremium": false
+        },
+        {
+          "id": "/videos/tigress-blood/tigress-blood",
+          "title": "Tigress Blood",
+          "desc": "Four tiger sisters battle each other for control of their homeland.",
+          "thumbnail": "https://ap2-prod-images.disco-api.com/2021/12/31/23665779-984b-388f-8eed-7958169a9b3f.jpeg?w=600&p=true&q=75",
+          "duration": "43:35",
+          "isPremium": true
         }
       ]
     }

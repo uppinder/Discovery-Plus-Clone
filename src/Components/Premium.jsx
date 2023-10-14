@@ -525,10 +525,13 @@ function Premium() {
         </Text>
 
         <iframe
-          width="80%" // Set the width of your video
-          height={isMobile ? '50%' : '550'} // Set the height of your video
-          src="https://www.youtube.com/embed/VIDEO_ID_HERE" // Replace with your video's URL or embed code
-          title="Embedded Video"
+          width="80%"
+          height={isMobile ? '50%' : '550'}
+          src="https://www.youtube.com/embed/-v8aeYXf4wI?si=7cZpoQ26OVuitzUs&controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
         ></iframe>
       </Flex>
 
