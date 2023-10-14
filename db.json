@@ -98,6 +98,850 @@
           "thumbnail": "https://ap2-prod-images.disco-api.com/2020/03/03/f65966a7-2b4d-4f95-9719-86247808f043.jpeg?bf=0&f=jpg&p=true&q=75&w=700",
           "isPremium": false,
           "hasNewEpisodes": false
+        },
+        {
+          "id": "little-singham",
+          "banner": "https://ap2-prod-images.disco-api.com/2023/03/05/bbd9636c-a15b-413d-a6c5-82283024ed5d.jpeg?bf=0&f=jpg&p=true&q=85&w=1600",
+          "title": "Little Singham",
+          "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+          "videoSrc": "https://www.youtube.com/embed/FKv4mq6dmbg?si=MGduuPbpkSFdKL5B",
+          "genres": [
+            "Animated",
+            "Kids"
+          ],
+          "languages": [
+            "Telugu",
+            "Malayalam",
+            "Hindi",
+            "Kannada",
+            "Tamil"
+          ],
+          "numOfSeasons": 9,
+          "episodes": [
+            {
+              "id": "panja-vs-ninja-part1",
+              "title": "Panja vs. Ninja Part1",
+              "desc": "Ninja Fui seeks the help of Little Singham to defeat Ganja Ninja.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/918795a9-b067-397c-80ec-8b1f727bf9ad.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "panja-vs-ninja-part2",
+              "title": "Panja vs. Ninja Part2",
+              "desc": "Little Singham helps Ninja Fui defeat Ganja Ninja.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/f0cfded9-243a-32d2-bdaa-1762837236a5.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "airport-mission-part-1",
+              "title": "Airport Mission Part 1",
+              "desc": "King Cobra hijacks Avishkar's plane to obtain his super-energy device.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/ee804cce-d485-34fa-a59d-c6d3e7d0d14d.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "airport-mission-part-2",
+              "title": "Airport Mission Part 2",
+              "desc": "King Cobra hijacks Avishkar's plane to obtain his super-energy device.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/e07c296f-48e7-336c-a2bf-8d467d50fd29.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-mangalyaan-part-1",
+              "title": "Mission Mangalyaan Part 1",
+              "desc": "Chikki is sent to Mars, but Khatarnaak Khatri takes over the spaceship.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/8aef6579-3351-3a52-b300-48b2f2485e6f.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-mangalyaan-part-2",
+              "title": "Mission Mangalyaan Part 2",
+              "desc": "Chikki is sent to Mars, but Khatarnaak Khatri takes over the spaceship.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/26/7323e22e-dba8-3a3e-86a3-be0339812f2e.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-squad-part-1",
+              "title": "Little Singham Squad Part 1",
+              "desc": "Little Singham recruits Lattu and Babli to help him find three bombs.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/c8667a21-e6e5-30ba-849b-06adc8457dc1.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-squad-part-2",
+              "title": "Little Singham Squad Part 2",
+              "desc": "Little Singham, Lattu and Babli search for three bombs.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/ece4ab7a-0326-3df9-97f3-5616c9b60c51.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-submarine-part-1",
+              "title": "Mission Submarine Part 1",
+              "desc": "King Cobra tries to capture Shadow X to hide his submarine from radar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/b2097a1c-c797-3d7d-9220-c819b2fa346c.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-submarine-part-2",
+              "title": "Mission Submarine Part 2",
+              "desc": "Little Singham fights King Cobra in an underwater submarine fight.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/39657cd6-e8ba-3ed4-a0db-7b52af5885a4.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-vs-eel-mutant",
+              "title": "Little Singham vs. Eel Mutant",
+              "desc": "Little Singham must defeat the electric shocks of an eel mutant.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/1d025900-3e20-3d2b-b6ff-e757718a78b6.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-kavya-sherni",
+              "title": "Little Kavya Sherni",
+              "desc": "Little Singham narrates the story of \"Sherni-Kavya.\"",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/06ac829d-e5d2-3e2a-a301-38b76df3d021.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "rang-berang",
+              "title": "Rang Berang",
+              "desc": "Jangli Joker tries to ruin Holi for the kids by stealing all the colors.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/de475d14-5eb1-3ab6-b9b1-804b054d7c0c.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "commissioner-lallu-lafanga",
+              "title": "Commissioner Lallu Lafanga",
+              "desc": "Lallu Lafanga pretends to be the police commissioner of Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/434f54b1-e299-3d3c-af2c-d607064cf375.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "exam-ka-bhoot-returns",
+              "title": "Exam ka Bhoot Returns",
+              "desc": "Shambhala steals all the books of Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/9d9de5e9-a9f3-3c01-8d6c-7319eafab1d9.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "bhootiya-bangla",
+              "title": "Bhootiya Bangla",
+              "desc": "Lattu, Ajay and Babli get trapped by ghosts in a haunted bungalow.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/5e73c48c-2baa-3167-9a92-957312d41b44.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "maushi-aayi-mirchi-nagar",
+              "title": "Maushi Aayi Mirchi Nagar",
+              "desc": "Karate lies about being an Inspector to his Maushi.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/d3f93318-005a-316c-88ef-69c4bd43b046.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "haanikarak-hippo",
+              "title": "Haanikarak Hippo",
+              "desc": "Khatarnak Khatri unleashes a mutated hippopotamus on Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/11/e7b6b215-62d9-3f2b-b266-6e0cd8628b5e.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "master-makoda",
+              "title": "Master Makoda",
+              "desc": "A mutant made from a cockroach, a dragonfly and a scorpion attacks.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/673c51d7-9ef5-33e0-b528-5b49b57d1e6b.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-vs-pokey-pasha",
+              "title": "Little Singham vs. Pokey Pasha",
+              "desc": "Khatarnaak Khatri sends a mutated porcupine to attack Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/4321bd4c-4ca8-31c3-a129-0fac61dfeffe.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "harr-koi-little-singham",
+              "title": "Harr Koi Little Singham",
+              "desc": "Boga kidnaps kids dressed as Little Singham because of a dress-up contest.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/0a280f79-ec4b-3e52-a57f-18d9f8716930.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "junglee-video-game",
+              "title": "Junglee Video game",
+              "desc": "Jungli Joker traps Lattu and Babli in a video game at the arcade.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/3f6c2291-db8d-3fe4-926e-882cbf3e6141.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "ls-aur-hyenas-ka-hungama",
+              "title": "LS aur Hyenas ka Hungama",
+              "desc": "Khatri sends three mutant hyenas to create havoc in Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/2d24e71b-fc8a-3ef3-b6c0-bbb42a65f54d.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "nani-ki-unlimited-thali",
+              "title": "Nani Ki Unlimited Thali",
+              "desc": "Shambala and Bhukkad Bhai try to ruin the Unlimited Thali Competition.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/103e8761-b141-38fd-a470-0dbd4daaad7f.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "bull-dozer-aur-rhino",
+              "title": "Bull Dozer Aur Rhino",
+              "desc": "Rowdy Rhino and Bull Dozer attack during a water crisis in Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/013ad68c-6564-3dcd-887d-64ffcbeda4d7.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "muniya-makdi",
+              "title": "Muniya Makdi",
+              "desc": "A mutated black widow named Muniya Makdi traps everyone in the school lab.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/96631011-8101-3eb9-9b04-85fcc02d009d.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-junglee-gufa",
+              "title": "Mission Junglee Gufa",
+              "desc": "Jungli Joker puts kidnapped kids in a cave where he can control the water.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/8c7d059a-686f-352a-9d47-c03dccc56409.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-vs-jazzy-genie",
+              "title": "Little Singham vs. Jazzy Genie",
+              "desc": "An eccentric genie has come to Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/26/06205ec8-155c-3cb0-a845-063b34013f00.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "gutter-ganjoo-returns",
+              "title": "Gutter Ganjoo Returns",
+              "desc": "Little Singham and Nani must stop Gutter Ganjoo and his army of rats.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/2e45c838-6c62-3245-a0cc-25b8606cf611.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "sher-ki-cheenk",
+              "title": "Sher Ki Cheenk",
+              "desc": "Little Singham must stop Lord Boga while fighting nasty allergies.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/982d29b9-d237-34bf-8b1d-e45cc60416e1.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-in-assam",
+              "title": "Little Singham in Assam",
+              "desc": "A music-loving villain named Taaka declares himself the King of Assam.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/2bd108d3-9e1a-3469-99e9-26368c7084c1.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "baba-tirchi-topiwala",
+              "title": "Baba Tirchi Topiwala",
+              "desc": "Baba Tirchhi Topiwal tricks the people with fake predictions.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/28113529-494b-3812-840f-2b04033d4a86.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "bollywood-keeda",
+              "title": "Bollywood Keeda",
+              "desc": "Bollywood Keeda turns everyone in town into a Bollywood character.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/5f725d8a-dd7c-3e9b-a142-4686d3a81f7b.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "jungle-mein-dangal",
+              "title": "Jungle Mein Dangal",
+              "desc": "Lallu Lafanga and his goons attempt to sabotage the Jungle Dhamaal Camp.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/14/2c112eaf-5cc0-3ee9-8c45-ac3916194b9d.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "kans-ka-aatank-part-1",
+              "title": "Kans ka Aatank Part 1",
+              "desc": "Kansa and Shambhala summon demons to bring Kanas to life.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/04/0bd990c5-2902-3ccf-9aba-cb0db9e06709.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "kans-ka-aatank-part-2",
+              "title": "Kans ka Aatank Part 2",
+              "desc": "Little Singham and Krishna fight demons summoned by Kansa and Shambhala.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/04/96118d0e-8b02-360b-a5f3-294e6d5226ca.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-in-africa",
+              "title": "Little Singham in Africa",
+              "desc": "Little Singham fights against Boga, who steals a magical mask in Africa.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/57fd968a-0df8-3490-a26d-23f6138040c6.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "merry-christmas",
+              "title": "Merry Christmas",
+              "desc": "Junglee Joker becomes an evil Santa to ruin Christmas for the kids.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/905c64a4-1e4c-3db9-af6c-920966060790.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "tamma-tamma-madhugola-part-1",
+              "title": "Tamma Tamma Madhugola Part 1",
+              "desc": "LS helps the bees of Planet Madhu Gola save their honey from an evil toad.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/8e177027-4884-312c-a693-8de3eba12c8c.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "tamma-tamma-madhugola-part-2",
+              "title": "Tamma Tamma Madhugola Part 2",
+              "desc": "Tarrrkaal tries to steal the honey from the bees of Planet Madhu Gola.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/938a18ad-686d-3c88-8116-bcd7923b0eee.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "naagin-noodles",
+              "title": "Naagin Noodles",
+              "desc": "Nagin Noodles wreck havoc during a lunch hosted for the Queen of England.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/1cb174c2-e116-3d61-8fb6-1e45fcafbc27.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "tamma-tamma-chocola-part-1",
+              "title": "Tamma Tamma Chocola Part 1",
+              "desc": "Halwa Halwai's sweet-making factory has gone berserk on Mithai Mandal.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/a39b1ff9-5499-39ee-8407-1ba09236e4bb.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "tamma-tamma-chocola-part-2",
+              "title": "Tamma Tamma Chocola Part 2",
+              "desc": "Little Singham and team try to pacify baker Halwa Halwai on Mithai Mandal.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/56e3530f-24dc-3c74-9bb3-948753b09075.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-bollywood-star",
+              "title": "Little Singham Bollywood Star",
+              "desc": "Lord Boga and Kallu Ballu disguise themselves as filmmakers to rob banks.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/be3aaa8a-7d4a-357e-bd28-b7da2f287304.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-in-japan-part-1",
+              "title": "Little Singham in Japan Part 1",
+              "desc": "Little Singham must stop Khatarnaak Khatri from making Mount Fuji erupt.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/16/b8467338-df06-3bab-8264-ae4017615d77.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-in-japan-part-2",
+              "title": "Little Singham in Japan Part 2",
+              "desc": "Little Singham must stop Khatarnaak Khatri from making Mount Fuji erupt.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/16/b1fb4fa3-5365-302a-8f01-7f5171fad84f.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "kahaan-hai-little-singham",
+              "title": "Kahaan Hai Little Singham",
+              "desc": "Little Singham is left without his powers as villains attack the school.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/9a623e55-65e2-3d94-ab00-49d2f2d738c0.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "chooran-ka-jholmol",
+              "title": "Chooran Ka Jholmol",
+              "desc": "Little Singham has to defeat Junglee Joker while taking loo breaks.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/94b1a9e5-eb59-34d3-b702-c9214d811674.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "babu-khushboo-ka-perfume",
+              "title": "Babu Khushboo ka Perfume",
+              "desc": "Babu Khushboo forces the people of Mirchi Nagar to buy his perfume.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/bd900cc8-01a1-3319-84d6-796f6ec3696f.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "jungli-timli-cards",
+              "title": "Jungli Timli Cards",
+              "desc": "Junglee Joker uses magical cards to suck kids into his Junglee card world.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/2f34b800-4a56-32d8-9240-7fd49d1876b9.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            }
+          ],
+          "rating": "Age Rating : U | Contains : Suitable for All Ages"
+        },
+        {
+          "id": "little-singham",
+          "banner": "https://ap2-prod-images.disco-api.com/2023/03/05/bbd9636c-a15b-413d-a6c5-82283024ed5d.jpeg?bf=0&f=jpg&p=true&q=85&w=1600",
+          "title": "Little Singham",
+          "desc": "A nine-year-old boy battles evil villains that are out to create chaos.",
+          "videoSrc": "https://www.youtube.com/embed/FKv4mq6dmbg?si=MGduuPbpkSFdKL5B",
+          "genres": [
+            "Animated",
+            "Kids"
+          ],
+          "languages": [
+            "Telugu",
+            "Malayalam",
+            "Hindi",
+            "Kannada",
+            "Tamil"
+          ],
+          "numOfSeasons": 9,
+          "episodes": [
+            {
+              "id": "panja-vs-ninja-part1",
+              "title": "Panja vs. Ninja Part1",
+              "desc": "Ninja Fui seeks the help of Little Singham to defeat Ganja Ninja.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/918795a9-b067-397c-80ec-8b1f727bf9ad.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "panja-vs-ninja-part2",
+              "title": "Panja vs. Ninja Part2",
+              "desc": "Little Singham helps Ninja Fui defeat Ganja Ninja.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/f0cfded9-243a-32d2-bdaa-1762837236a5.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "airport-mission-part-1",
+              "title": "Airport Mission Part 1",
+              "desc": "King Cobra hijacks Avishkar's plane to obtain his super-energy device.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/ee804cce-d485-34fa-a59d-c6d3e7d0d14d.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "airport-mission-part-2",
+              "title": "Airport Mission Part 2",
+              "desc": "King Cobra hijacks Avishkar's plane to obtain his super-energy device.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/e07c296f-48e7-336c-a2bf-8d467d50fd29.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-mangalyaan-part-1",
+              "title": "Mission Mangalyaan Part 1",
+              "desc": "Chikki is sent to Mars, but Khatarnaak Khatri takes over the spaceship.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/8aef6579-3351-3a52-b300-48b2f2485e6f.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-mangalyaan-part-2",
+              "title": "Mission Mangalyaan Part 2",
+              "desc": "Chikki is sent to Mars, but Khatarnaak Khatri takes over the spaceship.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/26/7323e22e-dba8-3a3e-86a3-be0339812f2e.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-squad-part-1",
+              "title": "Little Singham Squad Part 1",
+              "desc": "Little Singham recruits Lattu and Babli to help him find three bombs.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/c8667a21-e6e5-30ba-849b-06adc8457dc1.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-squad-part-2",
+              "title": "Little Singham Squad Part 2",
+              "desc": "Little Singham, Lattu and Babli search for three bombs.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/ece4ab7a-0326-3df9-97f3-5616c9b60c51.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-submarine-part-1",
+              "title": "Mission Submarine Part 1",
+              "desc": "King Cobra tries to capture Shadow X to hide his submarine from radar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/b2097a1c-c797-3d7d-9220-c819b2fa346c.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-submarine-part-2",
+              "title": "Mission Submarine Part 2",
+              "desc": "Little Singham fights King Cobra in an underwater submarine fight.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/39657cd6-e8ba-3ed4-a0db-7b52af5885a4.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-vs-eel-mutant",
+              "title": "Little Singham vs. Eel Mutant",
+              "desc": "Little Singham must defeat the electric shocks of an eel mutant.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/1d025900-3e20-3d2b-b6ff-e757718a78b6.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-kavya-sherni",
+              "title": "Little Kavya Sherni",
+              "desc": "Little Singham narrates the story of \"Sherni-Kavya.\"",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/06ac829d-e5d2-3e2a-a301-38b76df3d021.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "rang-berang",
+              "title": "Rang Berang",
+              "desc": "Jangli Joker tries to ruin Holi for the kids by stealing all the colors.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/de475d14-5eb1-3ab6-b9b1-804b054d7c0c.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "commissioner-lallu-lafanga",
+              "title": "Commissioner Lallu Lafanga",
+              "desc": "Lallu Lafanga pretends to be the police commissioner of Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/434f54b1-e299-3d3c-af2c-d607064cf375.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "exam-ka-bhoot-returns",
+              "title": "Exam ka Bhoot Returns",
+              "desc": "Shambhala steals all the books of Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/9d9de5e9-a9f3-3c01-8d6c-7319eafab1d9.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "bhootiya-bangla",
+              "title": "Bhootiya Bangla",
+              "desc": "Lattu, Ajay and Babli get trapped by ghosts in a haunted bungalow.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/5e73c48c-2baa-3167-9a92-957312d41b44.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "maushi-aayi-mirchi-nagar",
+              "title": "Maushi Aayi Mirchi Nagar",
+              "desc": "Karate lies about being an Inspector to his Maushi.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/d3f93318-005a-316c-88ef-69c4bd43b046.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "haanikarak-hippo",
+              "title": "Haanikarak Hippo",
+              "desc": "Khatarnak Khatri unleashes a mutated hippopotamus on Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/11/e7b6b215-62d9-3f2b-b266-6e0cd8628b5e.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "master-makoda",
+              "title": "Master Makoda",
+              "desc": "A mutant made from a cockroach, a dragonfly and a scorpion attacks.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/673c51d7-9ef5-33e0-b528-5b49b57d1e6b.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-vs-pokey-pasha",
+              "title": "Little Singham vs. Pokey Pasha",
+              "desc": "Khatarnaak Khatri sends a mutated porcupine to attack Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/4321bd4c-4ca8-31c3-a129-0fac61dfeffe.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "harr-koi-little-singham",
+              "title": "Harr Koi Little Singham",
+              "desc": "Boga kidnaps kids dressed as Little Singham because of a dress-up contest.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/0a280f79-ec4b-3e52-a57f-18d9f8716930.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "junglee-video-game",
+              "title": "Junglee Video game",
+              "desc": "Jungli Joker traps Lattu and Babli in a video game at the arcade.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/3f6c2291-db8d-3fe4-926e-882cbf3e6141.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "ls-aur-hyenas-ka-hungama",
+              "title": "LS aur Hyenas ka Hungama",
+              "desc": "Khatri sends three mutant hyenas to create havoc in Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/2d24e71b-fc8a-3ef3-b6c0-bbb42a65f54d.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "nani-ki-unlimited-thali",
+              "title": "Nani Ki Unlimited Thali",
+              "desc": "Shambala and Bhukkad Bhai try to ruin the Unlimited Thali Competition.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/103e8761-b141-38fd-a470-0dbd4daaad7f.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "bull-dozer-aur-rhino",
+              "title": "Bull Dozer Aur Rhino",
+              "desc": "Rowdy Rhino and Bull Dozer attack during a water crisis in Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/013ad68c-6564-3dcd-887d-64ffcbeda4d7.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "muniya-makdi",
+              "title": "Muniya Makdi",
+              "desc": "A mutated black widow named Muniya Makdi traps everyone in the school lab.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/96631011-8101-3eb9-9b04-85fcc02d009d.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "mission-junglee-gufa",
+              "title": "Mission Junglee Gufa",
+              "desc": "Jungli Joker puts kidnapped kids in a cave where he can control the water.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/8c7d059a-686f-352a-9d47-c03dccc56409.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-vs-jazzy-genie",
+              "title": "Little Singham vs. Jazzy Genie",
+              "desc": "An eccentric genie has come to Mirchi Nagar.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/26/06205ec8-155c-3cb0-a845-063b34013f00.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "gutter-ganjoo-returns",
+              "title": "Gutter Ganjoo Returns",
+              "desc": "Little Singham and Nani must stop Gutter Ganjoo and his army of rats.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/2e45c838-6c62-3245-a0cc-25b8606cf611.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "sher-ki-cheenk",
+              "title": "Sher Ki Cheenk",
+              "desc": "Little Singham must stop Lord Boga while fighting nasty allergies.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/982d29b9-d237-34bf-8b1d-e45cc60416e1.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-in-assam",
+              "title": "Little Singham in Assam",
+              "desc": "A music-loving villain named Taaka declares himself the King of Assam.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/2bd108d3-9e1a-3469-99e9-26368c7084c1.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "baba-tirchi-topiwala",
+              "title": "Baba Tirchi Topiwala",
+              "desc": "Baba Tirchhi Topiwal tricks the people with fake predictions.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/21/28113529-494b-3812-840f-2b04033d4a86.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "bollywood-keeda",
+              "title": "Bollywood Keeda",
+              "desc": "Bollywood Keeda turns everyone in town into a Bollywood character.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/07/15/5f725d8a-dd7c-3e9b-a142-4686d3a81f7b.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "jungle-mein-dangal",
+              "title": "Jungle Mein Dangal",
+              "desc": "Lallu Lafanga and his goons attempt to sabotage the Jungle Dhamaal Camp.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/14/2c112eaf-5cc0-3ee9-8c45-ac3916194b9d.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "kans-ka-aatank-part-1",
+              "title": "Kans ka Aatank Part 1",
+              "desc": "Kansa and Shambhala summon demons to bring Kanas to life.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/04/0bd990c5-2902-3ccf-9aba-cb0db9e06709.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "kans-ka-aatank-part-2",
+              "title": "Kans ka Aatank Part 2",
+              "desc": "Little Singham and Krishna fight demons summoned by Kansa and Shambhala.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2021/11/04/96118d0e-8b02-360b-a5f3-294e6d5226ca.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-in-africa",
+              "title": "Little Singham in Africa",
+              "desc": "Little Singham fights against Boga, who steals a magical mask in Africa.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/57fd968a-0df8-3490-a26d-23f6138040c6.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "merry-christmas",
+              "title": "Merry Christmas",
+              "desc": "Junglee Joker becomes an evil Santa to ruin Christmas for the kids.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/905c64a4-1e4c-3db9-af6c-920966060790.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "tamma-tamma-madhugola-part-1",
+              "title": "Tamma Tamma Madhugola Part 1",
+              "desc": "LS helps the bees of Planet Madhu Gola save their honey from an evil toad.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/8e177027-4884-312c-a693-8de3eba12c8c.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "tamma-tamma-madhugola-part-2",
+              "title": "Tamma Tamma Madhugola Part 2",
+              "desc": "Tarrrkaal tries to steal the honey from the bees of Planet Madhu Gola.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/938a18ad-686d-3c88-8116-bcd7923b0eee.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "naagin-noodles",
+              "title": "Naagin Noodles",
+              "desc": "Nagin Noodles wreck havoc during a lunch hosted for the Queen of England.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/1cb174c2-e116-3d61-8fb6-1e45fcafbc27.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "tamma-tamma-chocola-part-1",
+              "title": "Tamma Tamma Chocola Part 1",
+              "desc": "Halwa Halwai's sweet-making factory has gone berserk on Mithai Mandal.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/a39b1ff9-5499-39ee-8407-1ba09236e4bb.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "tamma-tamma-chocola-part-2",
+              "title": "Tamma Tamma Chocola Part 2",
+              "desc": "Little Singham and team try to pacify baker Halwa Halwai on Mithai Mandal.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/56e3530f-24dc-3c74-9bb3-948753b09075.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-bollywood-star",
+              "title": "Little Singham Bollywood Star",
+              "desc": "Lord Boga and Kallu Ballu disguise themselves as filmmakers to rob banks.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/be3aaa8a-7d4a-357e-bd28-b7da2f287304.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-in-japan-part-1",
+              "title": "Little Singham in Japan Part 1",
+              "desc": "Little Singham must stop Khatarnaak Khatri from making Mount Fuji erupt.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/16/b8467338-df06-3bab-8264-ae4017615d77.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "little-singham-in-japan-part-2",
+              "title": "Little Singham in Japan Part 2",
+              "desc": "Little Singham must stop Khatarnaak Khatri from making Mount Fuji erupt.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/01/16/b1fb4fa3-5365-302a-8f01-7f5171fad84f.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "kahaan-hai-little-singham",
+              "title": "Kahaan Hai Little Singham",
+              "desc": "Little Singham is left without his powers as villains attack the school.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/9a623e55-65e2-3d94-ab00-49d2f2d738c0.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "chooran-ka-jholmol",
+              "title": "Chooran Ka Jholmol",
+              "desc": "Little Singham has to defeat Junglee Joker while taking loo breaks.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/94b1a9e5-eb59-34d3-b702-c9214d811674.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "babu-khushboo-ka-perfume",
+              "title": "Babu Khushboo ka Perfume",
+              "desc": "Babu Khushboo forces the people of Mirchi Nagar to buy his perfume.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/24/bd900cc8-01a1-3319-84d6-796f6ec3696f.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            },
+            {
+              "id": "jungli-timli-cards",
+              "title": "Jungli Timli Cards",
+              "desc": "Junglee Joker uses magical cards to suck kids into his Junglee card world.",
+              "thumbnail": "https://ap2-prod-images.disco-api.com/2022/02/05/2f34b800-4a56-32d8-9240-7fd49d1876b9.jpeg?w=600&p=true&q=75",
+              "duration": "10:33",
+              "isPremium": true
+            }
+          ],
+          "rating": "Age Rating : U | Contains : Suitable for All Ages"
         }
       ],
       "favourite_episodes": [

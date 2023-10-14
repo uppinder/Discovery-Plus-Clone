@@ -1,6 +1,17 @@
 import React from 'react';
-import { Box, ChakraProvider, theme } from '@chakra-ui/react';
+import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import Router from './Routes';
+
+const theme = extendTheme({
+  styles: {
+    global: {
+      // styles for the `body`
+      body: {
+        color: 'rgba(255, 255, 255, 0.92)',
+      },
+    },
+  },
+});
 
 function App() {
   return (
