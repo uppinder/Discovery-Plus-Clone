@@ -20,7 +20,6 @@ import React from 'react';
 
 function Footer() {
   const isMobile = useBreakpointValue({ base: true, sm: false });
-
   const footerBottomStyle = { textDecoration: 'none', color: 'white' };
 
   return (
@@ -46,16 +45,21 @@ function Footer() {
               hello@discovery.in
             </Link>
           </HStack>
-          <HStack spacing="10px">
-            <PhoneIcon />{' '}
-            <Link _hover={footerBottomStyle} href="tel:022-44444444">
-              022-44444444
-            </Link>
-            <Link _hover={footerBottomStyle} href="tel:+91-9999999999">
-              +91-9999999999
-            </Link>
-            <Text>(Mon-Fri, excluding holidays 11am - 4pm)</Text>
-          </HStack>
+          <Stack spacing="10px" direction="row">
+            <PhoneIcon />
+            <Stack
+              direction={isMobile ? 'column' : 'row'}
+              spacing={isMobile ? '0' : '10px'}
+            >
+              <Link _hover={footerBottomStyle} href="tel:022-44444444">
+                022-44444444
+              </Link>
+              <Link _hover={footerBottomStyle} href="tel:+91-9999999999">
+                +91-9999999999
+              </Link>
+              <Text>(Mon-Fri, excluding holidays 11am - 4pm)</Text>
+            </Stack>
+          </Stack>
           <HStack spacing="10px">
             <Image src={discoveryIcon} />{' '}
             <Text>
