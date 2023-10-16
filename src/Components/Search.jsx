@@ -771,7 +771,7 @@ function Search() {
           gridColumnGap="16px"
           gridRowGap="18px"
         >
-          {results['shows'].slice(0, 4).map((episodeData, index) => (
+          {results['episodes'].slice(0, 4).map((episodeData, index) => (
             <Link
               to={
                 episodeData.duration
