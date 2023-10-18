@@ -7,7 +7,7 @@ Please leave a ⭐ as motivation if you liked the implementation 😄
 
 ## Demo
 
-![Demo](quick-demo-mobile.gif)
+<img src="quick-demo-mobile.gif" width="375" height="667"/>
 
 ### Full Demo:
 <div align="left">
