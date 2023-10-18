@@ -1,16 +1,20 @@
 # Discovery Plus India Clone 
 A clone of [discoveryplus.in](https://discoveryplus.in/) ⚡
 
-Deployed using Netlify [here]([https://nextflix-azure.vercel.app/](https://discovery-plus-clone.netlify.app/)).
+Deployed using Netlify [here](https://discovery-plus-clone.netlify.app/).
 
 Please leave a ⭐ as motivation if you liked the implementation 😄
 
 ## Demo
 
-![Demo](/video-presentation/demo.mov)
+![Demo](quick-demo-mobile.gif)
 
-Full Demo:
-![Demo](/public/assets/demo.gif)
+### Full Demo:
+<div align="left">
+      <a href="https://www.youtube.com/watch?v=q0bpl3e6IkY">
+         <img src="https://img.youtube.com/vi/q0bpl3e6IkY/0.jpg" style="width:100%;">
+      </a>
+</div>
 <br />
 <br />
 
